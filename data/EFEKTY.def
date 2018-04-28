@@ -1,0 +1,20 @@
+[Info]
+name="--Efekty--"
+displayname="Efekty"
+versiondate= 01,05,2017
+mugenversion= 1.1
+author = "N-G MUGEN Team"
+pal.defaults=1,2,3,4,5,6
+localcoord = 380,360
+[Files]
+sprite=fightfx.sff
+sound=common.snd
+anim=fightfx.air
+cmd=
+cns=
+st=
+stcommon=Common.cns
+pal1=
+[Arcade]
+intro.storyboard=
+ending.storyboard=

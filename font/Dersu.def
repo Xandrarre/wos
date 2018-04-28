@@ -1,0 +1,12 @@
+[FNT v2]
+fntversion = 2,00
+name = "Dersu"
+author = "NGMT"
+
+[Def]
+type = truetype
+size = 100,130
+spacing = -10,1
+offset = 50,-20
+file = Dersu.ttf
+blend = -1

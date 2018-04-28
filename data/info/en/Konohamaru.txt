@@ -1,0 +1,247 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapons---------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+- requires 150 chakra
+  for final attack
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+- requires 150 chakra
+  for final attack
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+- requires 200 chakra
+  for final attack
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Small Stone Throw}
+[Command]
+Y
+[Triggers]
+- on ground
+[Info]
+
+{Katon: Haisekisho}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold to charge
+
+{Shuriken Kage Bunshin no Jutsu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Oiroke: Hato}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 150
+[Info]
+- paralyzes
+- does no effect on women
+
+{Oiroke: Iki}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 150
+[Info]
+- paralyzes
+- does no effect on women
+
+{Oiroke: Onnanoko Doshi}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- paralyzes
+- does no effect on women
+
+{Oiroke no Jutsu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- paralyzes
+- does no effect on women
+
+{Haremu no Jutsu}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 250+250 additional
+  for each close
+- requires at least 2 clones
+[Info]
+- paralyzes
+- does no effect on women
+
+{Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  odama rasengan
+
+{Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 3 clones
+
+{-------Ultimates---------}
+
+{Odama Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- 3000
+[Info]
+- fully charged Rasengan

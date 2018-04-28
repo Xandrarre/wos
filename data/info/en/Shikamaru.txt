@@ -1,0 +1,267 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Exploding Note}
+[Command]
+(DD),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Kageyose no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Kagenui no Jutsu Close}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Kagenui no Jutsu Long}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Kagekubishibari Stun}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Kagekubishibari Hands}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Kagemane Stun}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Kagemane Shuriken no Jutsu}
+[Command]
+Z
+[Triggers]
+- in air
+- chakra 100
+[Info]
+
+{Kagemane no Jutsu}
+[Command]
+(Z)
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- press arrows 
+  to choose direction
+- press S to end
+
+{Kagemane Combo}
+[Command]
+Y,Y,Y
+[Triggers]
+- on ground
+- requires active Kagemane
+[Info]
+
+{Kagemane: Kagenui}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 1000
+- requires active Kagemane
+[Info]
+
+{Kagemane: Kagenui Coffin}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 500
+- requires active Kagemane
+[Info]
+
+{Kagemane: Kagekubishibari}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 500
+- requires active Kagemane
+[Info]
+- smash
+
+{-------Ultimates---------}
+
+{Ultimate Kage Combo}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 4000
+- medium distance
+[Info]

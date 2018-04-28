@@ -1,0 +1,448 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Suna Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Suna Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Suna Forward Dash}
+[Command]
+FF,Y
+[Triggers]
+- in air
+- chakra 80
+[Info]
+
+{Suna Backward Dash}
+[Command]
+BB,Y
+[Triggers]
+- in air
+- chakra 80 
+[Info]
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Shuriken}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Suna Shuriken}
+[Command]
+(DD),B
+[Triggers]
+- on ground or sand
+- chakra 100
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Suna Hando}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Small Ryuusa}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Flying Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on sand
+- chakra 20/20/20/20
+[Info]
+
+{Flying Combo 2}
+[Command]
+X,X,X,X
+[Triggers]
+- on sand
+- chakra 20/20/20/20
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Sabaku Hando}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground or sand
+- chakra 200
+- medium distance
+[Info]
+
+{Suna Shigure}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground or sand
+- chakra 200
+- medium distance
+[Info]
+
+{Rendan: Suna Shigure}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground or sand
+- chakra 2000
+[Info]
+
+{Suna Arare}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground or sand
+- chakra 2000
+- medium distance
+[Info]
+
+{Suna Tatsumaki}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+
+{Suna Arashi}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground or sand
+- chakra 800
+- medium distance
+[Info]
+
+{Suna Supaiku Downward}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground or sand
+- chakra 1000
+- medium distance
+[Info]
+
+{Suna Supaiku Upward}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground or sand
+- chakra 1000
+- medium distance
+[Info]
+
+{Suna Mayu}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+- hold
+- press A/B/C/X/Y 
+  to perform additional 
+  attacks
+
+{Sabaku Kyu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground or sand
+- chakra 2500
+- medium distance
+[Info]
+
+{Sabaku Soso}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground or sand
+- chakra 1000
+- medium distance
+- enemy in coffin
+[Info]
+- automatically after
+  sabaku kyu
+
+{Sabaku Ro}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground or sand
+- chakra 3000
+- medium distance
+[Info]
+
+{Sabaku Taiso}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground or sand
+- chakra 1500/3000
+- medium distance
+[Info]
+
+{Ryusa Bakushin}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+
+{Ryusa Bakuryu}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground or sand
+- chakra 3000
+[Info]
+
+{Gokusa Maiso}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground or sand
+- chakra 200
+- medium distance
+[Info]
+- stuns enemy
+
+{Sabakuha}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground or sand
+- chakra 1000
+[Info]
+
+{Shukaku no Hoko}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+
+{Shukaku no Tate}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+
+{Sabaku Fuyu}
+[Command]
+C
+[Triggers]
+- in air 
+[Info]
+- allows flying on sand
+- press S to jump away
+
+{Suna no Yoroi}
+[Command]
+(C),Z
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+- press again to turn off
+- increases defence
+
+{Kazekage Mode}
+[Command]
+(Z),C
+[Triggers]
+- on ground or sand
+- chakra 500
+[Info]
+- press again to turn off
+- attacks have longer 
+  distance
+
+{Suna Combo 1}
+[Command]
+Y,Y,Y,Y
+[Triggers]
+- on ground or sand
+- chakra 20/20/20/20
+- in kazekage mode
+[Info]
+
+{Suna Combo 2}
+[Command]
+(DD),Y,Y,Y
+[Triggers]
+- on sand
+- chakra 20/20/20
+- in kazekage mode
+[Info]
+
+{Suna Attack}
+[Command]
+(FF),Y
+[Triggers]
+- on sand
+- chakra 100
+- in kazekage mode
+[Info]
+
+{Suna Shield}
+[Command]
+(BB),Y
+[Triggers]
+- on sand
+- chakra 20
+- in kazekage mode
+[Info]
+
+{-------Ultimates---------}
+
+{Sabaku Soutaisou}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground or sand
+- chakra 4000
+- medium distance
+[Info]
+
+{Shukaku Sabaku}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 4000
+- short distance
+[Info]

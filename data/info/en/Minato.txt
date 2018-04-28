@@ -1,0 +1,483 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- press arrows 
+  to choose direction
+
+{Hiraishin Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 100
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Up Kunai}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+[Info]
+
+{Multi Kunai}
+[Command]
+BB,BB,B
+[Triggers]
+- on ground
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Hiraishin Combo}
+[Command]
+Y,Y,Y,Y,Y,Y,Y
+[Triggers]
+- on ground
+- chakra 50/400
+[Info]
+- marks enemy
+  with hiraishin seal
+
+{Air Attack}
+[Command]
+Y
+[Triggers]
+- in air
+[Info]
+
+{Binding Seal}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- snares enemy
+
+{Keiyaku Fuin}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+- near enemy
+[Info]
+- marks enemy
+  with kuchiyose seal
+
+{Hiraishin Seal}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 500
+- near enemy
+[Info]
+- marks enemy
+  with hiraishin seal
+
+{Ground Hiraishin}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+- hold
+
+{Counter: Hiraishin no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- counters enemy's attack
+
+{Air Hiraishin Kunai}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1500
+[Info]
+
+{Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  kcm rasengan
+
+{Rasengan Smoke}
+[Command]
+DD
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{Jumping Rasengan}
+[Command]
+UU
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{KCM Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- 3000
+[Info]
+- fully charged rasengan
+
+{Air Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- chakra 900
+[Info]
+- hold to charge
+
+{Double Rasengan}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 2500
+[Info]
+
+{Double Air Rasengan}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 2500
+[Info]
+
+{Hiraishin: Rasengan}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{Hiraishin: Ni no Dan}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 3000
+- short distance
+[Info]
+
+{Kuchiyose: Gamabunta}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{------Kunai Hiraishin------}
+
+{Kunai Hiraishin Panku}
+[Command]
+(FF),A
+[Triggers]
+- chakra 100
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Kunai Hiraishin Katto}
+[Command]
+(BB),A
+[Triggers]
+- chakra 250
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Kunai Hiraishin Uraji}
+[Command]
+(FF),X
+[Triggers]
+- chakra 250
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Kunai Hiraishin Uchinuki}
+[Command]
+(BB),X
+[Triggers]
+- chakra 250
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Kunai Hiraishin Rasengan}
+[Command]
+(FF),Y
+[Triggers]
+- chakra 1000
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{Kunai Hiraishin Air Rasengan}
+[Command]
+(BB),Y
+[Triggers]
+- chakra 1000
+- requires thrown kunai
+[Info]
+- teleports directly
+  to thrown kunai
+
+{----Hiraishin no Jutsu-----}
+
+{Hiraishin Uraji}
+[Command]
+(DD),BB,A
+[Triggers]
+- chakra 500
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Andakatto}
+[Command]
+(DD),BB,X
+[Triggers]
+- chakra 500
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Uchinuki}
+[Command]
+(FF),B
+[Triggers]
+- chakra 300
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Panku}
+[Command]
+(BB),B
+[Triggers]
+- chakra 300
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Takkuru}
+[Command]
+(DD),Y
+[Triggers]
+- chakra 500
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Rasengan}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 1000
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{Hiraishin Air Rasengan}
+[Command]
+(BB),Z
+[Triggers]
+- chakra 1000
+- requires hiraishin seal
+[Info]
+- teleports directly
+  to enemy
+
+{-------Ultimates---------}
+
+{Hiraishin no Jutsu}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 4000
+[Info]
+
+{Shiki Fujin}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- life < 66%
+- enemy's life < 66%
+- chakra 3000
+[Info]

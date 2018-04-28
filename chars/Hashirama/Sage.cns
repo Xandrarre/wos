@@ -1,0 +1,806 @@
+;-------------------------------
+;Sennin Mode Charge
+[StateDef 1990]
+type = S
+movetype= I
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+anim = 1990
+poweradd = 0
+sprpriority = 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = timemod = 50,0
+value = F30,0
+
+[State 0]
+type = Explod
+trigger1 = timemod = 25,0
+anim = F290
+ID = 403
+pos = 0,2
+postype = p1
+name = "dym przód"
+scale = 1.3,1.3
+ownpal = 1
+ontop = 0
+facing = -1
+ignorehitpause = 1
+sprpriority = 2
+bindtime = 1
+removetime = -2
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+trans = addalpha
+alpha = 256,256
+
+[State 0]
+type = Explod
+trigger1 = timemod = 25,0
+anim = F401
+ID = 401
+pos = -7,2
+postype = p1
+name = "dym lewa"
+scale = 0.7,0.7
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 3
+bindtime=1
+removetime= -2
+removeongethit= 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0]
+type = Explod
+trigger1 = timemod = 25,0
+anim = F401
+ID = 4011
+pos = 7,2
+postype = p1
+facing = -1
+name = "dym prawa"
+scale = 0.7,0.7
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 3
+bindtime=1
+removetime= -2
+removeongethit= 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time > 6
+trigger1 = timemod = 25,0
+anim = F1070
+ID = 1070
+pos = 3,-42
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 99999
+scale = 1.2,1.2
+sprpriority = 3
+ownpal = 1
+removeongethit = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+volume = 255
+channel = 8
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = F17,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S2,2
+volume = 255
+channel = 2
+
+[State 0, Sage Explod]
+type = Explod
+ownpal = 1
+trigger1 = var(2) > 88
+trigger1 = time > 6
+anim = 1991
+ID = 1991
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 1
+supermovetime = 999
+scale = 1,1
+sprpriority = 1
+ownpal = 1
+removeongethit = 1
+trans = addalpha
+alpha = (var(2)-88)/2,256-((var(2)-88)/2)
+
+[State 0, VarSet]
+type = VarAdd
+trigger1 = var(2) < 600
+v = 2
+value = 3
+
+[State 0, end]
+type = ChangeState
+trigger1 = command != "hold_y" && var(50) = 0
+trigger2 = var(50) = 1 && random = [0,20-var(49)*(var(49))/50]
+trigger3 = var(50) = 1 && p2bodydist x = [-70,70]
+trigger3 = random = [50,71+var(49)*(var(49)/10)]
+triggerall = var(2) < 600
+value = 0
+ctrl = 1
+
+[State 0, end]
+type = ChangeState
+trigger1 = var(2) >= 600
+value = 1991
+;----------------------
+;Activate
+[StateDef 1991]
+type = S
+movetype = I
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+anim = 1997
+poweradd = 0
+sprpriority = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S1,0+random%7
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S1,0+random%7
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F19,6
+
+[State 0, Oczy]
+type = Explod
+ownpal = 1
+trigger1 = time = 0
+anim = 1996
+ID = 1996
+pos = 4,-54
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 999
+scale = .2,.2
+sprpriority = 3
+ownpal = 1
+removeongethit = 1
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 1
+time = 50
+anim = -1
+pos = 23,-59
+sound = S7,65474
+movetime = 0
+darken = 1
+unhittable = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+v = 2
+value = 600
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time = 0
+v = 1
+value = 1
+
+[State 0, end]
+type = ChangeState
+trigger1 = time = 2
+value = 70501
+ctrl = 1
+;----------------------
+;Pasek
+[StateDef 1992]
+type = S
+movetype = I
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+anim = 1992
+poweradd = 0
+sprpriority = 0
+
+[State 0, Turn]
+type = Turn
+trigger1 = var(10) = 1 && facing = -1
+trigger2 = var(10) = 2 && facing = 1
+trigger3 = var(10) = 3 && facing = -1
+trigger4 = var(10) = 4 && facing = 1
+
+[State 0, P1]
+type = VarSet
+trigger1 = numhelper(70000) = 1
+trigger1 = helper(70000), stateno = 77000
+v = 10
+value = 1
+
+[State 0, P2]
+type = VarSet
+trigger1 = numhelper(70000) = 1
+trigger1 = helper(70000), stateno = 78000
+v = 10
+value = 2
+
+[State 0, P3]
+type = VarSet
+trigger1 = numhelper(70001) = 1
+trigger1 = helper(70001), stateno = 77001
+v = 10
+value = 3
+
+[State 0, P4]
+type = VarSet
+trigger1 = numhelper(70001) = 1
+trigger1 = helper(70001), stateno = 78001
+v = 10
+value = 4
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+fv = 2  
+value = parent, var(2)
+
+[State 7500, P1]
+type = Explod
+trigger1 = var(10) = 1
+anim = 1993
+ID = 1993
+pos = -378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,0.3
+sprpriority = 254
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+
+[State 7500, P1]
+type = Explod
+trigger1 = var(10) = 1
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = -378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P2]
+type = Explod
+trigger1 = var(10) = 2
+anim = 1993
+ID = 1993
+pos = 378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,0.3
+sprpriority = 254
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P2]
+type = Explod
+trigger1 = var(10) = 2
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = 378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P3]
+type = Explod
+trigger1 = var(10) = 3
+anim = 1993
+ID = 1993
+pos = -378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,0.3
+sprpriority = 254
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P3]
+type = Explod
+trigger1 = var(10) = 3
+anim = cond((parent, var(0) = 1 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = -378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P4]
+type = Explod
+trigger1 = var(10) = 4
+anim = 1993
+ID = 1993
+pos = 378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,0.3
+sprpriority = 254
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P4]
+type = Explod
+trigger1 = var(10) = 4
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = 378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256,50
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, end]
+type = changestate
+trigger1 = parent, var(2) = 0
+value = 1993
+;----------------------
+;Pasek
+[StateDef 1993]
+type = S
+movetype = I
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+anim = 1992
+poweradd = 0
+sprpriority = 0
+
+[State 0, P1]
+type = VarSet
+trigger1 = numhelper(70000) = 1
+trigger1 = helper(70000), stateno = 77000
+v = 10
+value = 1
+
+[State 0, P2]
+type = VarSet
+trigger1 = numhelper(70000) = 1
+trigger1 = helper(70000), stateno = 78000
+v = 10
+value = 2
+
+[State 0, P3]
+type = VarSet
+trigger1 = numhelper(70001) = 1
+trigger1 = helper(70001), stateno = 77001
+v = 10
+value = 3
+
+[State 0, P4]
+type = VarSet
+trigger1 = numhelper(70001) = 1
+trigger1 = helper(70001), stateno = 78001
+v = 10
+value = 4
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+fv = 2  
+value = parent, var(2)
+
+[State 7500, P1]
+type = Explod
+trigger1 = var(10) = 1
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = -378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256-(time*25.6),50+(time*20)
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P2]
+type = Explod
+trigger1 = var(10) = 2
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = 378,170
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256-(time*25.6),50+(time*20)
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P3]
+type = Explod
+trigger1 = var(10) = 3
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = -378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256-(time*25.6),50+(time*20)
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P4]
+type = Explod
+trigger1 = var(10) = 4
+anim = cond((parent, var(1) = 0 || parent, var(1) >= 2),1994,cond((parent, stateno = 190 && parent,time < 55),1994,1995))
+ID = 1994
+pos = 378,110
+postype = front
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 2
+scale = 0.3,fvar(2)/2000
+sprpriority = 253
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256-(time*25.6),50+(time*20)
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 7500, P1]
+type = ModifyExplod
+trigger1 = time <= 10
+anim = 1993
+ID = 1993
+postype = front
+vfacing = 1
+scale = 0.3,0.3
+sprpriority = 254
+ontop = 0
+ownpal = 1
+trans = addalpha
+alpha = 256-(time*25.6),50+(time*20)
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time = 10
+id = 1993
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time = 10
+id = 1994
+
+[State 0, end]
+type = destroyself
+trigger1 = time = 10
+;---------------------------
+;SENNIN MODO
+[StateDef 1998]
+type = S
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1997
+poweradd = 0
+sprpriority = -1
+
+[State 0, Helper]
+type = Helper
+trigger1 = numhelper(70502) = 0
+helpertype = normal
+name = "Effect charge"
+ID = 70502           
+stateno = 70502
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 1
+size.xscale = 1
+size.yscale = 1
+
+[State 1520]
+type = Explod
+ownpal = 1
+trigger1 = timemod = 3,0
+anim = F402
+ID = 402
+pos = -30+random%60,-5
+postype = p1  ;p2,front,back,left,right
+vel = 0,-pi-0.5+random%2
+facing = 1
+name = "świetliki"
+vfacing = 1
+bindtime = 1
+removetime = 33
+scale = (0.025*var(18)),(0.025*var(18))
+sprpriority = cond(timemod=2,1,-1,1)
+ontop = 0
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0, VarRandom]
+type = VarRandom
+trigger1 = timemod = 2,1
+v = 18
+range = 2,5
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 5
+value = F30,0
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = 1
+triggerall = var(0) < 2
+value = 11-power/666
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = 1
+triggerall = var(0) = 2
+value = 16-power/666
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = [5,200]
+trigger1 = timemod = 25,0
+anim = F1070
+ID = 1070
+pos = 1,-34
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 99999
+scale = 1.2,1.2
+sprpriority = 3
+ownpal = 1
+removeongethit = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 200
+value = S6,1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 200
+value = S6,1
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 200
+anim = 1995
+ID = 1995
+pos = 2,-53
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 999
+scale = .2,.2
+sprpriority = 3
+ownpal = 1
+removeongethit = 1
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 115
+anim = 1999
+ID = 1999
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removetime = 85
+supermovetime = 999
+scale = 0.93,0.93
+sprpriority = 0
+ownpal = 1
+removeongethit = 1
+
+[State 0, Explod]
+type = modifyExplod
+trigger1 = time = [115,200]
+ID = 1999
+trans = addalpha
+alpha = (time-115)*3,256-(time-115)*3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F17,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S2,19
+volume = 255
+channel = 2
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time < 200
+v = 2
+value = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time < 200
+v = 15
+value = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time = 200
+v = 15
+value = power
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time = 200
+v = 0
+value = 2
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 200
+time = 70
+anim = -1
+pos = 23,-59
+sound = S7,4
+movetime = 0
+darken = 1
+unhittable = 0
+
+[State 811, end]
+type = ChangeState
+trigger1 = time = 200
+trigger2 = command != "hold_s" && var(50) = 0; && command != "hold_x"
+trigger3 = var(50) = 1 && random = [0,20-var(49)*(var(49))/50]
+trigger4 = var(50) = 1 && p2bodydist x = [-50,50]
+trigger4 = random = [50,71+var(49)*(var(49)/10)]
+value = cond(time>=200,0,70500)
+ctrl = 1

@@ -1,0 +1,655 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- use arrows 
+  to choose direction
+
+{Rinnegan Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 200
+[Info]
+- extends rinnegan limit
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Shuriken Barrage}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Chidori Combo}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Chidori Eiso Combo}
+[Command]
+(BB),B
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Katon Gokakyu no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- hold
+
+{Katon: Gokakyu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Air Katon: Gokakyu}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Katon: Hosenka}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- smash
+
+{Air Katon: Hosenka}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- smash
+
+{Katon: Ryuka}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Katon: Goryuka}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1800
+[Info]
+
+{Katon: Goryuka into air}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- after using 4 times 
+  creates rain
+
+{Sword Slashes}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Shishi Rendan}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+
+{Chidori}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  rinnegan: chidori
+
+{Chidori Koken}
+[Command]
+DD
+[Triggers]
+- while charging chidori
+[Info]
+- kakashi's mizutamari 
+  increases its size
+  and damage
+
+{Jumping Chidori}
+[Command]
+UU
+[Triggers]
+- while charging chidori
+[Info]
+
+{Chidori Eiso}
+[Command]
+FF
+[Triggers]
+- while charging chidori
+[Info]
+
+{Chidori Senbon}
+[Command]
+BB
+[Triggers]
+- while charging chidori
+[Info]
+
+{Rinnegan: Chidori}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- 3000
+[Info]
+- fully charged raikiri
+
+{Air Chidori}
+[Command]
+(Z)
+[Triggers]
+- in air
+- chakra 900
+[Info]
+- hold to charge
+
+{Air Chidori Senbon}
+[Command]
+BB
+[Triggers]
+- while charging air chidori
+[Info]
+
+{Chidori Nagashi}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold
+
+{Air Chidori Nagashi}
+[Command]
+UU,(Z)
+[Triggers]
+- in air
+- chakra 500 
+[Info]
+
+{Counter: Chidori Nagashi}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- counters enemy's attack
+
+{Shinra Tensei}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- extends rinnegan limit
+
+{Air Shinra Tensei}
+[Command]
+(Z),BB
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+- extends rinnegan limit
+
+{Chibaku Tensei}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- extends rinnegan limit
+
+{Kuchiyose: Hebi}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- untargetable
+
+{Kuchiyose: Aoda}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Kuchiyose: Taka}
+[Command]
+(C),UU
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- allows flying
+
+{Eternal Mangekyo Sharingan}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Enton: Kagutsuchi}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 2000
+- requires active ems
+[Info]
+
+{Enton: Honoikazuchi}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 2000
+- requires active ems
+[Info]
+
+{Amaterasu}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 2000 
+- requires active ems
+[Info]
+
+{Magen: Kasegui no Jutsu}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 2000 
+- requires active ems
+[Info]
+
+{Tsukuyomi: Susanoo}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 3000
+- requires active ems
+[Info]
+
+{Susano Combo}
+[Command]
+Y
+[Triggers]
+- onground
+- chakra 100
+- requires active ems
+[Info]
+- untargetable
+- press arrows to choose
+  attack
+
+{Susanoo Bones}
+[Command]
+(C),Y
+[Triggers]
+- chakra 250
+- requires active ems
+[Info]
+- untargetable
+- press again to end
+
+{Susanoo Bones: Attack 1}
+[Command]
+(C),A
+[Triggers]
+- chakra 250
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 2}
+[Command]
+(C),X
+[Triggers]
+- chakra 250
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 3}
+[Command]
+(C),B
+[Triggers]
+- chakra 250
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones: Amaterasu Sword}
+[Command]
+(Z),A
+[Triggers]
+- chakra 400
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones: Kagutsuchi}
+[Command]
+(Z),X
+[Triggers]
+- chakra 400
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones: Yasaka}
+[Command]
+(Z),B
+[Triggers]
+- chakra 400
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 1500
+- requires active ems
+[Info]
+- untargetable
+- press S to end
+
+{Susanoo: Attack 1}
+[Command]
+A
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 2}
+[Command]
+X
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 3}
+[Command]
+B
+[Triggers]
+- requires susanoo
+[Info]
+- hold to charge
+
+{Susanoo: Kagutsuchi}
+[Command]
+Y
+[Triggers]
+- requires susanoo
+- chakra 2000
+[Info]
+
+{Susanoo: Amaterasu}
+[Command]
+C
+[Triggers]
+- requires susanoo
+- chakra 3000
+[Info]
+
+{Perfect Susanoo}
+[Command]
+Z
+[Triggers]
+- requires susanoo
+- chakra 2000
+[Info]
+- untargetable
+- press S to end
+
+{Perfect Susanoo: Attack 1}
+[Command]
+A
+[Triggers]
+- requires perfect susanoo
+[Info]
+
+{Perfect Susanoo: Attack 2}
+[Command]
+X
+[Triggers]
+- requires perfect susanoo
+[Info]
+
+{Perfect Susanoo: Attack 3}
+[Command]
+B
+[Triggers]
+- requires perfect susanoo
+[Info]
+
+{Perfect Susanoo: Attack 4}
+[Command]
+Y
+[Triggers]
+- requires perfect susanoo
+[Info]
+
+{Perfect Susanoo: Amaterasu}
+[Command]
+C
+[Triggers]
+- requires perfect susanoo
+- chakra 2000
+[Info]
+
+{-------Ultimates---------}
+
+{Kirin}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- requires rain
+[Info]
+
+{Indora no Ya}
+[Command]
+Z
+[Triggers]
+- requires perfect susanoo
+- chakra 3500
+[Info]
+

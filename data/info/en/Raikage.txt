@@ -1,0 +1,395 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+- short distance
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+- short distance
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- use arrows 
+  to choose direction
+
+{Raikage Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 30
+- requires raiton no yoroi
+[Info]
+
+{Raikage Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 30
+- requires raiton no yoroi
+[Info]
+
+{Raikage Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+- requires raiton no yoroi
+[Info]
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Shuriken}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Electric Shuriken}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Whirlwind}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Counter: Raiton no Yoroi}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- counters enemy's attack
+
+{Fast Fists}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold
+
+{Electric Shock}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+
+{Electric Laser}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Electric Tower}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Electric Bomb}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Sutoreto}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+
+{Rariatto}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Raigyaku Suihei Choppu}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 1000/2000/3000
+[Info]
+- hold to charge
+
+{Girochin Doroppu}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 2000
+[Info]
+
+{Raiton no Yoroi}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- press again to turn off
+- increases attack,
+  defence and speed
+
+{Erubo}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+- requires raiton no yoroi
+[Info]
+
+{Raigyaku Suihei}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 1000
+- requires raiton no yoroi
+[Info]
+
+{Raitoningu Sutoreto}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 2000
+- requires raiton no yoroi
+[Info]
+
+{Shunshin Sutoreto}
+[Command]
+A
+[Triggers]
+- on ground
+- chakra 400
+- requires raiton no yoroi
+- during forward shunshin
+[Info]
+
+{Shunshin Erubo}
+[Command]
+A
+[Triggers]
+- on ground
+- chakra 1000
+- requires raiton no yoroi
+- during backward shunshin
+[Info]
+
+{Shunshin Raigyaku Suihei}
+[Command]
+X
+[Triggers]
+- on ground
+- chakra 1000
+- requires raiton no yoroi
+- during backward shunshin
+[Info]
+
+{Shunshin Raitoningu Sutoreto}
+[Command]
+X
+[Triggers]
+- on ground
+- chakra 2000
+- requires raiton no yoroi
+- during forward shunshin
+[Info]
+
+{Raiton Rariatto}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 2500
+- requires raiton no yoroi
+[Info]
+
+{Thunderstorm}
+[Command]
+(Z),BB,FF
+[Triggers]
+- in air
+- chakra 2500
+- requires raiton no yoroi
+[Info]
+
+{Three Walls Strike}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 3000
+- requires raiton no yoroi
+[Info]
+
+{-------Ultimates---------}
+
+{Raiga Bomu}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 4000
+- requires raiton no yoroi
+[Info]
+
+

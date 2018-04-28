@@ -1,0 +1,522 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Ground Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 100
+[Info]
+- press arrows 
+  to choose direction
+- enables wall stance
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapons---------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- puts parasite on the enemy
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+- puts parasite on the enemy
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+- puts parasite on the enemy
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+- puts parasite on the enemy
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+- puts parasite on the enemy
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Mokuton Jutsu 1}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 250
+[Info]
+
+{Mokuton Jutsu 2}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Mokuton Jutsu 3}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Mokuton Jutsu 4}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Mokuton Jutsu 5}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+- hold to charge
+
+{Mokuton Fist}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Chakra Sucking}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+[Info]
+
+{Parasite}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- steals chakra and heals
+
+{Clones}
+[Command]
+Z
+[Triggers]
+- on ground
+- chakra 200/clone
+[Info]
+- creates clones
+- max 6 clones
+
+{Separation}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+[Info]
+- turns to white/black zetsu
+
+{------Black Combo-------}
+
+{Black Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+- puts parasite on the enemy
+
+{Black Combo 2}
+[Command]
+(DD),A,A
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+
+{Black Combo 3}
+[Command]
+A,A,A
+[Triggers]
+- in air
+- black zetsu
+[Info]
+
+{Black Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+
+{Black Combo 5}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+- puts parasite on the enemy
+
+{Black Combo 6}
+[Command]
+X,X,X
+[Triggers]
+- in air
+- black zetsu
+[Info]
+
+{Black Tag Team}
+[Command]
+B
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+- changes to white zetsu
+
+{Black Replacement}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+- black zetsu
+[Info]
+- changes to white zetsu
+
+{Black Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+- black zetsu
+[Info]
+
+{Black Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+- black zetsu
+[Info]
+
+{Black Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+- black zetsu
+[Info]
+
+{Black Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+- black zetsu
+[Info]
+
+{-------White Combo-------}
+
+{White Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+- puts parasite on the enemy
+
+{White Combo 2}
+[Command]
+(DD),A,A
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+
+{White Combo 3}
+[Command]
+A,A
+[Triggers]
+- in air
+- white zetsu
+[Info]
+
+{White Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+- puts parasite on the enemy
+
+{White Combo 5}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+- puts parasite on the enemy
+
+{White Combo 6}
+[Command]
+X,X
+[Triggers]
+- in air
+- white zetsu
+[Info]
+
+{White Tag Team}
+[Command]
+B
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+- changes to black zetsu
+
+{White Replacement}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+- white zetsu
+[Info]
+- changes to black zetsu
+
+{White Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+- white zetsu
+[Info]
+
+{White Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+- white zetsu
+[Info]
+
+{White Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+- white zetsu
+[Info]
+
+{White Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+- white zetsu
+[Info]
+
+{-------Wall Stance-------}
+
+{Wall Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on wall
+[Info]
+- puts parasite on the enemy
+
+{Wall Combo 2}
+[Command]
+X,X,X,X
+[Triggers]
+- on wall
+[Info]
+
+{Wall Black Combo 1}
+[Command]
+X,X,X
+[Triggers]
+- on wall
+- black zetsu
+[Info]
+- puts parasite on the enemy
+
+{Wall Black Combo 2}
+[Command]
+X,X
+[Triggers]
+- on wall
+- black zetsu
+[Info]
+
+{Wall White Combo 1}
+[Command]
+X,X,X
+[Triggers]
+- on wall
+- white zetsu
+[Info]
+- puts parasite on the enemy
+
+{Wall White Combo 2}
+[Command]
+X,X
+[Triggers]
+- on wall
+- white zetsu
+[Info]
+
+{Wall Mokuton Jutsu 1}
+[Command]
+B
+[Triggers]
+- on wall
+- chakra 250
+[Info]
+
+{Wall Mokuton Jutsu 2}
+[Command]
+Y
+[Triggers]
+- on wall
+- chakra 500
+[Info]
+
+{Wall Mokuton Jutsu 3}
+[Command]
+C
+[Triggers]
+- on wall
+- chakra 1000
+[Info]
+
+{Wall Mokuton Jutsu 4}
+[Command]
+Z
+[Triggers]
+- on wall
+- chakra 2000
+[Info]
+

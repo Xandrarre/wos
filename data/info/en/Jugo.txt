@@ -1,0 +1,270 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Fury Forward Dash}
+[Command]
+FF,Y
+[Triggers]
+- in air
+- chakra 80
+[Info]
+
+{Fury Backward Dash}
+[Command]
+BB,Y
+[Triggers]
+- in air
+- chakra 80
+[Info]
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapons---------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+- in CS2 state
+  1 less attack
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+[Info]
+- in CS2 state
+  1 additional attack
+
+{Combo 7}
+[Command]
+(FF),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+- in CS2 state
+  1 less attack
+
+{Enemy Hold}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Kassokuken}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Kassokuken Downward}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Kassokuken: Ichishiki}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Kassokuken: Ichishiki Downward}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Senninka: Axe}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 800
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Senninka: Ken}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Kusari}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Ichishiki}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/1500
+[Info]
+- may activate automatically
+  when fury reaches 500
+- hold to charge
+
+{Ichishiki Punch}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- may activate automatically
+  when fury reaches 500
+
+{Cursed Seal Stage 2}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+- fury 500
+[Info]
+- activates automatically
+  when fury reaches 900
+
+{-------Ultimates---------}
+
+{Taren Fujizuho}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 4000
+- in cursed seal stage 2
+- short distance
+[Info]

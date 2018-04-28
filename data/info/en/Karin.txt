@@ -1,0 +1,198 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapons---------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Poison Perfume}
+[Command]
+(Y)
+[Triggers]
+- on ground
+[Info]
+- hold
+
+{Kongo Fusa 1}
+[Command]
+(C),FF
+[Triggers]
+- chakra 500
+[Info]
+
+{Kongo Fusa 2}
+[Command]
+(C),UU
+[Triggers]
+- chakra 500
+[Info]
+
+{Kongo Fusa 3}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Kongo Fusa 4}
+[Command]
+(C),DD
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Charm}
+[Command]
+(C),BB
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- paralyzes
+- does no effect on women
+
+{SelfHeal}
+[Command]
+(Z)
+[Triggers]
+- on ground
+- chakra 200
+- life < 100%
+[Info]
+- hold

@@ -1,0 +1,349 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Air Jump}
+[Command]
+UU,UU
+[Triggers]
+- in air
+- chakra 80 
+[Info]
+
+{Air Dash Backward}
+[Command]
+BB,BB
+[Triggers]
+- in air
+- chakra 80 
+[Info]
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Izanagi Kick}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Izanagi Punch}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+- marks enemy
+  with Juinjutsu Seal
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Izanagi}
+[Command]
+Y
+[Triggers]
+- chakra 750
+- available sharingan eye
+[Info]
+- consumes sharingan eye
+- after 5 seconds turns
+  all damage taken into
+  illusion
+
+{Futon: Shinkudama}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Futon: Shinku Taigyoku}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Air Futon: Shinku Taigyoku}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Futon: Shinkugyoku}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- smash
+
+{Air Futon: Shinkugyoku}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- smash
+
+{Futon: Daitoppa}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Futon: Shinkujin Shuriken}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- hold to charge
+
+{Futon: Shinkujin}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- hold
+
+{Futon: Shinkuha}
+[Command]
+(Z),FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Air Futon: Shinkuha}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Futon: Shinku Renpa 1}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 2500
+[Info]
+
+{Futon: Shinku Renpa 2}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 2500
+[Info]
+
+{Genjutsu: Sharingan}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Mahi Juinjutsu}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+- requires juinjutsu seal
+[Info]
+
+{Mokuton Jutsu 1}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Mokuton Jutsu 2}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Kuchiyose: Baku}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{-------Ultimates---------}
+
+{Ura Shisho Fuinjutsu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 4000
+[Info]
+- activates automatically
+  when, enemy in range,
+  life < 10%, chakra 2000 

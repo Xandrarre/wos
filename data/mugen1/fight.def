@@ -1,0 +1,996 @@
+;|-----------------------------------------------------------------|
+;|===================== ~ = ~ Game INFO ~ = ~ =====================|
+;|-----------------------------------------------------------------|
+;|--------------- Naruto Shippuuden: War of Shinobi ---------------|
+;|------------ Game Software © 2009-2017 N-G MUGEN Team -----------|
+;|---------------- Based on Elecbyte's Mugen Engine ---------------|
+;|-----------------------------------------------------------------|
+;|------------------ NARUTO Artwork and Elements ------------------|
+;|----------- © 2002 MASASHI KISHIMOTO / 2007 SHIPPUUDEN ----------|
+;|---------------------- All Rights Reserved ----------------------|
+;|-----------------------------------------------------------------|
+;|------------------------- Game made by: -------------------------|
+;|--------------------------- Xandrarre ---------------------------|
+;|---------------------------- Pein4444 ---------------------------|
+;|----------------------------- Tuder -----------------------------|
+;|-----------------------------------------------------------------|
+;|----------------------- Huge credits to: ------------------------|
+;|---------------------------- David11 ----------------------------|
+;|----------------------------- Snejok ----------------------------|
+;|--------------------------- Shinrashi ---------------------------|
+;|------------------------------ NES ------------------------------|
+;|-------------------------- RBM-Kyuubi ---------------------------|
+;|-------------------------- juansennin ---------------------------|
+;|--------------------------- WolfStak ----------------------------|
+;|--------------------------- Manoichi ----------------------------|
+;|--------------------------- Xxjohnyxx ---------------------------|
+;|---------------------------- Lavigon ----------------------------|
+;|----------------------------- Ramiz -----------------------------|
+;|------- everyone who took part in creating War of Shinobi -------|
+;|----------- and our old friends: Kinzo, juubi10, Adus -----------|
+;|-----------------------------------------------------------------|
+;|---------------------- You can find us on: ----------------------|
+;|--------------------------- FACEBOOK: ---------------------------|
+;|---- https://www.facebook.com/N-G-Mugen-Team-157035821030069/ ---|
+;|-----------------------------------------------------------------|
+;|---------------------------- YOUTUBE: ---------------------------|
+;|--------------- https://www.youtube.com/Xandrarre ---------------|
+;|-----------------------------------------------------------------|
+;|-----------------------------------------------------------------|
+;|--------- If you like the game, feel free to donate us! ---------|
+;|--------------- https://streamtip.com/y/xandrarre ---------------|
+;|-----------------------------------------------------------------|
+;|--------------------- Thanks for Downloading --------------------|
+;|------------------------- Enjoy Playing! ------------------------|
+;|-----------------------------------------------------------------|
+
+[Info]
+name = "Naruto Shippuuden War of Shinobi"
+author = "N-G MUGEN Team"
+versiondate = 01,05,2017
+mugenversion = 1.1
+localcoord = 1280,720
+
+;---------------------------------------------------------------------------------------------------
+
+[Files]
+sff = fight.sff
+snd = fight.snd
+intro.storyboard = intro.def   
+font1 = font/power_count.fnt
+font2 = font/lifebar_name.fnt
+font3 = font/time.fnt
+font4 = font/match.fnt
+font5 = font/name_select_2.fnt
+font6 = font/hits_count.def
+font7 = font/survival_counter.def
+font8 = font/continue.def
+fightfx.sff = fightfx.sff
+fightfx.air = fightfx.air
+common.snd = common.snd
+
+;---------------------------------------------------------------------------------------------------
+
+[FightFx]
+scale = 1.5
+
+;---------------------------------------------------------------------------------------------------
+
+[Lifebar]
+
+;Player 1
+
+p1.pos    = 0,0
+p1.bg0.anim = 102
+p1.bg0.layerno = 2
+p1.bg0.scale = 1,1
+p1.bg1.anim = 101
+p1.bg1.layerno = 1
+p1.bg1.scale = 1,1
+
+p1.mid.anim = 103
+p1.mid.scale = 1,1
+p1.mid.layerno = 2
+p1.front.anim = 104
+p1.front.layerno = 2
+p1.front.scale = 1,1
+p1.range.x = 205,513
+p1.back.anim = 1024
+p1.back.scale = 1,1
+p1.back.layerno = 2
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.bg0.anim = 102
+p2.bg0.layerno = 2
+p2.bg0.scale = 1,1
+p2.bg0.facing = -1
+p2.bg1.anim = 101
+p2.bg1.layerno = 1
+p2.bg1.scale = 1,1
+p2.bg1.facing = -1
+p2.mid.anim = 103
+p2.mid.scale = 1,1
+p2.mid.layerno = 2
+p2.mid.facing = -1
+p2.front.anim = 104
+p2.front.layerno = 2
+p2.front.scale = 1,1
+p2.front.facing = -1
+p2.front.pos = 1280,0
+p2.range.x = -205,-513
+
+[Begin Action 101] 
+1,1, 0,0, -1,
+
+[Begin Action 102] 
+1,2, 0,0, -1,, sub
+
+[Begin Action 103]
+1,8, 0,0, 1,
+
+[Begin Action 104] 
+1,5, 0,0, -1,
+
+[Simul Lifebar]
+
+;Player 1
+
+p1.pos    = 0,0
+p1.bg0.anim = 105
+p1.bg0.layerno = 2
+p1.bg0.scale = 1,1
+p1.bg1.anim = 106
+p1.bg1.layerno = 1
+p1.bg1.scale = 1,1
+p1.mid.anim = 103
+p1.mid.scale = 1,1
+p1.mid.layerno = 2
+p1.front.anim = 104
+p1.front.layerno = 2
+p1.front.scale = 1,1
+p1.range.x = 205,513
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.bg0.anim = 105
+p2.bg0.layerno = 2
+p2.bg0.scale = 1,1
+p2.bg0.facing = -1
+p2.bg1.anim = 106
+p2.bg1.layerno = 1
+p2.bg1.scale = 1,1
+p2.bg1.facing = -1
+p2.mid.anim = 103
+p2.mid.scale = 1,1
+p2.mid.layerno = 2
+p2.mid.facing = -1
+p2.front.anim = 104
+p2.front.layerno = 2
+p2.front.scale = 1,1
+p2.front.facing = -1
+p2.front.pos = 1280,0
+p2.range.x = -205,-513
+
+;Player 3
+
+p3.pos    = 0,0
+p3.mid.anim = 107
+p3.mid.scale = 1,1
+p3.mid.layerno = 2
+p3.mid.facing = 1
+p3.front.anim = 108
+p3.front.layerno = 2
+p3.front.scale = 1,1
+p3.front.facing = 1
+p3.front.pos = 0,0
+p3.range.x = 144,392
+
+;Player 4
+
+p4.pos    = 1280,0
+p4.mid.anim = 107
+p4.mid.scale = 1,1
+p4.mid.layerno = 2
+p4.mid.facing = -1
+p4.front.anim = 108
+p4.front.layerno = 2
+p4.front.scale = 1,1
+p4.front.facing = -1
+p4.front.pos = 1280,0
+p4.range.x = -144,-392
+
+[Begin Action 105] 
+1,3, 0,0, -1,, sub
+
+[Begin Action 106] 
+1,4, 0,0, -1,
+
+[Begin Action 107]
+1,9, 0,0, 1
+
+[Begin Action 108] 
+1,7, 0,0, -1,
+
+[Begin Action 109] 
+1,10, 0,0, -1,, add
+
+[Turns Lifebar]
+;Player 1
+
+p1.pos    = 0,0
+p1.bg0.anim = 111
+p1.bg0.layerno = 2
+p1.bg0.scale = 1,1
+p1.bg1.anim = 112
+p1.bg1.layerno = 1
+p1.bg1.scale = 1,1
+p1.mid.anim = 103
+p1.mid.scale = 1,1
+p1.mid.layerno = 2
+p1.front.anim = 104
+p1.front.layerno = 2
+p1.front.scale = 1,1
+p1.range.x = 205,513
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.bg0.anim = 111
+p2.bg0.layerno = 2
+p2.bg0.scale = 1,1
+p2.bg0.facing = -1
+p2.bg1.anim = 112
+p2.bg1.layerno = 1
+p2.bg1.scale = 1,1
+p2.bg1.facing = -1
+p2.mid.anim = 103
+p2.mid.scale = 1,1
+p2.mid.layerno = 2
+p2.mid.facing = -1
+p2.front.anim = 104
+p2.front.layerno = 2
+p2.front.scale = 1,1
+p2.front.facing = -1
+p2.front.pos = 1280,0
+p2.range.x = -205,-513
+
+[Begin Action 111] 
+1,11, 0,0, -1,, sub
+
+[Begin Action 112] 
+1,10, 0,0, -1
+
+;-----------------------------------------------------------
+
+[Powerbar]
+
+;Player 1
+
+p1.pos = 0,0
+p1.front.anim = 114
+p1.front.layerno = 2
+p1.front.scale = 1,1
+p1.front.offset = 0,0
+p1.range.x = 205,453
+p1.counter.offset = 532,110
+p1.counter.scale = 0.3,0.3
+p1.counter.font = 1,0,0
+p1.counter.layerno = 2
+
+;Player 2
+
+p2.pos = 1280,0
+p2.front.anim = 114
+p2.front.layerno = 2
+p2.front.scale = 1,1
+p2.front.facing = -1
+p2.range.x = -205,-453
+p2.counter.offset = -535,110
+p2.counter.scale = 0.3,0.3
+p2.counter.font = 1,0,0
+p2.counter.layerno = 2
+
+[Begin Action 114] 
+1,6, 0,0, -1,
+
+; --level sounds---
+level1.snd = 21,0
+level2.snd = 21,0
+level3.snd = 21,0
+
+;-----------------------------------------------------------
+
+[Face]
+
+;Player 1
+
+p1.pos    = 0,0
+p1.face.spr = 9000,3
+p1.face.scale = 0.2965, 0.2965
+p1.face.facing = 1
+p1.face.layerno = 0
+p1.face.offset = 2700,0
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.face.spr = 9000,3
+p2.face.scale = 0.2965, 0.2965
+p2.face.facing = -1
+p2.face.layerno = 2
+p2.face.offset = -2700,0
+
+[Simul Face]
+
+;Player 1
+
+p1.pos    = 0,0
+p1.face.spr = 9000,3
+p1.face.scale = 0.2965, 0.2965
+p1.face.facing = 1
+p1.face.layerno = 2
+p1.face.offset = 2700,0
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.face.spr = 9000,3
+p2.face.scale = 0.2965, 0.2965
+p2.face.facing = -1
+p2.face.layerno = 2
+p2.face.offset = -2700,0
+
+;Player 3
+
+p3.pos    = 0,0
+p3.face.spr = 9000,4
+p3.face.scale = 0.2965, 0.2965
+p3.face.facing = 1
+p3.face.layerno = 2
+p3.face.offset = 2700,8700
+
+;Player 4
+
+p4.pos    = 0,0
+p4.face.spr = 9000,4
+p4.face.scale = 0.2965, 0.2965
+p4.face.facing = 1
+p4.face.layerno = 2
+p4.face.offset = -2700,8700
+
+[Turns Face]
+
+;Player 1
+
+p1.pos    = 0,0
+p1.face.spr = 9000,2
+p1.face.scale = 0.296875, 0.296875
+p1.face.facing = 1
+p1.face.layerno = 2
+p1.face.offset = 2700,0
+
+p1.teammate.spacing = -10,40
+p1.teammate.pos = 34,87
+p1.teammate.ko.anim = 115
+p1.teammate.ko.layerno = 2
+p1.teammate.face.spr = 9000,2
+p1.teammate.face.scale = 0.296875, 0.296875
+p1.teammate.face.facing = 1
+p1.teammate.face.layerno = 2
+
+;Player 2
+
+p2.pos    = 1280,0
+p2.face.spr = 9000,2
+p2.face.scale = 0.296875, 0.296875
+p2.face.facing = -1
+p2.face.layerno = 2
+p2.face.offset = -2700,0
+
+p2.teammate.spacing = 10,40
+p2.teammate.pos = 1206,87
+p2.teammate.ko.anim = 115
+p2.teammate.ko.layerno = 2
+p2.teammate.face.spr = 9000,2
+p2.teammate.face.scale = 0.296875, 0.296875
+p2.teammate.face.facing = 1
+p2.teammate.face.layerno = 2
+
+[Begin Action 115]
+72,0, 0,0, 1, , AS192D64
+
+;-----------------------------------------------------------
+
+[Name]
+
+p1.pos = 200,75
+p1.name.font = 2,0,1
+p1.name.layerno = 2
+p1.name.scale = 1,1
+p2.pos = 1080,75
+p2.name.font = 2,0,-1
+p2.name.layerno = 2
+p2.name.scale = 1,1
+
+[Simul Name]
+
+p1.pos = 200,75
+p1.name.font = 2,0,1
+p1.name.layerno = 2
+p1.name.scale = 1,1
+p2.pos = 1080,75
+p2.name.font = 2,0,-1
+p2.name.layerno = 2
+p2.name.scale = 1,1
+p3.pos = 150,153
+p3.name.font = 2,0,1
+p3.name.layerno = 2
+p3.name.scale = 0.8,0.8
+p4.pos = 1130,153
+p4.name.font = 2,0,-1
+p4.name.layerno = 2
+p4.name.scale = 0.8,0.8
+
+[Turns Name]
+
+p1.pos = 200,75
+p1.name.font = 2,0,1
+p1.name.layerno = 2
+p1.name.scale = 1,1
+p2.pos = 1080,75
+p2.name.font = 2,0,-1
+p2.name.layerno = 2
+p2.name.scale =1,1
+
+;-----------------------------------------------------------
+
+[Time]
+pos = 640,-49
+
+counter.offset = 0,165
+counter.font = 3,0,0
+counter.layerno = 2
+framespercount = 90
+
+;-----------------------------------------------------------
+
+[Combo]
+
+team1.pos = 80,250        
+team1.start.x = -250     
+team1.text.text = "%iH" 
+team1.text.font = 6,0,1
+team1.text.offset = 0,0   
+team1.displaytime = 90 
+
+team2.pos = 1280,250   
+team2.start.x = 1530     
+team2.text.text = "%iH" 
+team2.text.font = 6,0,-1
+team2.text.offset = -5,0  
+team2.displaytime = 90 
+
+;-------------------------------------------------
+
+[Round]
+pos = 0,0
+match.wins = 2           
+match.maxdrawgames = 1   
+round.default.offset = 320, 240
+round.default.layerno = 2
+round.layerno = 2
+
+round1.anim = 7
+round1.scale = 1,1
+round1.offset = 0,0
+round1.snd = 0,0
+
+round2.anim = 7
+round2.scale = 1,1
+round2.offset = 0,0
+round2.snd = 0,0
+
+round3.anim = 7
+round3.scale = 1,1
+round3.offset = 0,0
+round3.snd = 0,0
+
+round4.snd = 0,0
+round5.snd = 0,0
+round6.snd = 0,0
+round7.snd = 0,0
+round8.snd = 0,0
+round9.snd = 0,0
+
+;Opoznienie odworzenia
+start.waittime = 20         
+round.time = 20          
+round.sndtime = 30   
+
+;-------------------------------------------------
+
+; FIGHT
+fight.anim = 8           
+fight.scale = 1,1     
+fight.offset = 0,50         
+fight.snd = 1,0  
+fight.layerno = 2
+
+;Opoznienie odworzenia
+fight.time = 120  
+ctrl.time = 140     
+fight.sndtime = 130            
+
+;-------------------------------------------------
+
+; KO
+KO.anim = 121 
+KO.scale = 1,1      
+KO.offset = 0,50     
+KO.snd = 2,0
+KO.layerno = 2 
+
+KO.font = 1,5
+KO.text = K.O.
+KO.displaytime = 93
+
+;-------------------------------------------------
+
+; Draw
+DKO.anim = 122 
+DKO.scale = 1,1
+DKO.offset = 0,50   
+DKO.snd = 2,1
+DKO.layerno = 2
+
+DKO.font = 1,5
+DKO.text = Draw
+DKO.displaytime = 99
+
+;-------------------------------------------------
+
+; Time Over
+TO.anim = 123
+TO.scale = 1,1
+TO.offset = 0,50
+TO.snd = 2,2
+TO.layerno = 2
+
+TO.font = 4,1,0
+TO.text = Time Over
+TO.displaytime = 109
+
+;-------------------------------------------------
+;Opoznienie odworzenia dzwiekow
+KO.time = 0   
+KO.sndtime = 5
+DKO.time = 0 
+DKO.sndtime = 5
+TO.time = 0    
+TO.sndtime = 5
+
+;-------------------------------------------------
+
+;Time for KO slowdown (in ticks)
+slow.time  = 60
+;Time to wait after KO before player control is stopped
+over.waittime = 60        
+;Time after KO that players can still damage each other (for double KO)
+over.hittime = 10     
+;Time to wait before players change to win states     
+over.wintime = 60      
+;Time to wait before round ends    
+over.time = 300           
+
+
+; Time to wait before showing win/draw message
+;win.time = 60
+; Win text
+;win.offset = 640,250
+;win.font = 4,1,0
+;win.text = %s Wins
+;win.displaytime = 300
+
+; 2-player win text
+;win2.offset = 640,250
+;win2.font = 4,1,0
+;win2.text = %s and %s Win
+;win2.displaytime = 300
+
+; Draw text
+;draw.offset = 640,250
+;draw.font = 4,1,0
+;draw.text = Draw Game
+;draw.displaytime = 300
+
+;-------------------------------------------------
+
+;Ready
+[Begin Action 7]
+10,0, 0,0, 2
+10,1, 0,0, 2
+10,2, 0,0, 2
+10,3, 0,0, 2
+10,4, 0,0, 2
+10,5, 0,0, 2
+10,6, 0,0, 2
+10,7, 0,0, 2
+10,8, 0,0, 2
+10,9, 0,0, 2
+10,10, 0,0, 2
+10,11, 0,0, 2
+10,12, 0,0, 2
+10,13, 0,0, 2
+10,14, 0,0, 2
+10,15, 0,0, 2
+10,16, 0,0, 2
+10,17, 0,0, 2
+10,18, 0,0, 2
+10,19, 0,0, 2
+10,20, 0,0, 2
+10,21, 0,0, 2
+10,22, 0,0, 2
+10,23, 0,0, 2
+10,24, 0,0, 2
+10,25, 0,0, 2
+10,26, 0,0, 2
+10,27, 0,0, 2
+10,28, 0,0, 2
+10,29, 0,0, 2
+10,30, 0,0, 2
+10,31, 0,0, 2
+10,32, 0,0, 2
+10,33, 0,0, 2
+10,34, 0,0, 2
+10,35, 0,0, 2
+10,36, 0,0, 2
+10,37, 0,0, 2
+10,38, 0,0, 2
+10,39, 0,0, 2
+10,40, 0,0, 2
+10,41, 0,0, 2
+10,42, 0,0, 2
+10,43, 0,0, 2
+10,44, 0,0, 2
+10,45, 0,0, 2
+10,46, 0,0, 2
+10,47, 0,0, 2
+10,48, 0,0, 2
+10,49, 0,0, 2
+10,50, 0,0, 2
+10,51, 0,0, 2
+10,52, 0,0, 2
+10,53, 0,0, 2
+10,54, 0,0, 2
+10,55, 0,0, 2
+10,56, 0,0, 2
+10,57, 0,0, 2
+10,58, 0,0, 2
+10,59, 0,0, 2
+10,60, 0,0, 2
+10,61, 0,0, 2
+10,62, 0,0, 2
+10,63, 0,0, 2
+10,64, 0,0, 2
+10,65, 0,0, 2
+10,66, 0,0, 2
+10,67, 0,0, 2
+10,68, 0,0, 2
+10,69, 0,0, 2
+10,70, 0,0, 2
+10,71, 0,0, 2
+10,72, 0,0, 2
+10,73, 0,0, 2
+10,74, 0,0, 2
+10,75, 0,0, 2
+10,76, 0,0, 2
+10,77, 0,0, 2
+10,78, 0,0, 2
+10,79, 0,0, 2
+10,80, 0,0, 2
+10,81, 0,0, 2
+10,82, 0,0, 2
+10,83, 0,0, 2
+10,84, 0,0, 2
+10,85, 0,0, 2
+10,86, 0,0, 2
+10,87, 0,0, 2
+10,88, 0,0, 2
+10,89, 0,0, 2
+-1,0, 0,0, -1
+
+;Fight
+[Begin Action 8]
+11,0, 0,0, 1
+11,1, 0,0, 1
+11,2, 0,0, 1
+11,3, 0,0, 1
+11,4, 0,0, 1
+11,5, 0,0, 1
+11,6, 0,0, 1
+11,7, 0,0, 1
+11,8, 0,0, 1
+11,9, 0,0, 1
+11,10, 0,0, 1
+11,11, 0,0, 1
+11,12, 0,0, 1
+11,13, 0,0, 1
+11,14, 0,0, 1
+11,15, 0,0, 1
+11,16, 0,0, 1
+11,17, 0,0, 1
+11,18, 0,0, 1
+11,19, 0,0, 1
+11,20, 0,0, 1
+11,21, 0,0, 1
+11,22, 0,0, 1
+11,23, 0,0, 1
+11,24, 0,0, 1
+11,25, 0,0, 1
+11,26, 0,0, 1
+11,27, 0,0, 1
+11,28, 0,0, 1
+11,29, 0,0, 1
+11,30, 0,0, 1
+11,31, 0,0, 1
+11,32, 0,0, 1
+11,33, 0,0, 1
+11,34, 0,0, 1
+11,35, 0,0, 1
+11,36, 0,0, 1
+-1,0, 0,0, -1
+
+;K.O. Animation
+[Begin Action 121]
+12,0, 0,0, 2
+12,1, 0,0, 2
+12,2, 0,0, 2
+12,3, 0,0, 2
+12,4, 0,0, 2
+12,5, 0,0, 2
+12,6, 0,0, 2
+12,7, 0,0, 2
+12,8, 0,0, 2
+12,9, 0,0, 2
+12,10, 0,0, 2
+12,11, 0,0, 2
+12,12, 0,0, 2
+12,13, 0,0, 2
+12,14, 0,0, 2
+12,15, 0,0, 2
+12,16, 0,0, 2
+12,17, 0,0, 2
+12,18, 0,0, 2
+12,19, 0,0, 2
+12,20, 0,0, 2
+12,21, 0,0, 2
+12,22, 0,0, 2
+12,23, 0,0, 2
+12,24, 0,0, 2
+12,25, 0,0, 2
+12,26, 0,0, 2
+12,27, 0,0, 2
+12,28, 0,0, 2
+12,29, 0,0, 2
+12,30, 0,0, 2
+12,31, 0,0, 2
+12,32, 0,0, 2
+12,33, 0,0, 2
+12,34, 0,0, 2
+12,35, 0,0, 2
+12,36, 0,0, 2
+12,37, 0,0, 2
+12,38, 0,0, 2
+12,39, 0,0, 2
+12,40, 0,0, 2
+12,41, 0,0, 2
+12,42, 0,0, 2
+12,43, 0,0, 2
+12,44, 0,0, 2
+12,45, 0,0, 2
+-1,0, 0,0, -1
+
+;Draw Animation
+[Begin Action 122]
+14,0, 0,0, 2
+14,1, 0,0, 2
+14,2, 0,0, 2
+14,3, 0,0, 2
+14,4, 0,0, 2
+14,5, 0,0, 2
+14,6, 0,0, 2
+14,7, 0,0, 2
+14,8, 0,0, 2
+14,9, 0,0, 2
+14,10, 0,0, 2
+14,11, 0,0, 2
+14,12, 0,0, 2
+14,13, 0,0, 2
+14,14, 0,0, 2
+14,15, 0,0, 2
+14,16, 0,0, 2
+14,17, 0,0, 2
+14,18, 0,0, 2
+14,19, 0,0, 2
+14,20, 0,0, 2
+14,21, 0,0, 2
+14,22, 0,0, 2
+14,23, 0,0, 2
+14,24, 0,0, 30
+14,25, 0,0, 2
+14,26, 0,0, 2
+14,27, 0,0, 2
+14,28, 0,0, 2
+14,29, 0,0, 2
+14,30, 0,0, 2
+14,31, 0,0, 2
+14,32, 0,0, 2
+14,33, 0,0, 2
+14,34, 0,0, 2
+-1,0, 0,0, -1
+
+;Time Over Animation
+[Begin Action 123]
+13,0, 0,0, 2
+13,1, 0,0, 2
+13,2, 0,0, 2
+13,3, 0,0, 2
+13,4, 0,0, 2
+13,5, 0,0, 2
+13,6, 0,0, 2
+13,7, 0,0, 2
+13,8, 0,0, 2
+13,9, 0,0, 2
+13,10, 0,0, 5
+13,11, 0,0, 2
+13,12, 0,0, 2
+13,13, 0,0, 2
+13,14, 0,0, 2
+13,13, 0,0, 2
+13,12, 0,0, 2
+13,11, 0,0, 2
+13,10, 0,0, 2
+13,11, 0,0, 2
+13,12, 0,0, 2
+13,13, 0,0, 2
+13,14, 0,0, 2
+13,13, 0,0, 2
+13,12, 0,0, 2
+13,11, 0,0, 2
+13,10, 0,0, 2
+13,11, 0,0, 2
+13,12, 0,0, 2
+13,13, 0,0, 2
+13,14, 0,0, 2
+13,13, 0,0, 2
+13,12, 0,0, 2
+13,11, 0,0, 2
+13,10, 0,0, 2
+13,11, 0,0, 2
+13,12, 0,0, 2
+13,13, 0,0, 2
+13,14, 0,0, 2
+13,13, 0,0, 2
+13,12, 0,0, 2
+13,11, 0,0, 2
+13,10, 0,0, 5
+13,9, 0,0, 2
+13,8, 0,0, 2
+13,7, 0,0, 2
+13,6, 0,0, 2
+13,5, 0,0, 2
+13,4, 0,0, 2
+13,3, 0,0, 2
+13,2, 0,0, 2
+-1,0, 0,0, -1
+
+;-----------------------------------------------------------
+
+[WinIcon]
+p1.pos = 530,60
+p2.pos = 785,60
+
+; Offset for next icon (x,y)
+p1.iconoffset = -34,0
+p2.iconoffset = 34,0
+
+; Counter text font and offset for representing wins
+p1.counter.offset = -10,20
+p1.counter.font = 7,0,1
+p1.counter.scale = 1,1
+p1.counter.layerno = 2
+
+p2.counter.offset = -10,20
+p2.counter.font = 7,0,-1
+p2.counter.scale = 1,1
+p2.counter.layerno = 2
+
+;-----------------------------------------------------------
+
+; Win by normal
+p1.n.spr = 100,0
+p1.n.scale = 1,1
+p1.n.layerno = 2
+
+p2.n.spr = 100,0
+p2.n.scale = 1,1
+p2.n.layerno = 2
+;-------------------
+; Win by special
+p1.s.spr = 101,0
+p1.s.scale = 1,1
+p1.s.layerno = 2
+
+p2.s.spr = 101,0
+p2.s.scale = 1,1
+p2.s.layerno = 2
+;-------------------
+; Win by hyper (super)
+p1.h.spr = 102,0
+p1.h.scale = 1,1
+p1.h.layerno = 2
+
+p2.h.spr = 102,0
+p2.h.scale = 1,1
+p2.h.layerno = 2
+;-------------------
+; Win by normal throw
+p1.throw.spr = 103,0
+p1.throw.scale = 1,1
+p1.throw.layerno = 2
+
+p2.throw.spr = 103,0
+p2.throw.scale = 1,1
+p2.throw.layerno = 2
+;-------------------
+; Win by cheese
+p1.c.spr = 104,0
+p1.c.scale = 1,1
+p1.c.layerno = 2
+
+p2.c.spr = 104,0
+p2.c.scale = 1,1
+p2.c.layerno = 2
+;-------------------
+; Win by time over
+p1.t.spr = 105,0
+p1.t.scale = 1,1
+p1.t.layerno = 2
+
+p2.t.spr = 105,0
+p2.t.scale = 1,1
+p2.t.layerno = 2
+;-------------------
+; Win by suicide
+p1.suicide.spr = 106,0
+p1.suicide.scale = 1,1
+p1.suicide.layerno = 2
+
+p2.suicide.spr = 106,0
+p2.suicide.scale = 1,1
+p2.suicide.layerno = 2
+;-------------------
+; Opponent beaten by his own teammate
+p1.teammate.spr = 107,0
+p1.teammate.scale = 1,1
+p1.teammate.layerno = 2
+
+p2.teammate.spr = 107,0
+p2.teammate.scale = 1,1
+p2.teammate.layerno = 2
+;-------------------
+; Win by perfect (overlay icon)
+p1.perfect.spr = 110,0
+p1.perfect.scale = 1,1
+p1.perfect.layerno = 2
+
+p2.perfect.spr = 110,0
+p2.perfect.scale = 1,1
+p2.perfect.layerno = 2
+;-------------------
+
+; Use icons up until this number of wins
+useiconupto = 4

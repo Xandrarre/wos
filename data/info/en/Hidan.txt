@@ -1,0 +1,281 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+- gets blood
+
+{Combo 5}
+[Command]
+X,X,X,X,
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+- gets blood
+
+{Scythe Attack}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+- gets blood
+
+{Scythe Throw}
+[Command]
+(FF),Y
+[Triggers]
+[Info]
+- gets blood
+
+{Scythe Pull}
+[Command]
+BB
+[Triggers]
+- on ground
+- during scythe throw
+[Info]
+- pulls scythe back
+
+{Scythe Kick}
+[Command]
+Y
+[Triggers]
+- during scythe throw
+- scythe in the ground
+[Info]
+
+{Death Combo}
+[Command]
+Y,Y,Y
+[Triggers]
+- on ground
+- chakra 50/100/200
+- life > 5%
+- requires curse, in circle
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Rod Barrage}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 800
+[Info]
+
+{Scythe Ground Attack}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 250
+[Info]
+
+{Scythe Ground Smash}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Scythe Cuts}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1200
+[Info]
+- gets blood
+
+{Scythe Slashes}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Air Scythe Slashes}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Scythe Barrage}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+- gets blood
+
+{Air Scythe Barrage}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1500
+[Info]
+- gets blood
+
+{Jujutsu: Shiji Hyoketsu}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+- chakra 500
+- requires blood
+[Info]
+- press again to turn off
+- damage is returned
+  to enemy while in circle
+- activates curse
+
+{Massacre}
+[Command]
+(Z)
+[Triggers]
+- in air
+- chakra 500/1000/2000
+- life > 10%
+- requires curse, in circle
+[Info]
+- hold to charge
+
+{-------Ultimates---------}
+
+{Ultimate: Curse of Jashin}
+[Command]
+(DD),Z
+[Triggers]
+- on ground
+- chakra 4000
+- life > 30%
+- requires curse, in circle
+[Info]

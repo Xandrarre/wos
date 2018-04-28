@@ -1,0 +1,1728 @@
+
+;------------------------------------------------------------------
+;Kunai poziomo
+[Statedef 70700]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70700
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x = 16
+y = -1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 40
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = -1
+sparkxy = -10, 0
+hitsound = -1;S4,21
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movehit
+value = F21,3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = moveguarded
+value = F21,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = moveguarded
+value = F21,1
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70705
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value = 70705
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70706
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movehit
+value = 70720
+ctrl = 0
+;------------------------------------------------------------------
+;Kunai z powietrza
+[Statedef 70701]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70700 ; animacja lotu ukoœnie
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x= cos(PI/8)*16
+y= sin(PI/8)*16-1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 40
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = movehit
+value = F21,3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = moveguarded
+value = F21,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = moveguarded
+value = F21,1
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70705
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value = 70705
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70706
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movehit
+value = 70720
+ctrl = 0
+;------------------------------------------------------------------
+;Kunai (odbicie)
+[Statedef 70705]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 0
+anim = 70700
+ctrl = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+anim = F230
+pos = 0,0
+postype = p1
+scale =  1,1
+sprpriority = 3
+bindtime = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+value = F21,0
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -time*30
+
+[State 0, Gravity]
+type = Gravity
+trigger1 = 1
+
+[State 707002, VelSet]
+type = VelSet
+trigger1 = time = 0
+y = -(random%30+20)/10
+
+[State 707002, VelSet]
+type = VelSet
+trigger1 = 1
+x = (random%30+20)/10
+
+[State 0, Turn]
+type = Turn
+trigger1 = time = 0
+
+[State 707002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos Y >= -5
+value = 70706
+
+;------------------------------------------------------------------
+;Kunai (wbicie w ziemiê)
+[StateDef 70706]
+type = A
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+anim = 70702
+sprpriority = 2
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time = 0
+value = 0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = prevstateno = 607
+trigger2 = prevstateno = 1314
+value = 70703
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F21,0
+
+[State 707002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = 0
+
+[State 1012, Trans]
+type = Trans
+trigger1 = time >= 35
+trans = addalpha
+alpha = 256-(time-35)*9.6,(time-35)*9.6
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 65
+;------------------------------------------------------------------
+;Shuriken lot
+[Statedef 70710]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+anim = 70710; pojedyñcza animacja shurikena (obracanie ju¿ jest zakodowane)
+sprpriority = 2
+
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = 1
+value = -time*30
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x = (Parent,Fvar(13))/(Parent,fvar(15))*16
+y = (Parent,FVar(14))/(Parent,fvar(15))*16-1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 40
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movehit
+value = 70720
+ctrl = 0
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70715
+time = 9999
+forceair = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+trigger2 = time = 200
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value = 70715
+ctrl = 0
+
+[State 1003, ChangeState]
+type = changestate
+trigger1 = pos y > -1
+value = 70716
+;------------------------------------------------------------------
+;Electric Shuriken lot 1
+[Statedef 70712]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+anim = 70710; pojedyñcza animacja shurikena (obracanie ju¿ jest zakodowane)
+sprpriority = 3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F11,10
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = target, ishelper = 0
+flag = unguardable
+
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = 1
+value = -time*40
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x = (Parent,Fvar(13))/(Parent,fvar(15))*20
+y = (Parent,FVar(14))/(Parent,fvar(15))*20-1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+damage = 80
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 3, 50
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -3
+airguard.velocity = -2.9,-1.8
+air.type = High
+air.velocity = -3,-4
+air.hittime = 12
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F1260
+ID = 1260
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = -1
+removeongethit = 1
+removetime = -1
+pausemovetime = 999
+supermovetime = 999
+scale = 1,1
+sprpriority = 4
+ontop = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movehit
+value = 70720
+ctrl = 0
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+stateno = 70715
+time = 9999
+forceair = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+removeexplods = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value = 70715
+ctrl = 0
+
+[State 1003, ChangeState]
+type = changestate
+trigger1 = pos y > -1
+value = 70716
+
+;------------------------------------------------------------------
+;Efekt Shurikena
+[StateDef 70714]
+type = S
+anim = 70714
+sprpriority = 4
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = 1
+time = -1
+pos = 0,0
+
+[State 310, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 8,1
+value = F11,7
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = add
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+scale = 0.25,0.25
+
+[State 331, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 220, end]
+type = Destroyself
+trigger1 = parent,stateno != 70712
+trigger2 = parent,stateno = 70715
+trigger3 = parent,stateno = 70716
+trigger4 = frontedgebodydist < -50
+;------------------------------------------------------------------
+;Shuriken odbicie
+[Statedef 70715]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 0
+ctrl = 0
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time = 0
+id = 1260
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+value = F21,0 
+
+[State 0, Explod]
+type = Explod
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+anim = F230
+pos = 0,0
+postype = p1 
+scale =  1,1
+sprpriority = 3
+bindtime = 1
+
+[State 6002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -time*30
+
+[State 0, Gravity]
+type = Gravity
+trigger1 = 1
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno != 1710
+trigger1 = time = 0
+y = -(random%30+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno != 1710
+x = (random%40+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno = 1710
+trigger1 = time = 0
+y = -(random%50+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno = 1710
+x = (random%60+20)/10
+
+[State 0, Turn]
+type = Turn
+trigger1 = time = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos Y >= -5
+value = 70716
+
+
+;------------------------------------------------------------------
+;Shuriken wbicie
+[StateDef 70716]
+type = A
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+sprpriority = 2
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time = 0
+id = 1260
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F21,0
+
+[State 0, dragons]
+type = Explod
+triggerall = time = 0
+trigger1 = anim = 70710
+trigger2 = anim = 1710
+trigger3 = anim = 1715
+ID = 70716
+anim = 70716
+pos = 0,4
+postype = p1
+scale =  1,1
+sprpriority = 3
+removetime = 65
+
+[State 0, dragons]
+type = Explod
+triggerall = time = 0
+trigger1 = anim = 1713
+ID = 70716
+anim = 70716
+pos = 2,10
+postype = p1
+scale =  1,1.2
+sprpriority = 3
+removetime = 65
+
+[State 0, dragons]
+type = Explod
+triggerall = time = 0
+trigger1 = anim = 1711
+ID = 70716
+anim = 70716
+pos = -12,13
+postype = p1
+facing = -1
+scale =  1,1.1
+sprpriority = 3
+removetime = 65
+
+[State 0, dragons]
+type = Explod
+triggerall = time = 0
+trigger1 = anim = 1711
+ID = 70716
+anim = 70716
+pos = 13,9
+postype = p1
+scale =  1,1
+sprpriority = 3
+removetime = 65
+
+[State 0, dragons]
+type = Explod
+triggerall = time = 0
+trigger1 = anim = 1711
+ID = 70716
+anim = 70716
+pos = -10,15
+postype = p1
+scale =  1,1.1
+sprpriority = 3
+removetime = 65
+
+[State 0, dragons]
+type = ChangeAnim
+trigger1 = anim = 1716
+value = 1718
+
+[State 0, ModifyExplod]
+type = ModifyExplod
+trigger1 = time >= 35
+ID = 70716
+trans = addalpha
+alpha = 256-(time-35)*9.6,(time-35)*9.6
+
+[State 6002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = anim != 1718
+trigger1 = anim != 1713
+value = -45
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = anim = 1713
+value = -135
+
+[State 1012, Trans]
+type = Trans
+trigger1 = time >= 35
+trans = addalpha
+alpha = 256-(time-35)*9.6,(time-35)*9.6
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = 0
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 65
+
+;------------------------------------------------------------------
+;trafienie kunaiem /shurikenem
+[Statedef 70720]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+trigger1 = prevstateno = 70712
+value = F11,7
+
+[State 6002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = time = 0
+id = 1260
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = p2stateno = [5000,5999]
+value = F21,3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F10
+angle = -25+random%50
+ID = 10
+pos = 25,0
+postype = p1
+facing = 1
+vfacing = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 0
+ignorehitpause = 1
+
+;------------------------------------------------------------------
+;Explode Kunai poziomo
+[Statedef 70730]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70730 ; animacja explode kunaia poziomo
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x = 16
+y = -1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+damage = 1
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 10
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70736
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 70736
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70735
+ctrl = 0
+;------------------------------------------------------------------
+;Explode Kunai z powietrza
+[Statedef 70731]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70730 ; animacja explode kunaia  z powietrza
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x= cos(PI/8)*16
+y= sin(PI/8)*16-1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 1
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 10
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70736
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 70736
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70735
+ctrl = 0
+;---------------------------------------------------------------------------
+;Explode Kunai wbity w ziemiê
+[Statedef 70735]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 0
+velset = 0,0
+ctrl = 0
+anim = 70735 ; animacja explode kunaia wbitego w ziemiê
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time = 0
+value = 0
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F21,0
+
+[State 1011, 1]
+type = HitDef
+trigger1 = 1
+attr = S, NA
+getpower = 0,0
+givepower = 0,0
+damage = 0
+;affectteam = B
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 8
+sparkno = -1
+hitsound = -1, 0
+guardsound = -1, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 15452
+ground.velocity = -1,5
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -1,5
+air.hittime = 12455
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+guard.cornerpush.veloff = 0
+airguard.cornerpush.veloff = 0
+
+[State 1010, end]
+type = ChangeState
+trigger1 = Time = 120 || movecontact
+value = 70736
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;Explode Kunai wybuch
+[Statedef 70736]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 0
+velset = 0,0
+ctrl = 0
+anim = 70736 ; animacja wybuchu explode kunaia
+sprpriority = 3
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time = 0
+time = 50
+ampl = -7
+freq = 50
+phase = 230
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && pos y >= -40
+anim = F588
+pos = 0,-pos y+5
+scale = 0.8,0.3
+vel = 0,-1.5
+accel = 0,0.03
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 2
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && pos y >= -40
+anim = F587
+pos = 0,-pos y+5
+scale = 0.5,0.5
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 5
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 5
+anim = F1330
+pos = 0,0
+scale = 2,2
+postype = p1
+facing = 1
+bindtime = 33
+removetime = -2
+sprpriority = 6
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F1331
+pos = 0,0
+scale = 1.2,1.2
+postype = p1
+facing = 1
+bindtime = 33
+removetime = -2
+sprpriority = 4
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = 0;time = 0
+anim = F1340
+pos = 0,0
+scale = 1.1,1.1
+postype = p1
+facing = 1
+bindtime = 33
+removetime = -2
+sprpriority = 4
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+ownpal = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F15,3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F15,5
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+scale = 0.8,0.8
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 256,256
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = time = 0
+trigger2 = 1
+flag = noshadow
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = time = 0
+trigger1 = prevstateno = 70735
+trigger1 = target, ishelper = 0
+flag = unguardable
+
+[State 1011, 1]
+type = HitDef
+triggerall = !time
+trigger1 = prevstateno = 70735
+trigger2 = prevstateno = 1306
+trigger3 = prevstateno = 1316
+attr = S, NA
+getpower = 0,0
+givepower = 0,0
+damage = 80, 60
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 4, 4
+sparkno = -1
+hitsound = -1, 3
+guardsound = -1, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -4,-7
+airguard.velocity = -3,-7
+air.type = High
+air.velocity = -4,-7
+air.hittime = 12
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+guard.cornerpush.veloff = 0
+airguard.cornerpush.veloff = 0
+fall = 1
+fall.recover = 0
+palfx.time = 30
+palfx.add = 150,0,-100
+palfx.mul = 256,256,256
+palfx.sinadd = 110,55,85,10
+
+[State 1011, 1]
+type = HitDef
+trigger1 = prevstateno != 70735
+trigger1 = prevstateno != 1306
+trigger1 = prevstateno != 1316
+triggerall = !time
+getpower = 0,0
+givepower = 0,0
+;affectteam = B
+attr = S, NA
+damage = 80, 60
+animtype = Hard
+guardflag = MA
+hitflag = MAF
+sparkno = -1
+priority = 5, Hit
+pausetime = 4, 4
+hitsound = S0, 2
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -4,-6
+airguard.velocity = -3,-6
+air.type = High
+air.velocity = -4,-6
+air.hittime = 12
+fall = cond(prevstateno =1606,0,1)
+fall.recover = 0
+palfx.time = 30
+palfx.add = 150,0,-100
+palfx.mul = 256,256,256
+palfx.sinadd = 110,55,85,10
+ownpal = 1
+
+[State 1011, Destroyself]
+type = destroyself
+trigger1 = animtime = 0
+
+;------------------------------------------------------------------
+;Smoke  Kunai poziomo
+[Statedef 70740]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70740 ;do podstawienia animacja smoke kunaia poziomo
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x = 16
+y = -1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 20
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70745
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 70745
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70745
+ctrl = 0
+;------------------------------------------------------------------
+;Smoke  Kunai z powietrza
+[Statedef 70741]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+anim = 70740 ;do podstawienia animacja smoke kunaia z powietrza
+sprpriority = 2
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time = 0
+x= cos(PI/8)*16
+y= sin(PI/8)*16-1
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 1
+x = -0.1
+y = 0.1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -atan(vel y/vel x)*180/PI 
+
+[State 0, 1]
+type = HitDef
+trigger1 = !time
+attr = A, NP
+getpower = 0,0
+givepower = 0,0
+damage = 10
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 29
+sparkxy = -10, 0
+hitsound = -1
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2
+airguard.velocity = -1.9,-.8
+air.type = High
+air.velocity = -2,-3
+air.hittime = 12
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70745
+time = 9999
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 70745
+ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y > -1
+value = 70745
+ctrl = 0
+;------------------------------------------------------------------
+;Smoke  Kunai wybuch
+[StateDef 70745]
+type = S
+movetype = I
+physics = S
+juggle = 0
+poweradd = 0
+anim = 70744
+ctrl = 0
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time = 0
+value = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F9,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 2
+value = F9,0
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = -25
+
+[State 331, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 70745
+ID = 442
+pos = 0,25
+postype = p1  ;P2,front,back,left,right
+facing = 1
+removetime = 584
+ontop = 0
+sprpriority = 20
+scale = 1,1
+vel = -0.1,0
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 70745
+ID = 442
+pos = 0,25
+postype = p1  ;P2,front,back,left,right
+facing = 1
+removetime = 584
+ontop = 0
+sprpriority = 20
+scale = 0.7,0.7
+vel = 0.1,0
+ownpal = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 584
+
+;---------------------------------------------------------------------------
+;Poison
+[Statedef 74444]
+type = S
+physics = S
+sprpriority = 0
+velset = 0,0
+ctrl = 0
+anim = 70502
+
+[State 0, VarSet]
+type = posSet
+trigger1 = 1
+y = 100
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 300
+trigger2 = time > 10 && numhelper(74444) != 1
+
+
+
+;------------------------------------------------------------------
+;Duzy Shuriken lot
+[Statedef 70750]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+anim = 70750; pojedyñcza animacja shurikena (obracanie ju¿ jest zakodowane)
+sprpriority = 2
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 8,0
+value = F21,6
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = time = 0
+time = 10
+pos = -12,-52
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time < 10
+value = -time*time*5
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time >= 10
+value = -time*50
+
+
+[State 0, PosSet]
+type = velSet
+trigger1 = time > 10
+x = (Parent,Fvar(13))/(Parent,fvar(15))*13
+y = (Parent,FVar(14))/(Parent,fvar(15))*13
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 11
+x = -0.1
+y = 0.1
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = hitcount < 5
+value = 1
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = hitcount >= 5
+value = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = movehit = 1 && p2movetype = H
+anim = F10+random%2
+angle = -25+random%50
+pos = -10,10-random%20
+postype = p1  ;p2,front,back,left,right
+facing = 1
+bindtime = 5
+removetime = -2
+sprpriority = 3
+scale = 1.3,1.3
+ownpal = 1
+ontop = 0
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, HitDef]
+type = HitDef
+trigger1 = hitcount < 5
+attr = S, NA
+damage = 35,10
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 3, Hit
+pausetime = 1, 5
+sparkno = 0+random%4
+sparkxy = -15, 10-random%20
+hitsound = 24, 13
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -3,0
+airguard.velocity = -3,-4
+air.type = High
+air.velocity = -3,-4
+air.hittime = 12
+envshake.time = 10
+envshake.freq = 20
+envshake.ampl = -5
+envshake.phase = 10
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70755
+time = 9999
+forceair = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = frontedgebodydist < -50
+ignorehitpause = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = moveguarded
+value = 70755
+ctrl = 0
+
+[State 1003, ChangeState]
+type = changestate
+trigger1 = pos y > -1
+value = 70756
+
+;------------------------------------------------------------------
+;Duzy Shuriken odbicie
+[Statedef 70755]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 0
+ctrl = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+value = F21,0
+
+[State 0, Explod]
+type = Explod
+trigger1 = p2stateno != [120,155]
+trigger1 = time = 0
+anim = F230
+pos = 0,0
+postype = p1
+scale =  1,1
+sprpriority = 3
+bindtime = 1
+
+[State 6002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -time*30
+
+[State 0, Gravity]
+type = Gravity
+trigger1 = 1
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno != 1710
+trigger1 = time = 0
+y = -(random%30+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno != 1710
+x = (random%40+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno = 1710
+trigger1 = time = 0
+y = -(random%50+20)/10
+
+[State 6002, VelSet]
+type = VelSet
+trigger1 = prevstateno = 1710
+x = (random%60+20)/10
+
+[State 0, Turn]
+type = Turn
+trigger1 = time = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos Y >= -5
+value = 70756
+
+;------------------------------------------------------------------
+;Duzy Shuriken wbicie
+[StateDef 70756]
+type = A
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F21,0
+
+[State 6002, NotHitBy]
+type = NotHitBy
+trigger1 = !time
+value = SCA
+time = -1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = -45
+
+[State 1012, Trans]
+type = Trans
+trigger1 = time >= 35
+trans = addalpha
+alpha = 256-(time-35)*9.6,(time-35)*9.6
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+y = 0
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 65

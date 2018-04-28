@@ -1,0 +1,548 @@
+{------Hiruko Mode-------}
+{----Hiruko Basic Moves----}
+
+{Hiruko Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Hiruko Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{------Hiruko Combo------}
+
+{Hiruko Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 2}
+[Command]
+(DD),A
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 3}
+[Command]
+(FF),A
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Hiruko Combo 5}
+[Command]
+X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 6}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Hiruko Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Hiruko Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Hiruko Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Hiruko Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Hiruko Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{---Hiruko Jutsu Normal----}
+
+{Hiruko Dokumu}
+[Command]
+B
+[Triggers]
+- on ground
+- power 30
+[Info]
+
+{Hiruko Shinshin Happa}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- hold
+
+{Hiruko Gishu Senbon}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- available once
+
+{Hiruko Terubaindo}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 800
+[Info]
+
+{Hiruko Terugado}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- hold
+
+{Hiruko Terurasshu}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/1000/1500
+[Info]
+- hold to charge
+
+{Hiruko Sumasshu}
+[Command]
+(Z),FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Hiruko Chijoha}
+[Command]
+(Z),BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Destroy Hiruko}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+[Info]
+
+{----Attacks vs Kankuro----}
+
+{Destroy Sanshoo}
+[Command]
+(FF),Y
+[Triggers]
+- on ground
+[Info]
+
+{Destroy Kuroari}
+[Command]
+(BB),Y
+[Triggers]
+- on ground
+[Info]
+
+{-------Sasori Mode------}
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X
+[Triggers]
+- in air
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Fire and Water Combo}
+[Command]
+Y,Y,Y
+[Triggers]
+- chakra 150/150/300
+[Info]
+
+{Shinshin Happa}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- hold
+
+{Air Shinshin Happa}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 300
+[Info]
+
+{Tsubasa Gekido}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Fire Charge}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- hold to charge
+
+{Water Pistols}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- hold
+
+{Summon Sandaime Kazekage}
+[Command]
+Z
+[Triggers]
+- on ground
+- chakra 1000 
+[Info]
+- available once
+
+{--Kazekage Control Mode--}
+
+{Kazekage - Satetsu Charge}
+[Command]
+(DD),(S)
+[Triggers]
+- on ground
+[Info]
+- charges iron sand
+
+{Kazekage - Move}
+[Command]
+B,Y,X,Z
+[Triggers]
+[Info]
+- press B to move upward
+- press Y to move downward
+- press X to move backward
+- press Z to move forward
+
+{Kazekage - Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+- short distance
+[Info]
+
+{Kazekage - Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Kazekage - Cut Out}
+[Command]
+(C),Z
+[Triggers]
+[Info]
+
+{Kazekage - Get Up}
+[Command]
+Z
+[Triggers]
+- kazekage on ground
+[Info]
+
+{Kazekage - Counter}
+[Command]
+A
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{Kazekage - Combo}
+[Command]
+A,A,A
+[Triggers]
+- chakra 20/20/20
+[Info]
+
+{Kazekage - Ropubaindo}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+
+{Kazekage - Dokumu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- hold
+
+{Kazekage - Senju Sobu}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 1000/2000
+[Info]
+- hold to charge
+
+{Kazekage - Satetsu Shigure}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 100
+- iron sand 200
+[Info]
+
+{Kazekage - Satetsu no ken}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 100
+- iron sand 200
+[Info]
+
+{Kazekage - Satetsu no Ken Ame}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 100
+- iron sand 300
+[Info]
+
+{Kazekage - Satetsu no Ken Panku}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 100
+- iron sand 500
+[Info]
+
+{Kazekage - Satetsu Kesshu}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 100
+- iron sand 700
+[Info]
+- creates solids that
+  can be used to
+  attack enemy
+
+{Kazekage - Kyodai Tettsui}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+- chakra 750
+- requires solids
+[Info]
+
+{Kazekage - Kyodaiso}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+- chakra 500
+- requires solids
+[Info]
+
+{Kazekage - Kyodaiso Tatsumaki}
+[Command]
+(DD),Y
+[Triggers]
+- on ground
+- chakra 1000
+- requires solids
+[Info]
+
+{-------Ultimates---------}
+
+{Kazekage - Satetsu Kaiho}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 2000
+- requires solids
+[Info]

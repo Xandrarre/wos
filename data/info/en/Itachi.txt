@@ -1,0 +1,486 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- use arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Shuriken Barrage}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Combo 9}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Karasu Bunshin Combo}
+[Command]
+Y,Y,Y,Y
+[Triggers]
+- on ground
+- chakra 50/50/50/50
+[Info]
+
+{Katon Gokakyu no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- hold
+
+{Katon: Gokakyu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Air Katon: Gokakyu}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Katon: Hosenka}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- smash
+
+{Air Katon: Hosenka}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- smash
+
+{Air Katon: Hosenka Tsumabeni}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1200
+- requires 6 shurikens
+[Info]
+
+{Katon: Goenkyu}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{Suiton: Suiryuudan}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Suiton: Suigadan}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 600
+[Info]
+
+{Genjutsu: Sharingan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 200/1000/2000/3000
+[Info]
+- hold to charge
+
+{Karasu Shuriken}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 600
+[Info]
+
+{Karasu Shuriken Barrage}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 800
+[Info]
+
+{Karasu Tatsumaki}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Karasu Furaito}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Bunshin Daibakuha}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Air Bunshin Daibakuha}
+[Command]
+(Z),BB
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Karasu Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- creates clone
+- max 1 clone
+
+{Karasu Bunshin Daibakuha}
+[Command]
+Y
+[Triggers]
+- on ground
+- chakra 500
+- requires clone
+[Info]
+
+{Mangekyo Sharingan}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Genjutsu}
+[Command]
+(Z),C
+[Triggers]
+- chakra 1000
+- requires active ms
+[Info]
+- after 15 seconds
+  returns all damage taken
+  during this time
+- press again to turn off
+
+{Amaterasu}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 2000 
+- requires active ms
+[Info]
+
+{Magen: Kasegui no Jutsu}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 2000 
+- requires active ms
+[Info]
+
+{Tsukuyomi: Kurosu}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 3000
+- requires active ms
+[Info]
+
+{Susanoo Bones}
+[Command]
+(C),Y
+[Triggers]
+- chakra 250
+- requires active ms
+[Info]
+- untargetable
+- press again to end
+
+{Susanoo Bones: Attack 1}
+[Command]
+(C),A
+[Triggers]
+- chakra 250
+- requires active ms
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 2}
+[Command]
+(C),X
+[Triggers]
+- chakra 250
+- requires active ms
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 3}
+[Command]
+(C),B
+[Triggers]
+- chakra 250
+- requires active ms
+[Info]
+- untargetable
+
+{Susanoo}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 1500
+- requires active ms
+[Info]
+- untargetable
+- press S to end
+
+{Susanoo: Attack 1}
+[Command]
+A
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 2}
+[Command]
+X
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 3}
+[Command]
+B
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Gokakyu}
+[Command]
+Y
+[Triggers]
+- requires susanoo
+- chakra 2000
+[Info]
+
+{Susanoo: Amaterasu}
+[Command]
+C
+[Triggers]
+- requires susanoo
+- chakra 2000
+[Info]
+
+{-------Ultimates---------}
+
+{Tsukyomi: Tengai Shisei}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 4000
+- requires active ms
+- medium distance
+[Info]
+
+{Yasaka no Magatama}
+[Command]
+Z
+[Triggers]
+- requires susanoo
+- chakra 3500
+[Info]
+

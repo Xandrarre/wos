@@ -1,0 +1,12 @@
+﻿[FNT v2]
+fntversion = 2,00
+name = "Wos"
+author = "NGMT"
+
+[Def]
+type = truetype
+size = 25,0
+spacing = 1,1
+offset = 0,0
+file = wos.ttf
+blend =0

@@ -1,0 +1,1831 @@
+;|-----------------------------------------------------------------|
+;|===================== ~ = ~ Game INFO ~ = ~ =====================|
+;|-----------------------------------------------------------------|
+;|--------------- Naruto Shippuuden: War of Shinobi ---------------|
+;|------------ Game Software © 2009-2017 N-G MUGEN Team -----------|
+;|---------------- Based on Elecbyte's Mugen Engine ---------------|
+;|-----------------------------------------------------------------|
+;|------------------ NARUTO Artwork and Elements ------------------|
+;|----------- © 2002 MASASHI KISHIMOTO / 2007 SHIPPUUDEN ----------|
+;|---------------------- All Rights Reserved ----------------------|
+;|-----------------------------------------------------------------|
+;|------------------------- Game made by: -------------------------|
+;|--------------------------- Xandrarre ---------------------------|
+;|---------------------------- Pein4444 ---------------------------|
+;|----------------------------- Tuder -----------------------------|
+;|-----------------------------------------------------------------|
+;|----------------------- Huge credits to: ------------------------|
+;|---------------------------- David11 ----------------------------|
+;|----------------------------- Snejok ----------------------------|
+;|--------------------------- Shinrashi ---------------------------|
+;|------------------------------ NES ------------------------------|
+;|-------------------------- RBM-Kyuubi ---------------------------|
+;|-------------------------- juansennin ---------------------------|
+;|--------------------------- WolfStak ----------------------------|
+;|--------------------------- Manoichi ----------------------------|
+;|--------------------------- Xxjohnyxx ---------------------------|
+;|---------------------------- Lavigon ----------------------------|
+;|----------------------------- Ramiz -----------------------------|
+;|------- everyone who took part in creating War of Shinobi -------|
+;|----------- and our old friends: Kinzo, juubi10, Adus -----------|
+;|-----------------------------------------------------------------|
+;|---------------------- You can find us on: ----------------------|
+;|--------------------------- FACEBOOK: ---------------------------|
+;|---- https://www.facebook.com/N-G-Mugen-Team-157035821030069/ ---|
+;|-----------------------------------------------------------------|
+;|---------------------------- YOUTUBE: ---------------------------|
+;|--------------- https://www.youtube.com/Xandrarre ---------------|
+;|-----------------------------------------------------------------|
+;|-----------------------------------------------------------------|
+;|--------- If you like the game, feel free to donate us! ---------|
+;|--------------- https://streamtip.com/y/xandrarre ---------------|
+;|-----------------------------------------------------------------|
+;|--------------------- Thanks for Downloading --------------------|
+;|------------------------- Enjoy Playing! ------------------------|
+;|-----------------------------------------------------------------|
+
+[Info]
+name = "Naruto Shippuuden War of Shinobi"
+author = "N-G MUGEN Team"
+versiondate = 01,05,2017
+mugenversion = 1.1
+localcoord = 1280,720
+
+;----------------------------
+
+[Files]
+spr = system.sff          
+snd = system.snd         
+logo.storyboard = logo.def   
+intro.storyboard = intro.def   
+select = select.def      
+fight = fight.def   
+font1 = font/win_screen.def   
+font2 = font/survival.fnt      
+font3 = stage_view.def         
+font4 = font/Dersu.def
+font5 = font/big_menu.fnt
+font6 = font/win_name.fnt
+font7 = font/name_select_vs2.fnt
+font8 = font/name_select_3.fnt
+font9 = font/match.fnt
+font10 = font/wos.def
+
+;----------------------------
+
+[Music]
+title.bgm = sound/Menu.mp3
+title.bgm.loop = 1
+
+select.bgm = sound/Select.mp3
+select.bgm.loop = 1
+
+vs.bgm = sound/Versus.mp3
+vs.bgm.loop = 0
+
+victory.bgm =sound/Victory.mp3
+victory.bgm.loop = 0
+
+;-------------------------------------------------------------------
+
+[Title Info]
+fadein.time = 20
+fadeout.time = 20
+menu.pos = 950,667
+menu.item.active.font = 4,0,0, 0, 0, 0
+menu.item.spacing = 0,20
+menu.item.layerno = 2
+menu.item.font.scale = 2,2
+
+menu.itemname.arcade = "Arcade"
+menu.itemname.versus = "Versus"
+menu.itemname.teamarcade = "Team Arc"
+menu.itemname.teamversus = "Team Vs"
+menu.itemname.teamcoop = "Team coop"
+menu.itemname.survival = "Survival"
+menu.itemname.survivalcoop = "Team Survi
+menu.itemname.training = "Training"
+menu.itemname.watch = "Demo"
+menu.itemname.options = "Options"
+menu.itemname.exit = "Exit"
+
+menu.window.margins.y = 130, 15
+menu.window.visibleitems = 1
+menu.boxcursor.visible = 0  
+menu.boxcursor.coords = -315,-85,315,10
+
+cursor.move.snd = 101,1
+cursor.done.snd = 101,4
+cancel.snd = 101,3
+
+;----------------------------
+
+[TitleBGdef]
+bgclearcolor = 256,256,256
+
+[TitleBG]
+type  = normal
+spriteno = 8,0
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,1
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,2
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,3
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,4
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,5
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,6
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,7
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,8
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,9
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,10
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[TitleBG]
+type  = normal
+spriteno = 8,11
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+
+[TitleBG 0]
+type = anim
+actionno = 11
+start = 109,469
+mask = 1
+layerno = 1
+
+; 
+[Begin Action 3]
+1,10, 0,0, 1, , AS60D256
+1,10, 0,0, 1, , AS65D256
+1,10, 0,0, 1, , AS70D256
+1,10, 0,0, 1, , AS80D256
+1,10, 0,0, 1, , AS85D256
+1,10, 0,0, 1, , AS90D256
+1,10, 0,0, 1, , AS95D256
+1,10, 0,0, 1, , AS100D256
+1,10, 0,0, 1, , AS105D256
+1,10, 0,0, 1, , AS110D256
+1,10, 0,0, 1, , AS115D256
+1,10, 0,0, 1, , AS120D256
+1,10, 0,0, 1, , AS125D256
+1,10, 0,0, 1, , AS130D256
+1,10, 0,0, 1, , AS135D256
+1,10, 0,0, 1, , AS140D256
+1,10, 0,0, 1, , AS145D256
+1,10, 0,0, 1, , AS150D256
+1,10, 0,0, 1, , AS155D256
+1,10, 0,0, 1, , AS160D256
+1,10, 0,0, 1, , AS165D256
+1,10, 0,0, 1, , AS170D256
+1,10, 0,0, 1, , AS175D256
+1,10, 0,0, 1, , AS180D256
+1,10, 0,0, 1, , AS185D256
+1,10, 0,0, 1, , AS190D256
+1,10, 0,0, 1, , AS195D256
+1,10, 0,0, 1, , AS200D256
+1,10, 0,0, 1, , AS205D256
+1,10, 0,0, 1, , AS210D256
+1,10, 0,0, 1, , AS215D256
+1,10, 0,0, 1, , AS220D256
+1,10, 0,0, 1, , AS225D256
+1,10, 0,0, 1, , AS230D256
+1,10, 0,0, 1, , AS235D256
+1,10, 0,0, 1, , AS240D256
+1,10, 0,0, 1, , AS245D256
+1,10, 0,0, 1, , AS250D256
+1,10, 0,0, 1, , A
+1,10, 0,0, 1, , AS250D256
+1,10, 0,0, 1, , AS245D256
+1,10, 0,0, 1, , AS240D256
+1,10, 0,0, 1, , AS235D256
+1,10, 0,0, 1, , AS230D256
+1,10, 0,0, 1, , AS225D256
+1,10, 0,0, 1, , AS220D256
+1,10, 0,0, 1, , AS215D256
+1,10, 0,0, 1, , AS210D256
+1,10, 0,0, 1, , AS205D256
+1,10, 0,0, 1, , AS200D256
+1,10, 0,0, 1, , AS195D256
+1,10, 0,0, 1, , AS190D256
+1,10, 0,0, 1, , AS185D256
+1,10, 0,0, 1, , AS180D256
+1,10, 0,0, 1, , AS175D256
+1,10, 0,0, 1, , AS170D256
+1,10, 0,0, 1, , AS165D256
+1,10, 0,0, 1, , AS160D256
+1,10, 0,0, 1, , AS155D256
+1,10, 0,0, 1, , AS150D256
+1,10, 0,0, 1, , AS145D256
+1,10, 0,0, 1, , AS140D256
+1,10, 0,0, 1, , AS135D256
+1,10, 0,0, 1, , AS130D256
+1,10, 0,0, 1, , AS125D256
+1,10, 0,0, 1, , AS120D256
+1,10, 0,0, 1, , AS115D256
+1,10, 0,0, 1, , AS110D256
+1,10, 0,0, 1, , AS105D256
+1,10, 0,0, 1, , AS100D256
+1,10, 0,0, 1, , AS95D256
+1,10, 0,0, 1, , AS90D256
+1,10, 0,0, 1, , AS85D256
+1,10, 0,0, 1, , AS80D256
+1,10, 0,0, 1, , AS75D256
+1,10, 0,0, 1, , AS70D256
+1,10, 0,0, 1, , AS65D256
+
+
+
+
+; 
+[Begin Action 4]
+1,11, 0,0, 1, , A
+1,11, 0,0, 1, , AS250D256
+1,11, 0,0, 1, , AS245D256
+1,11, 0,0, 1, , AS240D256
+1,11, 0,0, 1, , AS235D256
+1,11, 0,0, 1, , AS230D256
+1,11, 0,0, 1, , AS225D256
+1,11, 0,0, 1, , AS220D256
+1,11, 0,0, 1, , AS215D256
+1,11, 0,0, 1, , AS210D256
+1,11, 0,0, 1, , AS205D256
+1,11, 0,0, 1, , AS200D256
+1,11, 0,0, 1, , AS195D256
+1,11, 0,0, 1, , AS190D256
+1,11, 0,0, 1, , AS185D256
+1,11, 0,0, 1, , AS180D256
+1,11, 0,0, 1, , AS175D256
+1,11, 0,0, 1, , AS170D256
+1,11, 0,0, 1, , AS165D256
+1,11, 0,0, 1, , AS160D256
+1,11, 0,0, 1, , AS155D256
+1,11, 0,0, 1, , AS150D256
+1,11, 0,0, 1, , AS145D256
+1,11, 0,0, 1, , AS140D256
+1,11, 0,0, 1, , AS135D256
+1,11, 0,0, 1, , AS130D256
+1,11, 0,0, 1, , AS125D256
+1,11, 0,0, 1, , AS120D256
+1,11, 0,0, 1, , AS115D256
+1,11, 0,0, 1, , AS110D256
+1,11, 0,0, 1, , AS105D256
+1,11, 0,0, 1, , AS100D256
+1,11, 0,0, 1, , AS95D256
+1,11, 0,0, 1, , AS90D256
+1,11, 0,0, 1, , AS85D256
+1,11, 0,0, 1, , AS80D256
+1,11, 0,0, 1, , AS75D256
+1,11, 0,0, 1, , AS70D256
+1,11, 0,0, 1, , AS65D256
+1,11, 0,0, 1, , AS60D256
+1,11, 0,0, 1, , AS65D256
+1,11, 0,0, 1, , AS70D256
+1,11, 0,0, 1, , AS80D256
+1,11, 0,0, 1, , AS85D256
+1,11, 0,0, 1, , AS90D256
+1,11, 0,0, 1, , AS95D256
+1,11, 0,0, 1, , AS100D256
+1,11, 0,0, 1, , AS105D256
+1,11, 0,0, 1, , AS110D256
+1,11, 0,0, 1, , AS115D256
+1,11, 0,0, 1, , AS120D256
+1,11, 0,0, 1, , AS125D256
+1,11, 0,0, 1, , AS130D256
+1,11, 0,0, 1, , AS135D256
+1,11, 0,0, 1, , AS140D256
+1,11, 0,0, 1, , AS145D256
+1,11, 0,0, 1, , AS150D256
+1,11, 0,0, 1, , AS155D256
+1,11, 0,0, 1, , AS160D256
+1,11, 0,0, 1, , AS165D256
+1,11, 0,0, 1, , AS170D256
+1,11, 0,0, 1, , AS175D256
+1,11, 0,0, 1, , AS180D256
+1,11, 0,0, 1, , AS185D256
+1,11, 0,0, 1, , AS190D256
+1,11, 0,0, 1, , AS195D256
+1,11, 0,0, 1, , AS200D256
+1,11, 0,0, 1, , AS205D256
+1,11, 0,0, 1, , AS210D256
+1,11, 0,0, 1, , AS215D256
+1,11, 0,0, 1, , AS220D256
+1,11, 0,0, 1, , AS225D256
+1,11, 0,0, 1, , AS230D256
+1,11, 0,0, 1, , AS235D256
+1,11, 0,0, 1, , AS240D256
+1,11, 0,0, 1, , AS245D256
+1,11, 0,0, 1, , AS250D256
+1,11, 0,0, 1, , A
+
+;b³ysk versus
+[Begin Action 5]
+2,7, 0,0, 1, , AS60D256
+2,7, 0,0, 1, , AS65D256
+2,7, 0,0, 1, , AS70D256
+2,7, 0,0, 1, , AS80D256
+2,7, 0,0, 1, , AS85D256
+2,7, 0,0, 1, , AS90D256
+2,7, 0,0, 1, , AS95D256
+2,7, 0,0, 1, , AS100D256
+2,7, 0,0, 1, , AS105D256
+2,7, 0,0, 1, , AS110D256
+2,7, 0,0, 1, , AS115D256
+2,7, 0,0, 1, , AS120D256
+2,7, 0,0, 1, , AS125D256
+2,7, 0,0, 1, , AS130D256
+2,7, 0,0, 1, , AS135D256
+2,7, 0,0, 1, , AS140D256
+2,7, 0,0, 1, , AS145D256
+2,7, 0,0, 1, , AS150D256
+2,7, 0,0, 1, , AS155D256
+2,7, 0,0, 1, , AS160D256
+2,7, 0,0, 1, , AS165D256
+2,7, 0,0, 1, , AS170D256
+2,7, 0,0, 1, , AS175D256
+2,7, 0,0, 1, , AS180D256
+2,7, 0,0, 1, , AS185D256
+2,7, 0,0, 1, , AS190D256
+2,7, 0,0, 1, , AS195D256
+2,7, 0,0, 1, , AS200D256
+2,7, 0,0, 1, , AS205D256
+2,7, 0,0, 1, , AS210D256
+2,7, 0,0, 1, , AS215D256
+2,7, 0,0, 1, , AS220D256
+2,7, 0,0, 1, , AS225D256
+2,7, 0,0, 1, , AS230D256
+2,7, 0,0, 1, , AS235D256
+2,7, 0,0, 1, , AS240D256
+2,7, 0,0, 1, , AS245D256
+2,7, 0,0, 1, , AS250D256
+2,7, 0,0, 1, , A
+2,7, 0,0, 1, , AS250D256
+2,7, 0,0, 1, , AS245D256
+2,7, 0,0, 1, , AS240D256
+2,7, 0,0, 1, , AS235D256
+2,7, 0,0, 1, , AS230D256
+2,7, 0,0, 1, , AS225D256
+2,7, 0,0, 1, , AS220D256
+2,7, 0,0, 1, , AS215D256
+2,7, 0,0, 1, , AS210D256
+2,7, 0,0, 1, , AS205D256
+2,7, 0,0, 1, , AS200D256
+2,7, 0,0, 1, , AS195D256
+2,7, 0,0, 1, , AS190D256
+2,7, 0,0, 1, , AS185D256
+2,7, 0,0, 1, , AS180D256
+2,7, 0,0, 1, , AS175D256
+2,7, 0,0, 1, , AS170D256
+2,7, 0,0, 1, , AS165D256
+2,7, 0,0, 1, , AS160D256
+2,7, 0,0, 1, , AS155D256
+2,7, 0,0, 1, , AS150D256
+2,7, 0,0, 1, , AS145D256
+2,7, 0,0, 1, , AS140D256
+2,7, 0,0, 1, , AS135D256
+2,7, 0,0, 1, , AS130D256
+2,7, 0,0, 1, , AS125D256
+2,7, 0,0, 1, , AS120D256
+2,7, 0,0, 1, , AS115D256
+2,7, 0,0, 1, , AS110D256
+2,7, 0,0, 1, , AS105D256
+2,7, 0,0, 1, , AS100D256
+2,7, 0,0, 1, , AS95D256
+2,7, 0,0, 1, , AS90D256
+2,7, 0,0, 1, , AS85D256
+2,7, 0,0, 1, , AS80D256
+2,7, 0,0, 1, , AS75D256
+2,7, 0,0, 1, , AS70D256
+2,7, 0,0, 1, , AS65D256
+
+[Begin Action 6]
+2,8, 0,0, 1, , A
+2,8, 0,0, 1, , AS250D256
+2,8, 0,0, 1, , AS240D256
+2,8, 0,0, 1, , AS230D256
+2,8, 0,0, 1, , AS220D256
+2,8, 0,0, 1, , AS210D256
+2,8, 0,0, 1, , AS200D256
+2,8, 0,0, 1, , AS190D256
+2,8, 0,0, 1, , AS180D256
+2,8, 0,0, 1, , AS170D256
+2,8, 0,0, 1, , AS160D256
+2,8, 0,0, 1, , AS150D256
+2,8, 0,0, 1, , AS140D256
+2,8, 0,0, 1, , AS130D256
+2,8, 0,0, 1, , AS120D256
+2,8, 0,0, 1, , AS110D256
+2,8, 0,0, 1, , AS100D256
+2,8, 0,0, 1, , AS90D256
+2,8, 0,0, 1, , AS80D256
+2,8, 0,0, 1, , AS70D256
+2,8, 0,0, 1, , AS60D256
+2,8, 0,0, 1, , AS70D256
+2,8, 0,0, 1, , AS80D256
+2,8, 0,0, 1, , AS90D256
+2,8, 0,0, 1, , AS100D256
+2,8, 0,0, 1, , AS110D256
+2,8, 0,0, 1, , AS120D256
+2,8, 0,0, 1, , AS130D256
+2,8, 0,0, 1, , AS140D256
+2,8, 0,0, 1, , AS150D256
+2,8, 0,0, 1, , AS160D256
+2,8, 0,0, 1, , AS170D256
+2,8, 0,0, 1, , AS180D256
+2,8, 0,0, 1, , AS190D256
+2,8, 0,0, 1, , AS200D256
+2,8, 0,0, 1, , AS210D256
+2,8, 0,0, 1, , AS220D256
+2,8, 0,0, 1, , AS230D256
+2,8, 0,0, 1, , AS240D256
+2,8, 0,0, 1, , AS250D256
+2,8, 0,0, 1, , A
+
+[Begin Action 7]
+7,0, 0,0, 5, , A
+7,1, 0,0, 5, , A
+7,2, 0,0, 5, , A
+7,3, 0,0, 5, , A
+7,4, 0,0, 5, , A
+7,5, 0,0, 5, , A
+7,6, 0,0, 5, , A
+7,7, 0,0, 5, , A
+7,8, 0,0, 5, , A
+7,9, 0,0, 5, , A
+7,10, 0,0, 5, , A
+7,11, 0,0, 5, , A
+7,12, 0,0, 5, , A
+7,13, 0,0, 5, , A
+7,14, 0,0, 5, , A
+7,15, 0,0, 5, , A
+7,16, 0,0, 5, , A
+7,17, 0,0, 5, , A
+7,18, 0,0, 5, , A
+7,19, 0,0, 5, , A
+7,20, 0,0, 5, , A
+7,21, 0,0, 5, , A
+7,22, 0,0, 5, , A
+7,23, 0,0, 5, , A
+7,24, 0,0, 5, , A
+7,25, 0,0, 5, , A
+7,26, 0,0, 5, , A
+7,27, 0,0, 5, , A
+7,28, 0,0, 5, , A
+7,29, 0,0, 5, , A
+
+[Begin Action 7]
+7,0, 0,0, 5, , A
+7,1, 0,0, 5, , A
+7,2, 0,0, 5, , A
+7,3, 0,0, 5, , A
+7,4, 0,0, 5, , A
+7,5, 0,0, 5, , A
+7,6, 0,0, 5, , A
+7,7, 0,0, 5, , A
+7,8, 0,0, 5, , A
+7,9, 0,0, 5, , A
+7,10, 0,0, 5, , A
+7,11, 0,0, 5, , A
+7,12, 0,0, 5, , A
+7,13, 0,0, 5, , A
+7,14, 0,0, 5, , A
+7,15, 0,0, 5, , A
+7,16, 0,0, 5, , A
+7,17, 0,0, 5, , A
+7,18, 0,0, 5, , A
+7,19, 0,0, 5, , A
+7,20, 0,0, 5, , A
+7,21, 0,0, 5, , A
+7,22, 0,0, 5, , A
+7,23, 0,0, 5, , A
+7,24, 0,0, 5, , A
+7,25, 0,0, 5, , A
+7,26, 0,0, 5, , A
+7,27, 0,0, 5, , A
+7,28, 0,0, 5, , A
+7,29, 0,0, 5, , A
+
+[Begin Action 7]
+7,0, 0,0, 5, , A
+7,1, 0,0, 5, , A
+7,2, 0,0, 5, , A
+7,3, 0,0, 5, , A
+7,4, 0,0, 5, , A
+7,5, 0,0, 5, , A
+7,6, 0,0, 5, , A
+7,7, 0,0, 5, , A
+7,8, 0,0, 5, , A
+7,9, 0,0, 5, , A
+7,10, 0,0, 5, , A
+7,11, 0,0, 5, , A
+7,12, 0,0, 5, , A
+7,13, 0,0, 5, , A
+7,14, 0,0, 5, , A
+7,15, 0,0, 5, , A
+7,16, 0,0, 5, , A
+7,17, 0,0, 5, , A
+7,18, 0,0, 5, , A
+7,19, 0,0, 5, , A
+7,20, 0,0, 5, , A
+7,21, 0,0, 5, , A
+7,22, 0,0, 5, , A
+7,23, 0,0, 5, , A
+7,24, 0,0, 5, , A
+7,25, 0,0, 5, , A
+7,26, 0,0, 5, , A
+7,27, 0,0, 5, , A
+7,28, 0,0, 5, , A
+7,29, 0,0, 5, , A
+
+[Begin Action 8]
+7,0, 0,0, 5, H, A
+7,1, 0,0, 5, H, A
+7,2, 0,0, 5, H, A
+7,3, 0,0, 5, H, A
+7,4, 0,0, 5, H, A
+7,5, 0,0, 5, H, A
+7,6, 0,0, 5, H, A
+7,7, 0,0, 5, H, A
+7,8, 0,0, 5, H, A
+7,9, 0,0, 5, H, A
+7,10, 0,0, 5, H, A
+7,11, 0,0, 5, H, A
+7,12, 0,0, 5, H, A
+7,13, 0,0, 5, H, A
+7,14, 0,0, 5, H, A
+7,15, 0,0, 5, H, A
+7,16, 0,0, 5, H, A
+7,17, 0,0, 5, H, A
+7,18, 0,0, 5, H, A
+7,19, 0,0, 5, H, A
+7,20, 0,0, 5, H, A
+7,21, 0,0, 5, H, A
+7,22, 0,0, 5, H, A
+7,23, 0,0, 5, H, A
+7,24, 0,0, 5, H, A
+7,25, 0,0, 5, H, A
+7,26, 0,0, 5, H, A
+7,27, 0,0, 5, H, A
+7,28, 0,0, 5, H, A
+7,29, 0,0, 5, H, A
+
+[Begin Action 8]
+7,0, 0,0, 5, H, A
+7,1, 0,0, 5, H, A
+7,2, 0,0, 5, H, A
+7,3, 0,0, 5, H, A
+7,4, 0,0, 5, H, A
+7,5, 0,0, 5, H, A
+7,6, 0,0, 5, H, A
+7,7, 0,0, 5, H, A
+7,8, 0,0, 5, H, A
+7,9, 0,0, 5, H, A
+7,10, 0,0, 5, H, A
+7,11, 0,0, 5, H, A
+7,12, 0,0, 5, H, A
+7,13, 0,0, 5, H, A
+7,14, 0,0, 5, H, A
+7,15, 0,0, 5, H, A
+7,16, 0,0, 5, H, A
+7,17, 0,0, 5, H, A
+7,18, 0,0, 5, H, A
+7,19, 0,0, 5, H, A
+7,20, 0,0, 5, H, A
+7,21, 0,0, 5, H, A
+7,22, 0,0, 5, H, A
+7,23, 0,0, 5, H, A
+7,24, 0,0, 5, H, A
+7,25, 0,0, 5, H, A
+7,26, 0,0, 5, H, A
+7,27, 0,0, 5, H, A
+7,28, 0,0, 5, H, A
+7,29, 0,0, 5, H, A
+
+;-------------------------------------------------------------------
+
+
+[Begin Action 9]
+7,0, 0,0, 5, H, A, 0,0, 90
+7,1, 0,0, 5, H, A
+7,2, 0,0, 5, H, A
+7,3, 0,0, 5, H, A, 0,0, 90
+7,4, 0,0, 5, H, A, 0,0, 90
+7,5, 0,0, 5, H, A, 0,0, 90
+7,6, 0,0, 5, H, A, 0,0, 90
+7,7, 0,0, 5, H, A
+7,8, 0,0, 5, H, A
+7,9, 0,0, 5, H, A
+7,10, 0,0, 5, H, A
+7,11, 0,0, 5, H, A
+7,12, 0,0, 5, H, A
+7,13, 0,0, 5, H, A
+7,14, 0,0, 5, H, A
+7,15, 0,0, 5, H, A
+7,16, 0,0, 5, H, A
+7,17, 0,0, 5, H, A
+7,18, 0,0, 5, H, A
+7,19, 0,0, 5, H, A
+7,20, 0,0, 5, H, A
+7,21, 0,0, 5, H, A
+7,22, 0,0, 5, H, A
+7,23, 0,0, 5, H, A
+7,24, 0,0, 5, H, A
+7,25, 0,0, 5, H, A
+7,26, 0,0, 5, H, A
+7,27, 0,0, 5, H, A
+7,28, 0,0, 5, H, A
+7,29, 0,0, 5, H, A
+
+
+
+[Begin Action 10]
+4,1, 0,0, 3, , A
+4,2, 0,0, 3, , A
+4,3, 0,0, 3, , A
+4,4, 0,0, 3, , A
+4,5, 0,0, 3, , A
+4,6, 0,0, 3, , A
+4,7, 0,0, 3, , A
+4,8, 0,0, 3, , A
+4,9, 0,0, 3, , A
+4,10, 0,0, 3, , A
+4,11, 0,0, 3, , A
+4,12, 0,0, 3, , A
+4,13, 0,0, 3, , A
+4,14, 0,0, 3, , A
+4,15, 0,0, 3, , A
+4,16, 0,0, 3, , A
+4,17, 0,0, 3, , A
+4,18, 0,0, 3, , A
+4,19, 0,0, 3, , A
+4,20, 0,0, 3, , A
+4,21, 0,0, 3, , A
+4,22, 0,0, 3, , A
+4,23, 0,0, 3, , A
+4,24, 0,0, 3, , A
+4,25, 0,0, 3, , A
+4,26, 0,0, 3, , A
+4,27, 0,0, 3, , A
+4,28, 0,0, 3, , A
+4,29, 0,0, 3, , A
+4,30, 0,0, 3, , A
+
+[Begin Action 11]
+LoopStart
+11,0, 0,0, 4, , A,0.57,0.57
+11,1, 0,0, 4, , A,0.57,0.57
+11,2, 0,0, 4, , A,0.57,0.57
+11,3, 0,0, 4, , A,0.57,0.57
+11,4, 0,0, 4, , A,0.57,0.57
+11,5, 0,0, 4, , A,0.57,0.57
+11,6, 0,0, 4, , A,0.57,0.57
+
+[TitleBG 0]
+type = anim
+actionno = 13
+start = 0,0
+mask = 1
+layerno = 1
+
+[Begin Action 12]
+-1,0, 0,0, 40, , A
+6,0, 0,0, 3, H, A ,0.5,0.5
+6,1, 0,0, 3, H, A ,0.5,0.5
+6,2, 0,0, 3, H, A ,0.5,0.5
+6,3, 0,0, 3, H, A ,0.5,0.5
+6,4, 0,0, 3, H, A ,0.5,0.5
+6,5, 0,0, 5, H, A ,0.5,0.5
+6,23, 0,0, 3, H, A ,0.5,0.5
+6,7, 0,0, 3, H, A ,0.5,0.5
+6,8, 0,0, 3, H, A ,0.5,0.5
+6,9, 0,0, 3, H, A ,0.5,0.5
+6,10, 0,0, 3, H, A ,0.5,0.5
+6,11, 0,0, 3, H, A ,0.5,0.5
+6,12, 0,0, 3, H, A ,0.5,0.5
+6,13, 0,0, 3, H, A ,0.5,0.5
+6,14, 0,0, 3, H, A ,0.5,0.5
+6,15, 0,0, 3, H, A ,0.5,0.5
+6,16, 0,0, 3, H, A ,0.5,0.5
+6,17, 0,0, 3, H, A ,0.5,0.5
+6,18, 0,0, 3, H, A ,0.5,0.5
+6,19, 0,0, 3, H, A ,0.5,0.5
+6,20, 0,0, 3, H, A ,0.5,0.5
+6,21, 0,0, 3, H, A ,0.5,0.5
+6,22, 0,0, 3, H, A ,0.5,0.5
+-1,0, 0,0, 300, H, A ,0.5,0.5
+
+
+
+[Begin Action 13]
+6,0, 0,0, 3, , A
+6,1, 0,0, 3, , A
+6,2, 0,0, 3, , A
+6,3, 0,0, 3, , A
+6,4, 0,0, 3, , A
+6,5, 0,0, 6, , A
+6,6, 0,0, 3, , A
+6,7, 0,0, 3, , A
+6,8, 0,0, 3, , A
+6,9, 0,0, 3, , A
+6,10, 0,0, 3, , A
+6,11, 0,0, 3, , A
+6,12, 0,0, 3, , A
+6,13, 0,0, 3, , A
+6,14, 0,0, 3, , A
+6,15, 0,0, 3, , A
+6,16, 0,0, 3, , A
+6,17, 0,0, 3, , A
+6,18, 0,0, 3, , A
+6,19, 0,0, 3, , A
+6,20, 0,0, 3, , A
+6,21, 0,0, 3, , A
+6,22, 0,0, 3, , A
+-1,0, 0,0, 500, , A
+
+
+[TitleBG 0]
+type = anim
+actionno = 12
+start = 0,0
+mask = 1
+layerno = 1
+
+[TitleBG Select Menu 3]
+type  = normal
+spriteno = 0,15
+start = 0, 0
+delta = 1,1
+layerno = 0 
+mask = 1 
+
+[TitleBG Select Amaterasu]
+type  = normal
+spriteno = 410,0
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1 
+			
+[TitleBG Select Menu 3]
+type  = normal
+spriteno = 0,17
+start = 0, 0
+delta = 1,1
+sin.x = -20,200,20
+layerno = 0 
+mask = 1 
+
+[TitleBG Select Menu 3]
+type  = normal
+spriteno = 0,18
+start = 0, 0
+delta = 1,1
+sin.x = -20,280,20
+layerno = 0
+mask = 1 
+
+[TitleBG Select Menu 3]
+type  = normal
+spriteno = 0,21
+start = -10, 0
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 0 
+mask = 1 
+
+
+[TitleBG 0]
+type = anim
+actionno = 7
+start = -10,-46
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 0
+
+[TitleBG Select Menu 3]
+type  = normal
+spriteno = 0,20
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1 
+
+
+;----------------------------
+[Infobox]
+text.font = 10,0,1
+
+;----------------------------
+[Infobox Text]
+Naruto Shippuuden: War of Shinobi
+Version 2.0 - 1.5.17
+Game Software Copyright 2009-2017 N-G MUGEN Team 
+Based on Elecbyte's Mugen Engine
+_
+NARUTO Artwork and Elements
+Copyright 2002 MASASHI KISHIMOTO / 2007 SHIPPUUDEN
+All Rights Reserved
+_
+Game created by: 
+Xandrarre - Pein4444 - Tuder
+_
+Huge credits to:
+David11 - Snejok - Shinrashi - NES - RBM-Kyuubi - juansennin - WolfStak
+Manoichi - Xxjohnyxx - Lavigon - Ramiz - Kinzo - juubi10 - Adus
+_
+Characters are made to be used only in War of Shinobi Mugen Game.
+Please do not use them outside our Game or even without our FX file.
+They may not run correctly!
+_
+You can find us on:
+FACEBOOK: https://www.facebook.com/N-G-Mugen-Team-157035821030069/ 
+YOUTUBE: https://www.youtube.com/Xandrarre
+_
+If you like the game, feel free to donate us!
+https://streamtip.com/y/xandrarre
+_
+Thanks for Downloading
+Enjoy Playing!
+_
+;-------------------------------------------------------------------
+
+[Select Info]
+fadein.time = 10
+fadeout.time = 10
+rows = 6;8
+columns = 9
+wrapping = 1             
+pos = 407,185;135           
+showemptyboxes = 0   
+moveoveremptyboxes = 0
+cell.size = 51,51    
+cell.spacing = 1,1         
+cell.bg.spr = 150,0       
+cell.bg.scale = 0,0
+cell.random.spr = 151,0   
+cell.random.switchtime = 4
+cell.random.scale = 1,1
+
+p1.cursor.startcell = 0,0
+p1.cursor.active.anim = 160
+p1.cursor.active.scale = 1,1
+p1.cursor.done.anim = 161
+p1.cursor.done.scale = 1,1
+p1.cursor.move.snd = 101,0
+p1.cursor.done.snd = 101,5
+p1.random.move.snd = 101,0
+
+p2.cursor.startcell = 0,8
+p2.cursor.active.anim = 170
+p2.cursor.active.scale = 1,1
+p2.cursor.done.anim = 171
+p2.cursor.done.scale = 1,1
+p2.cursor.blink = 0
+p2.cursor.move.snd = 101,0
+p2.cursor.done.snd = 101,5
+p2.random.move.snd = 101,0
+
+random.move.snd.cancel = 0
+stage.move.snd = 101,1
+stage.done.snd = 101,2
+cancel.snd = 100,2
+portrait.spr = 9000,0   
+portrait.offset = 0,0
+portrait.scale = 0.296875, 0.296875
+portrait.layerno = 0
+title.offset = 6400,30
+title.font = 7,5,0       
+
+p1.face.spr = 9000,1      
+p1.face.offset = 255,210   
+p1.face.scale = 0.296875, 0.296875
+p1.face.facing = 1
+p1.face.window = 0,0, 739,719
+p2.face.spr = 9000,1
+p2.face.offset = 1080,210
+p2.face.scale = 0.296875, 0.296875
+p2.face.facing = 1
+p2.face.window = 540,0, 1279,719
+
+p1.name.offset = 220,480 
+p1.name.font = 7,0,0    
+p1.name.spacing = 40,55
+p2.name.offset = 1060,480
+p2.name.font = 7,0,0
+p2.name.spacing = -40,55
+
+stage.pos = 632,604
+stage.active.font = 3,0,0
+stage.active2.font = 3,0,0  
+stage.done.font = 3,0,0
+
+teammenu.move.wrapping = 1
+
+p1.teammenu.pos = 20, 50
+p1.teammenu.bg.spr = 195,0
+p1.teammenu.move.snd = 101,1
+p1.teammenu.value.snd = 101,0
+p1.teammenu.done.snd = 101,5
+p1.teammenu.item.offset = -1000,0
+p1.teammenu.item.spacing = 0,22
+p1.teammenu.item.font = 8,0		
+p1.teammenu.item.active.font = 8,0
+p1.teammenu.item.active2.font = 8,0
+p1.teammenu.item.cursor.offset = 1059,36
+p1.teammenu.item.cursor.anim = 195
+p1.teammenu.value.icon.offset = 1114,31
+p1.teammenu.value.icon.spr = 195,4
+p1.teammenu.value.empty.icon.offset = 1114,31	
+p1.teammenu.value.empty.icon.spr = 195,3
+p1.teammenu.value.spacing = 18,0
+
+p2.teammenu.pos = 1143, 50
+p2.teammenu.bg.spr = 195,0
+p2.teammenu.move.snd = 101,0
+p2.teammenu.value.snd = 101,1
+p2.teammenu.done.snd = 101,5
+p2.teammenu.item.offset = 1000,0
+p2.teammenu.item.spacing = 0,22
+p2.teammenu.item.font = 8,0
+p2.teammenu.item.active.font = 8,0,
+p2.teammenu.item.active2.font = 8,0,
+p2.teammenu.item.cursor.offset = -937,36
+p2.teammenu.item.cursor.anim = 195
+p2.teammenu.value.icon.offset = -1016,31
+p2.teammenu.value.icon.spr = 195,4
+p2.teammenu.value.empty.icon.offset = -1016,31	
+p2.teammenu.value.empty.icon.spr = 195,3
+p2.teammenu.value.spacing = -18,0
+
+; ==========
+; animations
+; ==========
+
+[Begin Action 160] 
+Loopstart
+160,0, 0,0, 5,, as256d256
+160,0, 0,0, 2,, as226d256
+160,0, 0,0, 2,, as196d256
+160,0, 0,0, 2,, as166d256
+160,0, 0,0, 2,, as136d256
+160,0, 0,0, 2,, as106d256
+160,0, 0,0, 2,, as76d256
+160,0, 0,0, 5,, as46d256
+160,0, 0,0, 2,, as76d256
+160,0, 0,0, 2,, as106d256
+160,0, 0,0, 2,, as136d256
+160,0, 0,0, 2,, as166d256
+160,0, 0,0, 2,, as196d256
+160,0, 0,0, 2,, as226d256
+
+[Begin Action 161] 
+Loopstart
+160,1, 0,0, 3,, A
+
+[Begin Action 170]
+Loopstart
+170,0, 0,0, 5,, as256d256
+170,0, 0,0, 2,, as226d256
+170,0, 0,0, 2,, as196d256
+170,0, 0,0, 2,, as166d256
+170,0, 0,0, 2,, as136d256
+170,0, 0,0, 2,, as106d256
+170,0, 0,0, 2,, as76d256
+170,0, 0,0, 5,, as46d256
+170,0, 0,0, 2,, as76d256
+170,0, 0,0, 2,, as106d256
+170,0, 0,0, 2,, as136d256
+170,0, 0,0, 2,, as166d256
+170,0, 0,0, 2,, as196d256
+170,0, 0,0, 2,, as226d256
+
+[Begin Action 171] 
+Loopstart
+170,1, 0,0, 3,, A
+
+;-----------------------
+
+[Begin Action 195] 
+Loopstart
+194,4, 0,0, 3,, a
+194,0, 0,0, 3,, a
+194,1, 0,0, 3,, a
+194,2, 0,0, 3,, a
+194,3, 0,0, 3,, a
+194,3, 0,0, 3,, as200D256
+194,3, 0,0, 3,, as150D256
+194,3, 0,0, 3,, as100D256
+194,3, 0,0, 3,, as50D256
+
+[Begin Action 196] 
+Loopstart
+195,1, 0,0, 5,H, a
+
+[SelectBGdef]
+;spr = graphics/selectbg.sff
+bgclearcolor = 256,256,256
+
+[SelectBG]
+type  = normal
+spriteno = 9,0
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,1
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,2
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,3
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,4
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,5
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,6
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,7
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,8
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,9
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,10
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,11
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,12
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,13
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,14
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,15
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,16
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,17
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,18
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+[SelectBG]
+type  = normal
+spriteno = 9,19
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+
+
+[selectBG 0]
+type = anim
+actionno = 3
+start = 0,0
+mask = 1
+layerno = 0
+
+[selectBG 0]
+type = anim
+actionno = 4
+start = 0,0
+mask = 1
+layerno = 0
+
+[SelectBG Select chmurka]
+type  = normal
+spriteno = 0,22
+start = 0, 80
+delta = 1,1
+sin.x = -20,200,20
+layerno = 0 ; 0 = behind player, 1 = same layer as player, 2 = infront of player.
+mask = 1 ; 1 = does not show alpha color, 0 = show alpha color.
+
+[SelectBG podgladarenblack] 
+type  = normal
+spriteno = 0,26
+start = 0,0
+delta = 1,1
+layerno = 0
+mask = 1
+
+[SelectBG podgladaren] 
+type  = normal
+spriteno = 0,25
+start = 0,0
+delta = 1,1
+layerno = 0
+mask = 1
+
+[SelectBG]
+type  = normal
+spriteno = 0,23
+start = -800, 80
+delta = 1,1
+sin.x = -8,140,11
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[SelectBG]
+type = anim
+actionno = 8
+start = -800,34
+sin.x = -8,140,11
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[SelectBG]
+type  = normal
+spriteno = 0,23
+start = 30, 0
+delta = 1,1
+sin.x = -12,110,14
+sin.y = 5,80,7
+layerno = 1
+mask = 1 
+
+[SelectBG]
+type = anim
+actionno = 8
+start = 30,-46
+sin.x = -12,110,14
+sin.y = 5,80,7
+mask = 1
+layerno = 1
+
+[SelectBG]
+type  = normal
+spriteno = 0,21
+start = -10, 0
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[SelectBG]
+type = anim
+actionno = 7
+start = -10,-46
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[SelectBG]
+type  = normal
+spriteno = 0,21
+start = 450, 80
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+
+[SelectBG]
+type = anim
+actionno = 7
+start = 450,34
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[SelectBG]
+type  = normal
+spriteno = 0,23
+start = 150, 30
+delta = 1,1
+sin.x = -7,120,9
+sin.y = 3,100,5
+layerno = 1
+mask = 1 
+
+[SelectBG]
+type = anim
+actionno = 8
+start = 150,-16
+sin.x = -7,120,9
+sin.y = 3,100,5
+mask = 1
+layerno = 1
+
+
+[SelectBG Podswietlenieikon] 
+type  = normal
+spriteno = 0,24
+start = 0,1
+delta = 1,1
+trans = Addalpha
+alpha = 200,256
+layerno = 1
+mask = 1
+
+;-------------------------------------------------------------------
+
+[VS Screen]
+time = 200
+fadein.time = 20
+fadeout.time = 20
+
+p1.spr = 9000,1     
+p1.offset = 255,210 
+p1.scale = 0.296875, 0.296875
+p1.facing = 1    
+p1.layerno = 0 
+p2.spr = 9000,1
+p2.offset = 1080,210
+p2.scale = 0.296875, 0.296875
+p2.facing = 1   
+p2.layerno = 0
+
+
+p1.name.offset = 180,150
+p1.name.font = 7,0,1
+p1.name.spacing = -40,55   
+p2.name.offset = 1100,150
+p2.name.font = 7,0,-1
+p2.name.spacing = 40,55  
+
+;-----------------------
+
+[VersusBGdef] 
+bgclearcolor = 256,256,256
+
+[VersusBG]
+type  = normal
+spriteno = 10,0
+start = 0, 0
+delta = 1,1
+layerno = 0
+mask = 1
+
+[VersusBG]
+type  = normal
+spriteno = 12,0
+start = 0, 0
+delta = 1,1
+layerno = 1
+mask = 1
+
+[VersusBG]
+type  = normal
+spriteno = 12,1
+start = 0, 0
+delta = 1,1
+layerno = 1
+mask = 1
+
+[VersusBG]
+type  = normal
+spriteno = 12,2
+start = 0, 0
+delta = 1,1
+layerno = 1
+mask = 1
+
+[VersusBG]
+type  = normal
+spriteno = 12,3
+start = 0, 0
+delta = 1,1
+layerno = 1
+mask = 1
+
+[VersusBG Select chmurka 1]
+type  = normal
+spriteno = 2,9
+start = 0,0
+delta = 1,1
+trans = sub
+layerno = 1 ; 0 = behind player, 1 = same layer as player, 2 = infront of player.
+mask = 1 ; 1 = does not show alpha color, 0 = show alpha color.
+
+[VersusBG Select chmurka 1]
+type  = normal
+spriteno = 2,10
+start = 0,0
+delta = 1,1
+trans = add
+layerno = 1 ; 0 = behind player, 1 = same layer as player, 2 = infront of player.
+mask = 1 ; 1 = does not show alpha color, 0 = show alpha color.
+
+[VersusBG 0]
+type = anim
+actionno = 5
+start = 0,0
+mask = 1
+layerno = 1
+
+[VersusBG 0]
+type = anim
+actionno = 6
+start = 0,0
+mask = 1
+layerno = 1
+
+[VersusBG]
+type  = normal
+spriteno = 0,23
+start = -800, 80
+delta = 1,1
+sin.x = -8,140,11
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[VersusBG]
+type = anim
+actionno = 8
+start = -800,34
+sin.x = -8,140,11
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VersusBG]
+type  = normal
+spriteno = 0,23
+start = 30, 0
+delta = 1,1
+sin.x = -12,110,14
+sin.y = 5,80,7
+layerno = 1
+mask = 1 
+
+[VersusBG]
+type = anim
+actionno = 8
+start = 30,-46
+sin.x = -12,110,14
+sin.y = 5,80,7
+mask = 1
+layerno = 1
+
+[VersusBG]
+type  = normal
+spriteno = 0,21
+start = -10, 0
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[VersusBG]
+type = anim
+actionno = 7
+start = -10,-46
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VersusBG]
+type  = normal
+spriteno = 0,21
+start = 450, 80
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+
+[VersusBG]
+type = anim
+actionno = 7
+start = 450,34
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VersusBG]
+type  = normal
+spriteno = 0,23
+start = 150, 30
+delta = 1,1
+sin.x = -7,120,9
+sin.y = 3,100,5
+layerno = 1
+mask = 1 
+
+[VersusBG]
+type = anim
+actionno = 8
+start = 150,-16
+sin.x = -7,120,9
+sin.y = 3,100,5
+mask = 1
+layerno = 1
+
+;---------------------------------------------------------
+[Demo Mode]
+enabled = 1            
+select.enabled = 0       
+vsscreen.enabled = 0     
+title.waittime = 1200     
+fight.endtime = 1800    
+fight.playbgm = 0        
+fight.bars.display = 1   
+intro.waitcycles = 0    
+debuginfo = 0           
+
+;-------------------------------------------------------------------
+
+[Continue Screen]
+enabled = 1              
+pos = 640,320 
+continue.text = "C"
+continue.font = 8,0,0  
+continue.offset = 180,-110
+yes.text = "Y"
+yes.font = 8,0,0
+yes.offset = 0,10
+yes.active.text = "X"
+yes.active.font = 8,0,0
+yes.active.offset = 0,10
+no.text = "N"
+no.font = 8,0,0
+no.offset = 110,10
+no.active.text = "M"
+no.active.font = 8,0,0
+no.active.offset = 110,10
+
+;-------------------------------------------------------------------
+
+[Game Over Screen]
+enabled = 1              
+storyboard = gameover.def         
+
+;-------------------------------------------------------------------
+
+[Victory Screen]
+enabled = 1
+time = 500                
+fadein.time = 20
+fadeout.time = 20
+
+p1.offset = 640,180 
+p1.spr = 9000,1
+p1.spr.layerno = 0
+p1.facing = 1
+p1.scale = 0.296875, 0.296875
+p1.window = 0,0, 1279,800
+p1.name.offset = 800,600  
+p1.name.font = 7,0,0      
+p1.name.spacing = 0,40
+
+winquote.text = ;"Congratulations!! Prepare for your next battle!"
+winquote.offset = 100,600
+winquote.font = 8,0,1
+winquote.window = 38,550, 1241,708
+winquote.textwrap = w    
+
+;-----------------------
+
+[VictoryBGdef] 
+bgclearcolor = 256,256,256
+
+[VictoryBG]
+type  = normal
+spriteno = 5,1
+start = 0, 0
+delta = 1,1
+layerno = 0 ; 0 = behind player, 1 = same layer as player, 2 = infront of player.
+trans = none
+mask = 1 ; 1 = does not show alpha color, 0 = show alpha color.
+
+[VictoryBG]
+type  = normal
+spriteno = 5,2
+start = 0,0
+delta = 1,1
+sin.x = -4,120,6
+sin.y = 1,100,3
+layerno = 0
+mask = 1 
+
+[VictoryBG]
+type  = normal
+spriteno = 5,3
+start = 0,0
+delta = 1,1
+sin.x = -2,80,5
+sin.y = -1,70,2
+layerno = 0
+mask = 1 
+
+[VictoryBG]
+type  = normal
+spriteno = 0,23
+start = -800, 80
+delta = 1,1
+sin.x = -8,140,11
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[VictoryBG]
+type = anim
+actionno = 8
+start = -800,34
+sin.x = -8,140,11
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VictoryBG]
+type  = normal
+spriteno = 0,23
+start = 30, 0
+delta = 1,1
+sin.x = -12,110,14
+sin.y = 5,80,7
+layerno = 1
+mask = 1 
+
+[VictoryBG]
+type = anim
+actionno = 8
+start = 30,-46
+sin.x = -12,110,14
+sin.y = 5,80,7
+mask = 1
+layerno = 1
+
+[VictoryBG]
+type  = normal
+spriteno = 0,21
+start = -10, 0
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+[VictoryBG]
+type = anim
+actionno = 7
+start = -10,-46
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VictoryBG]
+type  = normal
+spriteno = 0,21
+start = 450, 80
+delta = 1,1
+sin.x = -5,120,8
+sin.y = 3,120,5
+layerno = 1
+mask = 1 
+
+
+[VictoryBG]
+type = anim
+actionno = 7
+start = 450,34
+sin.x = -5,120,8
+sin.y = 3,120,5
+mask = 1
+layerno = 1
+
+[VictoryBG]
+type  = normal
+spriteno = 0,23
+start = 150, 30
+delta = 1,1
+sin.x = -7,120,9
+sin.y = 3,100,5
+layerno = 1
+mask = 1 
+
+[VictoryBG]
+type = anim
+actionno = 8
+start = 150,-16
+sin.x = -7,120,9
+sin.y = 3,100,5
+mask = 1
+layerno = 1
+
+;-------------------------------------------------------------------
+
+
+[Win Screen]
+enabled = 1              
+wintext.text = "A"
+wintext.font = 1,0,0
+wintext.offset = 640,0
+wintext.displaytime = -1
+wintext.layerno = 2
+wintext.mask = 1
+wintext.scale = 1,1
+fadein.time = 32
+pose.time = 300
+fadeout.time = 64
+
+;-------------------------------------------------------------------
+
+[Default Ending]
+enabled = 1      
+storyboard = ending.def     
+
+;-------------------------------------------------------------------
+
+[End Credits]
+enabled = 1          
+storyboard = data/credits.def           
+
+;-------------------------------------------------------------------
+
+[Survival Results Screen]
+enabled = 1
+winstext.text = "R %i"  
+winstext.font = 2,0,1
+winstext.offset = 0,720
+winstext.displaytime = -1
+winstext.layerno = 2
+winstext.scale = 0.5,0.5
+fadein.time = 32
+show.time = 300
+fadeout.time = 64
+roundstowin = 1  
+;-------------------------------------------------------------------
+
+[Option Info]    
+title.font = 7,0,0
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;-------------------
+
+[OptionBGdef] 
+
+[OptionBG 1]
+type  = normal
+spriteno = 3,1
+layerno = 0
+start = 0,0
+mask = 0
+

@@ -1,0 +1,1242 @@
+
+;---------------------------------------------------------------------------
+;Nadanie Vara
+[Statedef 104099]
+type = S
+physics = S
+sprpriority = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+triggerall = !ishelper(40000)
+triggerall = !ishelper(50000)
+triggerall = !ishelper(60000)
+triggerall = !ishelper(80000)
+v = 46  
+value = 1
+
+[State 0, 1]
+type = ChangeAnim
+trigger1 = Anim != 5000+var(0)*10000
+value = 5000+var(0)*10000
+
+;ANTI CLONE - CLONE DESTROY -----
+[State 0, VarSet]
+type = VarSet
+trigger1 = !ishelper
+v = 39
+value = 1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = var(39) = 0
+triggerall = !ishelper(40000)
+triggerall = !ishelper(50000)
+triggerall = !ishelper(60000)
+triggerall = !ishelper(80000)
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time = 5
+trigger1 = !ishelper
+value = 104000
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time = 5
+trigger1 = ishelper(40000)
+value = 40000
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time = 5
+trigger1 = ishelper(50000)
+value = 50000
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time = 5
+trigger1 = ishelper(60000)
+value = 60000
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = time = 5
+trigger1 = ishelper(80000)
+value = 80000
+;---------------------------------------------------------------------------
+; Stand
+[Statedef 104000]
+type = S
+physics = S
+sprpriority = 0
+
+[State 0, Turn]
+type = Turn
+trigger1 = p2bodydist x < -5
+persistent = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+v = 46  
+value = 1
+
+[State 0, 1]
+type = ChangeAnim
+trigger1 = Anim != 0+var(0)*10000 && Anim != 5+var(0)*10000
+trigger2 = Anim = 5+var(0)*10000 && AnimTime = 0;Turn anim over
+value = 0+var(0)*10000
+
+[State 0, 1]
+type = ChangeAnim
+trigger1 = var(0) != 0
+trigger1 = Anim = 5
+value = 5+var(0)*10000
+
+[State 0, 2]
+type = VelSet
+trigger1 = Time = 0
+y = 0
+
+[State 0, 3] ;Stop moving if low velocity or 4 ticks pass
+type = VelSet
+trigger1 = abs(vel x) < 2
+trigger2 = Time = 4
+x = 0
+
+[State 0, 4] ;Are you dead?
+type = ChangeState
+trigger1 = !alive
+value = 5050
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = pos y != 0
+value = 104008
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104001
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Stand to Crouch
+[Statedef 104001]
+type    = C
+physics = C
+anim = 10
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+v = 46  
+value = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = var(0) != 0
+trigger1 = time = 0
+value = 10+var(0)*10000
+
+[State 10, 1]
+type = VelMul
+trigger1 = Time = 0
+x = .75
+
+[State 10, 2] ;Stop moving if low velocity
+type = VelSet
+trigger1 = abs(vel x) < Const(movement.crouch.friction.threshold)
+x = 0
+
+[State 10, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 104002
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Crouching
+[Statedef 104002]
+type    = C
+physics = C
+anim = 11
+sprpriority = 0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = var(0) != 0
+trigger1 = animtime = 0 || anim = 11
+value = 11+var(0)*10000
+
+[State 11, 1] ;Change from turning animation
+type = ChangeAnim
+trigger1 = Anim = 6+var(0)*10000 && AnimTime = 0
+value = 11+var(0)*10000
+
+[State 11, 1]
+type = ChangeAnim
+trigger1 = var(0) != 0
+trigger1 = Anim = 6
+value = 6+var(0)*10000
+
+[State 11, 2] ;Stop moving if low velocity
+type = VelSet
+trigger1 = abs(vel x) < Const(movement.crouch.friction.threshold)
+x = 0
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno != [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104003
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Crouch to Stand
+[Statedef 104003]
+type    = S
+physics = S
+anim = 12
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0
+value = 12+var(0)*10000
+
+[State 12, 1]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 104000
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Walk Fwd
+[Statedef 104004]
+type    = S
+physics = S
+sprpriority = 0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+trigger2 = animelem = 5
+value = F1
+
+[State 20, 1]
+type = VelSet
+trigger1 = 1
+x = 1.8
+
+[State 20, 3]
+type = ChangeAnim
+trigger1 = Anim != 20+var(0)*10000 && Anim != 5+var(0)*10000
+trigger2 = Anim = 5+var(0)*10000 && AnimTime = 0
+value = 20+var(0)*10000
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno != 20
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104000
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Walk Back
+[Statedef 104005]
+type    = S
+physics = S
+sprpriority = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+trigger2 = animelem = 5
+value = F1
+
+[State 20, 2]
+type = VelSet
+trigger1 = 1
+x = -1.8
+
+[State 20, 4]
+type = ChangeAnim
+trigger1 = Anim != 21+var(0)*10000 && Anim != 5+var(0)*10000
+trigger2 = Anim = 5+var(0)*10000 && AnimTime = 0
+value = 21+var(0)*10000
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno != 20
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104000
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104001
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Jump Start
+[Statedef 104006]
+type    = S
+physics = S
+anim = 40
+ctrl = 0
+sprpriority = 1
+facep2 = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = F3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && vel x = 0
+anim = F360
+pos = 0,0
+scale = 1,1
+postype = p1
+facing = 1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && vel x > 0
+anim = F370
+pos = 0,0
+scale = 1,1
+postype = p1
+facing = 1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && vel x < 0
+anim = F370
+pos = 0,0
+scale = 1,1
+postype = p1
+facing = -1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = var(0) = 2
+value = 0
+ctrl = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0
+value = 40+var(0)*10000
+
+[State 40, 1]
+type = VarSet
+trigger1 = Time = 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+sysvar(1) = enemy,sysvar(1)
+
+[State 40, 4]
+type = VelSet
+trigger1 = AnimTime = 0
+x = ifelse(sysvar(1)=0,0,ifelse(sysvar(1)=1,3.2,-3.2))
+y = -8.3
+
+[State 40, 5]
+type = VelSet
+trigger1 = AnimTime = 0
+trigger1 = prevstateno = 104010 ;RUN_FWD
+trigger1 = sysvar(1) = 1
+x = 5
+
+[State 40, 6]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 104008
+;---------------------------------------------------------------------------
+; AirJump Start
+[Statedef 104007]
+type    = A
+physics = N
+ctrl = 0
+velset = 0,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F3,1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F280
+pos = 0,0
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 0
+
+[State 45, 1]
+type = ChangeAnim
+trigger1 = SelfAnimExist(44+var(0)*10000)
+value = 44+var(0)*10000
+
+[State 45, 2]
+type = ChangeAnim
+trigger1 = !SelfAnimExist(44+var(0)*10000)
+value = 41+var(0)*10000
+
+[State 45, 3]
+type = VarSet
+trigger1 = Time = 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+sysvar(1) = enemy,sysvar(1)
+
+[State 45, 6]
+type = VelSet
+trigger1 = Time = 2
+x = ifelse(sysvar(1)=0,0,ifelse(sysvar(1)=1,2.7,-2.75))
+y = -8.2
+
+[State 45, 7]
+type = ChangeState
+trigger1 = Time = 2
+value = 104008
+;---------------------------------------------------------------------------
+; Jump Up
+[Statedef 104008]
+type    = A
+physics = A
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 50, 1]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 50, 2]
+type = ChangeAnim
+trigger1 = Time = 0
+value = ifelse((vel x)=0,41+var(0)*10000,ifelse((vel x)>0,42+var(0)*10000,43+var(0)*10000))
+
+[State 50, 3]
+type = ChangeAnim
+trigger1 = Vel y > Const720p(-8)
+trigger1 = SelfAnimExist(anim + 3)
+trigger1 = anim >= 41 && anim <= 43
+persistent = 0
+value = Anim+3
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 45
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104007
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70655 || enemy, stateno = 70656 || enemy, stateno = 70657 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104098
+;---------------------------------------------------------------------------
+; Jump Land
+[Statedef 104009]
+type    = S
+physics = S
+ctrl = 0
+anim = 47
+
+[State 0, Turn]
+type = Turn
+trigger1 = p2bodydist x < -20
+persistent = 0
+
+[State 0, AngleSet]
+type = AngleDraw
+trigger1 = 1
+value = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = F4
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 && prevstateno !=100
+anim = F290
+ID = 23
+pos = -1,3
+postype = p1  ;p2,front,back,left,right
+scale = 1.8,1.5
+sprpriority = 2
+ontop = 0
+ownpal = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0
+trigger1 = prevstateno != 1500
+value = 47+var(0)*10000
+
+[State 52, 1]
+type = VelSet
+trigger1 = Time = 0
+y = 0
+
+[State 52, 2]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 52, 4]
+type = VelSet
+trigger1 = abs(vel x) < Const(movement.stand.friction.threshold)
+x = 0
+
+[State 52, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 401000
+ctrl = 1
+
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104001
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Run forward
+[Statedef 104010]
+type    = S
+physics = S
+anim = 100
+sprpriority = 1
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+trigger2 = animelem = 2
+trigger3 = animelem = 5
+value = F2
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 1
+trigger2 = animelem = 2
+trigger3 = animelem = 5
+anim = F300
+ID = 24
+pos = -10,2
+postype = p1  ;p2,front,back,left,right
+scale = 1.2,1.2
+sprpriority = 2
+vel = -1.3,-1
+bindtime = 1
+ownpal = 0
+ontop = 0
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0
+value = 100+var(0)*10000
+
+[State 100, 1]
+type = VelSet
+trigger1 = 1
+x = 7.7
+
+[State 100, 2] ;Prevent run from canceling into walk
+type = AssertSpecial
+trigger1 = 1
+flag = NoWalk
+
+[State 100, 3] ;Prevent from turning
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno != 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104000
+
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104001
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 105
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104011
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;---------------------------------------------------------------------------
+; Hop backwards
+[Statedef 104011]
+type    = A
+physics = A
+ctrl = 0
+anim = 43
+sprpriority = 1
+
+[State 0, AfterImage]
+type = AfterImage
+trigger1 = time = 0
+time = 17
+length = 10
+palcolor = 256
+palinvertall = 0
+palbright = 0,0,0
+palcontrast = 160,150,150
+palpostbright = 0,0,0
+paladd = 5,0,0
+palmul = .65,.65,.75
+timegap = 1
+framegap = 1
+trans = add
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F370
+pos = 0,5
+scale = 1,1
+postype = p1
+facing = -1
+bindtime = 1
+removetime = -2
+sprpriority = 3
+ownpal = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = F3
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time= 0
+value = 43+var(0)*10000
+
+[State 105, 1]
+type = VelSet
+trigger1 = Time = 0
+x = -6.0
+y = -4.5
+
+[State 105, 3]
+type = ChangeState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 104012
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70655 || enemy, stateno = 70656 || enemy, stateno = 70657 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104098
+;---------------------------------------------------------------------------
+; Hop backwards (land)
+[Statedef 104012]
+type    = S
+physics = S
+ctrl = 0
+velset = -3,0
+anim = 47
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0 
+anim = F290
+ID = 23
+pos = -1,3
+postype = p1  ;p2,front,back,left,right
+scale = 1.8,1.5
+sprpriority = 2
+ontop = 0
+ownpal = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = F4
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time= 0
+value = 47+var(0)*10000
+
+[State 106, 1]
+type = VelSet
+trigger1 = Time = 0
+y = 0
+
+[State 106, 2]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 106, 3]
+type = MakeDust
+trigger1 = Time = 2
+pos = -5,-2
+spacing = 1
+
+[State 106, 4]
+type = VelSet
+trigger1 = abs(vel x) < Const(movement.stand.friction.threshold)
+x = 0
+
+[State 106, 5]
+type = ChangeState
+trigger1 = Time = 7
+value = 104000
+ctrl = 1
+
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = [10,11]
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104001
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x > 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104004
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 20
+trigger1 = enemy, vel x < 0
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104005
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 40
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104006
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 100
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+value = 104010
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = enemy, stateno = 70650 || enemy, stateno = 70651 || enemy, stateno = 70652 
+trigger1 = enemy, name = "Shikamaru"
+trigger1 = enemy, var(10) = 1
+trigger1 = var(46) = 1
+trigger1 = enemy, animelem = 1
+value = 104097
+;--------------
+;Kunai
+[StateDef 104097]
+type = S
+movetype = A
+physics = S
+juggle = 0
+poweradd = 0
+anim = 500+var(0)*1000
+ctrl = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F21,4
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+triggerall = var(20) <= 17
+v = 20
+value = 1
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem = 2
+triggerall = var(20) <= 18
+helpertype = normal;player
+name = "kunai"
+ID = 70700
+stateno = 70700
+pos = 10,-40
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State 310, end]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 104000
+;--------------
+;Kunai Air
+[StateDef 104098]
+type = A
+movetype = A
+physics = A
+juggle = 0
+poweradd = 0
+anim = 505+var(0)*1000
+ctrl = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F21,4
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+triggerall = var(20) <= 17
+v = 20
+value = 1
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem = 2
+triggerall = var(20) <= 18
+helpertype = normal;player
+name = "kunai"
+ID = 70701
+stateno = 70701
+pos = 10,-45
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+
+[State 310, end]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 104008
+ctrl = 1

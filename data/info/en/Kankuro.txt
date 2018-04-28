@@ -1,0 +1,554 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+- available karasu
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A
+[Triggers]
+- on ground
+- available karasu
+[Info]
+
+{Combo 4}
+[Command]
+A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+- available kuroari
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X
+[Triggers]
+- on ground
+- available sanshouo
+[Info]
+
+{Combo 8}
+[Command]
+X
+[Triggers]
+- in air
+- available sasori
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Summon Karasu}
+[Command]
+(Z),FF
+[Triggers]
+- on ground
+- chakra 500
+- no sasori
+[Info]
+- available once
+
+{Summon Kuroari and Sanshouo}
+[Command]
+(Z),DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- available once
+
+{Summon Sasori}
+[Command]
+(Z),BB
+[Triggers]
+- on ground
+- chakra 500 
+- no karasu
+[Info]
+- available once
+
+{-----Karasu Control------}
+{Karasu - Move}
+[Command]
+B,Y,X,Z
+[Triggers]
+[Info]
+- press B to move upward
+- press Y to move downward
+- press X to move backward
+- press Z to move forward
+
+{Karasu - Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+- short distance
+[Info]
+
+{Karasu - Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Karasu - Counter}
+[Command]
+A
+[Triggers]
+- on ground
+- during being hit
+[Info]
+- avoids attack
+
+{Karasu - Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20/20
+[Info]
+
+{Karasu - Combo 2}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20
+- requires sanshouo
+- in sanshouo
+[Info]
+
+{Karasu - Combo 3}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20
+- requires kuroari
+[Info]
+
+{Karasu - Senbon}
+[Command]
+(C),DD,UU
+[Triggers]
+- chakra 250 for 
+  each puppet
+[Info]
+
+{Karasu - Kunai}
+[Command]
+(C),UU,DD
+[Triggers]
+- chakra 200
+[Info]
+
+{Karasu - Exploding Kunai}
+[Command]
+(C),UU,BB
+[Triggers]
+- chakra 150
+[Info]
+
+{Karasu - Smoke Bomb}
+[Command]
+(C),UU,FF
+[Triggers]
+- chakra 100
+[Info]
+
+{Karasu - Poison Bombs}
+[Command]
+(C),DD,BB
+[Triggers]
+- chakra 200
+[Info]
+
+{Karasu - Poison Knife}
+[Command]
+(C),DD,FF
+[Triggers]
+- chakra 200
+[Info]
+- paralyzes
+
+{Karasu - Hand Killer}
+[Command]
+(C),BB,UU
+[Triggers]
+- chakra 750 for 
+  each puppet
+[Info]
+
+{Karasu - Puppet Rendan}
+[Command]
+(C),FF,DD
+[Triggers]
+- chakra 1000
+[Info]
+
+{Karasu - Tatsumaki}
+[Command]
+(C),FF,UU
+[Triggers]
+- chakra 1500
+[Info]
+
+{Karasu - Kushudan}
+[Command]
+(C),FF,BB
+[Triggers]
+- chakra 1000
+[Info]
+
+
+{-----Kuroari Control-----}
+
+{Kuroari - Senbon}
+[Command]
+(C),DD,UU
+[Triggers]
+- chakra 250 for 
+  each puppet
+[Info]
+
+{Kuroari - Hand Killer}
+[Command]
+(C),BB,UU
+[Triggers]
+- chakra 750 for 
+  each puppet
+[Info]
+
+{Kuroari - Hyaku Renpatsu}
+[Command]
+(C),BB,DD
+[Triggers]
+- chakra 2000
+- requires karasu 
+[Info]
+
+{Kuroari - Kurohigi: Sandai Hiren}
+[Command]
+(C),BB,DD
+[Triggers]
+- chakra 2000
+- requires sasori
+[Info]
+
+{Kuroari - Kurohigi: Kiki Nihatsu}
+[Command]
+(C),Z
+[Triggers]
+- chakra 2000
+[Info]
+- hold to charge
+- at full bar performs
+  kurohigi: kiki ippatsu
+
+{-----Sanshouo Control-----}
+
+{Sanshouo - Fire}
+[Command]
+(C),BB,FF
+[Triggers]
+- chakra 500/1000/2000
+[Info]
+
+{------Sasori Control-------}
+
+{Sasori - Move}
+[Command]
+B,Y,X,Z
+[Triggers]
+[Info]
+- press B to move upward
+- press Y to move downward
+- press X to move backward
+- press Z to move forward
+
+{Sasori - Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+- short distance
+[Info]
+
+{Sasori - Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Sasori - Counter}
+[Command]
+A
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{Sasori - Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20/20
+[Info]
+
+{Sasori - Combo 2}
+[Command]
+(DD),A,A,A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20/20
+[Info]
+
+{Sasori - Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20/20
+[Info]
+
+{Sasori - Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+- chakra 20/20/20/20
+- after Sasori forward
+  shunshin
+[Info]
+
+{Sasori - Tail Binding}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+- snares enemy
+
+{Sasori - Tail Smash}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- during tail bind
+[Info]
+
+{Sasori - Tail Slash}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- during tail bind
+[Info]
+
+{Sasori - Senbon}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 250 for 
+  each puppet
+[Info]
+
+{Sasori - Hand Killer}
+[Command]
+(C),BB,UU
+[Triggers]
+- chakra 750 for 
+  each puppet
+[Info]
+
+{Sasori - Poison Bomb}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+
+{Sasori - Slash}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Sasori - Fire and Water Combo}
+[Command]
+(C),UU,DD,C,C
+[Triggers]
+- on ground
+- chakra 150/150/300
+[Info]
+
+{Sasori - Fire Charge}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1000/2000/4000
+[Info]
+- hold to charge
+- at full bar performs
+  soen katsugeki
+
+{Sasori - Water Pistols}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- hold
+
+{Sasori - Flame}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Sasori - Akahigi: Kiki Sankaku}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{-------Ultimates---------}
+
+{Kurohigi: Kiki Ippatsu}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+- requires karasu
+- requires kuroari
+- chakra 3500
+[Info]
+- fully charged 
+  kurohigi: kiki nihatsu
+
+{Kurohigi: Soen Katsugeki}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- requires sasori
+- chakra 4000
+[Info]
+- fully charged fire

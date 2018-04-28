@@ -1,0 +1,465 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai Combo}
+[Command]
+B,B,B,B,B,B
+[Triggers]
+- on ground
+[Info]
+
+{Air Kunai Combo}
+[Command]
+B,B,B,B
+[Triggers]
+- in air
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Shuriken Combo}
+[Command]
+Y,Y,Y,Y,Y
+[Triggers]
+- on ground
+[Info]
+
+{Air Shuriken Combo}
+[Command]
+Y,Y,Y
+[Triggers]
+- in air
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Smoke Bomb}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+[Info]
+
+{Makabishi}
+[Command]
+(DD),Y
+[Triggers]
+[Info]
+
+{Grasper}
+[Command]
+(BB),Y
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- snares enemy
+
+{Fuma Shuriken}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+
+{Chain-Ball}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Kunai Ball}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+
+{RopeTrap }
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- snares enemy
+
+{Senbon Parachute}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 450
+[Info]
+
+{Weapons Rain}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/1000/2500
+[Info]
+- hold to charge
+
+{Halberd}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- smash X
+
+{Sogu: Gurai Tekku}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Soshoryu}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Weapon Seal}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 750
+[Info]
+- resets weapons limit
+
+{Air Shurikens}
+[Command]
+(C),UU
+[Triggers]
+- in air
+- chakra 100
+[Info]
+
+{Air Balls}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Air Exploding Kunai Series}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Air Smoke Bomb Combo}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 2700
+[Info]
+
+{Multi Weapons Scroll Air}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 1500
+[Info]
+
+{Staff Mode}
+[Command]
+(C),Z
+[Triggers]
+- chakra 200
+[Info]
+- summons staff
+
+{Staff Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 4}
+[Command]
+A,A
+[Triggers]
+- in air
+- requires staff
+[Info]
+
+{Staff Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 7}
+[Command]
+(FF),X,X,X
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Combo 8}
+[Command]
+X
+[Triggers]
+- in air
+- requires staff
+[Info]
+
+{Staff Kick}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Enemy Toss}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Throw}
+[Command]
+C
+[Triggers]
+- requires staff
+[Info]
+
+{Staff Quick Attack}
+[Command]
+(DD),C
+[Triggers]
+- on ground
+- requires staff
+[Info]
+
+{Staff Guard}
+[Command]
+(Z)
+[Triggers]
+- requires staff
+[Info]
+- hold Z
+
+{Staff Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+- requires staff
+[Info]
+
+{Staff Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+- requires staff
+[Info]
+
+{Staff Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+- requires staff
+[Info]
+
+{Staff Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+- requires staff
+[Info]
+
+{-------Ultimates---------}
+
+{Bashosen: Kaze no Maki}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 4000
+- medium distance
+[Info]
+
+{Sogu: Tensasai}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 4000
+[Info]
+
+

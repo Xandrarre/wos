@@ -1,0 +1,1715 @@
+
+;Okr¹g
+[Statedef 70300]
+type    = S
+movetype= I
+physics = S
+anim = 70299 + palno
+ctrl = 0
+sprpriority = -3
+
+;Zywioly
+;--------------------------------------------------
+
+[State 0, - Katon - ]
+type = ParentVarAdd
+triggerall = parent, var(51) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 51
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(51) <= 0
+trigger2 = Parent, var(53) != 0
+trigger3 = Parent, stateno = [170,194]
+trigger4 = Parent, stateno = 5150
+triggerall = Parent, stateno != [109910,109919]
+v = 51
+value = 0
+
+[State 0, - Raiton - ]
+type = ParentVarAdd
+triggerall = parent, var(52) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 52
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(52) <= 0
+trigger2 = Parent, var(54) != 0
+trigger3 = Parent, stateno = [170,194]
+trigger4 = Parent, stateno = 5150
+triggerall = Parent, stateno != [109920,109929]
+v = 52
+value = 0
+
+[State 0, - Suiton - ]
+type = ParentVarAdd
+triggerall = parent, var(53) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 53
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(53) <= 0
+trigger2 = Parent, var(55) != 0
+trigger3 = Parent, stateno = [170,194]
+trigger4 = Parent, stateno = 5150
+triggerall = Parent, stateno != [109930,109939]
+v = 53
+value = 0
+
+[State 0, - Fuuton - ]
+type = ParentVarAdd
+triggerall = parent, var(54) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 54
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(54) <= 0
+;trigger2 = Parent, var(51) != 0
+trigger2 = Parent, stateno = [170,194]
+trigger3 = Parent, stateno = 5150
+triggerall = Parent, stateno != [109940,109949]
+v = 54
+value = 0
+
+[State 0, - Doton - ]
+type = ParentVarAdd
+triggerall = parent, var(55) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 55
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(55) <= 0
+trigger2 = Parent, var(52) != 0
+trigger3 = Parent, stateno = [170,194]
+trigger4 = Parent, stateno = 5150
+triggerall = stateno != [109950,109959]
+v = 55
+value = 0
+
+[State 0, - Amaterasu - ]
+type = ParentVarAdd
+triggerall = parent, var(56) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 56
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(56) <= 0
+trigger2 = Parent, stateno = [170,194]
+trigger3 = Parent, stateno = 5150
+triggerall = Parent, stateno != [109960,109969]
+v = 56
+value = 0
+
+[State 0, - Kuroi Kaminari - ]
+type = ParentVarAdd
+triggerall = parent, var(57) > 0
+trigger1 = parent, stateno != [0,199]
+trigger1 = parent, stateno != [5000,5299]
+v = 57
+value = -1
+
+[State 0, VarSet]
+type = ParentVarSet
+trigger1 = Parent, var(57) <= 0
+trigger2 = Parent, stateno = [170,194]
+trigger3 = Parent, stateno = 5150
+triggerall = Parent,  stateno != [109970,109979]
+v = 57
+value = 0
+
+;--------------------------------------------------
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 256,256
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+scale = 0.36*1.176,0.12*1.176
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = root,stateno = 1041
+value = -150
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = parent, pos x
+y = 0
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = root, life = 0
+;----------------------------------------------------------------
+;Fatality hit
+[Statedef 70400]
+type = S
+movetype= A
+physics = S
+juggle = 1
+velset = 0,0
+ctrl = 0
+anim = 70400
+poweradd = -1
+sprpriority = -10
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, SuperPause]
+type = SuperPause
+trigger1 = time = 1
+time = 50
+anim = 85865
+darken = 0
+
+[State 1533,excplod]
+type = Explod
+trigger1 = time = 1
+anim = F70401 + random%4
+postype = p1
+pos = 0,0
+name = "plama"
+bindtime = 1
+sprpriority = -25
+facing = 1
+ownpal = 1
+ontop = 0
+removetime = 1
+scale = 1,1
+
+[State 1533,excplod]
+type = Explod
+trigger1 = time = 1
+anim = F70405
+postype = front
+pos = cond(root,facing = 1,-380,0),0
+name = "paski ruchu"
+bindtime = 1
+sprpriority = 20
+ownpal = 1
+ontop = 1
+trans = sub
+removetime = 1
+scale = 1,1
+
+[State 1533,excplod]
+type = Explod
+trigger1 = time = 1
+anim = F70406 + random%4
+postype = p1
+pos = 0,0
+name = "znak"
+bindtime = 1
+sprpriority = -20
+facing = 1
+ownpal = 1
+ontop = 0
+removetime = 1
+scale = 0.7,0.7
+
+[State 1533,excplod]
+type = Explod
+trigger1 = root,statetype != L && time = 1
+anim = root,anim
+postype = p1
+pos = 0,0
+name = "widmo postaci"
+bindtime = -2
+sprpriority = 1
+facing = 1
+ownpal = 1
+ontop = 0
+trans = add
+removetime = 1
+scale = 1,1
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = time = 1
+time = 50
+value = 255,255,255
+under = 1
+
+[State 1531, 3]
+type = Destroyself
+trigger1 = time = 999999999
+
+;----------------------------------------------------------------
+;Charge Chakra
+[Statedef 70500]
+type    = S
+movetype= H
+physics = S
+juggle  = 4
+poweradd= 0
+ctrl = 0
+anim = 70500+var(0)*1000
+sprpriority = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+triggerall = var(0) = 0 || var(0) = 1
+value = S1,0+random%14
+volume = 256
+channel = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+triggerall = var(0) = 2
+value = S2,0+random%9
+volume = 256
+channel = 2
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = F17,0
+
+[State 0, Helper]
+type = Helper
+trigger1 = animelem = 4
+helpertype = normal
+name = "Effect charge"
+ID = 70502           
+stateno = 70502
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 1
+size.xscale = 1
+size.yscale = 1
+
+[State 1520]
+type = Explod
+trigger1 = animelem = 4
+trigger2 = animelem = 5
+trigger3 = animelem = 6
+trigger4 = animelem = 7
+trigger5 = animelem = 8
+trigger6 = animelem = 9
+trigger7 = animelem = 10
+trigger8 = animelem = 11
+trigger9 = animelem = 12
+trigger10 = animelem = 13
+anim = F402
+ID = 402
+pos = -30+random%60,-5
+postype = p1  ;p2,front,back,left,right
+vel = 0,-pi-0.5+random%2
+facing = 1
+name = "œwietliki"
+vfacing = 1
+bindtime = 1
+removetime = 33
+scale = (0.025*var(18)),(0.025*var(18))
+sprpriority = cond(timemod=2,1,-1,1)
+ontop = 0
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0, VarRandom]
+type = VarRandom
+trigger1 = timemod = 2,1
+v = 18
+range = 2,5
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 5
+value = F30,0
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = 1
+value = 8-power/666
+
+[State 1520, destroyself]
+type = ChangeState
+trigger1 = var(50) = 0 && command != "hold_s"
+trigger2 = var(50) = 1 && random = [0,10]
+trigger3 = power >= 4000
+trigger4 = var(50) = 1 && p2bodydist x = [-70,70]
+trigger4 = random = [50,71+var(49)*(var(49)/10)]
+value = 70501
+ctrl = 1
+
+[Statedef 70501]
+type    = S
+movetype= H
+physics = S
+juggle  = 1
+poweradd= 0
+ctrl = 0
+velset = 0,0
+anim = 70501+var(0)*1000
+sprpriority = 0
+
+[State 1521, destroyself]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;Effect Charge
+[Statedef 70502]
+type    = S
+anim = 70502
+sprpriority = 1
+
+[State 0, BindToRoot] 
+type = BindToRoot 
+trigger1 = 1 
+pos = 0,0 
+
+[State 0]
+type = Explod
+trigger1 = timemod = 15,1
+anim = F290
+ID = 403
+pos = 0,2
+postype = p1
+name = "dym przód"
+scale = 1.3,1.3
+ownpal = 1
+ontop = 0
+facing = -1
+ignorehitpause = 1
+sprpriority = 2
+bindtime = -1
+removetime = -2
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+trans = addalpha
+alpha = 256,256
+
+[State 0]
+type = Explod
+triggerall = numexplod(4031) = 0
+trigger1 = animelem = 1
+anim = F403
+ID = 4031
+pos = 0,2
+postype = p1
+name = "aura paski"
+scale = 1.1,1.1
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 2
+bindtime = -1
+removetime = -1
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+trans = addalpha
+alpha = 150,256
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+triggerall = parent,var(0) = 0
+anim = F404
+ID = 404
+pos = 0,5
+postype = p1
+name = "aura"
+scale = 2.42,2.75
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 1
+bindtime = -1
+removetime = -1
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+triggerall = parent,var(0) = 1
+anim = F404
+ID = 404
+pos = 0,5
+postype = p1
+name = "aura"
+scale = 2.5,2.5
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 1
+bindtime = -1
+removetime = -1
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+triggerall = parent,var(0) = 2
+anim = F404
+ID = 404
+pos = 0,5
+postype = p1
+name = "aura"
+scale = 2.75,2.5
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 1
+bindtime = -1
+removetime = -1
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+anim = F401
+ID = 401
+pos = -7,2
+postype = p1
+name = "dym lewa"
+scale = 0.7,0.7
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 3
+bindtime=-1
+removetime= -1
+removeongethit= 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+anim = F401
+ID = 4011
+pos = 7,2
+postype = p1
+facing = -1
+name = "dym prawa"
+scale = 0.7,0.7
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = 3
+bindtime=-1
+removetime= -1
+removeongethit= 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 1520]
+type = RemoveExplod
+trigger1 = root,stateno != 70500
+ID = 403
+
+[State 1520]
+type = RemoveExplod
+trigger1 = root,stateno != 70500
+ID = 4031
+
+[State 1520]
+type = RemoveExplod
+trigger1 = root,stateno != 70500
+ID = 404
+
+[State 1520]
+type = RemoveExplod
+trigger1 = root,stateno != 70500
+ID = 401
+
+[State 1520]
+type = RemoveExplod
+trigger1 = root,stateno != 70500
+ID = 4011
+
+[State 1520, destroyself]
+type = Destroyself
+trigger1 = root,stateno != 70500
+removeexplods = 1
+
+;----------------------------------------------------------------
+;Teleport
+[Statedef 70600]
+anim = 70600+var(0)*1000
+ctrl = 0
+poweradd = -40
+velset = 0,0
+sprpriority = 3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 5
+value = F17,0
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = time > 35
+value = -4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 7
+value = F15,6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 7
+value = S6,0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time > 10
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 2
+
+[State 310, 2]
+type = Explod
+trigger1 = time = 15
+anim = F290
+ID = 290
+pos = 0,0
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 4
+scale = 1.5,1.5
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0 && pos y > -5 && anim != 70600+var(0)*1000
+value = 70600+var(0)*1000
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = 1
+statetype = S      ;S,A,C,L
+physics = S         ;A,C,S,N
+
+[State 310, 1]
+type = VelAdd
+trigger1 = var(50) = 0 && command = "holdfwd"
+triggerall = time > 35
+trigger2 = var(50) = 1 && p2bodydist x > 0
+x = 2
+
+[State 310, 1]
+type = VelAdd
+trigger1 = var(50) = 0 && command = "holdback"
+triggerall = time > 35
+trigger2 = var(50) = 1 && p2bodydist x < 0
+x = -2
+
+[State -3]
+type = AfterImage
+trigger1 = time = 0
+time = 1
+length = 1
+trans = add
+
+[State 310, 7]
+type = ChangeState
+trigger1 = command != "hold_y"
+trigger1 = var(50) = 0
+trigger2 = power <= 5
+trigger3 = time = 100
+triggerall = time > 50
+trigger4 = vel x > 0 && p2bodydist x < 80
+trigger4 = var(50) = 1
+trigger5 = vel x < 0 && p2bodydist x > 400
+trigger5 = var(50) = 1
+trigger6 = random = [0,50-var(49)*(var(49))/100]
+trigger6 = var(50) = 1
+value = 70601
+ctrl = 0
+
+;Wall Run
+[state -1, Wall Run]
+type = changestate
+value = 900
+trigger1 = backedgebodydist <= 3 && backedgebodydist > -3
+trigger2 = frontedgebodydist <= 3 && frontedgebodydist > -3
+triggerall = time > 40
+;----------------------------------------------------------------
+;Teleport
+[Statedef 70601]
+anim = 70601+var(0)*1000
+ctrl = 0
+poweradd = 0
+velset = 0,0
+sprpriority = 3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = F15,6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S6,0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time <= 20
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 2
+
+[State 310, 2]
+type = Explod
+trigger1 = time = 15
+anim = F290
+ID = 290
+pos = 0,0
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 4
+scale = 1.5,1.5
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20 && random = [0,99]
+value = S1,2
+volume = 256
+channel = 2
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = 1
+statetype = S      ;S,A,C,L
+physics = S         ;A,C,S,N
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+x = 0
+
+[State 310, 1]
+type = Posset
+trigger1 = 1
+y = 0
+
+[State -3]
+type = AfterImage
+trigger1 = time = 0
+time = 1
+length = 1
+trans = add
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && enemy, pos x > pos x
+trigger2 = facing = 1 && enemy, pos x < pos x
+
+[State 310, 7]
+type = ChangeState
+trigger1 = animtime = 0
+triggerall = pos y = 0
+value = 0
+ctrl = 1
+;---------------------------------------------------------------------------
+;Kawarimi
+[Statedef 70800]
+;type    = S
+movetype= I
+;physics = S
+juggle  = 4
+ctrl = 0
+velset = 0,0
+anim = 0+var(0)*10000
+
+;---------------------efekty
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 30
+
+
+[State 0, Prawa]
+type = Explod
+trigger1 = time = 0
+trigger2 = time = 17
+anim = F696
+ownpal = 1
+ID = 900
+pos = 10+random%10,-30-random%20
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 9999
+pausemovetime = 9999
+vel = 0+random%2,-1-random%3
+scale = 0.6,0.6
+sprpriority = 5
+ontop = 0
+
+[State 0, Srodek]
+type = Explod
+trigger1 = time = 0
+trigger2 = time = 17
+anim = F696
+ownpal = 1
+ID = 900
+pos = -5+random%10,-20-random%10
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 9999
+pausemovetime = 9999
+vel = -1+random%3,-1-random%2
+scale = 1,1
+sprpriority = 5
+ontop = 0
+
+[State 0, Lewa]
+type = Explod
+trigger1 = time = 0
+trigger2 = time = 17
+anim = F696
+ownpal = 1
+ID = 900
+pos = -10-random%10,-30-random%20
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+supermovetime = 9999
+pausemovetime = 9999
+vel = 0-random%2,-1-random%3
+scale = 0.6,0.6
+sprpriority = 5
+ontop = 0
+
+[State 310, 2]
+type = Explod
+trigger1 = time = 17 && pos y < -5
+anim = F350
+ID = 350
+pos = 0,0
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 4
+scale = 2.5,2.5
+
+[State 310, 2]
+type = Explod
+trigger1 = time = 17 && pos y > -5
+anim = F290
+ID = 290
+pos = 0,0
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 4
+scale = 1.5,1.5
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+trigger2 = time = 17
+value = F9,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+trigger2 = time = 17
+value = F9,2
+
+[State 500, Explod]
+type = Explod
+trigger1 = Time = 7
+anim = F700
+ID = 450
+pos = 0,-30
+postype = p1  ;p2,front,back,left,right
+facing = 1
+removetime = 30
+scale = 2,2
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = time < 20 
+flag = invisible
+
+;--------------przemieszczenie
+
+[State 500, normal]
+type = Posadd
+triggerall = Time = 17
+trigger1 = Abs(p2dist x) > 110
+trigger1 = backedgedist > 50
+x = -80*cond(enemy(cond((enemy(0),alive),0,1)),pos x > pos x,1,-1)*facing
+
+[State 500, obok scian]
+type = Posadd
+triggerall = Time = 16
+trigger1 = backedgedist <= 50
+y = -90
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+triggerall = Time = 16
+trigger1 = backedgedist <= 50
+value = 45
+
+[State 500, obok przeciwnika]
+type = Posadd
+triggerall = Time = 15
+trigger1 = Abs(p2dist x) <= 110
+x = 150*cond(enemy(cond((enemy(0),alive),0,1)),pos x > pos x,1,-1)*facing
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && enemy(cond((enemy(0),alive),0,1)), pos x > pos x
+trigger2 = facing = 1 && enemy(cond((enemy(0),alive),0,1)), pos x < pos x
+triggerall = time = 20
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+x = 0
+y = 0
+
+;----------powrót
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+value = S1,4+random%3
+volume = 256
+channel = 2
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time = 25 
+trigger1 = pos y >= 0
+y = 0
+
+[State 500]
+type = ChangeState
+trigger1 = Time = 25
+trigger1 = pos y = 0
+value = 0
+ctrl = 1
+
+[State 500]
+type = ChangeState
+trigger1 = Time = 25
+trigger1 = pos y < 0 
+value = 50
+ctrl = 1
+;-----------------
+;JUTSU SYSTEM
+[StateDef 70850]
+type = S
+movetype= I
+physics = S
+ctrl = 0
+anim = cond(pos y = 0,70850+var(0)*1000,70860+var(0)*1000)
+poweradd = 0
+sprpriority = 0
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = var(50) = 1 && time > 5
+value = 1
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = pos y = 0
+statetype = S    
+movetype = I       
+physics = S
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = pos y != 0
+statetype = A   
+movetype = I       
+physics = A
+
+[State 0, Podstawa]
+type = ChangeAnim
+triggerall = anim != cond(pos y = 0,70850+var(0)*1000,70860+var(0)*1000)
+trigger1 = animelem = 3
+trigger1 = anim = [70851+var(0)*1000,70864+var(0)*1000]
+value = cond(pos y = 0,70850+var(0)*1000,70860+var(0)*1000)
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+triggerall = var(0) = 0 || var(0) = 1
+value = S1,0+random%14
+volume = 256
+channel = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+triggerall = var(0) = 2
+value = S2,0+random%9
+volume = 256
+channel = 2
+
+[State 0, End]
+type = ChangeState
+trigger1 = command != "hold_c" && command != "hold_z"
+trigger1 = pos y = 0
+value = 0
+ctrl = 1
+
+[State 0, End]
+type = ChangeState
+trigger1 = command != "hold_c" && command != "hold_z"
+trigger1 = pos y != 0
+value = 50
+ctrl = 1
+
+;----------------------------------------------------------------
+;Licznik lewa strona
+[Statedef 77000]
+type    = S
+movetype= I
+physics = S
+anim = 70251
+ontop = 0
+sprpriority = 250
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = timemod = 360,0
+triggerall = parent,var(10) < 9
+v = 10
+value = 1
+
+[State 213, Okrag]
+type = Explod
+trigger1 = 1
+ID = 700005555
+anim = 70250
+pos = -370, 191
+postype = front
+ontop = 0
+removetime = 1
+sprpriority = 249
+scale =  0.297,0.2968
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(20)%10
+pos = -370,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(20)-20)-parent,var(20)%10)/10 + cond(parent,var(20)%10=0,1,0)
+pos = -373,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, klony]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70220 + parent,var(10)%10
+pos = -361.5,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, portret]
+type = Explod
+trigger1 = Time > 1
+ID = 70450
+anim = 70450+parent,var(0)*1000
+pos = -345,30
+postype = front
+ontop = 0
+sprpriority = 250
+scale =  0.2965,0.3
+removetime = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = 1 && time = 0 && var(14) = 0
+v = 14
+value = -130
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = -1 && time = 0 && var(14) = 0
+v = 14
+value = 130
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && time = 2
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 0,256
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = var(14)
+y = 20
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+;-------------------------
+[State 0, Skala X]              ;-------------------------------skala x
+type = VarSet
+trigger1 = time = 0
+fvar(10)= 0.6663
+
+[State 0, Skala Y]              ;-------------------------------skala y
+type = VarSet
+trigger1 = time = 0
+fvar(11) = 0.675
+
+[State 213, Kawarimi Ramka]
+type = Explod
+trigger1 = 1
+ID = 70105-var(10)*0.01
+anim = F70105-var(10)*0.01
+pos = -298, 33
+postype = front
+ontop = 0
+removetime = 1
+sprpriority = 250
+scale = fvar(10),fvar(11)
+ownpal = 0
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = numexplod(70105-var(10)*0.01-1)!=0
+id = 70105-var(10)*0.01-1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = numexplod(70105-var(10)*0.01+1)!=0
+id = 70105-var(10)*0.01+1
+
+[State 213, Kawarimi Pasek]
+type = Explod
+trigger1 = numexplod(70110) = 0
+ID = 70110
+anim = F70106
+pos = -298, 33
+postype = front
+ontop = 0
+removetime = -1
+sprpriority = 249
+scale = fvar(10),fvar(11)
+ownpal = 0
+
+[State 213, Dlugosc]
+type = ModifyExplod
+trigger1 = 1
+ID = 70110
+scale = fvar(10)*(500-var(10))*0.002,fvar(11)
+postype = front
+pos = -298, 33
+ownpal = 0
+
+[State 0, VarSet]
+type = VarAdd
+trigger1 = root, stateno = 70800
+triggerall = root,time = 1
+v = 10
+value= 100
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(10) > 500
+v = 10
+value= 500
+
+[State 0, VarSet]
+type = VarAdd
+trigger1 = var(10) > 0
+trigger1 = timemod = 8,0     ;------------------------------szybkosc ladowania paska
+v = 10
+value= -1
+
+;ten trigger trzeba dodac do kazdego kawarimi
+;triggerall = helper(70000),var(10) <= 400
+
+;---------------------------------------------------------------------------
+;Licznik prawa strona
+[Statedef 78000]
+type    = S
+movetype= I
+physics = S
+anim = 70252
+ontop = 0
+sprpriority = 250
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = timemod = 360,0
+triggerall = parent,var(10) < 9
+v = 10
+value = 1
+
+[State 213, Okrag]
+type = Explod
+trigger1 = 1
+ID = 700005555
+anim = 70250
+pos = 0, 0
+postype = front
+ontop = 0
+facing = -1
+removetime = 1
+sprpriority = 249
+scale = 0.297,0.2968
+
+[State 213, Okrag]
+type = modifyExplod
+trigger1 = 1
+pos = -10, 191
+postype = front
+scale = 0.297,0.2968
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(20)%10
+pos = -10,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(20)-20)-parent,var(20)%10)/10 + cond(parent,var(20)%10=0,1,0)
+pos = -13,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, klony]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70220 + parent,var(10)%10
+pos = -21,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, portret]
+type = Explod
+trigger1 = Time > 1
+ID = 70451
+anim = 70451+parent,var(0)*1000
+pos = -38,30
+postype = front
+ontop = 0
+sprpriority = 250
+scale =  0.2965,0.3
+removetime = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = 1 && time = 0 && var(14) = 0
+v = 14
+value = -130
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = -1 && time = 0 && var(14) = 0
+v = 14
+value = 130
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && time = 2
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 0,256
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = var(14)
+y = 20
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+;-------------------------
+[State 0, Skala X]              ;-------------------------------skala x
+type = VarSet
+trigger1 = time = 0
+fvar(10)= 0.6663
+
+[State 0, Skala Y]              ;-------------------------------skala y
+type = VarSet
+trigger1 = time = 0
+fvar(11) = 0.675
+
+[State 213, Kawarimi Ramka]
+type = Explod
+trigger1 = 1
+ID = 70105-var(10)*0.01
+anim = F70105-var(10)*0.01
+pos = -81.7, 33
+postype = front
+ontop = 0
+facing = -1
+removetime = 1
+sprpriority = 250
+scale = fvar(10),fvar(11)
+ownpal = 0
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = numexplod(70105-var(10)*0.01-1)!=0
+id = 70105-var(10)*0.01-1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = numexplod(70105-var(10)*0.01+1)!=0
+id = 70105-var(10)*0.01+1
+
+[State 213, Kawarimi Pasek]
+type = Explod
+trigger1 = numexplod(70110) = 0
+ID = 70110
+anim = F70106
+pos = -81.7, 33
+postype = front
+ontop = 0
+facing = -1
+removetime = -1
+sprpriority = 249
+scale = fvar(10),fvar(11)
+ownpal = 0
+
+[State 213, Dlugosc]
+type = ModifyExplod
+trigger1 = 1
+ID = 70110
+scale = fvar(10)*(500-var(10))*0.002,fvar(11)
+postype = front
+pos = -81.7, 33
+ownpal = 0
+
+[State 0, VarSet]
+type = VarAdd
+trigger1 = root, stateno = 70800
+triggerall = root,time = 1
+v = 10
+value= 100
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(10) > 500
+v = 10
+value= 500
+
+[State 0, VarSet]
+type = VarAdd
+trigger1 = var(10) > 0
+trigger1 = timemod = 8,0     ;------------------------------szybkosc ladowania paska
+v = 10
+value= -1
+
+;ten trigger trzeba dodac do kazdego kawarimi
+;triggerall = helper(70000),var(10) <= 400
+
+;---------------------------------------------------------------------------
+
+;Liczniki wersja dla dwóch graczy.
+
+;----------------------------------------------------------------
+;Licznik lewa strona
+[Statedef 77001]
+type    = S
+movetype= I
+physics = S
+anim = 70251
+ontop = 0
+sprpriority = 250
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = timemod = 360,0
+triggerall = parent,var(10) < 9
+v = 10
+value = 1
+
+[State 213, Okrag]
+type = Explod
+trigger1 = 1
+ID = 700005555
+anim = 70250
+pos = 0, 0
+postype = front
+ontop = 0
+removetime = 1
+sprpriority = 249
+scale =  0.297,0.2968
+
+[State 213, Okrag]
+type = modifyExplod
+trigger1 = 1
+pos = -310, 191
+postype = front
+scale = 0.297,0.2968
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(20)%10
+pos = -310,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(20)-20)-parent,var(20)%10)/10 + cond(parent,var(20)%10=0,1,0)
+pos = -313,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, klony]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70220 + parent,var(10)%10
+pos = -301.5,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, portret]
+type = Explod
+trigger1 = Time > 1
+ID = 70460
+anim = 70460+parent,var(0)*1000
+pos = -346,30
+postype = front
+ontop = 0
+sprpriority = 251
+scale =  0.2965,0.3
+removetime = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = 1 && time = 0 && var(14) = 0
+v = 14
+value = -130
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = -1 && time = 0 && var(14) = 0
+v = 14
+value = 130
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && time = 2
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 0,256
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = var(14)
+y = 20
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+;---------------------------------------------------------------------------
+;Licznik prawa strona
+[Statedef 78001]
+type    = S
+movetype= I
+physics = S
+anim = 70252
+ontop = 0
+sprpriority = 250
+
+[State 0, VarAdd]
+type = ParentVarAdd
+trigger1 = timemod = 360,0
+triggerall = parent,var(10) < 9
+v = 10
+value = 1
+
+[State 213, Okrag]
+type = Explod
+trigger1 = 1
+ID = 700005555
+anim = 70250
+pos = 0, 0
+postype = front
+ontop = 0
+facing = -1
+removetime = 1
+sprpriority = 249
+scale = 0.297,0.2968
+
+[State 213, Okrag]
+type = modifyExplod
+trigger1 = 1
+pos = -70, 191
+postype = front
+scale = 0.297,0.2968
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(20)%10
+pos = -70,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(20)-20)-parent,var(20)%10)/10 + cond(parent,var(20)%10=0,1,0)
+pos = -73,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, klony]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(21)%10
+pos = -81,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, portret]
+type = Explod
+trigger1 = Time > 1
+ID = 70461
+anim = 70461+parent,var(0)*1000
+pos = -13,30
+postype = front
+ontop = 0
+sprpriority = 251
+scale =  0.2965,0.3
+removetime = 1
+
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = 1 && time = 0 && var(14) = 0
+v = 14
+value = -130
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = facing = -1 && time = 0 && var(14) = 0
+v = 14
+value = 130
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing = -1 && time = 2
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = addalpha
+alpha = 0,256
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = var(14)
+y = 20
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+
+;----------------------------------------------------------------
+;Stan dla graczy gdy Raikage w stanie 1041 i w Full Power
+[Statedef 77700]
+type    = S
+movetype= H
+physics = S
+juggle  = 1
+poweradd= 0
+ctrl = 0
+velset = 0,0
+anim = 70502
+sprpriority = -150
+
+[state 103, EdgeOfScreen]
+type = screenbound
+trigger1 = 1
+value = 0
+movecamera = 0,0
+
+[State 1521, destroyself]
+type = ChangeState
+trigger1 = partner,stateno = 0
+trigger2 = partner,stateno = [5000,5999]
+trigger3 = time = 800
+value = 50
+ctrl = 1
+
+[Statedef 77701]
+type    = S
+movetype= H
+physics = S
+juggle  = 1
+poweradd= 0
+ctrl = 0
+velset = 0,0
+anim = 70502
+sprpriority = -150
+
+[state 103, EdgeOfScreen]
+type = screenbound
+trigger1 = 1
+value = 0
+movecamera = 0,0
+
+[State 1521, destroyself]
+type = ChangeState
+trigger1 = partner,stateno = 0
+trigger2 = partner,stateno = [5000,5999]
+trigger3 = time = 350
+value = 50
+ctrl = 1

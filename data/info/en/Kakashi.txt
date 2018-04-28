@@ -1,0 +1,486 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- press arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Exploding Note}
+[Command]
+(DD),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Kubikiribocho Attack}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Sennen Goroshi}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Katon Gokakyu no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- hold
+
+{Katon: Gokakyu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Air Katon: Gokakyu}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Katon: Hosenka}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- smash
+
+{Air Katon: Hosenka}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- smash
+
+{Suiton: Sujinheki}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+- mizutamari decreases
+  chakra cost by half
+
+{Suiton: Suijuheki Hold}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold
+- mizutamari decreases
+  chakra cost by half
+
+{Suiton: Suiryuudan}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+- mizutamari decreases
+  chakra cost by half
+
+{Suiton: Daibakfu}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 3500
+[Info]
+
+{Suiton: Mizutamari}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- raikiri on ground 
+  does aoe damage
+- decreases chakra cost
+  of other water techniques
+
+{Kirigakure no Jutsu}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 500
+- only in 1vs1 fights
+[Info]
+- makes invisible
+
+{Omote Renge}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Raikiri}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  raiju hashiri no jutsu
+
+{Ground Raikiri}
+[Command]
+DD
+[Triggers]
+- while charging raikiri
+[Info]
+
+{Jumping Raikiri}
+[Command]
+UU
+[Triggers]
+- while charging raikiri
+[Info]
+
+{Raiju Hashiri no Jutsu}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- 3000
+[Info]
+- fully charged raikiri
+
+{Air Raikiri}
+[Command]
+(Z)
+[Triggers]
+- in air
+- chakra 900
+[Info]
+- hold to charge
+
+{Rasengan}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold to charge
+
+{Rasengan Smoke}
+[Command]
+DD
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{Jumping Rasengan}
+[Command]
+UU
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{Doton: Moguragakure no Jutsu}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 250
+[Info]
+- hides underground
+
+{Underground Punch}
+[Command]
+A
+[Triggers]
+- on ground
+- while underground
+- chakra 50
+[Info]
+
+{Doton: Shinju Zanshu no Jutsu}
+[Command]
+X
+[Triggers]
+- on ground
+- while underground
+- chakra 100
+[Info]
+- stuns enemy
+
+{Doton: Doryuu Heki}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Doton: Tsuiga no Jutsu}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- stuns enemy
+
+{Kuchiyose: Ninken}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Oiroke no Jutsu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- paralyzes
+- does no effect on women
+
+{Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 3 clones
+
+{Sharingan}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Kamui}
+[Command]
+Y
+[Triggers]
+- on ground
+- chakra 500 
+- requires active sharingan
+[Info]
+
+{Raiden}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Raikiri Kunai}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 50
+- requires active sharingan
+[Info]
+
+{Raiton Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000/clone
+- requires active sharingan
+[Info]
+- creates clones
+- max 3 clones
+
+{-------Ultimates---------}
+
+{Mangekyo Sharingan: Kamui}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 4000
+- enemy's life < 66%
+- requires active sharingan
+[Info]

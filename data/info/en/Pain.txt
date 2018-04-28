@@ -1,0 +1,800 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+- tendo or ningendo
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+- tendo or ningendo
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+- tendo or ningendo
+[Info]
+- press arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapons---------}
+
+{Rikudo Rod}
+[Command]
+B
+[Triggers]
+- chakra 200
+[Info]
+
+{-------Tendo Combo-------}
+
+{Tendo Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{Tendo Combo 2}
+[Command]
+(DD),A,A,A,A
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{Tendo Combo 3}
+[Command]
+A,A
+[Triggers]
+- in air
+- tendo
+[Info]
+
+{Tendo Combo 4}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{Tendo Combo 5}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{Tendo Combo 6}
+[Command]
+X,X
+[Triggers]
+- in air
+- tendo
+[Info]
+
+{Tendo Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{Tendo Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+- tendo
+[Info]
+
+{------Gakido Combo-------}
+
+{Gakido Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- gakido
+[Info]
+
+{Gakido Combo 2}
+[Command]
+(DD),A,A
+[Triggers]
+- on ground
+- gakido
+[Info]
+
+{Gakido Combo 3}
+[Command]
+A
+[Triggers]
+- in air
+- gakido
+[Info]
+
+{Gakido Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- gakido
+[Info]
+
+{Gakido Combo 5}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+- gakido
+[Info]
+
+{Gakido Combo 6}
+[Command]
+X
+[Triggers]
+- in air
+- gakido
+[Info]
+
+{------Jigokudo Combo------}
+
+{Jigokudo Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- jigokudo
+[Info]
+
+{Jigokudo Combo 2}
+[Command]
+(DD),A,A
+[Triggers]
+- on ground
+- jigokudo
+[Info]
+
+{Jigokudo Combo 3}
+[Command]
+A
+[Triggers]
+- in air
+- jigokudo
+[Info]
+
+{Jigokudo Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- jigokudo
+[Info]
+
+{Jigokudo Combo 5}
+[Command]
+(DD),X,X
+[Triggers]
+- on ground
+- jigokudo
+[Info]
+
+{Jigokudo Combo 6}
+[Command]
+X
+[Triggers]
+- in air
+- jigokudo
+[Info]
+
+{------Ningendo Combo------}
+
+{Ningendo Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- ningendo
+[Info]
+
+{Ningendo Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- ningendo
+[Info]
+
+{Ningendo Combo 3}
+[Command]
+A,A
+[Triggers]
+- in air
+- ningendo
+[Info]
+
+{Ningendo Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- ningendo
+[Info]
+
+{Ningendo Combo 5}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+- ningendo
+[Info]
+
+{Ningendo Combo 6}
+[Command]
+X,X
+[Triggers]
+- in air
+- ningendo
+[Info]
+
+{------Shurado Combo-------}
+
+{Shurado Combo 1}
+[Command]
+A,A,A,A
+[Triggers]
+- on ground
+- shurado
+[Info]
+
+{Shurado Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- shurado
+[Info]
+
+{Shurado Combo 3}
+[Command]
+A
+[Triggers]
+- in air
+- shurado
+[Info]
+
+{Shurado Combo 4}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+- shurado
+[Info]
+
+{Shurado Combo 5}
+[Command]
+(DD),X
+[Triggers]
+- on ground
+- shurado
+[Info]
+
+{Shurado Combo 6}
+[Command]
+X
+[Triggers]
+- in air
+- shurado
+[Info]
+
+{-----Chikushodo Combo------}
+
+{Chikushodo Combo 1}
+[Command]
+A,A,A
+[Triggers]
+- on ground
+- chikushodo 
+[Info]
+
+{Chikushodo Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- chikushodo
+[Info]
+
+{Chikushodo Combo 3}
+[Command]
+A,A
+[Triggers]
+- in air
+- chikushodo
+[Info]
+
+{Chikushodo Combo 4}
+[Command]
+X,X,X
+[Triggers]
+- on ground
+- chikushodo
+[Info]
+
+{Chikushodo Combo 5}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+- chikushodo
+[Info]
+
+{Chikushodo Combo 6}
+[Command]
+X
+[Triggers]
+- in air
+- chikushodo
+[Info]
+
+{-------Finishers---------}
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Pain Rikudo Combo}
+[Command]
+Y
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- additional 200 chakra
+  for each body
+
+{Pain Rikudo Attack}
+[Command]
+Y
+[Triggers]
+- in air
+[Info]
+
+{Summon: Tendo}
+[Command]
+(Z),A
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Summon: Gakido}
+[Command]
+(C),Y
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Summon: Jigokudo}
+[Command]
+(Z),X
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Summon: Ningendo}
+[Command]
+(C),X
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Summon: Shurado}
+[Command]
+(Z),Y
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Summon: Chikushodo}
+[Command]
+(C),A
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+- press U while summoning 
+  or press again take
+  control of summoned body
+
+{Tendo: Shinra}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 500
+- tendo
+[Info]
+- extends rinnegan limit
+- hold
+- untargetable
+
+{Tendo: Shinra Forward}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Air Shinra Forward}
+[Command]
+(Z),FF
+[Triggers]
+- in air
+- chakra 1000
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Air Shinra Downward}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 1000
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Shinra Tensei}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 2000
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Air Shinra Tensei}
+[Command]
+(Z),BB
+[Triggers]
+- in air
+- chakra 1200
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Bansho Ten'in}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 200
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Tendo: Bansho Stones Throw}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 1500
+- tendo
+[Info]
+- extends rinnegan limit
+
+{Gakido: Chakra Kyuin}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- gakido
+[Info]
+
+{Gakido: Fukutsu Kyuin}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 200
+- gakido
+[Info]
+- untargetable
+- hold
+
+{Jigokudo: Meifu no O}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000
+- jigokudo
+- short distance
+[Info]
+- smash
+
+{Jigokudo: Meifu no O - Recovery}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 2000
+- life < 100%
+- jigokudo
+[Info]
+
+{Ningendo: Kyukon no Jutsu}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 1000/2000
+- ningendo
+[Info]
+- hold
+
+{Shurado: Rush Forward}
+[Command]
+FF,Y
+[Triggers]
+- on ground
+- chakra 200
+- shurado
+[Info]
+
+{Shurado: Rush Backward}
+[Command]
+BB,Y
+[Triggers]
+- on ground
+- chakra 200
+- shurado
+[Info]
+
+{Shurado: Rush Upward}
+[Command]
+UU,Y
+[Triggers]
+- in air
+- chakra 200
+- shurado
+[Info]
+
+{Shurado: Kaiwan no Hiya}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 500
+- shurado
+[Info]
+
+{Shurado: Rockets}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 1500
+- shurado
+[Info]
+
+{Shurado: Shura no Ko}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 3000
+- shurado
+[Info]
+
+{Chikushodo: Kuchiyose Panda}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Ox}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 500
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Caterpillar}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Chameleon}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 1000
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Rhino}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Crab}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 1500
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Dogs}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 2000
+- chikushodo
+[Info]
+
+{Chikushodo: Kuchiyose Bird}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 2000
+- chikushodo
+[Info]
+
+{Chikushodo: Air Kuchiyose Bird}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 2000
+- chikushodo
+[Info]
+
+{Ukojizai no Jutsu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+[Info]
+
+{Kuchiyose: Gedo Mazo}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{-------Ultimates---------}
+
+{Ultimate Shinra Tensei}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 4000
+- tendo
+[Info]
+- extends rinnegan limit
+- takes bodies' life
+
+{Chibaku Tensei}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 4000
+- tendo
+- long distance
+[Info]
+- extends rinnegan limit
+- takes bodies' life

@@ -1,0 +1,293 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- press arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Mini Omote Renge}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Kage Buyo}
+[Command]
+y
+[Triggers]
+- chakra 80
+[Info]
+- 10 less chakra for
+  each open hachimon gate
+
+{Konoha Senpu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+
+{Air Konoha Senpu}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 300
+[Info]
+
+{Konoha Daisenpu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Konoha Gouriki Senpu}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Konoha Shofu}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+
+{Konoha Otoshi}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 800
+[Info]
+
+{Dainamikku Entorii}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+
+{Air Dainamikku Entorii}
+[Command]
+(C),UU
+[Triggers]
+- in air
+- chakra 400
+[Info]
+
+{Hachimon}
+[Command]
+(Z)
+[Triggers]
+- on ground
+[Info]
+- opens inner gates
+- hold
+- press D, Z to close gates
+
+{Omote Renge}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 2000
+- at least 1 gate open
+[Info]
+
+{Hachimon Hayai Atakku}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 1500
+- at least 3 gate open
+[Info]
+
+{Hachimon Kikku}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 1500
+- at least 5 gate open
+[Info]
+
+{-------Ultimates---------}
+
+{Ura Renge}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 4000
+- at least 3 gate open
+[Info]

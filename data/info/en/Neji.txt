@@ -1,0 +1,324 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dodge}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- near enemy
+[Info]
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{Jukenpo Kawarimi}
+[Command]
+Z
+[Triggers]
+- during being hit
+- chakra 200
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- during Byakugan
+  blocks enemy's chakra
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+- during Byakugan
+  blocks enemy's chakra
+
+{Combo 4}
+[Command]
+A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+- during Byakugan
+  blocks enemy's chakra
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+- during Byakugan
+  blocks enemy's chakra
+
+{Combo 8}
+[Command]
+X,X,X
+[Triggers]
+- in air
+[Info]
+- during Byakugan
+  blocks enemy's chakra
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Kaiten}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 400
+[Info]
+
+{Counter: Kaiten}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- counters enemy's attack
+
+{Hakkesho Kaiten}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- hold
+- untargetable
+
+{Air Hakkesho Kaiten}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+- hold
+- untargetable
+
+{Jukenpo Ichigekishin}
+[Command]
+(C),BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- avoids attack
+
+{Air Jukenpo Ichigekishin}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- avoids attack
+
+{Hakke Kusho}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 250/500/1000/2000
+[Info]
+- hold to charge
+
+{Air Hakke Kusho}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 500
+[Info]
+
+{Hakke Kusho Combo}
+[Command]
+(Z),FF,Z,Z
+[Triggers]
+- on ground
+- chakra 250/250/500
+[Info]
+
+{Hakke Kuhekisho}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Hakke Hasangeki}
+[Command]
+(Z),BB
+[Triggers]
+- on ground
+- chakra 2000
+- near enemy
+[Info]
+
+{Byakugan}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Hakke Rokujuyon Sho}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 3000
+- requires active byakugan
+[Info]
+- blocks enemy's chakra
+
+{Hakke Rokujuyon Sho Combo}
+[Command]
+Y,Y,Y,Y,Y,Y
+[Triggers]
+- on ground
+- chakra 40/hit
+- requires active byakugan
+[Info]
+- blocks enemy's chakra
+
+{-------Ultimates---------}
+
+{Hakke Hyaku Nijuhachi Sho}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 4000
+- requires active byakugan
+[Info]
+- smash X
+- blocks enemy's chakra
+
+{Hakke Hyaku Nijuhachi Sho Combo}
+[Command]
+X,X
+[Triggers]
+- on ground
+- chakra 40/hit
+- requires active byakugan
+[Info]
+- blocks enemy's chakra
+- during rokujuyon sho
+  combo, after 32 hits

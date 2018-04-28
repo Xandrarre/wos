@@ -1,0 +1,3939 @@
+
+;-----------------
+;Dragon Mode - ground
+[StateDef 1700]
+type = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 700
+poweradd = 0
+sprpriority = 2
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = time = 5
+value = -1500
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,2
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time = 5
+time = 20
+ampl = -2
+freq = 50
+phase = 230
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = F9,2
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 5
+v = 24
+value = -150
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S3,8
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S3,8
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 2022
+ID = 442
+pos = -20,0
+postype = p1  ;p2,front,back,left,right
+facing = -1
+removetime = 80
+ontop = 0
+ownpal = 1
+sprpriority = 5
+scale = 1,1
+vel = -0.1,0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 2022
+ID = 442
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = -1
+removetime = 80
+ontop = 0
+ownpal = 1
+sprpriority = 5
+scale = 0.7,0.7
+vel = 0.1,0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 2022
+ID = 442
+pos = 20,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+removetime = 80
+ontop = 0
+ownpal = 1
+sprpriority = 5
+scale = 1,1
+vel = 0.1,0
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 5
+helpertype = normal ;player
+name = "smok"
+ID = 1705
+stateno = 1704
+pos = 0,5
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.2
+size.yscale = 0.2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = time > 5
+value = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time > 5
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+[State 811, end]
+type = ChangeState
+trigger1 = helper(1705), stateno = 1705
+value = 1713
+ctrl = 0
+;-----------------
+;Dragon Mode - air
+[StateDef 1701]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 701
+poweradd = 0
+sprpriority = 2
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = time = 5
+value = -1500
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,2
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time = 5
+time = 20
+ampl = -2
+freq = 50
+phase = 230
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = F9,2
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 5
+v = 24
+value = -150
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S3,8
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S3,8
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 5
+helpertype = normal ;player
+name = "smok"
+ID = 1705
+stateno = 1704
+pos = 0,5
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.2
+size.yscale = 0.2
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 2022
+ID = 442
+pos = 0,30
+postype = p1  ;p2,front,back,left,right
+facing = -1
+removetime = 80
+ontop = 0
+ownpal = 1
+sprpriority = 5
+scale = 0.7,0.7
+vel = -0.1,0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 2022
+ID = 442
+pos = 0,-30
+postype = p1  ;p2,front,back,left,right
+vfacing = -1
+removetime = 80
+ontop = 0
+ownpal = 1
+sprpriority = 5
+scale = 0.7,0.7
+vel = -0.1,0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = time > 5
+value = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time > 5
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+[State 811, end]
+type = ChangeState
+trigger1 = helper(1705), stateno = 1705
+value = 1713
+ctrl = 0
+
+[State 811, end]
+type = ChangeState
+trigger1 = time > 7 && numhelper(1705) = 0
+value = 50
+ctrl = 0
+;-----------------
+;Dragon Mode
+[StateDef 1702]
+type = A
+movetype= A
+physics = A
+juggle  = 1
+velset = 0,-5
+ctrl = 1
+anim = 702
+poweradd = 0
+sprpriority = 2
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F280
+pos = 0,0
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+[State 811, end]
+type = ChangeState
+triggerall = command != "a" && command != "b" && command != "c" && command != "x" && command != "z" && command != "holdfwd"
+trigger1 = command = "holdback"
+value = 7021
+
+[State 811, end]
+type = ChangeState
+triggerall = command != "a" && command != "b" && command != "c" && command != "x" && command != "z" && command != "holdback"
+trigger1 = command = "holdfwd"
+value = 7022
+;-----------------
+;Bird Mode
+[StateDef 7021]
+type = A
+movetype= A
+physics = A
+juggle  = 1
+velset = -5,-5
+ctrl = 1
+anim = 43
+poweradd = 0
+sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 7,0
+value = S6,0
+channel = 6
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F280
+pos = 0,0
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+;-----------------
+;Bird Mode
+[StateDef 7022]
+type = A
+movetype= A
+physics = A
+juggle  = 1
+velset = 5,-5
+ctrl = 1
+anim = 41
+poweradd = 0
+sprpriority = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 7,0
+value = S6,0
+channel = 6
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F280
+pos = 0,0
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+;-----------------
+;Dragon Mode
+[StateDef 1703]
+type = A
+movetype= A
+physics = A
+juggle  = 1
+velset = 0,0
+ctrl = 1
+anim = 703
+poweradd = 0
+sprpriority = -3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = F3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 7,0
+value = S6,0
+channel = 6
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = F280
+pos = 0,0
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+triggerall = var(14) < -10
+x = (-var(14)/10)+1
+y = (-var(15)/10)
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+triggerall = var(14) > -10
+x = (-var(14)/10)
+y = (-var(15)/10)
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = stateno != 1702 && var(16) = 1
+triggerall = vel y > 0 && var(16) = 1
+triggerall = numhelper(1705) = 1 && var(16) = 1
+trigger1 = time > 0 && vel x = 0
+trigger2 = time > 0 && vel y = 0
+value = 1713
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = time = 50
+value = 50
+
+
+[Statedef 1798]
+type = S
+movetype= A
+physics = N
+juggle  = 3
+velset = 0,0
+ctrl = 0
+anim = 3012
+poweradd = -50
+sprpriority = 5
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = time = 0
+time = 55
+freq = 80
+ampl = -3
+phase = 80
+
+[State 0, Explod]
+type = Explod
+trigger1 = time > 25 && timemod = 6,1
+anim = 2024
+ID = 2023
+pos = -80+random%160,40-random%100
+postype = p1  
+scale = 0.65,0.65
+removetime = -2
+bindtime = -1
+sprpriority = 7
+ontop = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, Explod]
+type = Explod
+trigger1 = time > 25 && timemod = 6,1
+anim = 2025
+ID = 2023
+pos = -80+random%160,40-random%100
+postype = p1  
+scale = 0.65,0.65
+removetime = -2
+bindtime = -1
+sprpriority = 7
+ontop = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 3019
+ID = 3012
+pos = 0,0
+postype = p1  
+scale = 0.5,0.5
+facing = -1
+vfacing = -1
+removetime = 63
+bindtime = -1
+sprpriority = 3
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 3020
+ID = 3012
+pos = 0,0
+postype = p1  
+scale = 0.5,0.5
+facing = 1
+vfacing = 1
+removetime = -2
+bindtime = -1
+sprpriority = 2
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 3013
+ID = 3012
+pos = 0,0
+postype = p1  
+scale = 1,1
+facing = 1
+removetime = 42
+bindtime = -1
+sprpriority = 5
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 0
+anim = 1707
+ID = 1707
+pos = 20,-60
+postype = p1  
+scale = 0.2,0.2
+facing = 1
+removetime = 3
+bindtime = -1
+sprpriority = -3
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+scale = 4.3,4.3
+
+[State 0, Trans]
+type = Trans
+trigger1 = 1
+trans = add
+
+[State 0, PosAdd]
+type = PosAdd
+trigger1 = time = 0
+y = 60
+x = -20
+
+[State 331, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = time > 0
+value = 5
+
+[State 1810, 2]
+type = HitDef
+fall.yvelocity = -6
+trigger1 = animelem = 1
+trigger2 = animelem = 2
+trigger3 = animelem = 3
+trigger4 = animelem = 4
+trigger5 = animelem = 5
+trigger6 = animelem = 6
+trigger7 = animelem = 7
+trigger8 = animelem = 8
+trigger9 = animelem = 9
+trigger10 = animelem = 10
+trigger11 = animelem = 11
+trigger12 = animelem = 12
+trigger13 = animelem = 13
+trigger14 = animelem = 14
+trigger15 = animelem = 15
+attr = S, NA
+damage = 100,10
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = 5, Hit
+pausetime = 0, 4
+sparkno = 616161518165
+sparkxy = 0,30
+hitsound = 366664545,1
+guardsound = 3456364,10
+ground.type = High
+ground.slidetime = 0
+ground.hittime  = 0
+ground.velocity = 0,0
+airguard.velocity = 0,0
+air.type = High
+air.hittime = 0
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = 0
+down.cornerpush.veloff = 0
+guard.cornerpush.veloff = 0
+airguard.cornerpush.veloff = 0
+fall = 1
+palfx.time          = 20
+palfx.add           = 40,-70,-200
+palfx.mul           = 256,256,256
+palfx.sinadd        = 40,30,0,10
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = target, ishelper = 0
+flag = unguardable
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S1500,1
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = time = 51
+
+;--------------------------------------------
+[StateDef 1799]
+type = A
+movetype= I
+physics = A
+juggle  = 1
+velset = 0,-1
+ctrl = 0
+anim = 5060
+poweradd = 0
+sprpriority = -3
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = vel y > 0
+value = 5100
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+x = -1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = time = 1
+value = 105
+ctrl = 0
+
+;-----------------
+;Dragon Mode
+[StateDef 1704]
+type = A
+movetype= I
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 999
+poweradd = 0
+sprpriority = -3
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = pos y > -110
+y = -110
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 50
+value = s6,13
+channel = 6
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 1
+anim = 1700
+ID = 1700
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 10
+scale = 0.05,0.05
+sprpriority = -3
+ontop = 0
+ownpal = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 1
+anim = 2006
+ID = 2006
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 30
+scale = 0.15,0.15
+sprpriority = 6
+ontop = 0
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 9
+anim = 2006
+ID = 2006
+pos = 0,0
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 30
+scale = 0.75,0.75
+sprpriority = 6
+ontop = 0
+ownpal = 1
+
+[State 811, end]
+type = ChangeState
+trigger1 = time = 10
+value = 1705
+ctrl = 1
+
+;-----------------
+;Dragon Mode - stance
+[StateDef 1705]
+type = A
+movetype= I
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+poweradd = 0
+sprpriority = -3
+
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;obrot do przeciwnika
+
+[State 0, Turn]
+type = Turn
+trigger1 = p2dist x < -40
+
+;machanie skrzydel
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 4
+triggerall = pos y <= 0
+value = F15, 4
+
+;vary dla Deidary do wskoczenia
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 14
+value = parentdist x
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 15
+value = parentdist y
+
+;var stania na smoku
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x = [-20,20]
+trigger2 = parentdist y = [-10,10]
+v = 16
+value = 1
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x > 20
+trigger2 = parentdist x < -20
+trigger3 = parentdist y > 10
+trigger4 = parentdist y < -10
+v = 16
+value = 0
+
+;lifebar i skrzydla
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = numhelper(1706) = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1706
+stateno = 1706
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+size.xscale = 0.2
+size.yscale = 0.2
+
+;otrzymanie obrazen
+
+[State 0, HitOverride]
+type = HitOverride
+triggerall = 1
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+;hamowanie na ziemi
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 1700
+trigger1 = pos y < -100
+value = 1700
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 1709
+trigger1 = pos y > -100
+value = 1709
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = anim = 1709
+x = 0
+y = 0
+
+; bujanie skrzydel
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 1
+trigger2 = animelem  = 2
+trigger3 = animelem  = 3
+trigger4 = animelem  = 8
+triggerall = anim = 1700
+y = 0.8
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 4
+trigger2 = animelem  = 5
+trigger3 = animelem  = 6
+trigger4 = animelem  = 7
+triggerall = anim = 1700
+y = -0.8
+
+; zlatywanie na dol po zeskoku
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = pos y < -155
+triggerall = root, stateno != [1713,1753]
+triggerall = time > 10
+y = 2
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = pos y > -130
+triggerall = root, stateno != [1713,1753]
+triggerall = time > 10
+y = -2
+
+[State 0, Explod]
+type = Explod
+triggerall = pos y > -140
+triggerall = anim = 1700
+trigger1 = animelem = 4
+anim = F580
+ID = 2000
+pos = 0,-pos y+15
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 48
+scale = 2,0.8
+sprpriority = -4
+ownpal = 1
+
+;---------------------------------------
+
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = (pos x < parent, pos x) && facing = 1
+trigger2 = (pos x > parent, pos x) && facing = -1
+triggerall = pos y < -100
+triggerall = parent, var(10) = 0
+triggerall = facing = parent, facing
+triggerall = parent, statetype = A
+triggerall = parent, stateno != 1702
+triggerall = parent, stateno != 17021
+triggerall = parent, stateno != 17022
+triggerall = 0
+x = 8
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = (pos x > parent, pos x) && facing = 1
+trigger2 = (pos x < parent, pos x) && facing = -1
+trigger3 = facing != parent, facing
+trigger4 = parent, statetype != A
+trigger5 = vel x < 0
+triggerall = 0
+x = 0
+
+[State 0, Turn]
+type = Turn
+trigger1 = parent, facing = 1 && facing = -1
+trigger2 = parent, facing = -1 && facing = 1
+triggerall = 0;parent, stateno != [1710,1760]
+triggerall = 0
+
+;poruszanie sie
+
+[State 0, VelSet]
+type = VelSet
+triggerall = pos y < -100
+trigger1 = root,var(50) = 1
+trigger1 = root,p2bodydist x > 400
+trigger1 = random = [100,120+root,var(49)*(root,var(49))/50]
+trigger1 = frontedgedist > 20
+trigger2 = root,var(50) = 1
+trigger2 = root,p2bodydist x = [-50,150]
+trigger2 = random = [100,120+root,var(49)*(root,var(49))/50]
+trigger2 = frontedgedist > 20
+triggerall = root, stateno = 1713
+;trigger1 = parent,command = "holdfwd"
+;trigger2 = parent,command = "holdback"
+;trigger1 = pos y < -100
+x = 10
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = root, command != "holdfwd" && root, command != "holdback"
+x = 0
+
+[State 0, Turn]
+type = Turn
+;trigger1 = root,command = "holdback"
+;trigger1 = root,command != "holdfwd"
+;trigger1 = root,var(50) = 0
+;triggerall = root,command != "s"
+trigger1 = var(50) = 1 && timemod = 50,0
+triggerall = p2bodydist x < -5 && vel x = 0
+triggerall = root, stateno = 1713
+;triggerall = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = root,var(50) = 1 && p2bodydist y = [0,250]
+trigger1 = pos y > -600
+trigger1 = random = [400,420+root,var(49)*root,var(49)/50]
+triggerall = root, stateno = 1713
+y = -3.5
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = root,var(50) = 1 && p2bodydist y > 300
+trigger1 = root,var(50) = 1 && pos y < -100 && random = [300,320+root,var(49)*(root,var(49))/50]
+triggerall = root, stateno = 1713
+y = 3.5
+
+[State 15008, end]
+type = changestate
+triggerall = root,stateno = 1713
+trigger1 = root, command = "holdfwd" && pos y < -100 
+trigger2 = root, command = "holdback" && pos y < -100 
+trigger3 = root, command = "holdup" && pos y > -600
+trigger4 = root, command = "holddown" && pos y < -100
+value = 1708
+ctrl = 0
+
+;--------------------------------------
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1717
+trigger1 = root, time < 2
+value = 1718
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1720 
+;trigger1 = root, time < 2
+value = 1723
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1727
+trigger1 = root, time < 2
+value = 1730
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = var(9) >= 1500
+value = 1711
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+triggerall = 0;parent, command = "b" && parent, command = "y"
+triggerall = parent, command != "a" && parent, command != "c" && parent, command != "x" && parent, command != "z"
+trigger1 = parent, stateno = 1713
+trigger2 = parent, stateno = 7021
+trigger3 = parent, stateno = 7022
+value = 1798
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+triggerall = root,stateno != [1713,1753]
+trigger1 = parent, stateno = [600,601]
+triggerall = parent, time > 2 || parent, stateno != [7021,7022]
+value = 1798
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 100001
+value = 1798
+ctrl = 0
+
+;-----------------
+;Dragon Mode - skrzydla 
+[StateDef 1706]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1706
+poweradd = 0
+sprpriority = -2
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = 1
+time = 1
+facing = 1
+pos = 0,0
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = parent, stateno = 1798
+trigger2 = parent, anim = 1709
+trigger3 = parent, stateno = 1709
+trigger4 = parent, stateno = 1718
+trigger5 = root,stateno = 1717
+trigger6 = parent, stateno = 1723
+trigger7 = parent, stateno = 1730
+trigger8 = parent, stateno = 1711
+flag = invisible
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = numhelper(1705) = 0
+trigger2 = parent, anim != 1700
+;-----------------
+;Dragon Mode - lot
+[StateDef 1707]
+type = A
+movetype= I
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1707
+poweradd = 0
+sprpriority = -3
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;obrot do przeciwnika
+
+[State 0, Turn]
+type = Turn
+trigger1 = p2dist x < -40
+
+;machanie skrzydel
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 4
+triggerall = pos y <= 0
+value = F15, 4
+
+;vary dla Deidary do wskoczenia
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 14
+value = parentdist x
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 15
+value = parentdist y
+
+;var stania na smoku
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x = [-20,20]
+trigger2 = parentdist y = [-10,10]
+v = 16
+value = 1
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x > 20
+trigger2 = parentdist x < -20
+trigger3 = parentdist y > 10
+trigger4 = parentdist y < -10
+v = 16
+value = 0
+
+;lifebar i skrzydla
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = numhelper(1706) = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1706
+stateno = 1706
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+size.xscale = 0.2
+size.yscale = 0.2
+
+;otrzymanie obrazen
+
+[State 0, HitOverride]
+type = HitOverride
+triggerall = 1
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+[State 0, Explod]
+type = Explod
+triggerall = pos y > -140
+triggerall = anim = 1700
+trigger1 = animelem = 4
+anim = F580
+ID = 2000
+pos = 0,-pos y+15
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 48
+scale = 2,0.8
+sprpriority = -4
+ownpal = 1
+
+;---------------------------------------
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+triggerall = pos y < -40
+y = 0
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = 1
+triggerall = pos y < -100
+x = 10-time/5
+
+[State 0, Turn]
+type = Turn
+trigger1 = time = 0
+trigger2 = time = 28
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = pos y >= -100
+y = -100
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = pos y <= -600
+y = -600
+
+;--------------------------------------
+
+[State 15008, end]
+type = changestate
+trigger1 = time = 30
+trigger2 = p2bodydist x > 200
+value = 1705
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1717
+trigger1 = root, time < 2
+value = 1718
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1720 
+trigger1 = root, time < 2
+value = 1723
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 1727
+trigger1 = root, time < 2
+value = 1730
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = var(9) >= 1500
+value = 1711
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+triggerall = 0;parent, command = "b" && parent, command = "y"
+triggerall = parent, command != "a" && parent, command != "c" && parent, command != "x" && parent, command != "z"
+trigger1 = parent, stateno = 1713
+trigger2 = parent, stateno = 7021
+trigger3 = parent, stateno = 7022
+value = 1798
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+triggerall = root,stateno != [1713,1741]
+trigger1 = parent, stateno = [600,601]
+triggerall = parent, time > 2 || parent, stateno != [7021,7022]
+value = 1798
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = root,stateno = 100001
+value = 1798
+ctrl = 0
+;-------------------------------------------
+;Dragon mode - lot 
+[StateDef 1708]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+poweradd = 0
+sprpriority = -3
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 1700
+value = 1700
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;vary dla Deidary do wskoczenia
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 14
+value = parentdist x
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1
+triggerall = root, stateno = 1703
+v = 15
+value = parentdist y
+
+;var stania na smoku
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x = [-20,20]
+trigger2 = parentdist y = [-10,10]
+v = 16
+value = 1
+
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = parentdist x > 20
+trigger2 = parentdist x < -20
+trigger3 = parentdist y > 10
+trigger4 = parentdist y < -10
+v = 16
+value = 0
+
+;machanie skrzydel
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 4
+triggerall = pos y <= 0
+value = F15, 4
+
+;lifebar i skrzydla
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = numhelper(1706) = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1706
+stateno = 1706
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+size.xscale = 0.2
+size.yscale = 0.2
+
+;otrzymanie obrazen
+
+[State 0, HitOverride]
+type = HitOverride
+triggerall = 1
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+;podmuch wiatru
+
+[State 0, Explod]
+type = Explod
+triggerall = pos y > -140
+trigger1 = animelem = 4
+anim = F580
+ID = 2000
+pos = 0,-pos y+15
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 48
+scale = 2,0.8
+sprpriority = -4
+ownpal = 1
+
+;obrot do przeciwnika
+
+[State 0, Turn]
+type = Turn
+trigger1 = parent, command = "holdback" 
+trigger1 = time = 0
+trigger2 = parent, command = "back" 
+
+;poruszanie sie
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = parent,command = "holdfwd"
+trigger2 = parent,command = "holdback"
+triggerall = pos y < -100
+x = 10
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = parent,command = "holdup"
+triggerall = pos y > -600
+y = -3.5
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = parent,command = "holddown"
+triggerall = pos y < -100
+y = 3.5
+
+;hamowanie
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = parent,command != "holdup" || pos y <= -600 
+trigger1 = parent,command != "holddown" || pos y >= -100
+y = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = parent,command != "holdfwd"
+trigger1 = parent,command != "holdback"
+x = 0
+
+;powrot do stanu stania
+
+[State 15008, end]
+type = changestate
+trigger1 = parent,command != "holdfwd"
+trigger1 = parent,command != "holdback"
+trigger1 = parent,command != "holdup"
+trigger1 = parent,command != "holddown"
+trigger2 = pos y <= -600 && parent,command != "holddown" && parent,command != "holdfwd" && parent,command != "holdback"
+trigger3 = pos y >= -100 && parent,command != "holdup"
+trigger4 = parent, stateno !=1713
+trigger5 = root,stateno != [1713,1741]
+value = 1705
+ctrl = 0
+
+; zniszczenie
+
+[State 15008, end]
+type = changestate
+trigger1 = var(8) >= 1500
+value =  1798
+ctrl = 0
+
+; samozniszczenie
+
+[State 15008, end]
+type = changestate
+triggerall = parent, command = "b" && parent, command = "y"
+triggerall = parent, command != "a" && parent, command != "c" && parent, command != "x" && parent, command != "z"
+trigger1 = parent, stateno = 1713
+trigger2 = parent, stateno = 7021
+trigger3 = parent, stateno = 7022
+value =  1798
+ctrl = 0
+
+;-----------------
+;Dragon Mode - otrzymywanie damage
+[StateDef 1709]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+poweradd = 0
+sprpriority = -3
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 1700
+value = 1700
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time = 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 10
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+v = 9
+value = 25
+
+[State 15008, end]
+type = changestate
+trigger1 = var(9) >= 1500
+value = 1798
+ctrl = 0
+
+[State 811, end]
+type = ChangeState
+trigger1 = time = 0
+value = 1705
+ctrl = 1
+
+;-----------------
+;Dragon Mode    DESTROY
+[StateDef 1711]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1700
+poweradd = 0
+sprpriority = -3
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 1
+
+[State 811, end]
+type = Changestate
+trigger1 = time = 20
+value = 1798
+ctrl = 0
+
+;-------------------------
+;BAR
+[Statedef 1712]
+type    = S
+movetype= I
+physics = S
+velset = 0,0
+ctrl = 0
+sprpriority = 10
+anim = 999
+
+[State 0,]
+type = Explod
+trigger1 = Time = 0
+anim = 4002
+ID = 4002
+pos = 0,0
+scale = 0.33,0.33
+postype = p1
+bindtime = -1
+removetime = -1
+sprpriority = 11
+supermovetime = 9999
+pausemovetime = 9999
+ontop = 0
+
+[State 0,]
+type = Explod
+trigger1 = Time = 0
+anim = 4003
+ID = 4002
+pos = 0,0
+scale = 0.33,0.33
+postype = p1
+bindtime = -1
+removetime = -1
+sprpriority = 9
+ontop = 0
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0,]
+type = Explod
+trigger1 = 1
+anim = 4004
+ID = 4002
+pos = 0,0
+scale = ((parent,var(9))/1500.0)/3.11,0.33
+postype = p1
+bindtime = -1
+removetime = 1
+sprpriority = 10
+ontop = 0
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noautoturn
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = parent,var(9) >= 1500
+trigger2 = root, stateno = 1799
+trigger3 = numhelper(1705) = 0
+trigger4 = helper(1705),stateno = 1798
+id = 4002
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = 1
+time = -1
+facing = 0
+pos = -10,30
+
+[State 2064, 2]
+type = destroyself
+trigger1 = parent,var(9) >= 1500
+trigger2 = root, stateno = 1799
+trigger3 = numhelper(1705) = 0
+trigger4 = helper(1705),stateno = 1798
+
+;-----------------------------------------------
+;stan g³ówny
+[StateDef 1713]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 0
+poweradd = 0
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+; animacja ruchu
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 713
+trigger1 = helper(1705), vel x != 0
+value = 713
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = anim != 0
+trigger1 = helper(1705), vel x = 0
+value = 0
+
+[State 811, end]
+type = ChangeState
+triggerall = helper(1705),anim != 1709
+trigger1 = helper(1705), stateno = 1712
+trigger2 = helper(1705),stateno = 1711
+trigger3 = numhelper(1705) = 0
+trigger4 = helper(1705),stateno = 1798
+value = 105
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = 0;command = "b" && command = "y"
+triggerall = command != "a" && command != "c" && command != "x" && command != "z"
+value = 7021
+ctrl = 0
+
+;---------------------------------------
+;bird small
+[Statedef 1714]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 410
+poweradd = 0
+sprpriority = -3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -5)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+v = 24
+value = -1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 10
+anim = 2006
+ID = 1100
+pos = 25,-34
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = -2
+scale = 0.15,0.15
+sprpriority = 3
+ontop = 0
+ownpal = 1
+movetime = 9999
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 1100, 0
+
+[State 1640, X]
+Type=VarSet
+Trigger1=1
+fvar(13)=(EnemyNear(0),Pos X-Pos X)*Facing
+
+[State 1640, Y]
+Type=VarSet
+trigger1=1
+fvar(14)=(EnemyNear(0),pos Y-Pos Y)
+
+[State 1640, Vector Length]
+Type=VarSet
+trigger1=1
+fvar(15)=Exp(0.5*ln((fvar(13)*fvar(13))+(fvar(14)*fvar(14))))
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 10
+helpertype = normal ;player
+name = "ClayBird"
+ID = 455
+stateno = 455
+pos = 25,-34
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+pausemovetime = 9999
+size.xscale = 0.6
+size.yscale = 0.6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 10
+value = F9,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 10
+value = F9,2
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1713
+ctrl = 1
+
+;---------------------------------------
+;Bomb small
+[Statedef 1715]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 410
+poweradd = -200
+sprpriority = -3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -5)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 0
+v = 24
+value = -1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 10
+anim = 1100
+ID = 1100
+pos = 40,-34
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 1
+removetime = 9
+scale = 0.5,0.5
+sprpriority = 3
+ontop = 0
+ownpal = 1
+movetime = 9999
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 1100, 0
+
+[State 1640, X]
+Type=VarSet
+Trigger1=1
+fvar(13)=(EnemyNear(0),Pos X-Pos X)*Facing
+
+[State 1640, Y]
+Type=VarSet
+trigger1=1
+fvar(14)=(EnemyNear(0),pos Y-Pos Y)
+
+[State 1640, Vector Length]
+Type=VarSet
+trigger1=1
+fvar(15)=Exp(0.5*ln((fvar(13)*fvar(13))+(fvar(14)*fvar(14))))
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 10
+helpertype = normal ;player
+name = "Claybomb"
+ID = 457
+stateno = 457
+pos = 25,-34
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+pausemovetime = 9999
+size.xscale = 0.6
+size.yscale = 0.6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 10
+value = F9,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 10
+value = F9,2
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1713
+ctrl = 1
+
+;-----------------------------------------------------------------
+;Big bird - attack
+[Statedef 1716]
+type    = A
+movetype= A
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 400
+poweradd = -200
+sprpriority = -3
+
+[State 200, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+value = S3,0
+
+[State 200, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+value = S300,0
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 34
+helpertype = normal
+name = "bird 1"
+ID = 6304
+stateno = 6304
+pos = 42,-30
+postype = p1   
+facing = 1
+ownpal = 1
+keyctrl = 0
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 25
+value = 210,0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 28
+anim = 2006
+pos = 50,-30
+postype = p1  
+scale = 0.75,0.75
+removetime = 30
+sprpriority = 3
+ontop = 0
+ownpal = 1
+
+[State 200, 7]
+type = ChangeState
+trigger1 = animtime = 0
+value = 1713
+ctrl = 1
+
+;---------------------------------------
+;Dragon attack 1 skok
+[Statedef 1717]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 0
+poweradd = 0
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = time = 18
+value = 1713
+ctrl = 1
+
+;-----------------
+;Dragon attack - 1
+[StateDef 1718]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1717
+poweradd = 0
+sprpriority = -3
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;----
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,2
+channel = 6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,13
+channel = 6
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1719
+stateno = 1719
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.2
+size.yscale = 0.2
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = 1
+value = -3
+
+[State 0, VelSet]
+type = Veladd
+trigger1 = parent, time = 10
+y = 45
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = pos y > -145
+trigger1 = vel y = 30
+value = F7,2
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = pos y > -145
+y = 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 20
+value = F15, 4
+
+[State 220, 1]
+type = HitDef
+fall.yvelocity = -6
+trigger1 = !time 
+attr = S, NA
+damage = 300,150
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = -3, Hit
+p1sprpriority = -3
+pausetime = 0, 3
+sparkno = 41252
+sparkxy = -10, -30
+hitsound = F15, 4
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = -12
+ground.velocity = 0,10
+airguard.velocity = 0,10
+air.type = High
+air.velocity = 0,10
+air.hittime = 12
+fall = 1
+
+[State 15008, end]
+type = changestate
+trigger1 = time = 20
+value = 1705
+ctrl = 0
+
+[StateDef 1719]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1718
+poweradd = 0
+sprpriority = -2
+
+[State 0, Turn]
+type = Turn
+trigger1 = root, facing = -1 && facing = 1
+
+[State 0, Turn]
+type = Turn
+trigger1 = root, facing = 1 && facing = -1
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = 1
+time = -1
+pos = 0,0
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = parent, stateno != 1718
+
+
+;---------------------------------------
+;Dragon attack 2 pociski
+[Statedef 1720]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+ctrl = 0
+velset = 0,0
+anim = 490
+poweradd = 0
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+;-----
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 1100, 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = var(50) = 0 && command != "holdz"
+trigger2 = var(50) = 1 && random = [900,920-var(49)]
+trigger3 = power < 2000
+triggerall = time < 39
+value = 1721
+ctrl = 1
+
+[State 200, 7]
+type = ChangeState
+trigger1 = time = 40
+trigger1 = power < 2000
+value = 1721
+ctrl = 1
+
+[State 200, 7]
+type = ChangeState
+trigger1 = time = 40
+trigger1 = power >= 2000
+value = 1722
+ctrl = 1
+
+[Statedef 1721]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 491
+poweradd = 0
+sprpriority = -3
+
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 10
+anim = 491
+ID = 491
+pos = 0,3
+trans = addalpha
+alpha = 256,200
+postype = p1  
+scale = 1.1,1.1
+facing = 1
+removetime = 10
+bindtime = -1
+sprpriority = -2
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 1100, 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = helper(1705),stateno = 1723 && helper(1705),time = 84
+trigger2 = time = 90
+value = 1713
+ctrl = 1
+
+[Statedef 1722]
+type    = A
+movetype= I
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 491
+poweradd = 0
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 10
+anim = 491
+ID = 491
+pos = 0,8
+trans = addalpha
+alpha = 256,240 
+postype = p1  
+scale = 1.3,1.3
+facing = 1
+removetime = 10
+bindtime = -1
+sprpriority = -2
+ontop = 0
+ownpal = 1
+pausemovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = 1100, 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = 250, 6
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 1
+trigger1 = random <= 500
+value = 300, 0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = helper(1705),stateno = 1723 && helper(1705),time = 84
+trigger2 = time = 90
+value = 1713
+ctrl = 1
+
+;-----------------
+;Dragon attack - 2
+[StateDef 1723]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1720
+poweradd = 0
+sprpriority = -3
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;----
+
+; bujanie skrzydel
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 1
+trigger2 = animelem  = 2
+trigger3 = animelem  = 3
+trigger4 = animelem  = 8
+trigger5 = animelem  = 9
+trigger6 = animelem  = 10
+trigger7 = animelem  = 11
+trigger8 = animelem  = 16
+y = 0.8
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 4
+trigger2 = animelem  = 5
+trigger3 = animelem  = 6
+trigger4 = animelem  = 7
+trigger5 = animelem  = 12
+trigger6 = animelem  = 13
+trigger7 = animelem  = 14
+trigger8 = animelem  = 15
+y = -0.8
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 47
+v = 9
+value = 80
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,2
+channel = 6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,13
+channel = 6
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1724
+stateno = 1724
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.2
+size.yscale = 0.2
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = 1
+value = -3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 45
+anim = 2000
+ID = 2000
+pos = 143,80
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = 26
+scale = 0.2,0.1
+sprpriority = -2
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 45
+anim = 2000
+ID = 2000
+pos = 143,80
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = -1
+bindtime = 10
+removetime = 26
+scale = 0.2,0.16
+sprpriority = -2
+ownpal = 1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 47
+value = S3,3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 47
+value = S3,3
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 47 && root,stateno = 1721
+helpertype = normal ;player
+name = "Dragon_small"
+ID = 1725
+stateno = 1725
+pos = 113,70
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.05
+size.yscale = 0.05
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 47 && root,stateno = 1722 
+helpertype = normal ;player
+name = "Dragon_fat"
+ID = 1726
+stateno = 1726
+pos = 113,70
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.28
+size.yscale = 0.28
+
+[State 220, 1]
+type = HitDef
+fall.yvelocity = -6
+trigger1 = !time 
+attr = S, NA
+damage = 70,9
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = -3, Hit
+p1sprpriority = -3
+pausetime = 0, 3
+sparkno = 0
+sparkxy = -10, -30
+hitsound = 5, 0
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = -12
+ground.velocity = 0,10
+airguard.velocity = 0,10
+air.type = High
+air.velocity = 0,10
+air.hittime = 12
+fall = 1
+
+[State 15008, end]
+type = changestate
+trigger1 = time = 84
+value = 1705
+ctrl = 0
+
+[StateDef 1724]
+type = A
+movetype= I
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1706
+poweradd = 0
+sprpriority = -2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = timemod = 25,0
+value = F15, 4
+
+[State 0, Turn]
+type = Turn
+trigger1 = root, facing = -1 && facing = 1
+
+[State 0, Turn]
+type = Turn
+trigger1 = root, facing = 1 && facing = -1
+
+[State 0, BindToParent]
+type = BindToParent
+trigger1 = 1
+time = 1
+pos = 0,0
+
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 = parent, stateno = 1705
+trigger2 = parent, stateno = 1711
+
+
+[StateDef 1725]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1724
+poweradd = -1000
+sprpriority = -3
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S6,5
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time = 10
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 1
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = 1
+value = -3
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 1
+value = F14,6
+
+[State 0, alive]
+type = VarSet
+trigger1 = time = 0
+var(12) = cond((enemynear(0),alive),0,1)
+ignorehitpause = 1
+
+[State 1640, X]
+Type=VarSet
+Trigger1= time = 0
+fvar(13)=(enemynear(var(12)),Pos X-Pos X)*Facing
+ignorehitpause = 1
+
+[State 1640, Y]
+Type=VarSet
+trigger1= time = 0
+fvar(14)=-(enemynear(var(12)),pos Y-Pos Y-35)
+ignorehitpause = 1
+
+[State 1640, alfa]
+Type=VarSet
+trigger1= time = 0
+fvar(15)= Atan(fvar(14)/fvar(13))+cond(fvar(13)<0,PI ,0)
+ignorehitpause = 1
+
+[State 1640, alfa]
+Type=VarSet
+trigger1=fvar(13)=0
+trigger1= time = 0
+fvar(15)=cond(fvar(14)>0,-PI/2,PI/2)
+ignorehitpause = 1
+
+[State 0, VelSet]
+type=VelSet
+trigger1= 1
+x= 24*cos(fvar(15))
+y= -24*sin(fvar(15))
+ignorehitpause = 1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = fvar(15)*180/PI
+ignorehitpause = 1
+
+[State 220, 1]
+type = HitDef
+fall.yvelocity = -6
+trigger1 = !time 
+attr = S, NA
+damage = 100,50
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = -3, Hit
+p1sprpriority = -3
+pausetime = 0, 3
+sparkno = 3426
+sparkxy = -10, -30
+hitsound = 5, 24376
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = -12
+ground.velocity = 0,10
+airguard.velocity = 0,10
+air.type = High
+air.velocity = 0,10
+air.hittime = 12
+fall = 1
+
+[State 15008, end]
+type = changestate
+trigger1 = movecontact && p2movetype = H
+trigger2 = pos y > 5
+value = 6303
+ctrl = 0
+
+[StateDef 1726]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1725
+poweradd = -2000
+sprpriority = -3
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 1
+value = S6,5
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = time >= 0
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+time =10
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 1
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = 1
+value = -3
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 1
+value = F14,6
+
+[State 0, alive]
+type = VarSet
+trigger1 = time = 0
+var(12) = cond((enemynear(0),alive),0,1)
+ignorehitpause = 1
+
+[State 1640, X]
+Type=VarSet
+Trigger1= time = 0
+fvar(13)=(enemynear(var(12)),Pos X-Pos X)*Facing
+ignorehitpause = 1
+
+[State 1640, Y]
+Type=VarSet
+trigger1= time = 0
+fvar(14)=-(enemynear(var(12)),pos Y-Pos Y-35)
+ignorehitpause = 1
+
+[State 1640, alfa]
+Type=VarSet
+trigger1= time = 0
+fvar(15)= Atan(fvar(14)/fvar(13))+cond(fvar(13)<0,PI ,0)
+ignorehitpause = 1
+
+[State 1640, alfa]
+Type=VarSet
+trigger1=fvar(13)=0
+trigger1= time = 0
+fvar(15)=cond(fvar(14)>0,-PI/2,PI/2)
+ignorehitpause = 1
+
+[State 0, VelSet]
+type=VelSet
+trigger1= 1
+x= 29*cos(fvar(15))
+y= -29*sin(fvar(15))
+ignorehitpause = 1
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = 1
+value = fvar(15)*180/PI
+ignorehitpause = 1
+
+[State 220, 1]
+type = HitDef
+fall.yvelocity = -6
+trigger1 = !time 
+attr = S, NA
+damage = 100,100
+getpower = 0,0
+givepower = 0,0
+animtype = Light
+guardflag = MA
+hitflag = MAF
+priority = -3, Hit
+p1sprpriority = -3
+pausetime = 0, 0
+sparkno = 52336
+sparkxy = -10, -30
+hitsound = 5, 0
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = -12
+ground.velocity = 0,0
+airguard.velocity = 0,0
+air.type = High
+air.velocity = 0,0
+air.hittime = 12
+fall = 1
+
+[State 0, TargetBind]
+type = TargetBind
+trigger1 = movecontact
+time = 10
+pos = 0,0
+
+[State 15008, end]
+type = changestate
+trigger1 = movecontact && p2movetype = H && pos y >= -45
+value = 1504
+ctrl = 0
+
+[State 15008, end]
+type = changestate
+trigger1 = movecontact && p2movetype = H && pos y < -45
+trigger2 = time > 30
+value = 1506
+ctrl = 0
+
+;-----------------------------------------------------------------
+;Mine ball - attack
+[Statedef 1727]
+type    = A
+movetype= A
+physics = S
+juggle = 0
+velset = 0,0
+ctrl = 0
+anim = 490
+poweradd = 0
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+value = S7026,3
+
+[State 200, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+value = S3,0
+
+[State 200, PlaySnd]
+type = PlaySnd
+trigger1 = time = 20
+value = S300,0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 25
+value = 210,0
+
+[State 200, 7]
+type = ChangeState
+trigger1 = time = 84
+value = 1713
+ctrl = 1
+
+;-----------------
+;Mine ball - 2
+[StateDef 1730]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+ctrl = 0
+anim = 1720
+poweradd = 0
+sprpriority = -3
+
+;ucielesnienie
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+ignorehitpause = 1
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = parent,stateno = [1713,1741]
+value = 1
+movecamera = 1,1
+
+[State 0, Width]
+type = Width
+trigger1 = parent,stateno = [1713,1741]
+player = 100,0
+edge = 0,130
+
+;----
+
+; bujanie skrzydel
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 1
+trigger2 = animelem  = 2
+trigger3 = animelem  = 3
+trigger4 = animelem  = 8
+trigger5 = animelem  = 9
+trigger6 = animelem  = 10
+trigger7 = animelem  = 11
+trigger8 = animelem  = 16
+y = 0.8
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem  = 4
+trigger2 = animelem  = 5
+trigger3 = animelem  = 6
+trigger4 = animelem  = 7
+trigger5 = animelem  = 12
+trigger6 = animelem  = 13
+trigger7 = animelem  = 14
+trigger8 = animelem  = 15
+y = -0.8
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time = 47
+v = 9
+value = 100
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,2
+channel = 6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = random < 250 && timemod = 199,0
+triggerall = time > 100
+value = s6,13
+channel = 6
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0 && numhelper(1712) = 0
+helpertype = normal
+name = "dragon lifebar"
+stateno = 1712
+ID = 1712
+pos = 0,0
+postype = p1
+facing = 1
+keyctrl = 0
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA, NT, ST, HT, NA, SA, HA,NP,SP,HP
+stateno = 1709
+time = 9999
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal ;player
+name = "Skrzydla"
+ID = 1724
+stateno = 1724
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+supermove = 9999
+pausemove = 9999
+supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.2
+size.yscale = 0.2
+
+[State 0, SprPriority]
+type = SprPriority
+trigger1 = 1
+value = -3
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 45
+anim = 2000
+ID = 2000
+pos = 143,80
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = 1
+bindtime = 10
+removetime = 26
+scale = 0.2,0.1
+sprpriority = -2
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 45
+anim = 2000
+ID = 2000
+pos = 143,80
+postype = p1  ;p2,front,back,left,right
+facing = 1
+vfacing = -1
+bindtime = 10
+removetime = 26
+scale = 0.2,0.16
+sprpriority = -2
+ownpal = 1
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 47
+helpertype = normal ;player
+name = "Miny_g³owny"
+ID = 1731
+stateno = 1731
+pos = 113,70
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 1
+size.yscale = 1
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 47
+value = S1100,0
+
+[State 15008, end]
+type = changestate
+trigger1 = time = 84
+value = 1705
+ctrl = 0
+
+[StateDef 1731]
+type = S
+movetype = I
+Physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 999
+poweradd = -1000
+sprpriority = 3
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 0
+helpertype = normal ;player
+name = "Dr_miny"
+ID = 1732
+stateno = 1732
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.15
+size.yscale = 0.15
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 1
+helpertype = normal ;player
+name = "Dr_miny"
+ID = 1732
+stateno = 1732
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.15
+size.yscale = 0.15
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 2
+helpertype = normal ;player
+name = "Dr_miny"
+ID = 1732
+stateno = 1732
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.15
+size.yscale = 0.15
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 3
+helpertype = normal ;player
+name = "Dr_miny"
+ID = 1732
+stateno = 1732
+pos = 0,0
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+;supermovetime = 9999
+pausemovetime = 9999
+size.xscale = 0.15
+size.yscale = 0.15
+
+[State 15008, end]
+type = Destroyself
+trigger1 = time > 15
+
+
+[StateDef 1732]
+type = S
+movetype = I
+Physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1727
+poweradd = 0
+sprpriority = -3
+
+[State 0, PosSet]
+type = Posadd
+trigger1 = time = 0
+x = -5+random%30
+y = -5+random%20
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 0
+x = 3+(random%10)*0.5
+
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time > 5
+y = 0.3
+
+[State 0, VarRandom]
+type = VarRandom
+trigger1 = 1
+v = 5
+range = 0,5
+
+[State 15008, end]
+type = Changestate
+trigger1 = pos y > 2
+value = 1733
+ctrl = 1
+
+[StateDef 1733]
+type = S
+movetype = I
+Physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 1728
+poweradd = 0
+sprpriority = -3
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = time = 0
+y = 0
+
+[State 0, VarRandom]
+type = VarRandom
+trigger1 = time = 0
+v = 7
+range = 10,50
+
+[State 15008, end]
+type = Changestate
+trigger1 = time = (90+(var(7)*10))
+value = 1038
+ctrl = 1
+
+
+;----------------------------------------------------------------
+;Charge Chakra
+[Statedef 1740]
+type    = A
+movetype= H
+physics = S
+juggle  = 4
+poweradd= 0
+ctrl = 0
+velset = 0,0 
+anim = 70500
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 10
+value = F17,0
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = time = 7
+value = S370,0
+
+[State 1520]
+type = Explod
+trigger1 = animelem = 4
+trigger2 = animelem = 5
+trigger3 = animelem = 6
+trigger4 = animelem = 7
+trigger5 = animelem = 8
+trigger6 = animelem = 9
+trigger7 = animelem = 10
+trigger8 = animelem = 11
+trigger9 = animelem = 12
+trigger10 = animelem = 13
+anim = F402
+ID = 402
+pos = -35+random%70,-5
+postype = p1  ;p2,front,back,left,right
+vel = 0,-pi-2+random%5
+facing = 1
+name = "œwietliki"
+vfacing = 1
+bindtime = 1
+removetime = 20
+scale = 0.125,0.125
+sprpriority = -2
+ontop = 0
+ownpal = 1
+removeongethit = 1
+pausemovetime = -1
+supermovetime = -1
+
+[State 0]
+type = Explod
+trigger1 = animelem = 1
+anim = F404
+ID = 404
+pos = 0,5
+postype = p1
+name = "aura"
+scale = 2.3,2.4
+ownpal = 1
+ontop = 0
+ignorehitpause = 1
+sprpriority = -2
+bindtime = -1
+removetime = -1
+removeongethit = 1
+pausemovetime = 9999
+supermovetime = 9999
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 5
+value = F30,0
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = 1
+value = 9-power/666
+
+[State 1520, destroyself]
+type = ChangeState
+trigger1 = var(50) = 0 && command != "hold_s"
+trigger2 = var(50) = 1 && random = [0,10]
+trigger3 = power >= 4000
+value = 1741
+ctrl = 1
+
+[Statedef 1741]
+type    = A
+movetype= H
+physics = S
+juggle  = 1
+poweradd= 0
+ctrl = 0
+velset = 0,0
+anim = 70501
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 1520]
+type = RemoveExplod
+trigger1 = time = 0
+ID = 404
+
+[State 1521, destroyself]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1713
+ctrl = 1
+;-----------------
+;Combo
+[StateDef 1750]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 260
+poweradd = 20
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = animelem = 3
+v = 24
+value = -1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+[State 0, Explod]
+type = Helper
+trigger1 = animelem = 3
+stateno = 2601
+id = 205
+postype = p1
+pos = 25,-30
+ownpal = 1
+size.xscale = 0.5
+size.yscale = 0.5
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 3
+
+[State 0, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1713
+ctrl = 1
+;-----------------
+[StateDef 1751]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 261
+poweradd = 20
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = animelem = 3
+v = 24
+value = -1
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+[State 0, Explod]
+type = Helper
+trigger1 = animelem = 3
+stateno = 2611
+id = 205
+postype = p1
+pos = 30,-58
+ownpal = 1
+size.xscale = 0.5
+size.yscale = 0.5
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 3
+
+[State 0, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1713
+ctrl = 1
+;-----------------
+[StateDef 1752]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 262
+poweradd = 20
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = animelem = 3
+v = 24
+value = -2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+[State 0, Explod]
+type = Helper
+trigger1 = animelem = 3
+stateno = 2621
+id = 205
+postype = p1
+pos = 30,-35
+ownpal = 1
+size.xscale = 0.5
+size.yscale = 0.5
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 3
+
+[State 0, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1713
+ctrl = 1
+;-----------------
+[StateDef 1753]
+type = A
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 263
+poweradd = 20
+sprpriority = -3
+
+;----mocowanie do smoka 
+
+[State 0, Turn]
+type = Turn
+trigger1 = facing != helper(1705), facing
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(1705), pos x + (helper(1705), vel x -10)*facing
+y = helper(1705), pos y + helper(1705), vel y +2
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = animelem = 4
+v = 24
+value = -4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 0
+value = S6,2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = F8,0+random%4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 4
+value = S4,1+random%20
+volume = 255
+channel = 4
+
+[State 0, Explod]
+type = Helper
+trigger1 = animelem = 4
+stateno = 2621
+id = 205
+postype = p1
+pos = 30,-40
+ownpal = 1
+size.xscale = 0.8
+size.yscale = 0.8
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 3
+
+[State 0, Explod]
+type = Helper
+trigger1 = animelem = 4
+stateno = 2631
+id = 205
+postype = p1
+pos = -10,-37
+ownpal = 1
+size.xscale = 1
+size.yscale = 1
+facing = 1
+keyctrl = 0
+ownpal = 1
+sprpriority = 3
+
+[State 0, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1713
+ctrl = 1

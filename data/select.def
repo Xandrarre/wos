@@ -1,0 +1,92 @@
+[Characters]
+
+Naruto,		stages/T.def,	includestage=0,order=5
+randomselect	;SAKURA
+Sai,		stages/A.def,	includestage=0,order=2
+Kakashi,	stages/M.def,	includestage=0,order=4
+Madara,		stages/F.def,	includestage=0,order=5
+randomselect	;OBITO
+Zetsu,		stages/U.def,	includestage=0,order=2
+Pain,		stages/F.def,	includestage=0,order=5
+Sasuke,		stages/U.def,	includestage=0,order=5
+
+Lee,		stages/B.def,	includestage=0,order=2
+Tenten,		stages/B.def,	includestage=0,order=1
+Neji,		stages/B.def,	includestage=0,order=2
+empty
+empty
+empty
+Kakuzu,		stages/H.def,	includestage=0,order=4
+Deidara,	stages/H.def,	includestage=0,order=3
+Itachi,		stages/U.def,	includestage=0,order=5
+
+Shikamaru,	stages/Y.def,	includestage=0,order=2
+Ino,		stages/Y.def,	includestage=0,order=2
+Choji,		stages/Y.def,	includestage=0,order=2
+empty
+empty
+empty
+Hidan,		stages/Y.def,	includestage=0,order=2
+Sasori,		stages/H.def,	includestage=0,order=4
+randomselect	;KISAME
+
+randomselect	;KIBA
+Hinata,		stages/Y.def,	includestage=0,order=2
+Shino,		stages/Y.def,	includestage=0,order=2
+empty
+empty
+empty
+Jugo,		stages/I.def,	includestage=0,order=2
+Karin,		stages/I.def,	includestage=0,order=1
+randomselect	;SUIGETSU
+
+
+Konohamaru,	stages/A.def,	includestage=0,order=1
+Darui,		stages/C.def,	includestage=0,order=3
+Kankuro,	stages/C.def,	includestage=0,order=2
+empty
+empty
+empty
+randomselect	;JIRAIYA
+randomselect	;TSUNADE	
+Orochimaru,	stages/I.def,	includestage=0,order=4
+
+Killerbee,	stages/H.def,	includestage=0,order=4
+Raikage,	stages/H.def,	includestage=0,order=4
+Gaara,		stages/C.def,	includestage=0,order=3
+randomselect	;ONOKI	
+randomselect
+Hashirama,	stages/F.def,	includestage=0,order=5
+Tobirama,	stages/F.def,	includestage=0,order=5
+Minato,		stages/Y.def,	includestage=0,order=5
+Danzo,		stages/M.def,	includestage=0,order=4
+
+;---------------------------------------------------------------------------------------------------
+
+[ExtraStages]
+;Valley of the end	
+stages/F.def
+;Orochimaru Hideout (Destroyed)
+stages/I.def
+;Mist Ninja
+stages/B.def 
+;A and B	
+stages/H.def
+;Lightning Desert
+stages/C.def	
+;Forest of quiet movements
+stages/Y.def	
+;Samurai Bridge
+stages/M.def	
+;The Uchiha Hideout
+stages/U.def	
+;Tailed Beast Ruins
+stages/T.def
+;Ninja World Tournament Stage
+stages/A.def
+
+;---------------------------------------------------------------------------------------------------
+
+[Options]
+arcade.maxmatches = 2,4,3,2,2,0,0,0,0,0
+team.maxmatches = 2,4,3,2,2,0,0,0,0,0

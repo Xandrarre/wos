@@ -1,0 +1,504 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Bird Forward Dash}
+[Command]
+FF,Y
+[Triggers]
+- in air
+- chakra 80
+- clay 5
+[Info]
+
+{Bird Backward Dash}
+[Command]
+BB,Y
+[Triggers]
+- in air
+- chakra 80
+- clay 5
+[Info]
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+- when no clay
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A
+[Triggers]
+- on ground
+- clay 0/0/0/0/1
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+- clay 1/1/2
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A
+[Triggers]
+- on ground
+- clay 1/3/2
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+- clay 0/0/0/2
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+- clay 1/1/1/2
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X
+[Triggers]
+- on ground
+- clay 1/2/3
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+- clay 1/3/8/10
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+- clay 0/1/2/4
+[Info]
+
+{Bird Combo}
+[Command]
+(DD),B,B,B
+[Triggers]
+- in air
+- clay 2/2/3
+[Info]
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- clay 2
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+- clay 2
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Katsu}
+[Command]
+Y
+[Triggers]
+[Info]
+- forces bombs to explode
+
+{Shi Wan: Small Bird}
+[Command]
+B
+[Triggers]
+- clay 1
+[Info]
+
+{Shi Wan: Spiders}
+[Command]
+(DD),B
+[Triggers]
+- on ground
+- clay 1
+- chakra 150
+[Info]
+
+{Shi Wan: Grasshopper}
+[Command]
+(FF),B
+[Triggers]
+- on ground
+- clay 2
+- chakra 100
+[Info]
+
+{Shi Wan: Single Bird}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 1000
+- clay 20
+[Info]
+
+{Shi Wan: Double Bird}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 2000
+- clay 40
+[Info]
+
+{Rakka Hakai no Bi}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+- clay 20
+[Info]
+
+{Kamikaze Hakai no Bi}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+- clay 20
+[Info]
+
+{Air Kamikadze Hakai no Bi}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1000
+- clay 20
+[Info]
+
+{Hogeki Hakai no Bi}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 2000
+- clay 30
+[Info]
+
+{Raundo Hakai no Bi}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1200
+- clay 15
+[Info]
+
+{Shi Wan: Bombs}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 200
+- clay 18
+[Info]
+
+{Air Shi Wan: Bombs}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 700
+- clay 20
+[Info]
+
+{Shi Wan: Clay Mine}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 400
+- clay 6
+[Info]
+
+{Shi Wan: Snake}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 800
+- clay 10
+[Info]
+
+{Shi Wan: Worm}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 2500
+- clay 25
+[Info]
+
+{Ningyo Kibaku Nendo}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 2000
+- clay 80
+[Info]
+
+{Ningyo Kibaku Nendo Control}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- requires clay monsters
+[Info]
+
+{Counter - Nendo Bunshin}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 500
+- clay 18
+[Info]
+- counters enemy's attack
+
+{Doton: Moguragakure no Jutsu}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 100
+[Info]
+
+{Anti-Genjutsu Eye}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+- versus genjutsu users
+[Info]
+- makes immune
+  to enemy's genjutsu
+
+{Shi Wan: Bird Mode}
+[Command]
+(C),Z
+[Triggers]
+- chakra 1000 
+- clay  50
+[Info]
+
+{Shi Tsu: Dragon Mode}
+[Command]
+(Z),C
+[Triggers]
+- chakra 3000 
+- clay 150
+[Info]
+
+{-------Bird Mode----------}
+
+{BM Combo}
+[Command]
+A,A,A,A
+[Triggers]
+- on bird
+- clay 1/1/2/4
+[Info]
+
+{BM Bomb}
+[Command]
+X
+[Triggers]
+- on bird
+- clay 4
+[Info]
+
+{BM Shi Wan: Small Bird}
+[Command]
+B
+[Triggers]
+- on bird
+- clay 1
+[Info]
+
+{BM Shi Wan: Single Bird}
+[Command]
+Y
+[Triggers]
+- on bird
+- chakra 1000
+- clay 30
+[Info]
+
+{BM Shi Suri}
+[Command]
+C
+[Triggers]
+- on bird
+- chakra 2500
+- clay 100
+[Info]
+
+{Jump away from Bird}
+[Command]
+S
+[Triggers]
+- on bird
+[Info]
+
+{------Dragon Mode-------}
+
+{DM Combo}
+[Command]
+A,A,A,A
+[Triggers]
+- on dragon
+- clay 1/1/2/4
+[Info]
+
+{DM Bomb}
+[Command]
+X
+[Triggers]
+- on dragon
+- clay 4
+[Info]
+
+{DM Shi Wan: Small Bird}
+[Command]
+B
+[Triggers]
+- on dragon
+- clay 1
+[Info]
+
+{DM Body Slam}
+[Command]
+Y
+[Triggers]
+- on dragon
+[Info]
+
+{DM Kibaku Jirai}
+[Command]
+C
+[Triggers]
+- on dragon
+- chakra 1000
+[Info]
+
+{DM Dragon}
+[Command]
+(Z)
+[Triggers]
+- on dragon
+- chakra 1000/2000
+[Info]
+- hold
+
+{Jump away from Dragon}
+[Command]
+S
+[Triggers]
+- on dragon
+[Info]
+
+{-------Ultimates---------}
+
+{Shi Fo: Karura}
+[Command]
+Z
+[Triggers]
+- on bird
+- chakra 3500
+- enemy's life < 66%
+- clay 150
+[Info]
+
+{Shi O: Kyukyoku Geijutsu}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 4000 
+- life < 66%
+- clay 150
+[Info]

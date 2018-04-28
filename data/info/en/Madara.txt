@@ -1,0 +1,633 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- press arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Reverse Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+- catches enemy's kunai
+  and throws it away
+
+{Rikudo Rod}
+[Command]
+(FF),B
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Katon}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000/2000/3000
+[Info]
+- hold to charge
+- performs gokakyu,
+  gouka mekkyaku
+  and gouka meshitsu
+
+{Katon: Gokakyu no Jutsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- katon 1/3 charged
+- hold
+
+{Katon: Gouka Mekkyaku}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+- katon 2/3 charged
+- hold
+
+{Katon: Gouka Meshitsu}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+- katon fully charged
+- hold
+
+{Katon: Gokakyu}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Air Katon: Gokakyu}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Katon: Hosenka}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 200
+[Info]
+- smash
+
+{Air Katon: Hosenka}
+[Command]
+(C),BB
+[Triggers]
+- in air
+- chakra 200
+[Info]
+- smash
+
+{Katon: Haijingakure}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 700
+[Info]
+
+{Katon: Ryuen Hoka}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{Air Katon: Goenka}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 2400
+[Info]
+
+{Genjutsu: Sharingan}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Gunbai Attack}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Uchihageshi}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- counters enemy's attack
+
+{Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 5 clones
+
+{Kuchiyose: Kyubi}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Mokuton Jutsu}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+- requires active rinnegan
+  or ems
+[Info]
+
+{Mokuton: Mokuryu}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 3000
+- requires active rinnegan
+  or ems
+[Info]
+
+{Mokuton: Jukai Kotan}
+[Command]
+(Z),FF,DD
+[Triggers]
+- on ground
+- chakra 2500
+- requires active rinnegan
+  or ems
+[Info]
+- creates forest
+
+{Mokuton: Kajukai Korin}
+[Command]
+(Z),FF,UU
+[Triggers]
+- on ground
+- chakra 2500
+- requires forest and 
+  active rinnegan or ems
+[Info]
+
+{Mokuton: Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1500/clone
+- requires active rinnegan
+  or ems
+[Info]
+- creates clones
+- max 4 clones
+
+{Eternal Mangekyo Sharingan}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Izanagi}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 1500
+- requires active ems
+- available sharingan eye
+[Info]
+- consumes sharingan eye
+- after 10 seconds turns
+  all damage taken into
+  illusion
+
+{Tsukyomi}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 2500
+- requires active ems
+[Info]
+
+{Kuchiyose: Kyubi Susanoo}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 3000
+- requires active ems
+[Info]
+
+{Susano Combo}
+[Command]
+Y
+[Triggers]
+- onground
+- chakra 100
+- requires active ems
+[Info]
+- untargetable
+
+{Susanoo Bones}
+[Command]
+(C),Y
+[Triggers]
+- chakra 250
+- requires active ems
+  or rinnegan
+[Info]
+- untargetable
+- press again to end
+
+{Susanoo Bones: Attack 1}
+[Command]
+(C),A
+[Triggers]
+- chakra 250
+- requires active ems
+  or rinnegan
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 2}
+[Command]
+(C),X
+[Triggers]
+- chakra 250
+- requires active ems
+  or rinnegan
+[Info]
+- untargetable
+
+{Susanoo Bones: Attack 3}
+[Command]
+(C),B
+[Triggers]
+- chakra 250
+- requires active ems
+  or rinnegan
+[Info]
+- untargetable
+
+{Susanoo}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 2000
+- requires active ems
+  or rinnegan
+[Info]
+- untargetable
+- press S to end
+
+{Susanoo: Attack 1}
+[Command]
+A
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 2}
+[Command]
+X
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 3}
+[Command]
+B
+[Triggers]
+- requires susanoo
+[Info]
+
+{Susanoo: Attack 4}
+[Command]
+Y
+[Triggers]
+- requires susanoo
+[Info]
+
+{Yasaka no Magatama}
+[Command]
+C
+[Triggers]
+- requires susanoo
+- chakra 3000
+[Info]
+
+{Rinnegan}
+[Command]
+(Z),C
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{Fujutsu Kyuin}
+[Command]
+(C),FF,DD
+[Triggers]
+- on ground
+- chakra 200
+- requires active rinnegan
+[Info]
+- untargetable
+- hold
+
+{Mazo no Kusari}
+[Command]
+(C),FF,UU
+[Triggers]
+- on ground
+- chakra 500
+- requires active rinnegan
+[Info]
+- steals enemy's chakra
+
+{Rinbo Forward}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- chakra 300
+- requires active rinnegan
+[Info]
+- extends rinnegan limit
+
+{Rinbo Backward}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- chakra 300
+- requires active rinnegan
+[Info]
+- extends rinnegan limit
+
+{Air Rinbo}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 300
+- requires active rinnegan
+[Info]
+- extends rinnegan limit
+
+{Rinbo: Hengoku}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 2000
+- requires active rinnegan
+[Info]
+- extends rinnegan limit
+
+{Gedo: Rinne Tensei}
+[Command]
+(Z),BB,UU
+[Triggers]
+- on ground
+- chakra 2000
+- life < 100%
+- requires active rinnegan
+[Info]
+- heals while decreasing 
+  maximum life
+
+{Kuchiyose: Gedo Mazo}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 3000
+- requires active rinnegan
+[Info]
+
+{-------Ultimates---------}
+
+{Tengai Shisei}
+[Command]
+(C),FF,BB
+[Triggers]
+- on ground
+- chakra 4000
+- requires ems or rinnegan
+- long distance
+[Info]
+
+{Chibaku Tensei}
+[Command]
+(Z),FF,BB
+[Triggers]
+- on ground
+- chakra 4000
+- requires active rinnegan
+- long distance
+[Info]
+- extends rinnegan limit
+
+{Perfect Susanoo Slash}
+[Command]
+Z
+[Triggers]
+- requires susanoo
+- chakra 4000
+- long distance
+[Info]

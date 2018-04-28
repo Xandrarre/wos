@@ -1,0 +1,327 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- chakra 80
+[Info]
+
+{Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- press arrows 
+  to choose direction
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Shuriken}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Electric Shuriken}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+[Info]
+
+{Sword Throw}
+[Command]
+Y
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Raiton Combo}
+[Command]
+(C),FF,C,C
+[Triggers]
+- on ground
+- chakra 200/200/400
+[Info]
+
+{Raiton Kangekiha}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Raiton Kangekiha on Ground}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- smash
+- kakashi's mizutamari 
+  increases its size
+  and damage
+
+{Hurricane}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Air Hurricane}
+[Command]
+(C),UU
+[Triggers]
+- in Air
+- chakra 500
+[Info]
+
+{Raiton Hurricane}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Suiton Combo}
+[Command]
+(Z),FF,Z
+[Triggers]
+- on ground
+- chakra 400/400
+[Info]
+
+{Suiton: Sujinheki}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Suiton: Sujinheki Hold}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- hold
+- smash X to add 
+  raiton: kangekiha
+  (500 additional chakra)
+
+{Suiton and Raiton Attack}
+[Command]
+(Z),DD
+[Triggers]
+- in air
+- chakra 1000
+[Info]
+
+{Ranton Reiza Sakaso}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+
+{Kuroi Kaminari}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Kuropansa Combo}
+[Command]
+(C),UU,DD,C,C
+[Triggers]
+- on ground
+- chakra 500/1000/1500
+[Info]
+
+{Kohaku no Johei - Call}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+- calls kohaku no johei, 
+  which will be spawned in 
+  20 seconds after usage
+
+{Electric Sword}
+[Command]
+(C),Z
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- press again to turn off
+- attacks with sword
+  deal doubled damage
+
+{-------Ultimates---------}
+
+{Raiton Kuropansa}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- chakra 4000
+[Info]
+
+{Kohaku no Johei - Use}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- chakra 3000
+- requires kohaku no johei
+- near kohaku no johei
+[Info]

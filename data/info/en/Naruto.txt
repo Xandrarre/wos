@@ -1,0 +1,1160 @@
+{-------Basic Move-------}
+
+{Chakra Charge}
+[Command]
+(S)
+[Triggers]
+- on ground
+[Info]
+- charges chakra
+
+{Throw}
+[Command]
+Y
+[Triggers]
+- chakra 50
+[Info]
+- use arrows 
+  to choose direction
+
+{Air Jump}
+[Command]
+UU,Y
+[Triggers]
+- chakra 50
+[Info]
+
+{Dash}
+[Command]
+FF,FF
+[Triggers]
+- in air
+[Info]
+- dashes forward
+
+{Kawarimi}
+[Command]
+C
+[Triggers]
+- during being hit
+[Info]
+- avoids attack
+
+{--------Weapon----------}
+
+{Kunai}
+[Command]
+B
+[Triggers]
+[Info]
+
+{Smoke Kunai}
+[Command]
+(FF),B
+[Triggers]
+[Info]
+
+{Exploding Kunai}
+[Command]
+(BB),B
+[Triggers]
+[Info]
+
+{Shuriken}
+[Command]
+(DD),B
+[Triggers]
+[Info]
+
+{------Normal Mode-------}
+{--------Combo-----------}
+
+{Combo 1}
+[Command]
+A,A,A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 2}
+[Command]
+(DD),A,A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 3}
+[Command]
+(FF),A,A,A,A,A,A,A,A
+[Triggers]
+- on ground
+[Info]
+
+{Combo 4}
+[Command]
+A,A,A,A,A
+[Triggers]
+- in air
+[Info]
+
+{Combo 5}
+[Command]
+X,X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 6}
+[Command]
+(DD),X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 7}
+[Command]
+(FF),X,X,X,X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+[Info]
+
+{Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+[Info]
+
+{Bunshin Throw Combo}
+[Command]
+(BB),X,X,X
+[Triggers]
+- on ground
+[Info]
+
+{Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+[Info]
+
+{Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+[Info]
+
+{------Jutsu Normal--------}
+
+{Bunshin Stun}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+
+{Naruto Rendan}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Naruto Nisen Rendan}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- chakra 1500
+[Info]
+
+{Fuma Shuriken}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- press Y to perform
+  shihohappo shuriken
+
+{Shihohappo Shuriken}
+[Command]
+Y
+[Triggers]
+- chakra 1500
+- during fuma shuriken
+- behind enemy
+[Info]
+
+{Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  odama rasengan
+- press X to add futon
+
+{Rasengan Smoke}
+[Command]
+DD
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{Jumping Rasengan}
+[Command]
+UU
+[Triggers]
+- while charging rasengan 
+[Info]
+
+{Futon: Rasengan}
+[Command]
+(Z),X
+[Triggers]
+- while charging rasengan 
+[Info]
+- smash to charge 
+  rasenshuriken
+
+{Odama Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- chakra 3000
+[Info]
+- fully charged rasengan
+
+{Air Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- chakra 900
+[Info]
+- hold to charge
+
+{Rasen Cho Tarengan}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- chakra 1500
+- medium distance
+[Info]
+
+{Odama Rasen Tairengan}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- chakra 1800
+- short distance
+[Info]
+
+{Futon: Gama Teppo}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- chakra 1000
+[Info]
+
+{Futon: Gamayu Endan}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- chakra 1500
+[Info]
+
+{Kuchiyose: Gamabunta}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- chakra 2000
+[Info]
+
+{Oiroke no Jutsu}
+[Command]
+(C),BB,UU
+[Triggers]
+- on ground
+- chakra 300
+[Info]
+- paralyzes
+- does no effect on women
+
+{Haremu no Jutsu}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- chakra 250+250 additional
+  for each close
+- requires at least 2 clones
+[Info]
+- paralyzes
+- does no effect on women
+
+{Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 5 clones
+
+{Charging Bunshin}
+[Command]
+DD,Y
+[Triggers]
+- on ground
+- chakra 1000/clone
+[Info]
+- creates clones that
+  charges sennin chakra
+- max 2 clones
+
+{Sennin Modo Charge}
+[Command]
+Y
+[Triggers]
+- on ground
+- chakra 500
+[Info]
+- charges sennin chakra
+
+{Kyubi Control Mode}
+[Command]
+(C),Z
+[Triggers]
+- chakra 500
+[Info]
+- press again to turn off
+
+{-------Ultimates---------}
+
+{Futon: Rasenshuriken}
+[Command]
+(Z),X
+[Triggers]
+- on ground
+- chakra 4000 
+[Info]
+- fully charged 
+  futon: rasengan
+
+{------Sennin Modo-------}
+{------Sennin Combo-------}
+
+{Sennin Combo 1}
+[Command]
+A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 2}
+[Command]
+(DD),A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 3}
+[Command]
+(FF),A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 4}
+[Command]
+A,A,A,A,A
+[Triggers]
+- in air
+- in sennin modo
+[Info]
+
+{Sennin Combo 5}
+[Command]
+X,X,X,X,X,X
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 6}
+[Command]
+(DD),X,X,X,X,X,X
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 7}
+[Command]
+(FF),X,X,X,X,X,X
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+- in sennin modo
+[Info]
+
+{Sennin Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+- in sennin modo
+[Info]
+
+{Sennin Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+- in sennin modo
+[Info]
+
+{Sennin Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+- in sennin modo
+[Info]
+
+{Sennin Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+- in sennin modo
+[Info]
+
+{Sennin Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+- in sennin modo
+[Info]
+
+{---Sennin Jutsu Normal----}
+
+{Sennin Kawazu Kumite 1}
+[Command]
+Y
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 200
+[Info]
+
+{Sennin Kawazu Kumite 2}
+[Command]
+(DD),Y
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 200
+[Info]
+
+{Sennin Kawazu Kumite 3}
+[Command]
+Y
+[Triggers]
+- in air
+- in sennin modo
+- chakra 200
+[Info]
+
+{Sennin Bunshin Stun}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 500
+[Info]
+
+{Sennin Fuma Shuriken}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 300
+[Info]
+- press Y to perform
+  rasenrengan
+
+{Sennin Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  senpo: odama rasengan
+- press X to add futon
+
+{Sennin Rasengan Smoke}
+[Command]
+DD
+[Triggers]
+- in sennin modo
+- while charging rasengan 
+[Info]
+
+{Sennin Jumping Rasengan}
+[Command]
+UU
+[Triggers]
+- in sennin modo
+- while charging rasengan 
+[Info]
+
+{Sennin Futon: Rasengan}
+[Command]
+(Z),X
+[Triggers]
+- in sennin modo
+- while charging rasengan 
+[Info]
+- smash to charge 
+  rasenshuriken
+
+{Senpo: Odama Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 3000
+[Info]
+- fully charged rasengan
+
+{Sennin Air Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- in sennin modo
+- chakra 900/2500
+[Info]
+- hold to charge
+- at full bar performs
+  air odama rasengan
+
+{Sennin Air Odama Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- in sennin modo
+- chakra 2500
+[Info]
+- fully charged air rasengan
+
+{Sennin Rasenrengan}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 2000
+[Info]
+- can be used during 
+  fuma shuriken when
+  behind enemy
+
+{Sennin Rasen Cho Tarengan}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 1500
+- medium distance
+[Info]
+
+{Sennin Odama Rasen Tairengan}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 1800
+- short distance
+[Info]
+
+{Kuchiyose: Futon Sunabokori}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 500
+[Info]
+
+{Kuchiyose: Kawazu Naki}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 1000
+[Info]
+
+{Kuchiyose: Gamaken}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 1000
+[Info]
+
+{Sennin Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 3 clones
+
+{----Sennin Ultimates------}
+
+{Sennin Futon: Rasenshuriken}
+[Command]
+(Z),X
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 4000 
+[Info]
+- fully charged 
+  futon: rasengan
+
+{Cho Odama Rasen Tarengan}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- in sennin modo
+- chakra 4000
+- short distance
+[Info]
+
+{----Kyubi Control Mode----}
+{-----KCM Basic Move------}
+{KCM Forward Shunshin}
+[Command]
+DD,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 80
+[Info]
+
+{KCM Backward Shunshin}
+[Command]
+DD,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 80
+[Info]
+
+{KCM Teleport}
+[Command]
+Y
+[Triggers]
+- chakra 50
+- in kyubi control mode
+[Info]
+- use arrows 
+  to choose direction
+
+{KCM Forward Teleport}
+[Command]
+FF,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 50
+[Info]
+
+{KCM Backward Teleport}
+[Command]
+BB,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 50
+[Info]
+
+{-------KCM Combo-------}
+
+{KCM Combo 1}
+[Command]
+A,A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 2}
+[Command]
+(DD),A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 3}
+[Command]
+(FF),A,A,A,A,A,A,A,A
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 4}
+[Command]
+A,A,A,A,A
+[Triggers]
+- in air
+- in kyubi control mode
+[Info]
+
+{KCM Combo 5}
+[Command]
+X,X,X,X,X,X,X,X
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 6}
+[Command]
+(DD),X,X,X,X,X,X
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 7}
+[Command]
+(FF),X,X,X,X,X,X
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Combo 8}
+[Command]
+X,X,X,X,X
+[Triggers]
+- in air
+- in kyubi control mode
+[Info]
+
+{KCM Enemy Toss}
+[Command]
+(BB),A
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Enemy Throw}
+[Command]
+(BB),X
+[Triggers]
+- on ground
+- in kyubi control mode
+[Info]
+
+{KCM Finisher 1}
+[Command]
+(UU),A
+[Triggers]
+- during combo
+- in kyubi control mode
+[Info]
+
+{KCM Finisher 2}
+[Command]
+(UU),X
+[Triggers]
+- during combo
+- in kyubi control mode
+[Info]
+
+{KCM Finisher 3}
+[Command]
+(UU),B
+[Triggers]
+- during combo
+- in kyubi control mode
+[Info]
+
+{KCM Finisher 4}
+[Command]
+(UU),Y
+[Triggers]
+- during combo
+- in kyubi control mode
+[Info]
+
+{----KCM Jutsu Normal------}
+
+{KCM Bunshin Stun}
+[Command]
+(C),DD,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 500
+[Info]
+
+{KCM Biju Barrage}
+[Command]
+(C),DD,UU
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1000
+[Info]
+
+{KCM Air Biju Barrage}
+[Command]
+(C),DD
+[Triggers]
+- in air
+- in kyubi control mode
+- chakra 500
+[Info]
+
+{KCM Mini Kurama Attack}
+[Command]
+(C),DD,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1000
+[Info]
+
+{KCM Air Mini Kurama Attack}
+[Command]
+(C),FF
+[Triggers]
+- in air
+- in kyubi control mode
+- chakra 500
+[Info]
+
+{KCM Mini Kurama Block}
+[Command]
+(C),BB,DD
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 500
+[Info]
+- hold
+- untargetable
+
+{KCM Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 500/3000
+[Info]
+- hold to charge
+- at full bar performs
+  wakusei rasengan
+- press X to add futon
+
+{KCM Rasengan Smoke}
+[Command]
+DD
+[Triggers]
+- in kyubi control mode
+- while charging rasengan 
+[Info]
+
+{KCM Jumping Rasengan}
+[Command]
+UU
+[Triggers]
+- in kyubi control mode
+- while charging rasengan 
+[Info]
+
+{KCM Futon: Rasengan}
+[Command]
+(Z),X
+[Triggers]
+- in kyubi control mode
+- while charging rasengan 
+[Info]
+- smash to charge 
+  rasenshuriken
+
+{KCM Wakusei Rasengan}
+[Command]
+(Z),DD,UU
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 3000
+[Info]
+- fully charged rasengan
+
+{KCM Air Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- in kyubi control mode
+- chakra 900/2500
+[Info]
+- hold to charge
+- at full bar performs
+  air odama rasengan
+
+{KCM Air Odama Rasengan}
+[Command]
+(Z)
+[Triggers]
+- in air
+- in kyubi control mode
+- chakra 2500
+[Info]
+- fully charged air rasengan
+
+{KCM Rasenrangan}
+[Command]
+(Z),UU,DD
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 2000
+[Info]
+
+{KCM Rasenkyugan}
+[Command]
+(Z),UU,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1500
+- short distance
+[Info]
+
+{KCM Rasen Cho Tarengan}
+[Command]
+(Z),DD,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1500
+- medium distance
+[Info]
+
+{KCM Odama Rasen Tairengan}
+[Command]
+(Z),DD,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1800
+- short distance
+[Info]
+
+{KCM Mini Rasenshuriken}
+[Command]
+(Z),UU,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 800
+[Info]
+
+{KCM Kuchiyose: Gamahiro}
+[Command]
+(C),UU,DD
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 3000
+[Info]
+
+{KCM Kuchiyose: Gamabunta}
+[Command]
+(C),UU,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 2000
+[Info]
+
+{KCM Kuchiyose: Gamaken}
+[Command]
+(C),UU,BB
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1000
+[Info]
+
+{KCM Kage Bunshin no Jutsu}
+[Command]
+(Z),BB,DD
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 1000/clone
+[Info]
+- creates clones
+- max 2 clones
+
+{Kurama Mode}
+[Command]
+(C),BB,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 2000
+[Info]
+
+{Kurama Attack 1}
+[Command]
+A
+[Triggers]
+- in kurama mode
+[Info]
+
+{Kurama Attack 1}
+[Command]
+X
+[Triggers]
+- in kurama mode
+[Info]
+
+{Kurama Attack 3}
+[Command]
+B
+[Triggers]
+- in kurama mode
+[Info]
+
+{Kurama Attack 4}
+[Command]
+Y
+[Triggers]
+- in kurama mode
+[Info]
+
+{Kurama Renzoku Bijudama}
+[Command]
+C
+[Triggers]
+- in kurama mode
+- chakra 1500
+[Info]
+
+{-----KCM Ultimates-------}
+
+{KCM Futon: Rasenshuriken}
+[Command]
+(Z),X
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 4000 
+[Info]
+- fully charged 
+  futon: rasengan
+
+{Bijudama}
+[Command]
+(Z),BB,FF
+[Triggers]
+- on ground
+- in kyubi control mode
+- chakra 4000 
+[Info]
+
+{Kurama Bijudama}
+[Command]
+Z
+[Triggers]
+- in kurama mode
+- chakra 4000 
+[Info]
