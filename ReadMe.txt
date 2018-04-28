@@ -1,6 +1,6 @@
 ﻿Naruto Shippuuden: War of Shinobi
-Version 2.0 - 1.5.17
-Game Software © 2009-2017 N-G MUGEN Team 
+Version 2.0.1 - 28.4.18
+Game Software © 2009-2018 N-G MUGEN Team 
 Based on Elecbyte's Mugen Engine
 
 NARUTO Artwork and Elements
@@ -24,6 +24,7 @@ Huge credits to:
 - Xxjohnyxx
 - Lavigon
 - Ramiz
+- Spectro Sosuke
 everyone who took part in creating War of Shinobi
 and our old friends: Kinzo, juubi10, Adus
 
@@ -34,9 +35,6 @@ They may not run correctly!
 You can find us on:
 FACEBOOK: https://www.facebook.com/N-G-Mugen-Team-157035821030069/ 
 YOUTUBE: https://www.youtube.com/Xandrarre
-
-If you like the game, feel free to donate us!
-https://streamtip.com/y/xandrarre
 
 Thanks for Downloading
 Enjoy Playing!
