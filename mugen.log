@@ -1,0 +1,258 @@
+---------------------------------------------------
+M.U.G.E.N ver 1.1.0 Beta 1 P1 (2013.08.11) status log
+---------------------------------------------------
+Parsing command line...
+Command line: E:\WoS\wos\mugen.exe
+Parse command line OK
+Initializing...
+Allocating game variables
+Reading configuration file...Setting language "en".
+OK
+Initializing timer...performance timer enabled...frequency 1757813...OK
+Initializing keyboard...configuring...OK
+Initializing input engine...OK
+Initializing sound...OK
+Initializing BGM...  OK
+Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x32 mode 0x0...success...OK
+Setting callbacks...OK
+Initializing font...OK
+Initializing game variables...OK
+Session RNG seed is 1530887004
+Loading system fonts...OK
+Loading options...
+Initializing pads...failed
+Reinitializing input engine...OK
+Remapping keys...OK
+Reinitializing input engine...OK
+Options loaded OK
+Loading system...
+  Load system file system.def...OK
+  Load system spr...OK
+  Load system snd...OK
+  Load system fonts...OK
+  Load system anim...OK
+  Load [Title Info]...OK
+  Load [Option Info]...OK
+  Load [Select Info]...OK
+  Load [VS Screen]...OK
+  Load [Victory Screen]...OK
+  Load [Demo Mode]...OK
+  Load [Continue Screen]...OK
+  Load [Game Over Screen]...OK
+  Load [Win Screen]...OK
+  Load [Survival Results Screen]...OK
+  Load [Default Ending]...OK
+  Load [End Credits]...OK
+  Load TitleBG...VersusBG...VictoryBG...SelectBG...OptionBG...OK
+  Loading fight data
+    Opening fight data file data/mugen1/fight.def...OK
+    Reading [Files]...OK
+    Loading fonts...OK
+    Load fight anim...OK
+    Reading [Lifebar]...[Turns Lifebar]...[Simul Lifebar]...[Powerbar]...
+    [Face]...[Simul Face]...[Turns Face]...
+    [Name]...[Simul Name]...[Turns Name]...
+    [Time]...[Combo]...[Round]...[WinIcon]...OK
+    Allocating explods...OK
+  Fight data loaded OK
+Lua initing
+Lua init complete
+System loaded OK
+Initialize OK
+Set up graphics...timer...OK
+
+Entering gameflow loop
+Gameflow 0
+Gameflow 1
+Playing storyboard logo.def: scene
+Unloading match assets
+Freeing players
+Game loop init
+Game loop deinit
+Finished playing storyboard logo.def: scene
+Gameflow 2
+Initializing character info...OK
+Initializing select screen...finding characters...
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+
+  Error reading character file: chars/empty/empty.def
+OK
+Gameflow 3
+Playing storyboard intro.def: scene
+Unloading match assets
+Freeing players
+Game loop init
+Game loop deinit
+Finished playing storyboard intro.def: scene
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 10 on teamslot 0.0
+Char Kakuzu.def (10) request pal 3 3F (3F) -> reserved 3 (37)
+Selected char 15 on teamslot 1.0
+Char Choji.def (15) request pal 3 3F (3F) -> reserved 3 (37)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1623686605
+Reset persist vars team 0
+Reset persist vars team 1
+Loading character chars/Kakuzu/Kakuzu.def...
+  Loading info...OK
+  Loading cmd command set Kakuzu.cmd...OK
+  Loading cns Kakuzu.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Kakuzu.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Kakuzu.sff...OK
+  Loading anim Kakuzu.air...OK
+  Loading snd Kakuzu.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  20650 expressions (5584 on trigger lines)
+Character Kakuzu.def loaded OK
+New char Kakuzu loaded into cache: (1/4 cached) Load time: 2940.000ms
+Loading character chars/Choji/Choji.def...
+  Loading info...OK
+  Loading cmd command set Choji.cmd...OK
+  Loading cns Choji.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Choji.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Choji.sff...OK
+  Loading anim Choji.air...OK
+  Loading snd Choji.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  16404 expressions (4627 on trigger lines)
+Character Choji.def loaded OK
+New char Choji loaded into cache: (2/4 cached) Load time: 440.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Resetting round
+End of match loop
+Total time: 203.33s
+Total frames: 12200 	Skipped frames: 0
+Avg game rate: 60.00
+Avg frame rate: 60.00
+
+Finishing match
+Freeing players
+Save persist vars P56 Kakuzu
+Player Kakuzu cache count reduced: 0
+Save persist vars P57 Choji
+Player Choji cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 12
+Entering victory screen.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Victory screen init
+End of victory screen loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Returned from gameflow loop
+Deinitializing...
+Frames      : 15614
+Time elapsed: 268.010 sec
+ticks: 26801, tps: 100, start 1788, end 28589
+
+Unloading match assets
+Freeing players
+Clearing player cache...Freeing player RC Kakuzu...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC Choji...CMD...CNS...SFF...AIR...SND...Misc...OK
+OK
+Freeing character info...OK
+Freeing select screen...OK
+Freeing fight data...OK
+Freeing system data...OK
+Freeing game variables...Unloading match assets
+Freeing players
+OK
+Deinitializing input...pad...keyboard...OK
+Removing callbacks...OK
+Deintializing timer...OK
+Deinitializing graphics...OK
+Deinitializing BGM...OK
+Deinitializing sound...OK
+Successful program termination.
+
+Log file successfully closed.

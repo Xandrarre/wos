@@ -13502,6 +13502,118 @@ trigger1 = animtime = 0
 trigger2 = parent, stateno != 710
 trigger2 = parent, stateno != 702
 ;-----------------
+;-- Suiton: Daisuijinheki
+[StateDef 720]
+type = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 720
+poweradd = 0
+sprpriority = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 2
+value = F8,0+random%4
+
+[State 200, 1]
+type = PlaySnd
+trigger1 = animelem = 3
+value = F17,0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 3
+value = S3,4
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 5
+value = S6,9
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 8
+value = S6,6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 8
+value = S6,6
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 40
+value = F19,6
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 40
+anim = F2015
+id = 2015
+pos = 44*0.95,-57*0.95
+scale = 1,1
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 5
+ownpal = 1
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = timemod = 3,0
+triggerall = time >= 35
+anim = F1300+random%3
+id = 1300
+pos = 0*0.95+random%50,-55*0.95-random%15
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 2+random%3
+scale = 0.5,0.5
+ownpal = 1
+supermovetime = 9999
+pausemovetime = 9999
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 35
+value = F11,6
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = time = 50
+value = -2500
+
+[State 0, Helper]
+type = Helper
+trigger1 = time = 50
+helpertype = normal;player
+name = "Raiton"
+ID = 625
+stateno = 625
+pos = 49*0.95,-53*0.95
+postype = p1    ;p2,front,back,left,right
+facing = 1
+keyctrl = 0
+ownpal = 1
+size.xscale = 0.5
+size.yscale = 1
+pausemovetime = 9999
+
+[State 0, end]
+type = ChangeState
+trigger1 = time = 110
+value = 602
+ctrl = 1
+;-----------------
 ;-- Suiton Air
 [StateDef 730]
 type = A
@@ -16058,19 +16170,7 @@ value = 5050
 type = DisplayToClipboard
 trigger1 = 1
 text = "VarAttak = %d | VarCombo = %d | Var(49) = %d | Jutsu = %d | HPScaling = %d | Ulti = %d"
-params = ceil(var(49)/2)-ceil(var(48)/50), ceil(var(49)*2+var(48)), var(49), ceil(((ceil(var(49)/5)+0)*ceil(Power/100))/200), ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil((3000-life)/40))/200)*5, ceil(((ceil(var(49)/5)+ceil(var(48)/25))*(ceil(Power/200)+(3000-life)/80))/200)*5
-
-[State 0, DisplayToClipboard]
-type = DisplayToClipboard
-trigger1 = 0
-text = "Kawarimi = %d | Crouch = %d | Jump = %d | Walk = %d | Run = %d | RunBack = %d"
-params = ceil(var(49)/25 + (3-helper(70000), var(10)/150)), ceil(var(49)/10), ceil(var(49)/10 +(-p2bodydist y)/200 + cond(p2movetype = A,var(49)/10,0)), ceil(var(49)/10 + cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5)), ceil(var(49)/10 * cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5)), ceil(var(49)/10 + cond(p2movetype = A,var(49)/2,0))
-
-[State 0, DisplayToClipboard]
-type = DisplayToClipboard
-trigger1 = 0
-text = "Chakra = %d | Dash = %d | ShushinF = %d | Teleport = %d | Guard = %d"
-params = ceil(var(49)/5 + cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5) + ((5000-power)/500) + cond(p2stateno=70500,5,0)), ceil(var(49)/10 * cond((abs(p2bodydist x-100))/50 < 5, (abs(p2bodydist x-100))/50, 5)), ceil(ceil(var(49)/2.5*ceil(Power/100))/200)*3, ceil(ceil(var(49)/2.5*ceil(Power/100))/200)*2, ceil(var(49)/5)+(100-(p2bodydist x))/20
+params = ceil(var(49)/2)-ceil(var(48)/50), ceil(var(49)*2+var(48)), var(49), ceil(((ceil(var(49)/5)+10)*ceil(Power/100))/200), ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-life)/40))/200), ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-life)/40))/200)
 
 ;Domu
 [state 0, Doton Domu]
