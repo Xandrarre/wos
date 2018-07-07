@@ -127,10 +127,9 @@ x = 0
 
 [State 10, 3]
 type = ChangeState
-trigger1 = var(50) = 1
-trigger1 = enemy, statetype != C && random = [0,10-var(49)*(var(49))/100]
-trigger2 = var(50) = 1
-trigger2 = p2dist x > 50 && random = [0,10-var(49)*(var(49))/100]
+trigger1 = enemy, statetype != C && random = [0,1+ceil(var(49))]
+trigger2 = p2dist x > 50 && random = [0,0+ceil(var(49))]
+triggerall = var(50) = 1
 value = 12
 ;---------------------------------------------------------------------------
 ; Crouch to Stand
@@ -374,7 +373,7 @@ triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
 trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,20+var(49)*(var(49))/10+(p2bodydist y)/10]
+trigger2 = random = [0,0+ceil(ceil(var(49)/5)*(p2bodydist y)/10)]
 y = -const(velocity.jump.y)/10
 
 [State 50, 1]
@@ -698,7 +697,7 @@ triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
 trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,20+var(49)*(var(49))/10+(p2bodydist y)/10]
+trigger2 = random = [0,0+ceil(var(49)/5)+(p2bodydist y)/10]
 y = -const(velocity.jump.y)/10
 
 [State 0, PosAdd]
@@ -736,7 +735,7 @@ triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
 trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,20+var(49)*(var(49))/10+(p2bodydist y)/10]
+trigger2 = random = [0,0+ceil(var(49)/5)+(p2bodydist y)/10]
 y = -const(velocity.jump.y)/10
 
 [State 0, PosAdd]
@@ -882,7 +881,7 @@ value = 0
 ;Shushin no jutsu
 [Statedef 102]
 type    = S
-movetype= A
+movetype= I
 physics = S
 juggle  = 4
 poweradd = -80
@@ -1023,7 +1022,7 @@ ctrl = 1
 ;Shushin no jutsu
 [Statedef 103]
 type    = S
-movetype= A
+movetype= I
 physics = S
 juggle  = 4
 poweradd = -80

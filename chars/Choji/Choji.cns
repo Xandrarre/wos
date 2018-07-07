@@ -11317,6 +11317,13 @@ value = 5050
 ;---------------------------------------------------------------------------
 [Statedef -2]
 
+[State 0, DisplayToClipboard]
+type = DisplayToClipboard
+trigger1 = 1
+text = "VarAttak = %d | VarCombo = %d | Var(48) = %d | Var(49) = %d | JutsuMin = %d | JutsuMax = %d"
+params = var(49)*(var(49))/50+10-var(48)/50,var(49)*(var(49)/20)+10+var(48)/40, var(48), var(49), var(49)*(var(49))/500+var(48)/500, var(49)*(var(49))/500+var(48)/200
+
+
 ;Cho Baika
 [State 0, LifeAdd]
 type = LifeAdd

@@ -3814,6 +3814,18 @@ Loopstart
 [Begin Action 72451]
 9000,8, 0,0, 10, , A
 
+[Begin Action 70460]
+9000,9, 0,0, 10
+
+[Begin Action 70461]
+9000,10, 0,0, 10
+
+[Begin Action 71460]
+9000,11, 0,0, 10
+
+[Begin Action 71461]
+9000,12, 0,0, 10
+
 ; Poza pocz¹tkowa ³adowania chakry i ³adowanie chakry
 [Begin Action 70500]
 Clsn2: 2

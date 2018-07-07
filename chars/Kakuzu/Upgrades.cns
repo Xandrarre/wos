@@ -359,7 +359,7 @@ trigger1 = var(50) = 0 && command != "hold_s"
 trigger2 = var(50) = 1 && random = [0,10]
 trigger3 = power >= 5000
 trigger4 = var(50) = 1 && p2bodydist x = [-70,70]
-trigger4 = random = [50,71+var(49)*(var(49)/10)]
+trigger4 = random = [50,50+var(49)]
 value = 70501
 ctrl = 1
 
