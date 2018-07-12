@@ -1,5 +1,5 @@
 ﻿Naruto Shippuuden: War of Shinobi
-Version 2.0.1 - 28.4.18
+Version 2.0.2 - 11.7.18
 Game Software © 2009-2018 N-G MUGEN Team 
 Based on Elecbyte's Mugen Engine
 
