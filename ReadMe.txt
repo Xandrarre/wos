@@ -36,5 +36,8 @@ You can find us on:
 FACEBOOK: https://www.facebook.com/N-G-Mugen-Team-157035821030069/ 
 YOUTUBE: https://www.youtube.com/Xandrarre
 
+Check DeviantArt for screenshots:
+https://www.deviantart.com/xandrarre
+
 Thanks for Downloading
 Enjoy Playing!

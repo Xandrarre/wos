@@ -7,10 +7,9 @@ defence = 100
 fall.defence_up = 50	
 liedown.time = 60		
 airjuggle = 15		
-sparkno = 2		
+sparkno = 1		
 guard.sparkno = 40	
-KO.echo = 0			
-volume = 0			
+KO.echo = 0		
 IntPersistIndex = 0	
 FloatPersistIndex = 0  
 
@@ -64,13 +63,12 @@ velset = 0,0
 type = PlaySnd
 trigger1 = animelem = 3
 value = S2,3
-volume = 255
 channel = 5
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 3
-value = F4
+value = F4,0
 
 [State 0, Explod]
 type = Explod
@@ -112,7 +110,6 @@ velset = 0,0
 type = PlaySnd
 trigger1 = time = 5
 value = S2,5
-volume = 255
 channel = 5
 
 [State 0, Explod]
@@ -223,7 +220,6 @@ velset = 0,0
 type = PlaySnd
 trigger1 = animelem = 1
 value = S2,0+random%3
-volume = 255
 channel = 2
 
 [State 0, PowerSet]
@@ -261,7 +257,6 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = animelem = 1
 value = S2,0+random%3
-volume = 255
 channel = 2
 
 [State 195, 2]
@@ -291,7 +286,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -301,21 +295,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -34*0.97
+sparkxy = -15, -ceil(34*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -349,7 +343,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -359,21 +352,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -47*0.97
+sparkxy = -15, -ceil(47*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
-ground.velocity = -2,-2
-airguard.velocity = -2,-2
+ground.hittime = 20
+ground.velocity = -1,-1
+airguard.velocity = -1,-1
 air.type = High
-air.velocity = -2,-2
-air.hittime = 12
+air.velocity = -1,-1
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -392,7 +385,7 @@ type = S
 movetype= A
 physics = S
 juggle  = 1
-velset = 2,0
+velset = 3,0
 ctrl = 0
 anim = 210
 poweradd = 20
@@ -407,7 +400,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -417,21 +409,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -55*0.97
+sparkxy = -15, -ceil(55*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-1
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -465,7 +457,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -475,21 +466,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -41*0.97
+sparkxy = -15, -ceil(41*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-2
 airguard.velocity = -2,-2
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -518,7 +509,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -543,31 +534,30 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 50,10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -26*0.97
+sparkxy = -15, -ceil(26*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,-3
 airguard.velocity = -5,-3
 air.type = High
 air.velocity = -5,-3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -602,7 +592,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -612,21 +601,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -55*0.97
+sparkxy = -15, -ceil(55*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-1
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -660,7 +649,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -670,21 +658,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -50*0.97
+sparkxy = -15, -ceil(50*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-4
 airguard.velocity = -2,-4
 air.type = High
 air.velocity = -2,-4
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -718,7 +706,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -728,21 +715,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -35*0.97
+sparkxy = -15, -ceil(35*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,3
 airguard.velocity = -4,3
 air.type = High
 air.velocity = -4,3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -771,7 +758,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -796,31 +783,30 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 50,10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -20*0.97
+sparkxy = -15, -ceil(20*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,6
 airguard.velocity = -5,6
 air.type = High
 air.velocity = -5,6
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -861,32 +847,31 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 2
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = timemod = 5,0
 triggerall = hitcount < 4
-attr = S, NA
+attr = A, NA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 0+random%4
-sparkxy = -15, -12*0.97
+sparkxy = -15, -ceil(12*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,3
 airguard.velocity = -4,3
 air.type = High
 air.velocity = -5,3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -904,7 +889,7 @@ ctrl = 1
 [State 0, End]
 type = ChangeState
 trigger1 = hitcount >= 4
-value = 81
+value = 72 
 ctrl = 1
 ;-----------------
 ;-- Combo3
@@ -928,7 +913,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -938,21 +922,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -28*0.97
+sparkxy = -15, -ceil(28*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4
 airguard.velocity = -3,-.8
 air.type = High
 air.velocity = -4,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -986,7 +970,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -996,21 +979,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -32*0.97
+sparkxy = -15, -ceil(32*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-2
 airguard.velocity = -3,-2
 air.type = High
 air.velocity = -3,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -1050,7 +1033,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1060,21 +1042,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -37*0.97
+sparkxy = -15, -ceil(37*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,1
 airguard.velocity = -4,1
 air.type = High
 air.velocity = -4,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -1103,7 +1085,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -1128,31 +1110,30 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -22*0.97
+sparkxy = -15, -ceil(22*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,-3
 airguard.velocity = -5,-3
 air.type = High
 air.velocity = -5,-3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -1182,7 +1163,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -1231,32 +1212,31 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 2
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = timemod = 5,0
 triggerall = hitcount < 4
-attr = S, NA
+attr = A, NA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 0+random%4
-sparkxy = -15, -27*0.97
+sparkxy = -15, -ceil(27*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -6,-1
 airguard.velocity = -6,-1
 air.type = High
 air.velocity = -6,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -1274,7 +1254,7 @@ ctrl = 1
 [State 0, End]
 type = ChangeState
 trigger1 = hitcount >= 4
-value = 81
+value = 72
 ctrl = 1
 ;-----------------
 ;-- Combo4
@@ -1288,6 +1268,11 @@ anim = 230
 poweradd = 20
 sprpriority = 2
 
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 0
+x = 3
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 2
@@ -1297,36 +1282,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -20*0.97
+sparkxy = -15, -ceil(20*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-1
 airguard.velocity = -3,-1
 air.type = High
 air.velocity = -3,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -1340,7 +1331,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 3,-1
+velset = 3,-1+(enemynear, pos y - pos y)/10
 ctrl = 0
 anim = 231
 poweradd = 20
@@ -1355,36 +1346,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -34*0.97
+sparkxy = -15, -ceil(34*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-2
 airguard.velocity = -3,-2
 air.type = High
 air.velocity = -3,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -1398,7 +1395,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 3,-3
+velset = 3,-2
 ctrl = 0
 anim = 232
 poweradd = 20
@@ -1413,36 +1410,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = animelem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -39*0.97
+sparkxy = -15, -ceil(39*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,-2
 airguard.velocity = -4,-2
 air.type = High
 air.velocity = -4,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -1471,7 +1474,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1481,21 +1483,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -25*0.97
+sparkxy = -15, -ceil(25*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -1524,7 +1526,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -1549,7 +1551,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1559,21 +1560,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -20*0.97
+sparkxy = -15, -ceil(20*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,2
 airguard.velocity = -3,2
 air.type = High
 air.velocity = -3,2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -1607,7 +1608,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1617,21 +1617,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -35*0.97
+sparkxy = -15, -ceil(35*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,3
 airguard.velocity = -4,3
 air.type = High
 air.velocity = -4,3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -1671,7 +1671,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1681,21 +1680,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -37*0.97
+sparkxy = -15, -ceil(37*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -6,1
 airguard.velocity = -6,1
 air.type = High
 air.velocity = -6,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -1729,7 +1728,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 2
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, Helper]
@@ -1739,7 +1737,7 @@ helpertype = normal;player
 name = "shintenshin"
 ID = 245
 stateno = 245
-pos = 24*0.97,-42*0.97
+pos = ceil(24*0.97),-ceil(42*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -1749,6 +1747,7 @@ size.yscale = 0.5
 
 [State 0, Explod Postac]
 type = Explod
+triggerall = numhelper(245) != 0
 trigger1 = helper(245), movecontact
 persistent = 0
 anim = 507
@@ -1785,7 +1784,7 @@ sprpriority = 2
 [State 0, VelSet]
 type = VelSet
 trigger1 = time > 5
-x = 5+(time-5)*0.5
+x = 5+ceil((time-5)*0.5)
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -1823,16 +1822,16 @@ palmul = .65,.65,.65
 timegap = 1
 framegap = 1
 trans = addalpha
-alpha = 256-(time-20)*25,256
+alpha = ceil(256-(time-20)*25),256
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = !time && time < 25
-attr = S, NA
+attr = S, SA
 damage = 75,15
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 40
 sparkno = 3
@@ -1889,7 +1888,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1899,21 +1897,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -47*0.97
+sparkxy = -15, -ceil(47*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-2
 airguard.velocity = -2,-2
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -1947,7 +1945,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -1957,21 +1954,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -25*0.97
+sparkxy = -15, -ceil(25*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -2005,7 +2002,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2015,21 +2011,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -55*0.97
+sparkxy = -15, -ceil(55*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-1
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -2063,7 +2059,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2073,21 +2068,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -35*0.97
+sparkxy = -15, -ceil(35*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,3
 airguard.velocity = -4,3
 air.type = High
 air.velocity = -4,3
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -2106,7 +2101,7 @@ type = S
 movetype= A
 physics = S
 juggle  = 1
-velset = 3,0
+velset = 4,0
 ctrl = 0
 anim = 254
 poweradd = 20
@@ -2121,7 +2116,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 2
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -2138,7 +2132,7 @@ pos = 5,-35
 postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
-bindtime = 1
+bindtime = -1
 removetime = -2
 supermovetime = 9999
 pausemovetime = 9999
@@ -2146,31 +2140,32 @@ scale = 0.7,0.7
 sprpriority = 4
 ontop = 0
 ownpal = 1
+removeongethit = 1
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = timemod = 5,0
 triggerall = hitcount < 4
 triggerall = time <= 25
-attr = S, NA
+attr = S, SA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 54325250+random%4
-sparkxy = -15, -10*0.97-random%55
+sparkxy = -15, -ceil(10*0.97)-random%55
 hitsound = 21, 3;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,-2
 airguard.velocity = -4,-2
 air.type = High
 air.velocity = -4,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -2205,7 +2200,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2215,21 +2209,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -34*0.97
+sparkxy = -15, -ceil(34*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -2,-.8
 air.type = High
 air.velocity = -2,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -2269,7 +2263,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 5
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2279,21 +2272,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -37*0.97
+sparkxy = -15, -ceil(37*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,1
 airguard.velocity = -5,1
 air.type = High
 air.velocity = -5,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -2327,7 +2320,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2337,21 +2329,21 @@ attr = S, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -39*0.97
+sparkxy = -15, -ceil(39*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-2
 airguard.velocity = -3,-2
 air.type = High
 air.velocity = -3,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -2391,7 +2383,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2401,21 +2392,21 @@ attr = S, NA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -47*0.97
+sparkxy = -15, -ceil(47*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,0
 airguard.velocity = -2,0
 air.type = High
 air.velocity = -3,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -2487,9 +2478,9 @@ y = enemynear, pos y-40
 type = PalFX
 trigger1 = time > 10
 time = 1
-add = (time-10)*24,(time-10)*5,0
-mul = 255-(time-10)*0.5,255-(time-10)*3,255-(time-10)*13.5
-sinadd = (time-10)*11,(time-10)*5.5,(time-10)*8.5,10
+add = ceil((time-10)*24),ceil((time-10)*5),0
+mul = ceil(255-(time-10)*0.5),ceil(255-(time-10)*3),ceil(255-(time-10)*13.5)
+sinadd = ceil((time-10)*11),ceil((time-10)*5.5),ceil((time-10)*8.5),10
 invertall = 0
 color = 0
 
@@ -2522,7 +2513,6 @@ x = 2
 type = PlaySnd
 trigger1 = animelem = 1
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -2539,7 +2529,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 266
 stateno = 266
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -2552,7 +2542,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 266
 stateno = 266
-pos = 10*0.97,-45*0.97
+pos = ceil(10*0.97),-ceil(45*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -2565,7 +2555,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 266
 stateno = 266
-pos = 25*0.97,-33*0.97
+pos = ceil(25*0.97),-ceil(33*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -2601,7 +2591,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -2614,7 +2604,7 @@ attr = S, NA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = -1
@@ -2623,12 +2613,12 @@ hitsound = -1;S4,21
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, Explod]
 type = Explod
@@ -2649,6 +2639,7 @@ pausemovetime = 9999
 
 [State 0, TargetState]
 type = TargetState
+triggerall = NumTarget
 trigger1 = 0;enemynear, var(30) = 0
 value = 106000
 
@@ -2712,7 +2703,7 @@ y = 0
 type = Trans
 trigger1 = time >= 70
 trans = addalpha
-alpha = 256-(time-70)*9.6,(time-70)*9.6
+alpha = ceil(256-(time-70)*9.6),ceil((time-70)*9.6)
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -2729,6 +2720,11 @@ anim = 230
 poweradd = 20
 sprpriority = 2
 
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 0
+x = 3
+
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 2
@@ -2738,36 +2734,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -20*0.97
+sparkxy = -15, -ceil(20*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-1
 airguard.velocity = -3,-1
 air.type = High
 air.velocity = -3,-1
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -2781,7 +2783,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 3,-2
+velset = 3,-2+(enemynear, pos y - pos y)/10
 ctrl = 0
 anim = 222
 poweradd = 20
@@ -2796,36 +2798,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -22*0.97
+sparkxy = -15, -ceil(22*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,-2
 airguard.velocity = -3,-2
 air.type = High
 air.velocity = -3,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -2839,7 +2847,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 3,-2
+velset = 3,-2+(enemynear, pos y - pos y)/10
 ctrl = 0
 anim = 232
 poweradd = 20
@@ -2854,36 +2862,42 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = animelem = 2
-attr = S, NA
+attr = A, NA
 damage = 30,6
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -39*0.97
+sparkxy = -15, -ceil(39*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,-2
 airguard.velocity = -4,-2
 air.type = High
 air.velocity = -4,-2
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
 envshake.phase = 10
 fall.yvelocity = -6
+
+[state 0, velset]
+type = velset
+trigger1 = movecontact
+triggerall = NumTarget
+x = -target, vel x*1.5
+y = target, vel y*1.5
 
 [State 0, End]
 type = ChangeState
@@ -2897,7 +2911,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 4,-2
+velset = 4,-2+(enemynear, pos y - pos y)/10
 ctrl = 0
 anim = 213
 poweradd = 20
@@ -2912,31 +2926,30 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = AnimElem = 2
-attr = S, NA
+attr = A, NA
 damage = 50,10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 0+random%4
-sparkxy = -15, -20*0.97
+sparkxy = -15, -ceil(20*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,6
 airguard.velocity = -5,6
 air.type = High
 air.velocity = -5,6
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -2971,7 +2984,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 4
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -2981,21 +2993,21 @@ attr = S, NA
 damage = 50,10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 5, 5
 sparkno = 0+random%4
-sparkxy = -15, -55*0.97
+sparkxy = -15, -ceil(55*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2,-6
 airguard.velocity = -2,-5
 air.type = High
 air.velocity = -2,-6
-air.hittime = 12
+air.hittime = 20
 envshake.time = 20
 envshake.freq = 25
 envshake.ampl = -6
@@ -3016,7 +3028,7 @@ type = A
 movetype= A
 physics = A
 juggle  = 1
-velset = 4,-3
+velset = 2,-3
 ctrl = 0
 anim = 223
 poweradd = 20
@@ -3026,7 +3038,7 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = time = 1
 triggerall = pos y >= -5
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -3075,32 +3087,31 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 2
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, HitDef]
 type = HitDef
 trigger1 = timemod = 5,0
 triggerall = hitcount < 4
-attr = S, NA
+attr = A, NA
 damage = 20,4
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 0+random%4
-sparkxy = -15, -45*0.97
+sparkxy = -15, -ceil(45*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -5,-4
 airguard.velocity = -5,-4
 air.type = High
 air.velocity = -5,-4
-air.hittime = 12
+air.hittime = 20
 envshake.time = 30
 envshake.freq = 30
 envshake.ampl = -7
@@ -3137,14 +3148,12 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = animelem = 2
 value = F8,0+random%4
-volume = 255
 channel = 8
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, HitDef]
@@ -3155,21 +3164,21 @@ attr = S, NA
 damage = 0,0
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 20, 20
 sparkno = 0+random%4
-sparkxy = -20, -38*0.97
+sparkxy = -20, -ceil(38*0.97)
 hitsound = 35, 0+random%15;5, 21+random%5
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 0,0
 airguard.velocity = 0,0
 air.type = High
 air.velocity = 0,0
-air.hittime = 12
+air.hittime = 20
 p1stateno = 291
 
 [State 0, End]
@@ -3207,14 +3216,12 @@ phase = 90
 type = PlaySnd
 trigger1 = animelem = 2
 value = F8,0+random%4
-volume = 255
 channel = 8
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 3
 value = S4,0+random%11
-volume = 255
 channel = 4
 
 [State 220, 1]
@@ -3225,7 +3232,7 @@ attr = C,HP
 damage = 30,8
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 2
 sparkno = 4563456
@@ -3234,12 +3241,12 @@ hitsound = 5, 64264
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 5,-5
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = 5,-5
-air.hittime = 12
+air.hittime = 20
 fall = 1
 fall.recover = 0
 
@@ -3251,7 +3258,7 @@ attr = C,HP
 damage = 30,8
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 0
 sparkno = 45634
@@ -3260,12 +3267,12 @@ hitsound = 5, 42646
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 12
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 4,-1
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = 4,-1
-air.hittime = 12
+air.hittime = 20
 fall = 1
 fall.recover = 0
 fall.envshake.time = 20
@@ -3307,7 +3314,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, VarAdd]
@@ -3323,7 +3329,7 @@ helpertype = normal;player
 name = "Kulka"
 ID = 305
 stateno = 305
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -3391,7 +3397,7 @@ value = 0+random%360
 type = VarSet
 trigger1 = vel x != 0
 v = 6 
-value = var(5)+((1+vel x)/time)*2000
+value = ceil(var(5)+((1+vel x)/(time+1))*2000)
 
 [State 0, AngleDraw]
 type = AngleDraw
@@ -3493,7 +3499,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, VarAdd]
@@ -3509,7 +3514,7 @@ helpertype = normal;player
 name = "Kulka"
 ID = 315
 stateno = 315
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -3577,7 +3582,7 @@ value = 0+random%360
 type = VarSet
 trigger1 = vel x != 0
 v = 6 
-value = var(5)+((1+vel x)/time)*2000
+value = ceil(var(5)+((1+vel x)/(time+1))*2000)
 
 [State 0, AngleDraw]
 type = AngleDraw
@@ -3679,7 +3684,6 @@ value = F8,0+random%4
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, VarAdd]
@@ -3695,7 +3699,7 @@ helpertype = normal;player
 name = "Kulka"
 ID = 325
 stateno = 325
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -3763,7 +3767,7 @@ value = 0+random%360
 type = VarSet
 trigger1 = vel x != 0
 v = 6 
-value = var(5)+((1+vel x)/time)*2000
+value = ceil(var(5)+((1+vel x)/(time+1))*2000)
 
 [State 0, AngleDraw]
 type = AngleDraw
@@ -3890,13 +3894,13 @@ type = HitDef
 fall.yvelocity = -6
 trigger1 = time%3 = 0
 trigger1 = enemynear, var(30) = 0
-attr =  C,HP
+attr = C,HP
 damage = 50, 1
 getpower = 0,0
 givepower = 0,0
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 3
 sparkno = -1
@@ -3917,6 +3921,7 @@ palfx.add = 100,0,50
 
 [State 0, TargetState]
 type = TargetState
+triggerall = NumTarget
 trigger1 = enemynear, var(30) = 0
 value = 106000
 
@@ -3940,7 +3945,6 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -3955,7 +3959,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 345
 stateno = 355
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -3968,7 +3972,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 346
 stateno = 355
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -3981,7 +3985,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 347
 stateno = 355
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4016,7 +4020,6 @@ x = 1
 type = PlaySnd
 trigger1 = animelem = 1
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -4033,7 +4036,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 355
 stateno = 355
-pos = 10*0.97,-37*0.97
+pos = ceil(10*0.97),-ceil(37*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4046,7 +4049,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 355
 stateno = 355
-pos = 10*0.97,-45*0.97
+pos = ceil(10*0.97),-ceil(45*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4059,7 +4062,7 @@ helpertype = normal;player
 name = "Kwiatek"
 ID = 355
 stateno = 355
-pos = 25*0.97,-33*0.97
+pos = ceil(25*0.97),-ceil(33*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4125,7 +4128,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -4138,7 +4141,7 @@ attr = S, NA
 damage = cond(ishelper(355),20,40),cond(ishelper(355),4,8)
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = -1
@@ -4147,12 +4150,12 @@ hitsound = -1;S4,21
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, Explod]
 type = Explod
@@ -4173,6 +4176,7 @@ pausemovetime = 9999
 
 [State 0, TargetState]
 type = TargetState
+triggerall = NumTarget
 trigger1 = enemynear, var(30) = 0
 value = 106000
 
@@ -4236,7 +4240,7 @@ y = 0
 type = Trans
 trigger1 = time >= 70
 trans = addalpha
-alpha = 256-(time-70)*9.6,(time-70)*9.6
+alpha = ceil(256-(time-70)*9.6),ceil((time-70)*9.6)
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -4258,7 +4262,6 @@ sprpriority = 2
 type = PlaySnd
 trigger1 = animelem = 3
 value = S1,0+random%3
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -4273,7 +4276,7 @@ helpertype = normal;player
 name = "EXKwiatek"
 ID = 365
 stateno = 365
-pos = 10*0.97,-40*0.97
+pos = ceil(10*0.97),-ceil(40*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4312,6 +4315,30 @@ y = 0.1
 type = AngleDraw
 trigger1 = time > 5
 value = -(time-5)*10
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 0, HitOverride]
+type = HitOverride
+trigger1 = 1
+attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
+stateno = 70736
+time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, ChangeState]
 type = ChangeState
@@ -4439,8 +4466,8 @@ trigger5 = lose
 trigger6 = drawgame
 trigger7 = life = 0
 trigger8 = !ALive
-trigger9 = time > 30 && var(50) = 1 && p2bodydist x = [-70,70]
-trigger9 = random = [50,71+var(49)*(var(49)/10)]
+trigger9 = time > 30 && var(50) = 1 && p2bodydist x = [-100,10]
+trigger9 = random = [50,75+ceil(var(49)/2)]
 trigger10 = life = 3000
 value = 0
 ctrl = 1
@@ -4669,7 +4696,7 @@ trigger6 = drawgame
 trigger7 = life = 0
 trigger8 = !ALive
 trigger9 = time > 30 && var(50) = 1 && p2bodydist x = [-70,70]
-trigger9 = random = [50,71+var(49)*(var(49)/10)]
+trigger9 = random = [50,75+ceil(var(49)/2)]
 trigger10 = life = 3000
 value = 0
 ctrl = 1
@@ -4703,7 +4730,7 @@ helpertype = normal;player
 name = "shinranshin"
 ID = 455
 stateno = 455
-pos = 20*0.97,-42*0.97
+pos = ceil(20*0.97),-ceil(42*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4732,7 +4759,7 @@ sprpriority = 2
 type = BindToParent
 trigger1 = parent, stateno = 450
 time = 1
-pos = 20*0.97,-42*0.97
+pos = ceil(20*0.97),-ceil(42*0.97)
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -4764,9 +4791,10 @@ trigger1 = time < 25
 attr = S, NA
 damage = 100,20
 getpower = 0
+givepower = 0
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 0
 sparkno = 3
@@ -4827,7 +4855,7 @@ trigger1 = timemod = 35,0
 anim = F1070
 id = 1070
 ownpal = 1
-pos = 18*0.97,-47*0.97
+pos = ceil(18*0.97),-ceil(47*0.97)
 scale = 1.2,1.2
 postype = p1
 facing = 1
@@ -4845,7 +4873,7 @@ helpertype = player
 name = "Celownik"
 ID = 510
 stateno = 510
-pos = 18*0.97,-47*0.97
+pos = ceil(18*0.97),-ceil(47*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4863,7 +4891,7 @@ value = -2
 type = ChangeState
 trigger1 = var(50) = 0 && command != "hold_z"
 trigger2 = time >= 65
-trigger2 = var(50) = 1 && random = [0,50-var(49)*(var(49))/50-life/300-power/400]
+trigger2 = var(50) = 1 && random = [0,50-ceil((ceil(var(49)/10)*ceil(Power/400)))]
 trigger2 = time >= 65
 trigger3 = win
 trigger4 = lose
@@ -4909,7 +4937,7 @@ helpertype = normal;player
 name = "shintenshin"
 ID = 520
 stateno = 520
-pos = 24*0.97,-42*0.97
+pos = ceil(24*0.97),-ceil(42*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -4955,13 +4983,12 @@ sprpriority = 0
 type = PlaySnd
 trigger1 = time = 1
 value = S5,0+random%2
-volume = 255
 channel = 5
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = animelem = 3
-value = F4
+value = F4,0
 
 [State 0, Explod]
 type = Explod
@@ -5124,25 +5151,25 @@ value = -time*5
 [State 0, VelSet]
 type = VelSet
 trigger1 = parent,var(50) = 0  && parent, command = "holdfwd"
-trigger2 = parent,var(50) = 1 && p2dist x > -20 && random = [0,100+root,var(49)*(root,var(49))/10]
+trigger2 = parent,var(50) = 1 && p2dist x > -20 && random = [0,100+ceil(ceil(root,var(49)/5)*ceil(Power/100))]
 x = 5
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = parent,var(50) = 0 && parent, command = "holdback"
-trigger2 = parent,var(50) =  1 && p2dist x < 20 && random = [0,100+root,var(49)*(root,var(49))/10] 
+trigger2 = parent,var(50) =  1 && p2dist x < 20 && random = [0,100+ceil(ceil(root,var(49)/5)*ceil(Power/100))] 
 x = -5
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = parent,var(50) = 0 && parent, command = "holdup"
-trigger2 = parent,var(50) = 1 && p2dist y < cond(p2statetype = C,5+random%20,25+random%20) && random = [0,100+root,var(49)*(root,var(49))/10]
+trigger2 = parent,var(50) = 1 && p2dist y < cond(p2statetype = C,5+random%20,25+random%20) && random = [0,100+ceil(ceil(root,var(49)/5)*ceil(Power/100))]
 y = -5
 
 [State 0, VelSet]
 type = VelSet
 trigger1 = parent,var(50) = 0 && parent, command = "holddown"
-trigger2 = parent,var(50) = 1 && p2dist y > cond(p2statetype = C,5+random%20,25+random%20) && random = [0,100+root,var(49)*(root,var(49))/10]
+trigger2 = parent,var(50) = 1 && p2dist y > cond(p2statetype = C,5+random%20,25+random%20) && random = [0,100+ceil(ceil(root,var(49)/5)*ceil(Power/100))]
 triggerall = pos y < 0
 y = 5
 
@@ -5215,7 +5242,7 @@ scale = (1+time)*0.5,(1+time)*0.5
 type = Trans
 trigger1 = 1
 trans = addalpha
-alpha = 256-time*12.5,256
+alpha = ceil(256-time*12.5),256
 
 [State 0, End]
 type = destroyself
@@ -5280,9 +5307,11 @@ type = HitDef
 trigger1 = !time && time < 25
 attr = S, NA
 damage = 75,15
+getpower = 0
+givepower = 0
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 40
 sparkno = 3
@@ -5336,7 +5365,7 @@ type = Explod
 ownpal = 1
 trigger1 = time = 10
 anim = 6188
-pos = 0,-45*0.97
+pos = 0,-ceil(45*0.97)
 postype = p1  ;p2,front,back,left,right
 facing = 1
 bindtime = 1
@@ -5355,7 +5384,7 @@ helpertype = normal;player
 name = "heart"
 ID = 661
 stateno = 661
-pos = 0,-45*0.97
+pos = 0,-ceil(45*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -5371,7 +5400,7 @@ helpertype = normal;player
 name = "heart"
 ID = 661
 stateno = 662
-pos = 0,-45*0.97
+pos = 0,-ceil(45*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -5387,7 +5416,7 @@ helpertype = normal;player
 name = "heart"
 ID = 661
 stateno = 663
-pos = 0,-45*0.97
+pos = 0,-ceil(45*0.97)
 postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
@@ -5447,6 +5476,7 @@ pausemovetime = 9999
 
 [State 0, AssertSpecial]
 type = AssertSpecial
+triggerall = NumTarget
 trigger1 = target, ishelper = 0
 flag = unguardable
 
@@ -5537,7 +5567,7 @@ attr = C,HP
 damage = 10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 150*var(7)
 sparkno = 75475476
@@ -5546,12 +5576,12 @@ hitsound = S3, 12
 guardsound = S3, 12
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 0
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -1.4,-3
-air.hittime = 12
+air.hittime = 20
 fall = 1*var(7)
 fall.recover = 1
 fall.recovertime = 50
@@ -5595,6 +5625,7 @@ pausemovetime = 9999
 
 [State 0, AssertSpecial]
 type = AssertSpecial
+triggerall = NumTarget
 trigger1 = target, ishelper = 0
 flag = unguardable
 
@@ -5685,7 +5716,7 @@ attr = C,HP
 damage = 10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 150*var(7)
 sparkno = 45757
@@ -5694,12 +5725,12 @@ hitsound = S3, 12
 guardsound = S3, 12
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 0
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -1.4,-3
-air.hittime = 12
+air.hittime = 20
 fall = 1*var(7)
 fall.recover = 1
 fall.recovertime = 50
@@ -5743,6 +5774,7 @@ pausemovetime = 9999
 
 [State 0, AssertSpecial]
 type = AssertSpecial
+triggerall = NumTarget
 trigger1 = target, ishelper = 0
 flag = unguardable
 
@@ -5833,7 +5865,7 @@ attr = C,HP
 damage = 10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 150*var(7)
 sparkno = 57547
@@ -5842,12 +5874,12 @@ hitsound = S3, 12
 guardsound = S3, 12
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = 0
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -1.4,-3
-air.hittime = 12
+air.hittime = 20
 fall = 1*var(7)
 fall.recover = 1
 fall.recovertime = 50
@@ -5860,46 +5892,6 @@ palfx.sinadd = 100,0,100,10
 type = Destroyself
 trigger1 = movehit = 1
 trigger2 = frontedgedist <=-20
-;-----------------------------
-;Kawarimi
-[StateDef 4501]
-type = A
-movetype= A
-physics = S
-juggle  = 1
-velset = 0,0
-ctrl = 0
-anim = 4501
-poweradd = 0
-sprpriority = 0
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 5
-value = F21,8
-
-[State 0, Explod]
-type = Explod
-ownpal = 1
-trigger1 = time = 0
-anim = F700
-ID = 700
-pos = 0,-40
-postype = p1  ;p2,front,back,left,right
-facing = 1
-vfacing = 1
-bindtime = 1
-removetime = -2
-supermovetime = 9999
-pausemovetime = 9999
-scale = 2,2
-sprpriority = 4
-ontop = 0
-ownpal = 1
-
-[State 0, end]
-type = destroyself
-trigger1 = animtime = 0
 ;----------------
 ;White Flash
 [Statedef 9999]
@@ -5946,7 +5938,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -5956,7 +5947,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 20
 value = 1
 
@@ -5995,7 +5986,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6005,7 +5995,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 22
 value = 1
 
@@ -6043,7 +6033,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6053,7 +6042,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 21
 value = 1
 
@@ -6090,7 +6079,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6100,7 +6088,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 20
 value = 1
 
@@ -6139,7 +6127,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6150,7 +6137,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 20
 value = 1
 
@@ -6187,7 +6174,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6198,7 +6184,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 22
 value = 1
 
@@ -6235,7 +6221,6 @@ ctrl = 0
 type = PlaySnd
 trigger1 = animelem = 2
 value = S4,0+random%5
-volume = 255
 channel = 4
 
 [State 0, PlaySnd]
@@ -6245,7 +6230,7 @@ value = F21,4
 
 [State 0, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 2
 v = 21
 value = 1
 
@@ -6388,7 +6373,6 @@ type = ScreenBound
 trigger1 = 1 
 value = 0
 
-
 [State 0, Explod]
 type = Explod
 ownpal = 1
@@ -6397,7 +6381,7 @@ trigger2 = timemod = 6,0
 anim = F1391
 ID = 380
 pos = -20,-25
-postype = p1  ;p2,front,back,left,right
+postype = p1  
 facing = -1
 vfacing = 1
 bindtime = 1
@@ -6405,7 +6389,7 @@ removetime = -2
 scale = 0.7,0.7
 sprpriority = 3
 ontop = 0
-angle = atan(vel y/vel x)*180/PI -30
+angle = cond(vel x != 0,atan(vel y/vel x)*180/PI, 0) -30
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -6570,7 +6554,7 @@ anim = 5060
 
 [State 0, AngleDraw]
 Type = AngleDraw
-Trigger1 = 1
+Trigger1 = vel x != 0
 Value = -((ATan(vel y/vel x))*(180.0/PI))
 
 [State 0, ScreenBound]
@@ -6726,7 +6710,7 @@ trigger2 = timemod = 6,0
 anim = F1391
 ID = 380
 pos = -20,-25
-postype = p1  ;p2,front,back,left,right
+postype = p1  
 facing = -1
 vfacing = 1
 bindtime = 1
@@ -6734,7 +6718,7 @@ removetime = -2
 scale = 0.7,0.7
 sprpriority = 3
 ontop = 0
-angle = atan(vel y/vel x)*180/PI -30
+angle = cond(vel x != 0,atan(vel y/vel x)*180/PI, 0) -30
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -6759,12 +6743,16 @@ trigger1 = (Vel y > 0) && (Pos y >= 0)
 value = 5050
 
 
-
-
 ;---------------------------------------------------------------------------
 ; States that are executed when in self's state file (use statedef -3)
 ;---------------------------------------------------------------------------
 [Statedef -2]
+
+[State 0, DisplayToClipboard]
+type = DisplayToClipboard
+trigger1 = 1
+text = "Var(47) = %d | Var(48) = %d | Var(49) = %d | VarAttak = %d | VarCombo = %d | Jutsu = %d"
+params = var(47), var(48), var(49), ceil(var(49)), ceil(var(49)*5+var(48)), ceil(((ceil(var(49)/5)+10)*ceil(Power/100))/200)
 
 [State 0, VarSet]
 type = VarSet
@@ -6783,24 +6771,9 @@ type = PowerAdd
 trigger1 = var(10) = 1
 value = -2
 
-
 ;-----------------
 
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = random = 999
-triggerall = Alive
-triggerall = life > 0
-triggerall = !matchover
-triggerall = !win
-triggerall = !lose
-triggerall = !drawgame
-triggerall = stateno != [170,199]
-value = S2,0+random%6
-volume = 256
-channel = 2
-
-
+ 
 ;SMIERC OSTATECZNA
 [State 0, SMIERC OSTATECZNA]
 type = ChangeState
@@ -6835,6 +6808,7 @@ y = -500
 [State 0, PosSet]
 type = PosSet
 trigger1 = pos y < -300
+triggerall = numhelper(70003) != 0
 triggerall = helper(70003), var(10) = 0
 triggerall = StageVar(info.name) = "U"
 y = -300
@@ -7320,53 +7294,53 @@ ctrl = 1
 ;>>>>>>>>>>>>>>> Shintenshin Ino <<<<<<<<<<<<<<<
 [State 0, CtrlSet]
 type = CtrlSet
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 0
 
 [State 0, VarSet]
 type = VarSet
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 0
-trigger1 = var(47) = 1
-v = 47
+trigger1 = var(44) = 1
+v = 44
 value = 0
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = 0
-trigger2 = var(47) = 1 && stateno = 20
-trigger3 = var(47) = 1 && stateno = 100
+trigger1 = var(44) = 1 && stateno = 0
+trigger2 = var(44) = 1 && stateno = 20
+trigger3 = var(44) = 1 && stateno = 100
 value = 104200
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = [10,11]
-trigger2 = var(47) = 1 && stateno = 5120
+trigger1 = var(44) = 1 && stateno = [10,11]
+trigger2 = var(44) = 1 && stateno = 5120
 value = 104202
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = 12
+trigger1 = var(44) = 1 && stateno = 12
 value = 104203
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = [40,51]
+trigger1 = var(44) = 1 && stateno = [40,51]
 value = 104208
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = 52
+trigger1 = var(44) = 1 && stateno = 52
 value = 104209
 
 [State 0, Changestate]
 type = Changestate
-trigger1 = var(47) = 1 && stateno = 106
+trigger1 = var(44) = 1 && stateno = 106
 value = 104212
 
 [State 0, Selfstate]
 type = Selfstate
-trigger1 = var(47) = 0 && stateno = [104200,104299]
+trigger1 = var(44) = 0 && stateno = [104200,104299]
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 0
 value = cond(pos y = 0,0,50)
@@ -7612,7 +7586,7 @@ sprpriority = 10
 accel = 0*facing,-0.04
 scale = 0.4,0.4
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7656,7 +7630,7 @@ value = -1
 [State 0, VarSet]
 type = VarSet
 trigger1 = var(52) <= 0
-trigger2 = var(54) != 0
+trigger2 = var(54) != 0 && var(53) = 0
 trigger3 = ishelper
 trigger4 = stateno = [170,194]
 trigger5 = stateno = 5150
@@ -7726,7 +7700,7 @@ sprpriority = 10
 accel = 0.02*facing,0.03
 scale = 0.4,0.4
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7809,7 +7783,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7826,7 +7800,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7894,7 +7868,7 @@ sprpriority = 10
 accel = -0.03*facing,-0.02
 scale = 0.4,0.4
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7937,7 +7911,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -7954,7 +7928,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -8021,7 +7995,7 @@ sprpriority = 10
 accel = 0.03*facing,-0.02
 scale = 0.4,0.4
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -8063,7 +8037,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -8080,7 +8054,7 @@ removetime = -1
 sprpriority = 4
 scale = 0.6,0.6
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -8164,7 +8138,7 @@ sprpriority = 10
 accel = -0.02*facing,0.03
 scale = 0.4,0.4
 ownpal = 1
-ontop = 1
+ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
 
@@ -8297,6 +8271,158 @@ pausemovetime = 9999
 ;-------------------------
 
 [Statedef -3]
+
+;-- AI ----------------
+
+[State -3, DeActivate AI]
+type = VarSet
+triggerall = var(50) = 1
+trigger1 = win
+trigger2 = lose
+trigger3 = drawgame
+trigger4 = AILevel = 0
+trigger5 = life = 0
+trigger6 = !ALive
+trigger7 = matchover
+v = 50
+value = 0
+
+[State -3, Activate AI]
+type = VarSet
+triggerall = var(50) = 0
+trigger1 = AILevel != 0
+triggerall = stateno != [190,194]
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+v = 50
+value = 1
+
+[State -3, Human Power VS Human]
+type = VarSet
+trigger1 = var(50) = 0
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+triggerall = stateno != 5150
+triggerall = NumEnemy
+triggerall = enemy, AILevel = 0
+v = 49
+value = ceil(ceil(exp(0.5*ln(life)))/5.5+(Power/100))
+
+[State -3, Human Power VS AI]
+type = VarSet
+trigger1 = var(50) = 0
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+triggerall = stateno != 5150
+triggerall = NumEnemy
+triggerall = enemy, AILevel != 0
+v = 49
+value = ceil(ceil(exp(0.5*ln(life)))/5.5+(Enemy, AILevel*5))
+
+[State -3, AI Power]
+type = VarSet
+trigger1 = var(50) = 1
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+triggerall = stateno != 5150
+v = 49
+value = ceil(ceil(exp(0.5*ln(life)))/5.5+(AILevel*5))
+
+[State -3, AI Set Min]
+type = VarSet
+trigger1 = var(49) < 1
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+triggerall = stateno != 5150
+v = 49
+value = 1
+
+[State -3, AI Set Max]
+type = VarSet
+trigger1 = var(49) >= 50
+triggerall = Alive
+triggerall = life > 0
+triggerall = !matchover
+triggerall = !win
+triggerall = !lose
+triggerall = !drawgame
+triggerall = stateno != 5150
+v = 49
+value = 50
+
+[State -3, Reset Power]
+type = VarSet
+triggerall = var(49) != 0
+trigger1 = !Alive
+trigger2 = life = 0
+trigger3 = matchover
+trigger4 = win
+trigger5 = lose
+trigger6 = drawgame
+trigger7 = stateno = 5150
+v = 49
+value = 0
+
+
+;-- ComboMaker --------
+
+[State -3, ComboMaker Add]
+type = VarAdd
+trigger1 = movecontact = 1
+triggerall = stateno = [200,299]
+v = 48
+value = 25
+
+[State -3, ComboMaker Remove]
+type = VarAdd
+trigger1 = stateno != [200,299]
+triggerall = var(48) > 0
+v = 48
+value = -1-ceil(var(48)/100)
+
+[State -3, ComboMaker Set]
+type = VarSet
+trigger1 = var(48) > 250
+v = 48   
+value = 250
+
+[State -3, VarSet]
+type = VarSet
+trigger1 = stateno != [200,299]
+trigger1 = prevstateno != [200,299]
+trigger2 = stateno = [200,299]
+trigger2 = time = 0
+v = 47
+value = 0
+
+[State -3, VarSet]
+type = VarSet
+trigger1 = movecontact
+triggerall = stateno = [200,299]
+v = 47
+value = 1
+
+;----------------------
 
 [State -3, PowerAdd]
 type = PowerAdd

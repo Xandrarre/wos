@@ -364,7 +364,7 @@ value = 0
 type = PlaySnd
 trigger1 = animelem = 2
 trigger2 = animelem = 5
-value = F1
+value = F1,0
 
 [State 20, 1]
 type = VelSet
@@ -428,7 +428,7 @@ sprpriority = 0
 type = PlaySnd
 trigger1 = animelem = 2
 trigger2 = animelem = 5
-value = F1
+value = F1,0
 
 [State 20, 2]
 type = VelSet
@@ -502,7 +502,7 @@ facep2 = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -699,7 +699,7 @@ value = 0
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F4
+value = F4,0
 
 [State 0, Explod]
 type = Explod
@@ -817,7 +817,7 @@ type = PlaySnd
 trigger1 = time = 1
 trigger2 = animelem = 2
 trigger3 = animelem = 5
-value = F2
+value = F2,0
 
 [State 0, Explod]
 type = Explod
@@ -956,7 +956,7 @@ ownpal = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F3
+value = F3,0
 
 [State 0, ChangeAnim]
 type = ChangeAnim
@@ -1007,7 +1007,7 @@ ownpal = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F4
+value = F4,0
 
 [State 0, ChangeAnim]
 type = ChangeAnim

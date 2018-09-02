@@ -7,19 +7,18 @@ type    = S
 movetype= I
 physics = S
 anim = 70249
-ontop = 0
 sprpriority = 249
 
 [State 0, Helper]
 type = Helper
-trigger1 = parent, stateno = [190,194]
+trigger1 = parent, stateno = 190
 persistent = 0
-helpertype = normal;player
+helpertype = normal
 name = "Rozciąganie ekranu"
 ID = 77004
 stateno = 77004
 pos = 0,0
-postype = p1    ;p2,front,back,left,right
+postype = p1    
 facing = 1
 keyctrl = 0
 ownpal = 1
@@ -660,7 +659,7 @@ pos = -pos x, -pos y -230
 postype = p1
 ontop = 0
 removetime = -1
-bindtime = -2
+bindtime = -1
 sprpriority = 20
 scale =  0.2,0.2
 
@@ -673,9 +672,14 @@ angle = -fvar(12)*9+20
 
 [State 0, RemoveExplod]
 type = RemoveExplod
+trigger1 = partner,numexplod(4000) !=0
+triggerall = numpartner = 1
+id = 7100
+
+[State 0, RemoveExplod]
+type = RemoveExplod
 trigger1 = root,numexplod(4000) !=0
-trigger2 = partner,numexplod(4000) !=0
-trigger3 = enemy,numexplod(4000) !=0
+trigger2 = enemy,numexplod(4000) !=0
 id = 7100
 
 ;*********************************************************************
@@ -687,7 +691,6 @@ type    = S
 movetype= I
 physics = S
 anim = 70249
-ontop = 0
 sprpriority = 249
 
 [State 0, ScreenBound]

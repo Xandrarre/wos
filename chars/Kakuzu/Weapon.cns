@@ -24,7 +24,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -45,12 +45,12 @@ hitsound = -1;S4,21
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -73,6 +73,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70705
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -121,7 +133,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -142,12 +154,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -170,6 +182,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70705
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -354,12 +378,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, ChangeState]
 type = ChangeState
@@ -374,6 +398,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70715
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -450,12 +486,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3
 airguard.velocity = -2.9,-1.8
 air.type = High
 air.velocity = -3,-4
-air.hittime = 12
+air.hittime = 20
 
 [State 0, Explod]
 type = Explod
@@ -488,6 +524,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 stateno = 70715
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -622,7 +670,6 @@ trigger1 = time = 0
 type = ChangeState
 trigger1 = pos Y >= -5
 value = 70716
-
 
 ;------------------------------------------------------------------
 ;Shuriken wbicie
@@ -826,7 +873,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -847,12 +894,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, HitOverride]
 type = HitOverride
@@ -860,6 +907,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70736
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -902,7 +961,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -923,12 +982,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, HitOverride]
 type = HitOverride
@@ -936,6 +995,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70736
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -998,12 +1069,12 @@ hitsound = -1
 guardsound = -1
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 15452
+ground.hittime = 12
 ground.velocity = -1,5
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -1,5
-air.hittime = 12455
+air.hittime = 12
 ground.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
@@ -1168,12 +1239,12 @@ hitsound = -1
 guardsound = -1
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,-7
 airguard.velocity = -3,-7
 air.type = High
 air.velocity = -4,-7
-air.hittime = 12
+air.hittime = 20
 ground.cornerpush.veloff = 0
 air.cornerpush.veloff = 0
 down.cornerpush.veloff = 0
@@ -1207,12 +1278,12 @@ hitsound = S0, 2
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -4,-6
 airguard.velocity = -3,-6
 air.type = High
 air.velocity = -4,-6
-air.hittime = 12
+air.hittime = 20
 fall = cond(prevstateno =1606,0,1)
 fall.recover = 0
 palfx.time = 30
@@ -1250,7 +1321,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -1271,12 +1342,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, HitOverride]
 type = HitOverride
@@ -1284,6 +1355,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70745
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -1326,7 +1409,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -1347,12 +1430,12 @@ hitsound = -1
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -2
 airguard.velocity = -1.9,-.8
 air.type = High
 air.velocity = -2,-3
-air.hittime = 12
+air.hittime = 20
 
 [State 0, HitOverride]
 type = HitOverride
@@ -1360,6 +1443,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70745
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -1574,12 +1669,12 @@ hitsound = 24, 13
 guardsound = 6, 0
 ground.type = High
 ground.slidetime = 5
-ground.hittime  = 12
+ground.hittime = 20
 ground.velocity = -3,0
 airguard.velocity = -3,-4
 air.type = High
 air.velocity = -3,-4
-air.hittime = 12
+air.hittime = 20
 envshake.time = 10
 envshake.freq = 20
 envshake.ampl = -5
@@ -1592,6 +1687,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70755
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf

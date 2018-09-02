@@ -371,8 +371,8 @@ type = VelAdd
 triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
-trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,0+ceil(ceil(var(49)/5)*(p2bodydist y)/10)]
+trigger2 = p2dist y > 30
+trigger2 = random = [0,0+ceil(ceil(var(49)/2)*(p2bodydist y)/10)]
 y = -const(velocity.jump.y)/10
 
 [State 50, 1]
@@ -501,7 +501,7 @@ sysvar(1) = 1
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = S4,0+random%10
+value = S4,0+random%8
 
 [State 0, PlaySnd]
 type = PlaySnd
@@ -542,27 +542,12 @@ trans = add
 
 [State 0, Explod]
 type = Explod
-trigger1 = time = 2
-trigger1 = var(15) = 1
-anim = 52
-pos = 0,0
-scale = 1,1
-postype = p1
-facing = 1
-bindtime = -2
-ownpal = 1
-removetime = -2
-sprpriority = 2
-angle = -atan(vel y/vel x)*180/PI
-
-[State 0, Explod]
-type = Explod
 trigger1 = time > 1
 trigger1 = var(15) = 1
 anim = F20
 ID = 20
 pos = -10+random%15,-10-random%50
-postype = p1  
+postype = p1  ;P2,front,back,left,right
 scale = 0.8,0.4
 vel = -2,-2*(FVar(14))/(fvar(15))
 sprpriority = 0
@@ -571,7 +556,7 @@ ownpal = 1
 ontop = 0
 supermovetime = 9999
 pausemovetime = 9999
-angle = -atan(vel y/vel x)*180/PI 
+angle = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
 
 [State 0, Explod]
 type = Explod
@@ -586,70 +571,40 @@ bindtime = 1
 ownpal = 1
 removetime = -2
 sprpriority = 0
-angle = -90-atan(vel y/vel x)*180/PI 
+angle = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)-90
 
 [State 0, AngleDraw]
 type = AngleDraw
 trigger1 = time > 1
 trigger1 = var(15) = 1
-value = -atan(vel y/vel x)*180/PI 
+value = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
 
-[State 0, VarSet]
-Type = Null
-trigger1 = 1
+[State 1640, X]
+Type=VarSet
+Trigger1=1
 trigger1 = var(15) = 1
-Trigger1 = NumEnemy
-Trigger1 = FVar(13) := (EnemyNear, Pos X - Pos X) * Cond ((EnemyNear, Pos X - Pos X)<0,-1,1)
-Trigger1 = FVar(14) := (EnemyNear, Pos Y - Pos Y)
+fvar(13)=(EnemyNear(0),Pos X-Pos X)*Facing
 
-[State 0, VarSet]
-Type = Null
-trigger1 = 1
+[State 1640, Y]
+Type=VarSet
+trigger1=1
 trigger1 = var(15) = 1
-Trigger1 = FVar(15) := Exp(0.5*ln((FVar(13)*FVar(13)) + (FVar(14)*FVar(14))))
+fvar(14)=(EnemyNear(0),pos Y-Pos Y)
 
-[State 0, VelSet]
-Type = VelSet
-trigger1 = time = 1 && numenemy
+[State 1640, Vector Length]
+Type=VarSet
+trigger1=1
 trigger1 = var(15) = 1
-x = (FVar(13)/FVar(15))*2.5*const(velocity.airjump.fwd.x)
+fvar(15)=Exp(0.5*ln((fvar(13)*fvar(13))+(fvar(14)*fvar(14))))
 
 [State 0, VelSet]
-Type = VelSet
-trigger1 = time = 1 && numenemy
+type=VelSet
+trigger1= time = 1
 trigger1 = var(15) = 1
-triggerall = (((EnemyNear,Pos Y - Pos Y)-(EnemyNear, Const(Size.Height)/2))/FVar(15))*5*const(velocity.airjump.fwd.x) = [const(velocity.airjump.y)*0.5, -const(velocity.airjump.y)*0.5]
-y = (((EnemyNear,Pos Y - Pos Y)-(EnemyNear, Const(Size.Height)/2))/FVar(15))*5*const(velocity.airjump.fwd.x)
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = time = 1 && numenemy
-trigger1 = var(15) = 1
-trigger1 = vel y > -const(velocity.airjump.y)*0.5
-y = -const(velocity.airjump.y)*0.5
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = time = 1 && numenemy
-trigger1 = var(15) = 1
-trigger1 = vel y < const(velocity.airjump.y)*0.5
-y = const(velocity.airjump.y)*0.5
+x=(Fvar(13))/(fvar(15))*2.5*const(velocity.airjump.fwd.x)
+y=(FVar(14))/(fvar(15))*2.5*const(velocity.airjump.fwd.x)
 
 ;------------------------
-
-[State 0, Explod]
-type = Explod
-trigger1 = time = 2
-trigger1 = var(15) = 2
-anim = 52
-pos = 0,0
-scale = 1,1
-postype = p1
-facing = 1
-bindtime = -2
-ownpal = 1
-removetime = -2
-sprpriority = 2
 
 [State 0, Explod]
 type = Explod
@@ -658,7 +613,7 @@ trigger1 = var(15) = 2
 anim = F20
 ID = 20
 pos = -10+random%15,-10-random%50
-postype = p1  
+postype = p1  ;P2,front,back,left,right
 scale = 0.8,0.4
 vel = -2,0
 sprpriority = 0
@@ -691,41 +646,6 @@ x=2.5*const(velocity.airjump.fwd.x)
 
 ;---------------------
 
-[State 0, HitDef]
-type = HitDef
-trigger1 = !time
-attr = A, NA
-damage = 25,5
-animtype = Light
-guardflag = MA
-hitflag = MAFD
-priority = 3, Hit
-pausetime = 0, 5
-sparkno = 0+random%4
-sparkxy = -15, -30+random%20
-hitsound = 35, 0+random%15;5, 21+random%5
-guardsound = 6, 0
-ground.type = High
-ground.slidetime = 5
-ground.hittime  = 12
-ground.velocity = -2,-3
-guard.velocity = -2
-airguard.velocity = -2,-2
-air.type = High
-air.velocity = -2,-3
-air.hittime = 120
-yaccel = .35
-envshake.time = 10
-envshake.freq = 20
-envshake.ampl = -5
-envshake.phase = 10
-fall.yvelocity = -6
-Ground.CornerPush.VelOff = 0
-Air.CornerPush.VelOff = 0
-Down.CornerPush.VelOff = 0
-Guard.CornerPush.VelOff = 0
-AirGuard.CornerPush.VelOff = 0
-
 [State 0, CtrlSet]
 type = CtrlSet
 trigger1 = Time = 5
@@ -734,34 +654,6 @@ value = 1
 [State 45, 7]
 type = ChangeState
 trigger1 = Time = 10
-value = 50
-ctrl = 1
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = movecontact
-value = 61
-ctrl = 1
-;-------------------------------------------------------------------------------
-;Dash (Hit)
-[Statedef 61]
-type = A
-movetype = I
-physics = A
-juggle = 1
-ctrl = 1
-anim = 105
-sprprioritY = 2
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = time = 0
-x = -0.5
-y = -1.5
-
-[State 0, ChangeState]
-type = ChangeState
-trigger1 = animtime = 0
 value = 50
 ctrl = 1
 ;---------------------------------------------------------------------------
@@ -775,8 +667,8 @@ type = VelAdd
 triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
-trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,0+ceil(var(49)/5)+(p2bodydist y)/10]
+trigger2 = p2dist y > 30
+trigger2 = random = [0,0+ceil(ceil(var(49)/2)*(p2bodydist y)/10)]
 y = -const(velocity.jump.y)/10
 
 [State 0, PosAdd]
@@ -813,8 +705,8 @@ type = VelAdd
 triggerall = vel y > 0
 trigger1 = var(50) = 0 && command = "holddown"
 trigger2 = var(50) = 1 
-trigger2 = (p2dist y > 30 && enemynear, vel y >= 0)
-trigger2 = random = [0,0+ceil(var(49)/5)+(p2bodydist y)/10]
+trigger2 = p2dist y > 30
+trigger2 = random = [0,0+ceil(ceil(var(49)/2)*(p2bodydist y)/10)]
 y = -const(velocity.jump.y)/10
 
 [State 0, PosAdd]
@@ -840,7 +732,479 @@ value = S6,0
 [State 51, 1]
 type = Null
 trigger1 = 1
+;---------------------------------------------------------------------------
+;Combo Dash Ground
+[Statedef 80]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+facep2 = 1
+velset = 0,0
+anim = 80+var(0)*10000
+poweradd = -100
 
+[State 45, 3]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 4 && pos y > -5
+anim = F370
+pos = 0,0
+scale = 1.3,1.3
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = S1,0+random%12
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = F3,1
+
+[State 0, AfterImage]
+type = AfterImage
+trigger1 = time = 5
+time = -1
+length = 10
+palcolor = 256
+palinvertall = 0
+palbright = 0,0,0
+palcontrast = 120,120,120
+palpostbright = 0,0,0
+paladd = 5,5,5
+palmul = .65,.65,.65
+timegap = 1
+framegap = 1
+trans = add
+
+[State 0, Explod]
+type = Explod
+trigger1 = time > 5
+anim = F20
+ID = 20
+pos = -10+random%15,-10-random%50
+postype = p1  
+scale = 0.8,0.4
+vel = -2,-2*(FVar(14))/(fvar(15))
+sprpriority = 0
+bindtime = 1
+ownpal = 1
+ontop = 0
+supermovetime = 9999
+pausemovetime = 9999
+angle = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 5
+anim = F280
+pos = -20,-30
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 0
+angle = cond(vel x != 0,-90-atan(vel y/vel x)*180/PI, 0)-90
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 5
+value = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
+
+[State 0, VarSet]
+Type = Null
+trigger1 = 1
+Trigger1 = NumEnemy
+Trigger1 = FVar(13) := (EnemyNear, Pos X - Pos X) * Cond ((EnemyNear, Pos X - Pos X)<0,-1,1)
+Trigger1 = FVar(14) := (EnemyNear, Pos Y - Pos Y)
+
+[State 0, VarSet]
+Type = Null
+trigger1 = 1
+Trigger1 = FVar(15) := Exp(0.5*ln((FVar(13)*FVar(13)) + (FVar(14)*FVar(14))))
+
+[State 0, VelSet]
+Type = VelSet
+trigger1 = time = 5 && numenemy
+x = (FVar(13)/FVar(15))*5*const(velocity.airjump.fwd.x)
+y = 0
+
+[State 0, HitDef]
+type = HitDef
+trigger1 = !time
+attr = A, NA
+damage = 25,5
+animtype = Light
+guardflag = MA
+hitflag = MAFD
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 0+random%4
+sparkxy = -15, -50+random%10
+hitsound = 35, 0+random%15;5, 21+random%5
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2,-2
+guard.velocity = -2
+airguard.velocity = -2,-2
+air.type = High
+air.velocity = -2,-2
+air.hittime = 120
+yaccel = .35
+envshake.time = 10
+envshake.freq = 20
+envshake.ampl = -5
+envshake.phase = 10
+fall.yvelocity = -6
+Ground.CornerPush.VelOff = 0
+Air.CornerPush.VelOff = 0
+Down.CornerPush.VelOff = 0
+Guard.CornerPush.VelOff = 0
+AirGuard.CornerPush.VelOff = 0
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = time > 5 && p2bodydist x < 0
+x = 0.5
+y = 0.5
+
+[State 45, 7]
+type = ChangeState
+trigger1 = Time = 10
+value = 0
+ctrl = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 81
+ctrl = 1
+;-------------------------------------------------------------------------------
+;Combo Dash (Hit)
+[Statedef 81]
+type = S
+movetype = I
+physics = S
+juggle = 1
+ctrl = 1
+anim = 81+var(0)*10000
+sprpriority = 2
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 0
+x = 0.5
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+;---------------------------------------------------------------------------
+;Combo Dash Air
+[Statedef 85]
+type = A
+movetype = A
+physics = S
+ctrl = 0
+facep2 = 1
+velset = 0,0
+anim = cond(pos y = 0,85+var(0)*10000,86+var(0)*10000)
+poweradd = -100
+
+[State 45, 3]
+type = VarSet
+trigger1 = Time = 0
+sysvar(1) = 0
+
+[State 40, 2]
+type = VarSet
+trigger1 = 1
+sysvar(1) = 1
+
+[State 0, VelMul]
+Type = VelMul
+Trigger1 = Time < 5 && pos y < 0
+X = 0.9
+Y = 0.9
+
+[State 0, StateTypeSet]
+type = StateTypeSet
+trigger1 = time = 5
+statetype = A
+movetype = A
+physics = N
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = time = 4 && pos y > -5
+anim = F370
+pos = 0,0
+scale = 1.3,1.3
+postype = p1
+facing = 1
+bindtime = 1
+removetime = -2
+sprpriority = 3
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = S1,0+random%12
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 5
+value = F3,1
+
+[State 0, AfterImage]
+type = AfterImage
+trigger1 = time = 5
+time = -1
+length = 10
+palcolor = 256
+palinvertall = 0
+palbright = 0,0,0
+palcontrast = 120,120,120
+palpostbright = 0,0,0
+paladd = 5,5,5
+palmul = .65,.65,.65
+timegap = 1
+framegap = 1
+trans = add
+
+[State 0, Explod]
+type = Explod
+trigger1 = time > 5
+anim = F20
+ID = 20
+pos = -10+random%15,-10-random%50
+postype = p1  
+scale = 0.8,0.4
+vel = -2,-2*(FVar(14))/(fvar(15))
+sprpriority = 0
+bindtime = 1
+ownpal = 1
+ontop = 0
+supermovetime = 9999
+pausemovetime = 9999
+angle = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
+
+[State 0, Explod]
+type = Explod
+trigger1 = time = 5
+anim = F280
+pos = -20,-30
+scale = 1.5,1.5
+postype = p1
+facing = 1
+bindtime = 1
+ownpal = 1
+removetime = -2
+sprpriority = 0
+angle = cond(vel x != 0,-90-atan(vel y/vel x)*180/PI, 0)-90
+
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 5
+value = cond(vel x != 0,-atan(vel y/vel x)*180/PI, 0)
+
+[State 0, VarSet]
+Type = Null
+trigger1 = 1
+Trigger1 = NumEnemy
+Trigger1 = FVar(13) := (EnemyNear, Pos X - Pos X) * Cond ((EnemyNear, Pos X - Pos X)<0,-1,1)
+Trigger1 = FVar(14) := (EnemyNear, Pos Y - Pos Y)
+
+[State 0, VarSet]
+Type = Null
+trigger1 = 1
+Trigger1 = FVar(15) := Exp(0.5*ln((FVar(13)*FVar(13)) + (FVar(14)*FVar(14))))
+
+[State 0, VelSet]
+Type = VelSet
+trigger1 = time = 5 && numenemy
+x = (FVar(13)/FVar(15))*5*const(velocity.airjump.fwd.x)
+y = ((EnemyNear,Pos Y - Pos Y)-(EnemyNear, Const(Size.Height)/4))/15.0
+
+[State 0, HitDef]
+type = HitDef
+trigger1 = !time
+attr = A, NA
+damage = 25,5
+animtype = Light
+guardflag = MA
+hitflag = MAFD
+priority = 3, Hit
+pausetime = 0, 5
+sparkno = 0+random%4
+sparkxy = -15, -50+random%10
+hitsound = 35, 0+random%15;5, 21+random%5
+guardsound = 6, 0
+ground.type = High
+ground.slidetime = 5
+ground.hittime  = 12
+ground.velocity = -2,-3
+guard.velocity = -2
+airguard.velocity = -2,-2
+air.type = High
+air.velocity = -2,-3
+air.hittime = 120
+yaccel = .35
+envshake.time = 10
+envshake.freq = 20
+envshake.ampl = -5
+envshake.phase = 10
+fall.yvelocity = -6
+Ground.CornerPush.VelOff = 0
+Air.CornerPush.VelOff = 0
+Down.CornerPush.VelOff = 0
+Guard.CornerPush.VelOff = 0
+AirGuard.CornerPush.VelOff = 0
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = time > 5 && p2bodydist x < 0
+x = 0.5
+y = 0.5
+
+[State 45, 7]
+type = ChangeState
+trigger1 = Time = 10
+value = 50
+ctrl = 1
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = movecontact
+value = 86
+ctrl = 1
+;-------------------------------------------------------------------------------
+;Combo Dash (Hit)
+[Statedef 86]
+type = A
+movetype = I
+physics = A
+juggle = 1
+ctrl = 1
+anim = 87+var(0)*10000
+sprpriority = 2
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time = 0
+x = 0.5
+y = -1.5
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = animtime = 0
+value = 50
+ctrl = 1
+;-----------------
+; Run END
+[StateDef 99]
+type = S
+movetype= I
+physics = S
+juggle  = 1
+ctrl = 0
+anim = 99+var(0)*10000
+poweradd = 0
+sprpriority = 0
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = noautoturn
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nowalk
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = animelem = 1
+anim = F300
+ID = 24
+pos = ceil(-26*0.95),2
+postype = p1  ;p2,front,back,left,right
+scale = 0.7,0.7
+sprpriority = 2
+vel = 2,-0.5
+bindtime = 1
+ownpal = 0
+ontop = 0
+facing = -1
+
+[State 0, Explod]
+type = Explod
+ownpal = 1
+trigger1 = animelem = 1
+anim = F300
+ID = 24
+pos = ceil(20*0.95),2
+postype = p1  ;p2,front,back,left,right
+scale = 0.7,0.7
+sprpriority = 2
+vel = 2,-0.5
+bindtime = 1
+ownpal = 0
+ontop = 0
+facing = -1
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = vel x > 0
+x = const(velocity.run.fwd.x)*0.7-time/10
+y = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = vel x <= 0
+x = 0
+y = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 1
+value = F8,0+random%4
+volume = 255
+channel = 8
+
+[State 0, CtrlSet]
+type = CtrlSet
+trigger1 = time = 2
+value = 1
+
+[State 0, End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
 ;---------------------------------------------------------------------------
 ; Run forward
 [Statedef 100]
@@ -969,24 +1333,6 @@ velset = 0,0
 anim = 102+var(0)*10000
 sprpriority = -2
 
-[State 0, Explod]
-type = Explod
-trigger1 = 1
-anim = 900+random%2
-ID = 900
-pos = -7+random%15,-5-random%40
-vel = -1,-1
-accel = 0,0.03
-postype = p1
-bindtime = 1
-removetime = -2
-supermovetime = 9999
-pausemovetime = 9999
-scale = 0.6,0.6
-sprpriority = 5
-ownpal = 0
-ontop = 0
-
 [State 0, PlayerPush]
 type = PlayerPush
 trigger1 = 1
@@ -1109,24 +1455,6 @@ ctrl = 0
 velset = 0,0
 anim = 103+var(0)*10000
 sprpriority = -2
-
-[State 0, Explod]
-type = Explod
-trigger1 = 1
-anim = 900+random%2
-ID = 900
-pos = -7+random%15,-5-random%40
-vel = 1,-1
-accel = 0,0.03
-postype = p1
-bindtime = 1
-removetime = -2
-supermovetime = 9999
-pausemovetime = 9999
-scale = 0.6,0.6
-sprpriority = 5
-ownpal = 0
-ontop = 0
 
 [State 0, PlayerPush]
 type = PlayerPush
@@ -1901,7 +2229,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2005,7 +2332,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2067,7 +2393,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2161,7 +2486,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2224,7 +2548,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2311,7 +2634,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2373,7 +2695,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2438,7 +2759,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2502,7 +2822,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2590,7 +2909,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2637,7 +2955,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2685,7 +3002,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2751,7 +3067,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2801,7 +3116,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -2941,7 +3255,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]
@@ -3005,7 +3318,6 @@ type = NotHitBy
 trigger1 = var(39) = 0
 triggerall = ishelper
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-value2 = S,NA
 time = -1
 
 [State 0, DestroySelf]

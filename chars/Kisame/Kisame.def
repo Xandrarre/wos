@@ -13,7 +13,7 @@
 ;|--------------------------- Xandrarre ---------------------------|
 ;|---------------------------- Pein4444 ---------------------------|
 ;|----------------------------- Tuder -----------------------------|
-;|-------------- Sprites by NES - Edited by Xandrarre -------------|
+;|-------- Sprites by Spectro Sosuke - Edited by Xandrarre --------|
 ;|-----------------------------------------------------------------|
 ;|----------------------- Huge credits to: ------------------------|
 ;|---------------------------- David11 ----------------------------|
@@ -52,8 +52,8 @@
 ;|-----------------------------------------------------------------|
 
 [Info]
-name="Hinata"
-displayname="Hinata"
+name="Kisame"
+displayname="Kisame"
 versiondate=0,0,2018
 mugenversion=1.1
 author = "N-G MUGEN Team"
@@ -61,19 +61,19 @@ pal.defaults = 1,2,3,4,5,6
 localcoord = 380,360
 
 [Files]
-sprite=Hinata.sff
-sound=Hinata.snd
-anim=Hinata.air
-cmd=Hinata.cmd
-cns=Hinata.cns
-st=Hinata.cns
+sprite=Kisame.sff
+sound=Kisame.snd
+anim=Kisame.air
+cmd=Kisame.cmd
+cns=Kisame.cns
+st=Kisame.cns
 stcommon=Common.cns
-pal1=Hinata.act
-pal2=Hinata.act
-pal3=Hinata.act
-pal4=Hinata.act
-pal5=Hinata.act
-pal6=Hinata.act
+pal1=Kisame.act
+pal2=Kisame.act
+pal3=Kisame.act
+pal4=Kisame.act
+pal5=Kisame.act
+pal6=Kisame.act
 st1=Upgrades.cns
 st2=Weapon.cns
 st3=Common States.cns
