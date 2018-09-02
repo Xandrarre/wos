@@ -202,6 +202,7 @@ trigger1 = time = 1
 anim = F70401 + random%4
 postype = p1
 pos = 0,0
+name = "plama"
 bindtime = 1
 sprpriority = -25
 facing = 1
@@ -216,6 +217,7 @@ trigger1 = time = 1
 anim = F70405
 postype = front
 pos = cond(root,facing = 1,-380,0),0
+name = "paski ruchu"
 bindtime = 1
 sprpriority = 20
 ownpal = 1
@@ -230,6 +232,7 @@ trigger1 = time = 1
 anim = F70406 + random%4
 postype = p1
 pos = 0,0
+name = "znak"
 bindtime = 1
 sprpriority = -20
 facing = 1
@@ -244,7 +247,8 @@ trigger1 = root,statetype != L && time = 1
 anim = root,anim
 postype = p1
 pos = 0,0
-bindtime = -1
+name = "widmo postaci"
+bindtime = -2
 sprpriority = 1
 facing = 1
 ownpal = 1
@@ -278,8 +282,15 @@ sprpriority = 0
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = time = 20
-value = S2,21+random%3
+trigger1 = time = 5
+value = S2,0
+volume = 256
+channel = 2
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 100
+value = S2,2+random%3
 volume = 256
 channel = 2
 
@@ -296,7 +307,7 @@ name = "Effect charge"
 ID = 70502           
 stateno = 70502
 pos = 0,0
-postype = p1    
+postype = p1    ;p2,front,back,left,right
 facing = 1
 keyctrl = 0
 ownpal = 1
@@ -319,9 +330,10 @@ trigger10 = animelem = 13
 anim = F402
 ID = 402
 pos = -30+random%60,-5
-postype = p1  
+postype = p1  ;p2,front,back,left,right
 vel = 0,-pi-0.5+random%2
 facing = 1
+name = "œwietliki"
 vfacing = 1
 bindtime = 1
 removetime = 33
@@ -357,8 +369,7 @@ trigger4 = var(50) = 1 && p2bodydist x = [-70,70]
 trigger4 = random = [50,75+ceil(var(49)/2)]
 value = 70501
 ctrl = 1
-;----------------------------------------------------------------
-;Charge Chakra End
+
 [Statedef 70501]
 type    = S
 movetype= H
@@ -394,6 +405,7 @@ anim = F290
 ID = 403
 pos = 0,2
 postype = p1
+name = "dym przód"
 scale = 1.3,1.3
 ownpal = 1
 ontop = 0
@@ -416,6 +428,7 @@ anim = F403
 ID = 4031
 pos = 0,2
 postype = p1
+name = "aura paski"
 scale = 1.1,1.1
 ownpal = 1
 ontop = 0
@@ -436,7 +449,8 @@ anim = F404
 ID = 404
 pos = 0,5
 postype = p1
-scale = 2.3,2.4
+name = "aura"
+scale = 2.4,2.6
 ownpal = 1
 ontop = 0
 ignorehitpause = 1
@@ -454,6 +468,7 @@ anim = F401
 ID = 401
 pos = -7,2
 postype = p1
+name = "dym lewa"
 scale = 0.7,0.7
 ownpal = 1
 ontop = 0
@@ -473,6 +488,7 @@ ID = 4011
 pos = 7,2
 postype = p1
 facing = -1
+name = "dym prawa"
 scale = 0.7,0.7
 ownpal = 1
 ontop = 0
@@ -523,6 +539,13 @@ poweradd = -50
 velset = 0,0
 sprpriority = 3
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = time = 1
+trigger2 = time = 24
+value = S7,0+random%4
+channel = 7
+
 [State 310, 2]
 type = Explod
 trigger1 = time = 4 && pos y < -5
@@ -538,7 +561,7 @@ scale = 2.5,2.5
 
 [State 310, 2]
 type = Explod
-trigger1 = time = 14 && pos y < -5
+trigger1 = time = 15 && pos y < -5
 anim = F350
 ID = 350
 pos = 0,0
@@ -552,51 +575,39 @@ scale = 2.5,2.5
 [State 310, 2]
 type = Explod
 trigger1 = time = 4 && pos y > -5
-anim = F290
-ID = 290
-pos = 0,0
+anim = F340
+ID = 340
+pos = 0,-22
 postype = p1
 facing = 1
 bindtime = 1
 removetime = -2
 sprpriority = 4
-scale = 1.5,1.5
+scale = 1,1
 
 [State 310, 2]
 type = Explod
-trigger1 = time = 14 && pos y > -5
-anim = F290
-ID = 290
-pos = 0,0
+trigger1 = time = 15 && pos y > -5
+anim = F340
+ID = 340
+pos = 0,-22
 postype = p1
 facing = 1
 bindtime = 1
 removetime = -2
 sprpriority = 4
-scale = 1.5,1.5
+scale = 1,1
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 4
-trigger2 = time = 14
-value = F14,4
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 4
-trigger2 = time = 14
-value = F3,2
-
-[State 0, PlaySnd]
-type = PlaySnd
-trigger1 = time = 4
-trigger2 = time = 14
+trigger2 = time = 15
 value = F9,1
 
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 25 && random = [0,99]
-value = S1,0+random%12
+value = S2,23
 volume = 256
 channel = 2
 
@@ -635,14 +646,14 @@ physics = S         ;A,C,S,N
 [State 310, 1]
 type = PosAdd
 trigger1 = var(50) = 0 && command = "holdfwd"
-triggerall = time = 13
+triggerall = time = 14
 trigger2 = var(50) = 1 && p2bodydist x > 0
 x = 160
 
 [State 310, 1]
 type = PosAdd
 trigger1 = var(50) = 0 && command = "holdback"
-triggerall = time = 13
+triggerall = time = 14
 trigger2 = var(50) = 1 && p2bodydist x < 0
 x = -160
 
@@ -650,14 +661,14 @@ x = -160
 type = PosAdd
 trigger1 = var(50) = 0 && command = "holdup"
 triggerall = pos y > -200
-triggerall = time = 13
+triggerall = time = 14
 trigger2 = var(50) = 1 && p2bodydist y < 0
 y = -160
 
 [State 310, 1]
 type = Posset
 trigger1 = var(50) = 0 && command = "holddown"
-triggerall = time = 13
+triggerall = time = 14
 trigger2 = var(50) = 1 && p2bodydist y > 0
 y = 0
 
@@ -711,6 +722,7 @@ trigger1 = time = 0
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 time = 30
 
+
 [State 0, Prawa]
 type = Explod
 trigger1 = time = 0
@@ -719,7 +731,7 @@ anim = F696
 ownpal = 1
 ID = 900
 pos = 10+random%10,-30-random%20
-postype = p1  
+postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
 bindtime = 1
@@ -739,7 +751,7 @@ anim = F696
 ownpal = 1
 ID = 900
 pos = -5+random%10,-20-random%10
-postype = p1  
+postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
 bindtime = 1
@@ -759,7 +771,7 @@ anim = F696
 ownpal = 1
 ID = 900
 pos = -10-random%10,-30-random%20
-postype = p1  
+postype = p1  ;p2,front,back,left,right
 facing = 1
 vfacing = 1
 bindtime = 1
@@ -873,7 +885,7 @@ y = 0
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 20
-value = S1,0+random%12
+value = S1,4+random%3
 volume = 256
 channel = 2
 
@@ -1377,7 +1389,7 @@ value = F17,0
 type = PlaySnd
 trigger1 = time = 20
 channel = 2
-value = S2,21+random%3
+value = S2,41+random%4
 channel = 2
 
 [State 0, End]
@@ -1401,6 +1413,7 @@ type    = S
 movetype= I
 physics = S
 anim = 70251
+ontop = 0
 sprpriority = 250
 
 [State 213, Okrag]
@@ -1408,54 +1421,6 @@ type = Explod
 trigger1 = 1
 ID = 700005555
 anim = 70250
-pos = -370, 191
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Fire]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70251+parent,var(3)
-pos = -370, 191
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Wind]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70253+parent,var(4)
-pos = -370, 191
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Lightning]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70255+parent,var(5)
-pos = -370, 191
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Water]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70257+parent,var(6)
 pos = -370, 191
 postype = front
 ontop = 0
@@ -1485,6 +1450,54 @@ postype = front
 ontop = 0
 sprpriority = 252
 scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(21)%10
+pos = -361,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(21)-10)-parent,var(21)%10)/10 + cond(parent,var(21)%10=0,1,0)
+pos = -364,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, bomb]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(22)%10
+pos = -352,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale = 0.27,0.3
+removetime = 1
+
+[State 213, fuma]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(24)%10
+pos = -342,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale = 0.26,0.3
 removetime = 1
 
 [State 213, portret]
@@ -1624,6 +1637,7 @@ type    = S
 movetype= I
 physics = S
 anim = 70252
+ontop = 0
 sprpriority = 250
 
 [State 213, Okrag]
@@ -1638,58 +1652,6 @@ facing = -1
 removetime = 1
 sprpriority = 249
 scale = 0.297,0.2968
-
-[State 213, Fire]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70251+parent,var(3)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Wind]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70253+parent,var(4)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Lightning]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70255+parent,var(5)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Water]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70257+parent,var(6)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
 
 [State 213, Okrag]
 type = modifyExplod
@@ -1720,6 +1682,54 @@ postype = front
 ontop = 0
 sprpriority = 252
 scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(21)%10
+pos = -20,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(21)-10)-parent,var(21)%10)/10 + cond(parent,var(21)%10=0,1,0)
+pos = -23,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, bomb]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(22)%10
+pos = -31,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, fuma]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(24)%10
+pos = -41,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
 removetime = 1
 
 [State 213, portret]
@@ -1865,6 +1875,7 @@ type    = S
 movetype= I
 physics = S
 anim = 70251
+ontop = 0
 sprpriority = 250
 
 [State 213, Okrag]
@@ -1872,54 +1883,6 @@ type = Explod
 trigger1 = 1
 ID = 700005555
 anim = 70250
-pos = 0, 0
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Fire]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70251+parent,var(3)
-pos = 0, 0
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Wind]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70253+parent,var(4)
-pos = 0, 0
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Lightning]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70255+parent,var(5)
-pos = 0, 0
-postype = front
-ontop = 0
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Water]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70257+parent,var(6)
 pos = 0, 0
 postype = front
 ontop = 0
@@ -1956,6 +1919,54 @@ postype = front
 ontop = 0
 sprpriority = 252
 scale =  0.27,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(21)%10
+pos = -301,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(21)-10)-parent,var(21)%10)/10 + cond(parent,var(21)%10=0,1,0)
+pos = -304,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, bomb]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(22)%10
+pos = -292,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale = 0.27,0.3
+removetime = 1
+
+[State 213, fuma]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(24)%10
+pos = -282,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale = 0.26,0.3
 removetime = 1
 
 [State 213, portret]
@@ -2010,6 +2021,7 @@ type    = S
 movetype= I
 physics = S
 anim = 70252
+ontop = 0
 sprpriority = 250
 
 [State 213, Okrag]
@@ -2024,58 +2036,6 @@ facing = -1
 removetime = 1
 sprpriority = 249
 scale = 0.297,0.2968
-
-[State 213, Fire]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70251+parent,var(3)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Wind]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70253+parent,var(4)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Lightning]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70255+parent,var(5)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
-
-[State 213, Water]
-type = Explod
-trigger1 = 1
-ID = 700005555
-anim = 70257+parent,var(6)
-pos = 0, 0
-postype = front
-ontop = 0
-facing = -1
-removetime = 1
-sprpriority = 249
-scale =  0.297,0.2968
 
 [State 213, Okrag]
 type = modifyExplod
@@ -2108,6 +2068,54 @@ sprpriority = 252
 scale =  0.27,0.3
 removetime = 1
 
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70230 - parent,var(21)%10
+pos = -80,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, kunai exp.]
+type = Explod
+trigger1 = Time > 1
+ID = 70002
+anim = 70219 - ((parent,var(21)-10)-parent,var(21)%10)/10 + cond(parent,var(21)%10=0,1,0)
+pos = -83,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
+[State 213, bomb]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(22)%10
+pos = -91,196
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.27,0.3
+removetime = 1
+
+[State 213, fuma]
+type = Explod
+trigger1 = Time > 1
+ID = 70001
+anim = 70225 - parent,var(24)%10
+pos = -101,206
+postype = front
+ontop = 0
+sprpriority = 252
+scale =  0.26,0.3
+removetime = 1
+
 [State 213, portret]
 type = Explod
 trigger1 = Time > 1
@@ -2119,6 +2127,7 @@ ontop = 0
 sprpriority = 251
 scale =  0.2965,0.3
 removetime = 1
+
 
 [State 0, VarSet]
 type = VarSet
@@ -2174,16 +2183,10 @@ value = 0
 movecamera = 0,0
 
 [State 1521, destroyself]
-type = SelfState
+type = ChangeState
 trigger1 = partner,stateno = 0
 trigger2 = partner,stateno = [5000,5999]
-triggerall = numpartner = 1
-value = 50
-ctrl = 1
-
-[State 1521, destroyself]
-type = SelfState
-trigger1 = time = 800
+trigger3 = time = 800
 value = 50
 ctrl = 1
 
@@ -2205,15 +2208,9 @@ value = 0
 movecamera = 0,0
 
 [State 1521, destroyself]
-type = SelfState
+type = ChangeState
 trigger1 = partner,stateno = 0
 trigger2 = partner,stateno = [5000,5999]
-triggerall = numpartner = 1
-value = 50
-ctrl = 1
-
-[State 1521, destroyself]
-type = SelfState
-trigger1 = time = 350
+trigger3 = time = 350
 value = 50
 ctrl = 1

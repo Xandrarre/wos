@@ -17,7 +17,7 @@ Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
-Session RNG seed is 1531399405
+Session RNG seed is 1535894624
 Loading system fonts...OK
 Loading options...
 Initializing pads...failed
@@ -122,10 +122,10 @@ Freeing players
 Game loop init
 Unreserved all palettes
 Charsel init
-Selected char 10 on teamslot 0.0
-Char Kakuzu.def (10) request pal 3 3F (3F) -> reserved 3 (37)
-Selected char 10 on teamslot 1.0
-Char Kakuzu.def (10) request pal 0 3F (37) -> reserved 0 (36)
+Selected char 19 on teamslot 0.0
+Char Jugo.def (19) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 20 on teamslot 1.0
+Char Karin.def (20) request pal 3 3F (3F) -> reserved 3 (37)
 End of charsel loop
 Game loop deinit
 Gameflow 8
@@ -144,7 +144,126 @@ Loading stage...
   Loading BG...OK
 Stage loaded OK
   Allocating helpers...OK
-Match RNG seed: 1068289016
+Match RNG seed: 283408726
+Reset persist vars team 0
+Reset persist vars team 1
+Loading character chars/Jugo/Jugo.def...
+  Loading info...OK
+  Loading cmd command set Jugo.cmd...OK
+  Loading cns Jugo.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Jugo.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Jugo.sff...OK
+  Loading anim Jugo.air...OK
+  Loading snd Jugo.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  17547 expressions (5097 on trigger lines)
+Character Jugo.def loaded OK
+New char Jugo loaded into cache: (1/4 cached) Load time: 870.000ms
+Loading character chars/Karin/Karin.def...
+  Loading info...OK
+  Loading cmd command set Karin.cmd...OK
+  Loading cns Karin.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Karin.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Karin.sff...OK
+  Loading anim Karin.air...OK
+  Loading snd Karin.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  11630 expressions (3515 on trigger lines)
+Character Karin.def loaded OK
+New char Karin loaded into cache: (2/4 cached) Load time: 910.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+End of match loop
+Total time: 208.20s
+Total frames: 10714 	Skipped frames: 0
+Avg game rate: 51.46
+Avg frame rate: 51.46
+
+Finishing match
+Freeing players
+Save persist vars P56 Jugo
+Player Jugo cache count reduced: 0
+Save persist vars P57 Karin
+Player Karin cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 10 on teamslot 0.0
+Char Kakuzu.def (10) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 16 on teamslot 1.0
+Char Hidan.def (16) request pal 2 3F (3F) -> reserved 2 (3B)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 131712030
 Reset persist vars team 0
 Reset persist vars team 1
 Loading character chars/Kakuzu/Kakuzu.def...
@@ -161,38 +280,91 @@ Loading character chars/Kakuzu/Kakuzu.def...
   Loading anim Kakuzu.air...OK
   Loading snd Kakuzu.snd...OK
   Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
-  21013 expressions (5751 on trigger lines)
+  23290 expressions (6342 on trigger lines)
 Character Kakuzu.def loaded OK
-New char Kakuzu loaded into cache: (1/4 cached) Load time: 3210.000ms
-Player Kakuzu cache count increased: 2
+New char Kakuzu loaded into cache: (3/4 cached) Load time: 2900.000ms
+Loading character chars/Hidan/Hidan.def...
+  Loading info...OK
+  Loading cmd command set Hidan.cmd...OK
+  Loading cns Hidan.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Hidan.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Hidan.sff...OK
+  Loading anim Hidan.air...OK
+  Loading snd Hidan.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  15559 expressions (4635 on trigger lines)
+Character Hidan.def loaded OK
+New char Hidan loaded into cache: (4/4 cached) Load time: 960.000ms
 Resetting round
 Match assets initialized OK
 Game loop init
 Match loop init
-Resetting round
-Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
 End of match loop
-Total time: 307.74s
-Total frames: 18459 	Skipped frames: 0
-Avg game rate: 59.98
-Avg frame rate: 59.98
+Total time: 224.66s
+Total frames: 10863 	Skipped frames: 5
+Avg game rate: 48.35
+Avg frame rate: 48.33
 
 Finishing match
 Freeing players
 Save persist vars P56 Kakuzu
-Player Kakuzu cache count reduced: 1
-Save persist vars P57 Kakuzu
 Player Kakuzu cache count reduced: 0
+Save persist vars P57 Hidan
+Player Hidan cache count reduced: 0
 Match RNG closed
-Game loop deinit
-Gameflow 12
-Entering victory screen.
-Unloading match assets
-Freeing players
-Unloading stage...OK
-Game loop init
-Victory screen init
-End of victory screen loop
 Game loop deinit
 Gameflow 6
 Reset persist vars team 0
@@ -201,19 +373,14 @@ Gameflow 7
 Entering character select.
 Unloading match assets
 Freeing players
+Unloading stage...OK
 Game loop init
 Unreserved all palettes
 Charsel init
-Selected char 10 on teamslot 0.0
-Char Kakuzu.def (10) request pal 0 3F (3F) -> reserved 0 (3E)
-Selected char 14 on teamslot 1.0
-Char Ino.def (14) request pal 3 3F (3F) -> reserved 3 (37)
-Selected char 18 on teamslot 1.0
-Char Hinata.def (18) request pal 2 3F (3F) -> reserved 2 (3B)
-Selected char 15 on teamslot 1.0
-Char Choji.def (15) request pal 5 3F (3F) -> reserved 5 (1F)
-Selected char 29 on teamslot 1.0
-Char Hashirama.def (29) request pal 3 3F (3F) -> reserved 3 (37)
+Selected char 5 on teamslot 0.0
+Char Pain.def (5) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 4 on teamslot 1.0
+Char Zetsu.def (4) request pal 1 3F (3F) -> reserved 1 (3D)
 End of charsel loop
 Game loop deinit
 Gameflow 8
@@ -232,76 +399,298 @@ Loading stage...
   Loading BG...OK
 Stage loaded OK
   Allocating helpers...OK
-Match RNG seed: 1421895512
+Match RNG seed: 2075561346
 Reset persist vars team 0
 Reset persist vars team 1
-Player Kakuzu cache count increased: 1
-Loading character chars/Ino/Ino.def...
+Player Jugo purged from cache: 0
+Freeing player RC Jugo...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Pain/Pain.def...
   Loading info...OK
-  Loading cmd command set Ino.cmd...OK
-  Loading cns Ino.cns...OK
+  Loading cmd command set Pain.cmd...OK
+  Loading cns Pain.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Tendo.cns...OK
+  Loading cns Gakido.cns...OK
+  Loading cns Jigokudo.cns...OK
+  Loading cns Ningendo.cns...OK
+  Loading cns Shurado.cns...OK
+  Loading cns Chikushodo.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cmd state entry Pain.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Pain.sff...OK
+  Loading anim Pain.air...OK
+  Loading snd Pain.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  34917 expressions (11621 on trigger lines)
+Character Pain.def loaded OK
+New char Pain loaded into cache: (4/4 cached) Load time: 4090.000ms
+Player Karin purged from cache: 1
+Freeing player RC Karin...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Zetsu/Zetsu.def...
+  Loading info...OK
+  Loading cmd command set Zetsu.cmd...OK
+  Loading cns Zetsu.cns...OK
   Loading cns Upgrades.cns...OK
   Loading cns Weapon.cns...OK
+  Loading cns Bunshin.cns...OK
+  Loading cns Wall.cns...OK
   Loading cns Common States.cns...OK
   Loading cns Stages.cns...OK
-  Loading cns Shintenshin.cns...OK
-  Loading cmd state entry Ino.cmd...OK
+  Loading cmd state entry Zetsu.cmd...OK
   Loading common states Common.cns...OK
-  Loading sff Ino.sff...OK
-  Loading anim Ino.air...OK
-  Loading snd Ino.snd...OK
+  Loading sff Zetsu.sff...OK
+  Loading anim Zetsu.air...OK
+  Loading snd Zetsu.snd...OK
   Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
-  13598 expressions (4168 on trigger lines)
-Character Ino.def loaded OK
-New char Ino loaded into cache: (2/4 cached) Load time: 610.000ms
+  21725 expressions (6527 on trigger lines)
+Character Zetsu.def loaded OK
+New char Zetsu loaded into cache: (4/4 cached) Load time: 230.000ms
 Resetting round
 Match assets initialized OK
 Game loop init
 Match loop init
-Save persist vars P57 Ino
-Player Ino cache count reduced: 0
-Loading character chars/Hinata/Hinata.def...
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+End of match loop
+Total time: 222.82s
+Total frames: 12193 	Skipped frames: 8
+Avg game rate: 54.72
+Avg frame rate: 54.69
+
+Finishing match
+Freeing players
+Save persist vars P56 Pain
+Player Pain cache count reduced: 0
+Save persist vars P57 Zetsu
+Player Zetsu cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 5 on teamslot 0.0
+Char Pain.def (5) request pal 0 3F (3F) -> reserved 0 (3E)
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 4 on teamslot 0.0
+Char Zetsu.def (4) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 29 on teamslot 1.0
+Char Danzo.def (29) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 46181615
+Reset persist vars team 0
+Reset persist vars team 1
+Player Zetsu cache count increased: 1
+Player Kakuzu purged from cache: 2
+Freeing player RC Kakuzu...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Danzo/Danzo.def...
   Loading info...OK
-  Loading cmd command set Hinata.cmd...OK
-  Loading cns Hinata.cns...OK
+  Loading cmd command set Danzo.cmd...OK
+  Loading cns Danzo.cns...OK
   Loading cns Upgrades.cns...OK
   Loading cns Weapon.cns...OK
   Loading cns Common States.cns...OK
   Loading cns Stages.cns...OK
-  Loading cmd state entry Hinata.cmd...OK
+  Loading cmd state entry Danzo.cmd...OK
   Loading common states Common.cns...OK
-  Loading sff Hinata.sff...OK
-  Loading anim Hinata.air...OK
-  Loading snd Hinata.snd...OK
-  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
-  18230 expressions (4595 on trigger lines)
-Character Hinata.def loaded OK
-New char Hinata loaded into cache: (3/4 cached) Load time: 1170.000ms
+  Loading sff Danzo.sff...OK
+  Loading anim Danzo.air...OK
+  Loading snd Danzo.snd...OK
+  Loading pals...OK
+  18823 expressions (5113 on trigger lines)
+Character Danzo.def loaded OK
+New char Danzo loaded into cache: (4/4 cached) Load time: 1680.000ms
 Resetting round
-Save persist vars P115 Hinata
-Player Hinata cache count reduced: 0
-Loading character chars/Choji/Choji.def...
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+End of match loop
+Total time: 92.30s
+Total frames: 5085 	Skipped frames: 2
+Avg game rate: 55.09
+Avg frame rate: 55.07
+
+Finishing match
+Freeing players
+Save persist vars P56 Zetsu
+Player Zetsu cache count reduced: 0
+Save persist vars P57 Danzo
+Player Danzo cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 3 on teamslot 0.0
+Char Madara.def (3) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 27 on teamslot 1.0
+Char Hashirama.def (27) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1135764305
+Reset persist vars team 0
+Reset persist vars team 1
+Player Hidan purged from cache: 3
+Freeing player RC Hidan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Madara/Madara.def...
   Loading info...OK
-  Loading cmd command set Choji.cmd...OK
-  Loading cns Choji.cns...OK
+  Loading cmd command set Madara.cmd...OK
+  Loading cns Madara.cns...OK
   Loading cns Upgrades.cns...OK
   Loading cns Weapon.cns...OK
+  Loading cns Mokuton.cns...OK
+  Loading cns EMS.cns...OK
+  Loading cns Rinnegan.cns...OK
+  Loading cns Bunshin.cns...OK
+  Loading cns BunshinM.cns...OK
   Loading cns Common States.cns...OK
   Loading cns Stages.cns...OK
-  Loading cmd state entry Choji.cmd...OK
+  Loading cmd state entry Madara.cmd...OK
   Loading common states Common.cns...OK
-  Loading sff Choji.sff...OK
-  Loading anim Choji.air...OK
-  Loading snd Choji.snd...OK
+  Loading sff Madara.sff...OK
+  Loading anim Madara.air...OK
+  Loading snd Madara.snd...OK
   Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
-  16404 expressions (4627 on trigger lines)
-Character Choji.def loaded OK
-New char Choji loaded into cache: (4/4 cached) Load time: 1010.000ms
-Resetting round
-Save persist vars P151 Choji
-Player Choji cache count reduced: 0
-Player Ino purged from cache: 1
-Freeing player RC Ino...CMD...CNS...SFF...AIR...SND...Misc...OK
+  53101 expressions (11750 on trigger lines)
+Character Madara.def loaded OK
+New char Madara loaded into cache: (4/4 cached) Load time: 7810.000ms
+Player Pain purged from cache: 4
+Freeing player RC Pain...CMD...CNS...SFF...AIR...SND...Misc...OK
 Loading character chars/Hashirama/Hashirama.def...
   Loading info...OK
   Loading cmd command set Hashirama.cmd...OK
@@ -319,30 +708,57 @@ Loading character chars/Hashirama/Hashirama.def...
   Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
   17514 expressions (4620 on trigger lines)
 Character Hashirama.def loaded OK
-New char Hashirama loaded into cache: (4/4 cached) Load time: 1780.000ms
+New char Hashirama loaded into cache: (4/4 cached) Load time: 1110.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
 Resetting round
 End of match loop
-Total time: 277.67s
-Total frames: 16412 	Skipped frames: 1
-Avg game rate: 59.11
-Avg frame rate: 59.10
+Total time: 87.04s
+Total frames: 4854 	Skipped frames: 0
+Avg game rate: 55.77
+Avg frame rate: 55.77
 
 Finishing match
 Freeing players
-Save persist vars P56 Kakuzu
-Player Kakuzu cache count reduced: 0
-Save persist vars P185 Hashirama
+Save persist vars P56 Madara
+Player Madara cache count reduced: 0
+Save persist vars P57 Hashirama
 Player Hashirama cache count reduced: 0
 Match RNG closed
-Game loop deinit
-Gameflow 12
-Entering victory screen.
-Unloading match assets
-Freeing players
-Unloading stage...OK
-Game loop init
-Victory screen init
-End of victory screen loop
 Game loop deinit
 Gameflow 6
 Reset persist vars team 0
@@ -351,6 +767,331 @@ Gameflow 7
 Entering character select.
 Unloading match assets
 Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 3 on teamslot 0.0
+Char Madara.def (3) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 27 on teamslot 1.0
+Char Hashirama.def (27) request pal 2 3F (3F) -> reserved 2 (3B)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 859256869
+Reset persist vars team 0
+Reset persist vars team 1
+Player Madara cache count increased: 1
+Player Hashirama cache count increased: 1
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+End of match loop
+Total time: 21.77s
+Total frames: 1199 	Skipped frames: 1
+Avg game rate: 55.08
+Avg frame rate: 55.03
+
+Finishing match
+Freeing players
+Save persist vars P56 Madara
+Player Madara cache count reduced: 0
+Save persist vars P57 Hashirama
+Player Hashirama cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 6 on teamslot 0.0
+Char Sasuke.def (6) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 12 on teamslot 1.0
+Char Itachi.def (12) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1539847097
+Reset persist vars team 0
+Reset persist vars team 1
+Player Zetsu purged from cache: 6
+Freeing player RC Zetsu...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Sasuke/Sasuke.def...
+  Loading info...OK
+  Loading cmd command set Sasuke.cmd...OK
+  Loading cns Sasuke.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Tsukyomi.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Sasuke.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Sasuke.sff...OK
+  Loading anim Sasuke.air...OK
+  Loading snd Sasuke.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  42987 expressions (10523 on trigger lines)
+Character Sasuke.def loaded OK
+New char Sasuke loaded into cache: (4/4 cached) Load time: 8730.000ms
+Player Danzo purged from cache: 7
+Freeing player RC Danzo...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Itachi/Itachi.def...
+  Loading info...OK
+  Loading cmd command set Itachi.cmd...OK
+  Loading cns Itachi.cns...OK
+  Loading cns Upgrades.cns...OK
+  Loading cns Weapon.cns...OK
+  Loading cns Bunshin.cns...OK
+  Loading cns Tsukyomi.cns...OK
+  Loading cns Common States.cns...OK
+  Loading cns Stages.cns...OK
+  Loading cmd state entry Itachi.cmd...OK
+  Loading common states Common.cns...OK
+  Loading sff Itachi.sff...OK
+  Loading anim Itachi.air...OK
+  Loading snd Itachi.snd...OK
+  Loading pals...OK
+  38878 expressions (9164 on trigger lines)
+Character Itachi.def loaded OK
+New char Itachi loaded into cache: (4/4 cached) Load time: 6460.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+End of match loop
+Total time: 256.67s
+Total frames: 13950 	Skipped frames: 5
+Avg game rate: 54.35
+Avg frame rate: 54.33
+
+Finishing match
+Freeing players
+Save persist vars P56 Sasuke
+Player Sasuke cache count reduced: 0
+Save persist vars P57 Itachi
+Player Itachi cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 6 on teamslot 0.0
+Char Sasuke.def (6) request pal 0 3F (3F) -> reserved 0 (3E)
+Selected char 12 on teamslot 1.0
+Char Itachi.def (12) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 884712476
+Reset persist vars team 0
+Reset persist vars team 1
+Player Sasuke cache count increased: 1
+Player Itachi cache count increased: 1
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Requesting round reset
+Resetting round
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+Life power and time reset
+End of match loop
+Total time: 133.08s
+Total frames: 7244 	Skipped frames: 2
+Avg game rate: 54.43
+Avg frame rate: 54.42
+
+Finishing match
+Freeing players
+Save persist vars P56 Sasuke
+Player Sasuke cache count reduced: 0
+Save persist vars P57 Itachi
+Player Itachi cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
 Game loop init
 Unreserved all palettes
 Charsel init
@@ -366,15 +1107,15 @@ End of mode select loop
 Game loop deinit
 Returned from gameflow loop
 Deinitializing...
-Frames      : 41282
-Time elapsed: 701.700 sec
-ticks: 70170, tps: 100, start 1876, end 72046
+Frames      : 76085
+Time elapsed: 1466.410 sec
+ticks: 146641, tps: 100, start 1836, end 148477
 
 Unloading match assets
 Freeing players
-Clearing player cache...Freeing player RC Kakuzu...CMD...CNS...SFF...AIR...SND...Misc...OK
-Freeing player RC Choji...CMD...CNS...SFF...AIR...SND...Misc...OK
-Freeing player RC Hinata...CMD...CNS...SFF...AIR...SND...Misc...OK
+Clearing player cache...Freeing player RC Madara...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC Sasuke...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC Itachi...CMD...CNS...SFF...AIR...SND...Misc...OK
 Freeing player RC Hashirama...CMD...CNS...SFF...AIR...SND...Misc...OK
 OK
 Freeing character info...OK

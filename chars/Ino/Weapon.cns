@@ -24,7 +24,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -36,7 +36,7 @@ givepower = 0,0
 damage = 40
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = -1
@@ -73,6 +73,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70705
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -121,7 +133,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -133,7 +145,7 @@ givepower = 0,0
 damage = 40
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 29
@@ -170,6 +182,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70705
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -298,7 +322,7 @@ y = 0
 type = Trans
 trigger1 = time >= 35
 trans = addalpha
-alpha = 256-(time-35)*9.6,(time-35)*9.6
+alpha = ceil(256-(time-35)*9.6),ceil((time-35)*9.6)
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -345,7 +369,7 @@ givepower = 0,0
 damage = 40
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 29
@@ -374,6 +398,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70715
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -441,7 +477,7 @@ attr = A, NP
 damage = 80
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 3, 50
 sparkno = 29
@@ -488,6 +524,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 stateno = 70715
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -718,7 +766,7 @@ type = ModifyExplod
 trigger1 = time >= 35
 ID = 70716
 trans = addalpha
-alpha = 256-(time-35)*9.6,(time-35)*9.6
+alpha = ceil(256-(time-35)*9.6),ceil((time-35)*9.6)
 
 [State 6002, NotHitBy]
 type = NotHitBy
@@ -741,7 +789,7 @@ value = -135
 type = Trans
 trigger1 = time >= 35
 trans = addalpha
-alpha = 256-(time-35)*9.6,(time-35)*9.6
+alpha = ceil(256-(time-35)*9.6),ceil((time-35)*9.6)
 
 [State 0, PosSet]
 type = PosSet
@@ -826,7 +874,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -838,7 +886,7 @@ getpower = 0,0
 givepower = 0,0
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 29
@@ -902,7 +950,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -914,7 +962,7 @@ givepower = 0,0
 damage = 1
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 10
 sparkno = 29
@@ -936,6 +984,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70736
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -990,12 +1050,12 @@ damage = 0
 ;affectteam = B
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 8
 sparkno = -1
-hitsound = -1, 0
-guardsound = -1, 0
+hitsound = -1
+guardsound = -1
 ground.type = High
 ground.slidetime = 5
 ground.hittime  = 15452
@@ -1236,12 +1296,12 @@ givepower = 0,0
 damage = cond(ishelper(365),200,80), cond(ishelper(365),100,60)
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 4, 4
 sparkno = -1
-hitsound = -1, 3
-guardsound = -1, 0
+hitsound = -1
+guardsound = -1
 ground.type = High
 ground.slidetime = 5
 ground.hittime  = 12
@@ -1275,7 +1335,7 @@ attr = S, NA
 damage = cond(ishelper(365),200,80), cond(ishelper(365),100,60)
 animtype = Hard
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 sparkno = -1
 priority = 5, Hit
 pausetime = 4, 4
@@ -1326,7 +1386,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -1338,7 +1398,7 @@ givepower = 0,0
 damage = 20
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 29
@@ -1360,6 +1420,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70745
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -1402,7 +1474,7 @@ y = 0.1
 
 [State 0, AngleDraw]
 type = AngleDraw
-trigger1 = 1
+trigger1 = vel x != 0
 value = -atan(vel y/vel x)*180/PI 
 
 [State 0, 1]
@@ -1414,7 +1486,7 @@ givepower = 0,0
 damage = 10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 0, 5
 sparkno = 29
@@ -1436,6 +1508,18 @@ trigger1 = 1
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70745
 time = 9999
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -1641,7 +1725,7 @@ attr = S, NA
 damage = 35,10
 animtype = Light
 guardflag = MA
-hitflag = MAF
+hitflag = MAFD
 priority = 3, Hit
 pausetime = 1, 5
 sparkno = 0+random%4
@@ -1668,6 +1752,18 @@ attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT,NT
 stateno = 70755
 time = 9999
 forceair = 1
+
+[State 0, HitBy]
+type = HitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,ST,NT
+time = -1
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = ,HP,HT
+time = -1
 
 [State 0, DestroySelf]
 type = DestroySelf
@@ -1789,7 +1885,7 @@ value = -45
 type = Trans
 trigger1 = time >= 35
 trans = addalpha
-alpha = 256-(time-35)*9.6,(time-35)*9.6
+alpha = ceil(256-(time-35)*9.6),ceil((time-35)*9.6)
 
 [State 0, PosSet]
 type = PosSet

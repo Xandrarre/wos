@@ -54,7 +54,7 @@ type = ChangeState
 trigger1 = enemy, command = "holddown"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104201
 
 [State 0, ChangeState]
@@ -65,7 +65,7 @@ triggerall = enemy, command != "up"
 triggerall = enemy, command != "holdup"
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 104204
 
 [State 0, ChangeState]
@@ -76,7 +76,7 @@ triggerall = enemy, command != "up"
 triggerall = enemy, command != "holdup"
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 104205
 
 [State 0, ChangeState]
@@ -84,7 +84,7 @@ type = ChangeState
 trigger1 = enemy, command = "up"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104206
 
 [State 0, ChangeState]
@@ -93,7 +93,7 @@ trigger1 = enemy, command = "FF" && facing = 1
 trigger2 = enemy, command = "BB" && facing = -1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 104210
 
 [State 0, ChangeState]
@@ -102,7 +102,7 @@ trigger1 = enemy, command = "FF" && facing = -1
 trigger2 = enemy, command = "BB" && facing = 1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 105;104211
 ;---------------------------------------------------------------------------
 ;Stand to Crouch
@@ -172,7 +172,7 @@ type = ChangeState
 trigger1 = enemy, command != "holddown"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104203
 ;---------------------------------------------------------------------------
 ; Crouch to Stand
@@ -206,7 +206,7 @@ value = 0
 type = PlaySnd
 trigger1 = animelem = 2
 trigger2 = animelem = 5
-value = F1
+value = F1,0
 
 [State 20, 1]
 type = VelSet
@@ -225,7 +225,7 @@ trigger1 = enemy, command != "holdfwd"
 trigger1 = enemy, command != "holdback"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104200
 
 [State 0, ChangeState]
@@ -234,7 +234,7 @@ trigger1 = enemy, command = "FF" && facing = 1
 trigger2 = enemy, command = "BB" && facing = -1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 104210
 
 [State 0, ChangeState]
@@ -243,7 +243,7 @@ trigger1 = enemy, command = "FF" && facing = -1
 trigger2 = enemy, command = "BB" && facing = 1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 105;104211
 ;---------------------------------------------------------------------------
 ; Walk Back
@@ -256,7 +256,7 @@ sprpriority = 0
 type = PlaySnd
 trigger1 = animelem = 2
 trigger2 = animelem = 5
-value = F1
+value = F1,0
 
 [State 20, 2]
 type = VelSet
@@ -275,7 +275,7 @@ trigger1 = enemy, command != "holdfwd"
 trigger1 = enemy, command != "holdback"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104200
 
 [State 0, ChangeState]
@@ -284,7 +284,7 @@ trigger1 = enemy, command = "FF" && facing = 1
 trigger2 = enemy, command = "BB" && facing = -1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 104210
 
 [State 0, ChangeState]
@@ -293,7 +293,7 @@ trigger1 = enemy, command = "FF" && facing = -1
 trigger2 = enemy, command = "BB" && facing = 1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 value = 105;104211
 ;---------------------------------------------------------------------------
 ; Jump Start
@@ -313,7 +313,7 @@ value = S4,0+random%5
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F3
+value = F3,0
 
 [State 0, Explod]
 type = Explod
@@ -370,7 +370,7 @@ trigger1 = enemy, command = "holdfwd" && facing = 1
 trigger2 = enemy, command = "holdback" && facing = -1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 sysvar(1) = 1
 
 [State 40, 3]
@@ -379,7 +379,7 @@ trigger1 = enemy, command = "holdfwd" && facing = -1
 trigger2 = enemy, command = "holdback" && facing = 1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 sysvar(1) = -1
 
 [State 40, 4]
@@ -451,7 +451,7 @@ trigger1 = enemy, command = "holdfwd" && facing = 1
 trigger2 = enemy, command = "holdback" && facing = -1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 sysvar(1) = 1
 
 [State 40, 3]
@@ -460,7 +460,7 @@ trigger1 = enemy, command = "holdfwd" && facing = -1
 trigger2 = enemy, command = "holdback" && facing = 1
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 sysvar(1) = -1
 
 [State 45, 6]
@@ -485,7 +485,7 @@ triggerall = vel y > 0
 trigger1 = enemy, command = "holddown"
 triggerall = enemy, name = "Ino"
 triggerall = enemy, var(10) = 1
-triggerall = var(47) = 1
+triggerall = var(44) = 1
 y = -const(velocity.jump.y)/10
 
 [State 0, PlayerPush]
@@ -516,7 +516,7 @@ type = ChangeState
 trigger1 = enemy, command = "up"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 triggerall = prevstateno = 104206
 triggerall = prevstateno != 104208
 value = 104207
@@ -548,7 +548,7 @@ value = 0
 [State 0, PlaySnd]
 type = PlaySnd
 trigger1 = time = 1
-value = F4
+value = F4,0
 
 [State 0, Explod]
 type = Explod
@@ -601,7 +601,7 @@ type = PlaySnd
 trigger1 = time = 1
 trigger2 = animelem = 2
 trigger3 = animelem = 5
-value = F2
+value = F2,0
 
 [State 0, Explod]
 type = Explod
@@ -646,5 +646,5 @@ trigger1 = enemy, command != "holdfwd"
 trigger1 = enemy, command != "holdback"
 trigger1 = enemy, name = "Ino"
 trigger1 = enemy, var(10) = 1
-trigger1 = var(47) = 1
+trigger1 = var(44) = 1
 value = 104200

@@ -439,74 +439,6 @@ time = 1
 ;-| Command List |--------------------------------------------------------------
 
 [Statedef -1]
-;Przedzia³y Random
-;000-099 - Ruch + Kunaie
-;100-199 - Combo
-;200-299 - Combo
-;300-399 - Combo
-;400-499 - Jutsu
-;500-599 - Jutsu
-;600-699 - Jutsu Mocniejsze
-;700-799 - Ultimate
-;800-899 - Finishery
-;900-999 - 
-
-[State -1, DeActivate AI]
-type = VarSet
-triggerall = var(50) = 1
-trigger1 = win
-trigger2 = lose
-trigger3 = drawgame
-trigger4 = AILevel = 0
-trigger5 = life = 0
-trigger6 = !ALive
-trigger7 = matchover
-v = 50
-value = 0
-
-[State -1, Activate AI]
-type = VarSet
-triggerall = var(50) = 0
-trigger1 = AILevel != 0
-triggerall = stateno != [190,194]
-triggerall = Alive
-triggerall = life > 0
-triggerall = !matchover
-triggerall = !win
-triggerall = !lose
-triggerall = !drawgame
-v = 50
-value = 1
-
-[State -1, POWER]
-type = VarSet
-trigger1 = 1
-v = 49
-value = cond(var(50)=1,((5+(3000-Life)/300)+(Power/400)+AILevel*10+MatchNo)/(10-AILevel),((5+(3000-Life)/100)+(Power/100)+30+MatchNo)/5)
-
-[State -1, Exhaust +]
-type = VarAdd
-trigger1 = 1
-triggerall = stateno = [200,299]
-trigger1 = movecontact
-v = 48
-value = 20
-
-[State -1, Exhaust -]
-type = VarAdd
-trigger1 = 1
-triggerall = stateno != [200,299]
-triggerall = var(48) > 0
-v = 48
-value = -5-var(48)/100
-
-[State -1, Exhaust]
-type = VarSet
-triggerall = var(48) > 500
-trigger1 = stateno = [200,299]
-trigger2 = prevstateno = [200,299]
-v = 48   
-value = 500
 
 ;Finisher 4
 [State -1, Finisher 4]
@@ -518,12 +450,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [860,861+var(49)*(var(49))/200+var(48)/200]
+trigger2 = random = [875,876+ceil((var(49)/10*var(48)/25)/2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = movecontact
-triggerall = stateno = [200,289]
+triggerall = var(47) = 1
 triggerall = stateno != 244
 triggerall = stateno != 272
 triggerall = var(48) >= 0
@@ -538,12 +469,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [840,841+var(49)*(var(49))/200+var(48)/200]
+trigger2 = random = [850,851+ceil((var(49)/10*var(48)/25)/2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = movecontact
-triggerall = stateno = [200,289]
+triggerall = var(47) = 1
 triggerall = stateno != 265
 triggerall = stateno != 225
 triggerall = var(48) >= 0
@@ -558,12 +488,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [820,821+var(49)*(var(49))/200+var(48)/200]
+trigger2 = random = [825,826+ceil((var(49)/10*var(48)/25)/2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = movecontact
-triggerall = stateno = [200,289]
+triggerall = var(47) = 1
 triggerall = stateno != 254
 triggerall = stateno != 272
 triggerall = var(48) >= 0
@@ -578,12 +507,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [800,801+var(49)*(var(49))/200+var(48)/200]
+trigger2 = random = [800,801+ceil((var(49)/10*var(48)/25)/2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = movecontact
-triggerall = stateno = [200,289]
+triggerall = var(47) = 1
 triggerall = stateno != 224
 triggerall = stateno != 225
 triggerall = var(48) >= 0
@@ -597,8 +525,7 @@ triggerall = command = "hold_c" || command = "hold_z"
 triggerall = var(50) = 0
 trigger1 = ctrl 
 trigger1 = stateno = [0,199]
-trigger2 = stateno = [200,289]
-trigger2 = movecontact
+trigger2 = var(47) = 1
 triggerall = statetype != A
 
 ;Shinranshin no Jutsu
@@ -612,12 +539,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [30,120]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [620,621+var(49)*(var(49))/500+var(48)/200]
+trigger2 = random = [620,621+ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil(Power/100))/200)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
 trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
+trigger2 = (var(50) = 1 && pos y = 0 && statetype != A && ctrl) || (var(48) >= 100 && var(50) = 1 && pos y = 0 && statetype != A && var(47) = 1)
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 triggerall = power >= 500
@@ -634,79 +561,16 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,500]
 trigger2 = p2dist y = [-100,50]
-trigger2 = random = [600,601+var(49)*(var(49))/500+var(48)/200]
+trigger2 = random = [600,600+ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil(Power/100))/200)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
 trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
+trigger2 = (var(50) = 1 && pos y = 0 && statetype != A && ctrl) || (var(48) >= 100 && var(50) = 1 && pos y = 0 && statetype != A && var(47) = 1)
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 triggerall = power >= 1000
 triggerall = numhelper(510) = 0
-
-;Massive Heal
-[State -1, Massive Heal]
-type = ChangeState
-value = 420
-;PLAYER
-trigger1 = command = "hold_c"
-trigger1 = command = "UF" 
-trigger1 = var(50) = 0
-;AI RANDOM
-trigger2 = p2dist x > 100
-trigger2 = random = [540,541+(var(49)*(var(49))/200)+(p2bodydist x-100)/40+((power)/300)+((3000-life)/300)]
-trigger2 = var(50) = 1
-trigger2 = p2stateno != [5110,5150]
-;WARUNEK
-trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
-triggerall = stateno != [290,299]
-triggerall = stateno != 263
-triggerall = power >= 200
-triggerall = life < 3000 || (numpartner != 0 && partner, life < 3000)
-
-;Fast Heal
-[State -1, Fast Heal]
-type = ChangeState
-value = 410
-;PLAYER
-trigger1 = command = "hold_c"
-trigger1 = command = "UB" 
-trigger1 = var(50) = 0
-;AI RANDOM
-trigger2 = p2dist x > 100
-trigger2 = random = [520,521+(var(49)*(var(49))/200)+(p2bodydist x-100)/40+((power)/300)+((3000-life)/300)]
-trigger2 = var(50) = 1
-trigger2 = p2stateno != [5110,5150]
-;WARUNEK
-trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
-triggerall = stateno != [290,299]
-triggerall = stateno != 263
-triggerall = power >= 1000
-triggerall = life < 3000
-
-;SelfHeal
-[State -1, SelfHeal]
-type = ChangeState
-value = 400
-;PLAYER
-trigger1 = command = "hold_c"
-trigger1 = command = "UD" 
-trigger1 = var(50) = 0
-;AI RANDOM
-trigger2 = p2dist x > 100
-trigger2 = random = [500,501+(var(49)*(var(49))/200)+(p2bodydist x-100)/40+((power)/300)+((3000-life)/300)]
-trigger2 = var(50) = 1
-trigger2 = p2stateno != [5110,5150]
-;WARUNEK
-trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
-triggerall = stateno != [290,299]
-triggerall = stateno != 263
-triggerall = power >= 200
-triggerall = life < 3000
 
 ;Flowers Throw
 [State -1, Flowers Throw]
@@ -719,12 +583,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,400]
 trigger2 = p2dist y = [-100,50]
-trigger2 = random = [440,441+var(49)*(var(49))/500+var(48)/200]
+trigger2 = random = [520,520+ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil(Power/100))/200)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
 trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
+trigger2 = (var(50) = 1 && pos y = 0 && statetype != A && ctrl) || (var(48) >= 100 && var(50) = 1 && pos y = 0 && statetype != A && var(47) = 1)
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 triggerall = power >= 300
@@ -740,12 +604,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,350]
 trigger2 = p2dist y = [-100,50]
-trigger2 = random = [420,421+var(49)*(var(49))/500+var(48)/200]
+trigger2 = random = [510,510+ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil(Power/100))/200)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
 trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
+trigger2 = (var(50) = 1 && pos y = 0 && statetype != A && ctrl) || (var(48) >= 100 && var(50) = 1 && pos y = 0 && statetype != A && var(47) = 1)
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 triggerall = power >= 900
@@ -761,15 +625,83 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,400]
 trigger2 = p2dist y = [-100,50]
-trigger2 = random = [400,401+var(49)*(var(49))/500+var(48)/200]
+trigger2 = random = [500,500+ceil(((ceil(var(49)/5)+ceil(var(48)/25))*ceil(Power/100))/200)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
 trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
-trigger2 = (var(50) = 1 && ((pos y = 0 && statetype != A)) && ctrl) || (var(48) >= 0 && var(50) = 1 && (pos y = 0 && statetype != A) && movecontact &&  stateno = [200,289])
+trigger2 = (var(50) = 1 && pos y = 0 && statetype != A && ctrl) || (var(48) >= 100 && var(50) = 1 && pos y = 0 && statetype != A && var(47) = 1)
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 triggerall = power >= 500
+
+;Massive Heal
+[State -1, Massive Heal]
+type = ChangeState
+value = 420
+;PLAYER
+trigger1 = command = "hold_c"
+trigger1 = command = "UF" 
+trigger1 = var(50) = 0
+trigger1 = life < 3000
+;AI RANDOM
+trigger2 = p2dist x > 100
+trigger2 = random = [440,440+ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-life)/40))/200)]
+trigger2 = var(50) = 1
+trigger2 = life < 3000
+;AI Partner
+trigger3 = numpartner != 0
+trigger3 = p2dist x > 100
+trigger3 = abs(partner, pos x - pos x) < 100
+trigger3 = random = [440,440+ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-partner,life)/40))/200)]
+trigger3 = partner, life < 3000
+;WARUNEK
+trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
+trigger2 = var(50) = 1 && pos y = 0 && statetype != A && ctrl
+trigger3 = var(50) = 1 && pos y = 0 && statetype != A && ctrl
+triggerall = stateno != [290,299]
+triggerall = stateno != 263
+triggerall = power >= 200
+
+;Fast Heal
+[State -1, Fast Heal]
+type = ChangeState
+value = 410
+;PLAYER
+trigger1 = command = "hold_c"
+trigger1 = command = "UB" 
+trigger1 = var(50) = 0
+;AI RANDOM
+trigger2 = p2dist x > 100
+trigger2 = random = [420,420+ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-life)/40))/200)]
+trigger2 = var(50) = 1
+;WARUNEK
+trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
+trigger2 = var(50) = 1 && pos y = 0 && statetype != A && ctrl
+triggerall = stateno != [290,299]
+triggerall = stateno != 263
+triggerall = power >= 1000
+triggerall = life < 3000
+
+;SelfHeal
+[State -1, SelfHeal]
+type = ChangeState
+value = 400
+;PLAYER
+trigger1 = command = "hold_c"
+trigger1 = command = "UD" 
+trigger1 = var(50) = 0
+;AI RANDOM
+trigger2 = p2dist x > 100
+trigger2 = random = [400,400+ceil(((ceil(var(49)/5)+ceil(var(48)/25)) *2 *ceil((3000-life)/40))/200)]
+trigger2 = var(50) = 1
+;WARUNEK
+trigger1 = stateno = 70850 && time > cond(prevstateno=0,5,0) && (pos y = 0 && statetype != A)
+trigger2 = var(50) = 1 && pos y = 0 && statetype != A && ctrl
+triggerall = stateno != [290,299]
+triggerall = stateno != 263
+triggerall = power >= 200
+triggerall = life < 3000
 
 ;Combo 8
 [State -1, Combo 8.4]
@@ -781,7 +713,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [240,241+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -797,7 +729,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [240,241+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -813,7 +745,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [240,241+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -829,10 +761,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,100]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [220,221+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [350,351+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
+triggerall = numhelper(266) != 0
 triggerall = stateno = 265 && time > 24 && helper(266), movecontact
 
 ;Combo 7
@@ -845,7 +778,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [220,221+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [350,351+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -861,7 +794,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [220,221+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [350,351+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -877,7 +810,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [220,221+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [350,351+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -893,7 +826,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [200,201+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [300,301+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -909,7 +842,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [200,201+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [300,301+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -925,7 +858,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [200,201+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [300,301+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -941,7 +874,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [200,201+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [300,301+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -957,7 +890,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [180,181+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -973,7 +906,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [180,181+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -989,7 +922,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [180,181+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1005,7 +938,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [180,181+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [250,251+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1021,7 +954,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [160,161+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1037,7 +970,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [160,161+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1053,7 +986,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [160,161+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1069,7 +1002,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [140,141+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [200,201+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1085,7 +1018,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [140,141+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [200,201+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1101,7 +1034,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [140,141+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [200,201+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1117,7 +1050,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [140,141+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [200,201+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1133,7 +1066,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [120,121+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [150,151+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1149,7 +1082,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [120,121+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [150,151+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1165,7 +1098,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [120,121+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [150,151+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1181,11 +1114,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [120,121+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [150,151+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = stateno = 210 && time > 6 && movecontact
+triggerall = stateno = 210 && time > 4 && movecontact
 
 ;Combo 1
 [State -1, Combo 1.5]
@@ -1197,7 +1130,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,70]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [100,101+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1213,7 +1146,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [100,101+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1229,7 +1162,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [100,101+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1245,7 +1178,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [100,101+var(49)*(var(49)/20)+10+var(48)/40]
+trigger2 = random = [100,101+ceil(var(49)*5+var(48))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1261,11 +1194,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [280,281+var(49)*(var(49))/500]
+trigger2 = random = [390,391+ceil(var(49)/5)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y = 0 && statetype = S && ctrl) || (var(48) >= 0 && pos y = 0 && statetype != A && movecontact && stateno = [200,289]) 
+triggerall = (pos y = 0 && statetype = S && ctrl) || (var(48) >= 100 && pos y = 0 && statetype != A && var(47) = 1) 
 triggerall = stateno != [290,299]
 triggerall = stateno != 263
 ;triggerall = var(48) < 350
@@ -1280,11 +1213,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [260,261+var(49)*(var(49))/200]
+trigger2 = random = [240,241+ceil(var(49)/5)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y = 0 && statetype = S && ctrl) || (var(48) >= 0 && pos y = 0 && statetype != A && movecontact && stateno = [200,289]) 
+triggerall = (pos y = 0 && statetype = S && ctrl) || (var(48) >= 100 && pos y = 0 && statetype != A && var(47) = 1) 
 triggerall = stateno != [280,299]
 ;triggerall = var(48) < 350
 
@@ -1298,11 +1231,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [240,241+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [250,251+ceil(var(49)*2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y != 0 && statetype = A && ctrl)
+triggerall = pos y != 0 && statetype = A && ctrl
 triggerall = stateno != [270,279]
 triggerall = prevstateno != 270
 ;triggerall = var(48) < 350
@@ -1317,7 +1250,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [220,221+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [350,351+ceil(var(49)*0.8)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1335,12 +1268,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [200,201+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [300,301+ceil(var(49))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-trigger1 = (pos y = 0 && statetype = C && ctrl)
-trigger2 = (pos y = 0 && statetype != A && ctrl)
+trigger1 = pos y = 0 && statetype = C && ctrl
+trigger2 = pos y = 0 && statetype != A && ctrl
 triggerall = stateno != [250,259]
 ;triggerall = var(48) < 350
 
@@ -1354,11 +1287,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [180,181+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [250,251+ceil(var(49))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y = 0 && statetype = S && ctrl)
+triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = stateno != [240,249]
 ;triggerall = var(48) < 350
 
@@ -1372,11 +1305,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [160,161+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [100,101+ceil(var(49)*2)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y != 0 && statetype = A && ctrl)
+triggerall = pos y != 0 && statetype = A && ctrl
 triggerall = stateno != [230,239]
 triggerall = prevstateno != 230
 ;triggerall = var(48) < 350
@@ -1391,7 +1324,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [140,141+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [200,201+ceil(var(49)*0.8)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1409,12 +1342,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [120,121+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [150,151+ceil(var(49))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-trigger1 = (pos y = 0 && statetype = C && ctrl)
-trigger2 = (pos y = 0 && statetype != A && ctrl)
+trigger1 = pos y = 0 && statetype = C && ctrl
+trigger2 = pos y = 0 && statetype != A && ctrl
 triggerall = stateno != [210,219]
 ;triggerall = var(48) < 350
 
@@ -1428,11 +1361,11 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [0,50]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [100,101+var(49)*(var(49))/50+10-var(48)/50]
+trigger2 = random = [100,101+ceil(var(49))]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-triggerall = (pos y = 0 && statetype = S && ctrl)
+triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = stateno != [200,209]
 ;triggerall = var(48) < 350
 
@@ -1445,12 +1378,12 @@ trigger1 = command = "holddown" && command = "y"
 trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x != [0,100]
-trigger2 = random = [340,341+var(49)*(var(49))/1000]
+trigger2 = random = [920,920+ceil(var(49)/20)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-trigger1 = (pos y = 0 && statetype = C && ctrl)
-trigger2 = (pos y = 0 && statetype != A && ctrl)
+trigger1 = pos y = 0 && statetype = C && ctrl
+trigger2 = pos y = 0 && statetype != A && ctrl
 triggerall = stateno != [300,329]
 triggerall = numhelper(305) + numhelper(315) + numhelper(325) < 5
 triggerall = var(24) <= 19
@@ -1464,12 +1397,11 @@ trigger1 = command = "holdfwd" && command = "y"
 trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x != [0,100]
-trigger2 = random = [320,321+var(49)*(var(49))/1000]
+trigger2 = random = [910,910+ceil(var(49)/25)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-trigger1 = (pos y = 0 && statetype = S && ctrl)
-trigger2 = (pos y = 0 && statetype = S && ctrl)
+triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = stateno != [300,329]
 triggerall = numhelper(305) + numhelper(315) + numhelper(325) < 5
 triggerall = numhelper(70741) < 1
@@ -1487,12 +1419,11 @@ trigger1 = command = "holdback" && command = "y"
 trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x != [0,100]
-trigger2 = random = [300,301+var(49)*(var(49))/1000]
+trigger2 = random = [900,900+ceil(var(49)/25)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
-trigger1 = (pos y = 0 && statetype = S && ctrl)
-trigger2 = (pos y = 0 && statetype = S && ctrl)
+triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = stateno != [300,329]
 triggerall = numhelper(305) + numhelper(315) + numhelper(325) < 5
 triggerall = var(24) <= 19
@@ -1507,7 +1438,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y > 80
-trigger2 = random = [80,81+var(49)*(var(49))/400]
+trigger2 = random = [80,80+ceil(var(49)/20)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1516,7 +1447,6 @@ triggerall = pos y != 0 && statetype = A && ctrl
 triggerall = numhelper(70741) < 1
 triggerall = numhelper(70740) < 1
 triggerall = numexplod(442)= 0
-triggerall = numhelper(315) < 1
 
 ;Smoke Kunai
 [State -1, Smoke Kunai]
@@ -1528,7 +1458,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [80,81+var(49)*(var(49))/400]
+trigger2 = random = [80,80+ceil(var(49)/20)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 ;WARUNEK
@@ -1549,7 +1479,7 @@ trigger1 = var(50) = 0
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y > 80
 trigger2 = abs((p2dist x/((p2dist y+1)+cond(p2statetype=C,0,-10)))*10) = [10,30]
-trigger2 = random = [70,71+var(49)*(var(49))/300]
+trigger2 = random = [70,70+ceil(var(49)/10)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 trigger2 = numhelper(70730) < 1
@@ -1567,7 +1497,7 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [70,71+var(49)*(var(49))/300]
+trigger2 = random = [70,70+ceil(var(49)/10)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
 trigger2 = numhelper(70730) < 1
@@ -1586,12 +1516,12 @@ trigger1 = var(50) = 0
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y > 50
 trigger2 = abs((p2dist x/((p2dist y+1)+cond(p2statetype=C,0,-10)))*10) = [15,25]
-trigger2 = random = [60,61+var(49)*(var(49))/200]
+trigger2 = random = [60,60+ceil(var(49)/5)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
-trigger2 = numhelper(70700) < 1
+trigger2 = numhelper(70700) < 2
 ;WARUNEK
-triggerall = var(20) <= 19
+triggerall = var(20) <= 18
 triggerall = pos y != 0 && statetype = A && ctrl
 
 ;Kunai
@@ -1604,12 +1534,12 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = p2dist x = [100,650]
 trigger2 = p2dist y = [-50,50]
-trigger2 = random = [60,61+var(49)*(var(49))/200]
+trigger2 = random = [60,60+ceil(var(49)/5)*cond(p2stateno=70650,5,1)]
 trigger2 = var(50) = 1
 trigger2 = p2stateno != [5110,5150]
-trigger2 = numhelper(70700) < 1
+trigger2 = numhelper(70700) < 2
 ;WARUNEK
-triggerall = var(20) <= 19
+triggerall = var(20) <= 18
 triggerall = pos y = 0 && statetype = S && ctrl
 
 ;----MOVEMENT----
@@ -1618,17 +1548,24 @@ type = ChangeState
 value = 0
 trigger1 = 0
 
-;Guard
-[State -1, Guard]
+;Combo Dash
+[State -1, Combo Dash]
 type = ChangeState
-value = cond(pos y = 0,cond(statetype = S,130,131),132)
+value = cond(pos y = 0, cond(p2dist y < -20, 85, 80), 85)
+;PLAYER
+trigger1 = command = "y"
+trigger1 = command != "holddown" && command != "holdup" && command != "holdfwd" && command != "holdback"
+trigger1 = var(50) = 0
 ;AI RANDOM
-trigger1 = var(50) = 1
-trigger1 = p2dist x < 100
-trigger1 = random = [0,9+var(49)*(var(49))/20+(100-(p2bodydist x))/20]
+trigger2 = var(50) = 1
+trigger2 = random = [10,10+ceil((var(49)/5+var(48)/10) * cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5))]
 ;WARUNEK
-triggerall = stateno = [0,199]
-triggerall = p2movetype = A && ctrl
+triggerall = var(47) = 1
+triggerall = p2dist x = [20,150]
+triggerall = p2dist y = [-150,150]
+triggerall = prevstateno != 60
+triggerall = prevstateno != [80,89]
+triggerall = power >= 100
 
 ;Dash Fwd
 [State -1, Dash Fwd]
@@ -1639,8 +1576,8 @@ trigger1 = command = "FF"
 trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = var(50) = 1
-trigger2 = p2dist x > 100
-trigger2 = random = [30,39+var(49)*(var(49))/200+(p2bodydist x)/100]
+trigger2 = p2dist x > 50
+trigger2 = random = [10,10+ceil(var(49)/5 * cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5))]
 ;WARUNEK
 triggerall = pos y != 0 && statetype = A && ctrl
 triggerall = prevstateno = 40
@@ -1657,16 +1594,16 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = var(50) = 1
 trigger2 = p2dist x = [0,50]
-trigger2 = random = [20,29-var(49)*(var(49))/200+cond(p2movetype = A,var(49)*(var(49))/50,0)]
+trigger2 = random = [20,20+ceil(var(49)/5 + cond(p2movetype = A,var(49)/2,0))]
 ;AI ODSKOK P2LEZY
 trigger3 = var(50) = 1
 trigger3 = p2dist x = [0,100]
-trigger3 = p2statetype = L
-trigger3 = random = [20,29+var(49)*(var(49))/50]
+trigger3 = p2stateno = [5100,5149]
+trigger3 = random = [20,20+ceil(var(49)/2.5)]
 trigger3 = prevstateno != 106
 trigger3 = p2stateno != 5150
 ;WARUNEK
-triggerall = ((pos y = 0 && statetype = S)) && ctrl
+triggerall = (pos y = 0 && statetype = S && ctrl) || stateno = 20
 triggerall = backedgedist > 20
 
 ;Run Fwd
@@ -1679,9 +1616,9 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = var(50) = 1
 trigger2 = p2dist x > 20
-trigger2 = random = [10,19+var(49)*(var(49))/50+(p2bodydist x)/50]
+trigger2 = random = [10,10+ceil(var(49)/5 * cond((abs(p2bodydist x))/50 < 5, (abs(p2bodydist x))/50, 5))]
 ;WARUNEK
-triggerall = ((pos y = 0 && statetype = S)) && ctrl
+triggerall = (pos y = 0 && statetype = S && ctrl) || stateno = 20
 
 ;Air Jump
 [State -1, Air Jump]
@@ -1689,10 +1626,12 @@ type = ChangeState
 value = 45
 ;AI RANDOM
 trigger1 = var(50) = 1
-trigger1 = (p2dist y < -30 && enemynear, vel y < 0)
-trigger1 = random = [10,11+var(49)*(var(49))/200+(-p2bodydist y)/200]
+trigger1 = p2dist y < -30 && enemynear, vel y < 0
+trigger1 = p2dist x > 20
+trigger1 = p2dist x < 100
+trigger1 = random = [10,10+ceil(var(49)/50-cond(p2bodydist y<0,(p2bodydist y)/50, 0))]
 ;WARUNEK
-triggerall = ((pos y != 0 && statetype = A)) && ctrl
+triggerall = pos y != 0 && statetype = A && ctrl
 triggerall = prevstateno = 40
 
 ;Jump
@@ -1701,10 +1640,12 @@ type = ChangeState
 value = 40
 ;AI RANDOM
 trigger1 = var(50) = 1
-trigger1 = (p2dist y < -40 && enemynear, vel y < 0) || (p2movetype = A && p2bodydist x = [50,150])
-trigger1 = random = [30,31+var(49)*(var(49))/200+(-p2bodydist y)/200+cond(p2movetype = A,var(49)*var(49)/300,0)]
+trigger1 = p2dist y < -50 && enemynear, vel y < 0
+trigger1 = p2dist x > 20
+trigger1 = p2dist x < 100
+trigger1 = random = [10,10+ceil(var(49)/50-cond(p2bodydist y<0,(p2bodydist y)/50, 0))]
 ;WARUNEK
-triggerall = ((pos y = 0 && statetype = S)) && ctrl
+triggerall = pos y = 0 && statetype = S && ctrl
 
 ;Walk
 [State -1, Walk]
@@ -1714,10 +1655,12 @@ value = 20
 trigger1 = var(50) = 1
 trigger1 = p2dist x > 20
 trigger1 = p2dist x < 100
-trigger1 = random = [10,11+var(49)*(var(49))/200+(p2bodydist x)/50]
+trigger1 = random = [10,10+ceil(var(49)/50 * cond((abs(p2bodydist x))/50 < 2, (abs(p2bodydist x))/50, 2))]
 ;WARUNEK
 triggerall = pos y = 0 && statetype = S && ctrl
-triggerall = 0;stateno = [0,199]
+triggerall = stateno = [0,199]
+triggerall = stateno != 20
+triggerall = prevstateno != 20
 
 ;Crouch
 [State -1, Crouch]
@@ -1725,12 +1668,27 @@ type = ChangeState
 value = 10
 ;AI RANDOM
 trigger1 = var(50) = 1
-trigger1 = p2dist x < 100
-trigger1 = p2dist y >= 0
-trigger1 = random = [0,1+var(49)*(var(49))/200]
+trigger1 = p2dist x > 20
+trigger1 = p2dist x < 50
+trigger1 = p2dist y = 0
+trigger1 = random = [0,0+ceil(var(49)/50)]
 ;WARUNEK
 triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = stateno = [0,199]
+triggerall = stateno != [10,12]
+triggerall = prevstateno != [10,12]
+
+;Guard
+[State -1, Guard]
+type = ChangeState
+value = cond(pos y = 0,cond(statetype = S,130,131),132)
+;AI RANDOM
+trigger1 = var(50) = 1
+trigger1 = p2dist x < 100
+trigger1 = random = [0,0+ceil(var(49)/2)]
+;WARUNEK
+triggerall = stateno = [0,199]
+triggerall = p2movetype = A && ctrl
 
 ;Chakra
 [State -1, Chakra]
@@ -1742,9 +1700,9 @@ trigger1 = var(50) = 0
 ;AI RANDOM
 trigger2 = var(50) = 1
 trigger2 = p2dist x > 100
-trigger2 = random = [0,1+(var(49)*(var(49))/200)+(p2bodydist x-100)/40+((4000-power)/400)+cond(p2stateno=70500,5,0)]
+trigger2 = random = [0,0+ceil( ( (ceil(var(49)/5)+cond((abs(p2bodydist x-100))/100<5,(abs(p2bodydist x-100))/100,5)+cond(p2stateno=70500,5,0)) *ceil((4000-power)/100)) /25)]
 ;WARUNEK
-triggerall = ((pos y = 0 && statetype = S)) && ctrl
+triggerall = pos y = 0 && statetype = S && ctrl
 triggerall = power < 4000
 
 ;Kawarimi
@@ -1754,10 +1712,11 @@ type = HitOverride
 trigger1 = command = "c" || command = "z"
 trigger1 = var(50) = 0
 ;AI RANDOM
-trigger2 = random = [0,1+var(49)*(var(49))/1000]
+trigger2 = random = [0,0+floor(var(49)/25 + (3-helper(70000), var(10)/150))]
 trigger2 = var(50) = 1
 triggerall = !ishelper
-triggerall = helper(70000),var(10) <= 400
+triggerall = numhelper(70000) != 0
+triggerall = helper(70000), var(10) <= 400
 triggerall = prevstateno != 70800
 time = 30
 attr = SCA,NA,SA,HA,NP,SP,HP,ST,HT
@@ -1768,18 +1727,36 @@ stateno = 70800
 ;-----=====[ Narzucone ]=====-----
 ;------------------------------------
 
-[State -1, Stan narzucony gdy Ay w stanie 1041]
+[State -1, Enemy - Ay w 1041]
 type = ChangeState
 value = 77700
-trigger1 = enemy,stateno = 100009 || (partner, stateno = 1041 && partner, movehit)
-trigger2 = partner,stateno = 100009 || (enemy, stateno = 1041 && enemy, movehit)
-trigger3 = enemy,stateno = 100013 || (partner, stateno = 1041 && partner, movehit)
-trigger4 = partner,stateno = 100013 || (enemy, stateno = 1041 && enemy, movehit)
+trigger1 = enemy, stateno = 100009
+trigger2 = enemy, stateno = 100013
+trigger3 = enemy, stateno = 1041 && enemy, movehit
+trigger4 = enemy, stateno = 1041 && enemy, movehit
 triggerall = stateno != 100009 && stateno != 1041 || stateno != 100013 && stateno != 1041
 
-[State -1, Stan narzucony gdy Ay w stanie Full Power]
+[State -1, Partner - Ay w 1041]
+type = ChangeState
+value = 77700
+trigger1 = partner, stateno = 100009
+trigger2 = partner, stateno = 100013
+trigger3 = partner, stateno = 1041 && partner, movehit
+trigger4 = partner, stateno = 1041 && partner, movehit
+triggerall = numpartner = 1
+triggerall = stateno != 100009 && stateno != 1041 || stateno != 100013 && stateno != 1041
+
+[State -1, Enemy - Ay Full Power]
 type = ChangeState
 value = 77701
-trigger1 = enemy,stateno = 100025 || (partner, stateno = 2114 && partner, movehit)
-trigger2 = partner,stateno = 100025 || (enemy, stateno = 2114 && enemy, movehit)
+trigger1 = enemy,stateno = 100025
+trigger2 = enemy, stateno = 2114 && enemy, movehit
+triggerall = stateno != 100025 && stateno != 2114
+
+[State -1, Partner - Ay Full Power]
+type = ChangeState
+value = 77701
+trigger1 = partner, stateno = 2114 && partner, movehit
+trigger2 = partner,stateno = 100025 
+triggerall = numpartner = 1
 triggerall = stateno != 100025 && stateno != 2114

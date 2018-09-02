@@ -13,7 +13,7 @@
 ;|--------------------------- Xandrarre ---------------------------|
 ;|---------------------------- Pein4444 ---------------------------|
 ;|----------------------------- Tuder -----------------------------|
-;|-------------- Sprites by NES - Edited by Xandrarre -------------|
+;|-------- Sprites by Spectro Sosuke - Edited by Xandrarre --------|
 ;|-----------------------------------------------------------------|
 ;|----------------------- Huge credits to: ------------------------|
 ;|---------------------------- David11 ----------------------------|
@@ -52,8 +52,8 @@
 ;|-----------------------------------------------------------------|
 
 [Info]
-name="Hinata"
-displayname="Hinata"
+name="Kakuzu"
+displayname="Kakuzu"
 versiondate=0,0,2018
 mugenversion=1.1
 author = "N-G MUGEN Team"
@@ -61,19 +61,19 @@ pal.defaults = 1,2,3,4,5,6
 localcoord = 380,360
 
 [Files]
-sprite=Hinata.sff
-sound=Hinata.snd
-anim=Hinata.air
-cmd=Hinata.cmd
-cns=Hinata.cns
-st=Hinata.cns
+sprite=Kakuzu.sff
+sound=Kakuzu.snd
+anim=Kakuzu.air
+cmd=Kakuzu.cmd
+cns=Kakuzu.cns
+st=Kakuzu.cns
 stcommon=Common.cns
-pal1=Hinata.act
-pal2=Hinata.act
-pal3=Hinata.act
-pal4=Hinata.act
-pal5=Hinata.act
-pal6=Hinata.act
+pal1=Kakuzu.act
+pal2=Kakuzu.act
+pal3=Kakuzu.act
+pal4=Kakuzu.act
+pal5=Kakuzu.act
+pal6=Kakuzu.act
 st1=Upgrades.cns
 st2=Weapon.cns
 st3=Common States.cns
